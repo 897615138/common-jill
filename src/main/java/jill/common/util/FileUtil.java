@@ -123,5 +123,7 @@ public class FileUtil {
                 fileName;
     }
 
+    public static void huToolTest(){
 
+    }
 }

@@ -1,11 +1,11 @@
 package jill.common.util;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import cn.hutool.core.util.CharsetUtil;
 import org.junit.Test;
 
+import static jill.common.consts.LogConstants.log;
+
 public class CodeUtilTest {
-    static final Log log = LogFactory.getLog(CodeUtilTest.class);
     static final String TEST="test";
 
     @Test
@@ -15,4 +15,10 @@ public class CodeUtilTest {
 
     @Test
     public void getMd5(){log.info(CodeUtil.getMd5(TEST));}
+
+    @Test
+    public void charSet(){
+        log.info(String.valueOf(CharsetUtil.charset("GBK")));
+        log.info(String.valueOf(CharsetUtil.parse("GBK")));
+    }
 }

@@ -1,19 +1,17 @@
 package jill.common.util;
 
 import jill.common.consts.CodeConstants;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.util.UUID;
+
+import static jill.common.consts.LogConstants.log;
 
 
 /**
  * @author jill
  */
 public class CodeUtil {
-    static final Log log = LogFactory.getLog(CodeUtil.class);
     /**
      * 获取UUID
      *

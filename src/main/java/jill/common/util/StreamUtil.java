@@ -1,19 +1,18 @@
 package jill.common.util;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Objects;
 
+import static jill.common.consts.LogConstants.log;
+
 /**
  * @author jill
  */
 public class StreamUtil {
-    static final Log log = LogFactory.getLog(StreamUtil.class);
     /**
      * 输入流
      */

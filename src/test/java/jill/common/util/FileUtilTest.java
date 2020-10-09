@@ -1,11 +1,10 @@
 package jill.common.util;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.junit.Test;
 
+import static jill.common.consts.LogConstants.log;
 public class FileUtilTest {
-    static final Log log = LogFactory.getLog(FileUtilTest.class);
+
     static final String TEST_FILE="test.txt";
     static final String TEST_TYPE="jpg";
     @Test
@@ -19,7 +18,7 @@ public class FileUtilTest {
     }
     @Test
     public void getFileType(){
-        log.info(FileUtil.getFileType(TEST_TYPE));
+        log.info(FileUtil.getFileType(TEST_TYPE).getDesc());
     }
 
     @Test
