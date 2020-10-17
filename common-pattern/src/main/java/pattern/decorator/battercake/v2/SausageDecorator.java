@@ -1,15 +1,15 @@
 package pattern.decorator.battercake.v2;
 
 /**
- * Created by Tom on 2019/3/17.
+ * @author jill
  */
-public class SausageDecorator extends BattercakeDecorator {
-    public SausageDecorator(Battercake battercake) {
-        super(battercake);
+public class SausageDecorator extends PancakeDecorator {
+    public SausageDecorator(Pancake pancake) {
+        super(pancake);
     }
 
+    @Override
     protected void doSomething() {
-
     }
 
     @Override

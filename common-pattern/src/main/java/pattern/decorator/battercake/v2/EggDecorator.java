@@ -3,11 +3,12 @@ package pattern.decorator.battercake.v2;
 /**
  * Created by Tom on 2019/3/17.
  */
-public class EggDecorator extends BattercakeDecorator {
-    public EggDecorator(Battercake battercake) {
-        super(battercake);
+public class EggDecorator extends PancakeDecorator {
+    public EggDecorator(Pancake pancake) {
+        super(pancake);
     }
 
+    @Override
     protected void doSomething() {
 
     }
