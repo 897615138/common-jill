@@ -1,6 +1,7 @@
 package pattern.strategy.pay.payport;
 
-import com.gupaoedu.vip.pattern.strategy.pay.MsgResult;
+
+import pattern.strategy.pay.MsgResult;
 
 /**
  * 支付渠道

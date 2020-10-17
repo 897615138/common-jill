@@ -1,7 +1,8 @@
 package pattern.strategy.pay;
 
-import com.gupaoedu.vip.pattern.strategy.pay.payport.PayStrategy;
-import com.gupaoedu.vip.pattern.strategy.pay.payport.Payment;
+
+import pattern.strategy.pay.payport.PayStrategy;
+import pattern.strategy.pay.payport.Payment;
 
 /**
  * Created by Tom.

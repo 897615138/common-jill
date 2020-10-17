@@ -1,9 +1,6 @@
 package pattern.proxy.dynamicproxy.jdkproxy;
 
-import com.gupaoedu.vip.pattern.proxy.Person;
-import sun.misc.ProxyGenerator;
 
-import java.io.FileOutputStream;
 import java.lang.reflect.Method;
 
 /**

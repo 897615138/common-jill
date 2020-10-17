@@ -1,6 +1,7 @@
 package pattern.observer.events.mouseevent;
 
-import com.gupaoedu.vip.pattern.observer.events.core.EventLisenter;
+
+import pattern.observer.events.core.EventLisenter;
 
 /**
  * Created by Tom.

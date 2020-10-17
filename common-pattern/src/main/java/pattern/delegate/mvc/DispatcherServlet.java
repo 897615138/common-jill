@@ -1,8 +1,6 @@
 package pattern.delegate.mvc;
 
-import com.gupaoedu.vip.pattern.delegate.mvc.controllers.MemberController;
-import com.gupaoedu.vip.pattern.delegate.mvc.controllers.OrderController;
-import com.gupaoedu.vip.pattern.delegate.mvc.controllers.SystemController;
+import pattern.delegate.mvc.controllers.MemberController;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,8 +15,9 @@ import java.util.List;
 /**
  * 相当于是项目经理的角色
  * Created by Tom.
+ * @author jill
  */
-public class DispatcherServlet extends HttpServlet{
+public class DispatcherServlet extends HttpServlet {
 
     private List<Handler> handlerMapping = new ArrayList<Handler>();
 

@@ -1,6 +1,7 @@
 package pattern.proxy.staticproxy;
 
-import com.gupaoedu.vip.pattern.proxy.Person;
+
+import pattern.proxy.Person;
 
 /**
  * Created by Tom on 2019/3/10.

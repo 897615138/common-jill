@@ -1,8 +1,9 @@
 package pattern.adapter.loginadapter.v2;
 
-import com.gupaoedu.vip.pattern.adapter.loginadapter.ResultMsg;
-import com.gupaoedu.vip.pattern.adapter.loginadapter.v1.service.SiginService;
-import com.gupaoedu.vip.pattern.adapter.loginadapter.v2.adapters.*;
+
+import pattern.adapter.loginadapter.ResultMsg;
+import pattern.adapter.loginadapter.v1.service.SiginService;
+import pattern.adapter.loginadapter.v2.adapters.*;
 
 /**
  * 结合策略模式、工厂模式、适配器模式
@@ -12,19 +13,19 @@ public class PassportForThirdAdapter extends SiginService implements IPassportFo
 
     public ResultMsg loginForQQ(String id) {
 //        return processLogin(id,RegistForQQAdapter.class);
-        return processLogin(id,LoginForQQAdapter.class);
+        return processLogin(id, LoginForQQAdapter.class);
     }
 
     public ResultMsg loginForWechat(String id) {
-        return processLogin(id,LoginForWechatAdapter.class);
+        return processLogin(id, LoginForWechatAdapter.class);
     }
 
     public ResultMsg loginForToken(String token) {
-        return processLogin(token,LoginForTokenAdapter.class);
+        return processLogin(token, LoginForTokenAdapter.class);
     }
 
     public ResultMsg loginForTelphone(String telphone, String code) {
-        return processLogin(telphone,LoginForTelAdapter.class);
+        return processLogin(telphone, LoginForTelAdapter.class);
     }
 
     public ResultMsg loginForRegist(String username, String passport) {

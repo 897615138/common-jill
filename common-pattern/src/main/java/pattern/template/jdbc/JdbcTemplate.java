@@ -1,13 +1,10 @@
 package pattern.template.jdbc;
 
-import com.sun.org.apache.regexp.internal.RE;
-import com.sun.org.apache.xerces.internal.xs.datatypes.ObjectList;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package jill.mockito.code.customMatcher.game;
+package jill.mockito.code.custom.matcher.game;
 
 import jill.mockito.code.ArgumentMatcher;
 

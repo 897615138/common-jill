@@ -1,4 +1,4 @@
-package jill.mockito.code.customMatcher;
+package jill.mockito.code.custom.matcher;
 
 import jill.mockito.code.ArgumentMatcher;
 import jill.mockito.model.TestModel;

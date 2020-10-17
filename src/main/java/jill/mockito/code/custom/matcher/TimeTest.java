@@ -1,4 +1,4 @@
-package jill.mockito.code.customMatcher;
+package jill.mockito.code.custom.matcher;
 
 import java.util.LinkedList;
 

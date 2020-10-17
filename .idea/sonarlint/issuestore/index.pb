@@ -74,8 +74,6 @@ X
 ‹
 [common-arithmetic/src/main/java/jill/code/string/LengthOfLongestSubstringWithoutRepeat.java,4/2/42a42e954c832872a29929bbaf71f39bf583baf0
 S
-#src/main/resources/log4j.properties,7/5/755950bb690295904a49d36e60958901c54013b8
-S
 #src/test/resources/log4j.properties,2/e/2e7233cc442dd22e890222643b79a01460cbb1d7
 ^
 .src/main/java/jill/common/util/StringUtil.java,4/3/436705ac0b45b27a00687dcd738659cd091be30f

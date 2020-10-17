@@ -1,12 +1,5 @@
 package pattern.strategy.pay;
 
-import com.gupaoedu.vip.pattern.strategy.pay.payport.PayStrategy;
-import org.springframework.beans.factory.support.InstantiationStrategy;
-
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.TreeMap;
-
 /**
  * Created by Tom.
  */
@@ -23,9 +16,7 @@ public class PayStrategyTest {
         //基本算法固定的
 
         //这个值是在支付的时候才决定用哪个值
-        System.out.println(order.pay(PayStrategy.ALI_PAY));
-
-        InstantiationStrategy
+        System.out.println(order.pay("ALI_PAY"));
 
     }
 

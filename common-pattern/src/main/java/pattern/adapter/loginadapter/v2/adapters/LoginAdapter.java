@@ -1,6 +1,7 @@
 package pattern.adapter.loginadapter.v2.adapters;
 
-import com.gupaoedu.vip.pattern.adapter.loginadapter.ResultMsg;
+
+import pattern.adapter.loginadapter.ResultMsg;
 
 /**
  * 在适配器里面，这个接口是可有可无，不要跟模板模式混淆
@@ -9,6 +10,6 @@ import com.gupaoedu.vip.pattern.adapter.loginadapter.ResultMsg;
  */
 public interface LoginAdapter {
     boolean support(Object adapter);
-    ResultMsg login(String id,Object adapter);
+    ResultMsg login(String id, Object adapter);
 
 }

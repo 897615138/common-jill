@@ -5,14 +5,13 @@ import javax.tools.StandardJavaFileManager;
 import javax.tools.ToolProvider;
 import java.io.File;
 import java.io.FileWriter;
-import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * 用来生成源代码的工具类
- * Created by Tom.
+ * @author Jill
  */
 public class GPProxy {
 
@@ -28,24 +27,24 @@ public class GPProxy {
            String filePath = GPProxy.class.getResource("").getPath();
 //           System.out.println(filePath);
            File f = new File(filePath + "$Proxy0.java");
-           FileWriter fw = new FileWriter(f);
-           fw.write(src);
-           fw.flush();
-           fw.close();
+           try (FileWriter fw = new FileWriter(f)) {
+               fw.write(src);
+               fw.flush();
+           }
 
            //3、把生成的.java文件编译成.class文件
            JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
            StandardJavaFileManager manage = compiler.getStandardFileManager(null,null,null);
-           Iterable iterable = manage.getJavaFileObjects(f);
+           Iterable<? extends javax.tools.JavaFileObject> iterable = manage.getJavaFileObjects(f);
 
           JavaCompiler.CompilationTask task = compiler.getTask(null,manage,null,null,null,iterable);
           task.call();
           manage.close();
 
            //4、编译生成的.class文件加载到JVM中来
-          Class proxyClass =  classLoader.findClass("$Proxy0");
-          Constructor c = proxyClass.getConstructor(GPInvocationHandler.class);
-          f.delete();
+          Class<? extends Object> proxyClass =  classLoader.findClass("$Proxy0");
+           java.lang.reflect.Constructor<? extends Object> c = proxyClass.getConstructor(GPInvocationHandler.class);
+           f.delete();
 
            //5、返回字节码重组以后的新的代理对象
            return c.newInstance(h);
@@ -56,11 +55,11 @@ public class GPProxy {
     }
 
     private static String generateSrc(Class<?>[] interfaces){
-            StringBuffer sb = new StringBuffer();
-            sb.append("package com.gupaoedu.vip.pattern.proxy.dynamicproxy.gpproxy;" + ln);
+        StringBuilder sb = new StringBuilder();
+        sb.append("package com.gupaoedu.vip.pattern.proxy.dynamicproxy.gpproxy;" + ln);
             sb.append("import com.gupaoedu.vip.pattern.proxy.Person;" + ln);
             sb.append("import java.lang.reflect.*;" + ln);
-            sb.append("public class $Proxy0 implements " + interfaces[0].getName() + "{" + ln);
+            sb.append("public class $Proxy0 implements ").append(interfaces[0].getName()).append("{").append(ln);
                 sb.append("GPInvocationHandler h;" + ln);
                 sb.append("public $Proxy0(GPInvocationHandler h) { " + ln);
                     sb.append("this.h = h;");
@@ -68,17 +67,17 @@ public class GPProxy {
                 for (Method m : interfaces[0].getMethods()){
                     Class<?>[] params = m.getParameterTypes();
 
-                    StringBuffer paramNames = new StringBuffer();
-                    StringBuffer paramValues = new StringBuffer();
-                    StringBuffer paramClasses = new StringBuffer();
+                    StringBuilder paramNames = new StringBuilder();
+                    StringBuilder paramValues = new StringBuilder();
+                    StringBuilder paramClasses = new StringBuilder();
 
                     for (int i = 0; i < params.length; i++) {
-                        Class clazz = params[i];
+                        Class<?> clazz = params[i];
                         String type = clazz.getName();
                         String paramName = toLowerFirstCase(clazz.getSimpleName());
-                        paramNames.append(type + " " +  paramName);
+                        paramNames.append(type).append(" ").append(paramName);
                         paramValues.append(paramName);
-                        paramClasses.append(clazz.getName() + ".class");
+                        paramClasses.append(clazz.getName()).append(".class");
                         if(i > 0 && i < params.length-1){
                             paramNames.append(",");
                             paramClasses.append(",");
@@ -86,10 +85,10 @@ public class GPProxy {
                         }
                     }
 
-                    sb.append("public " + m.getReturnType().getName() + " " + m.getName() + "(" + paramNames.toString() + ") {" + ln);
+                    sb.append("public ").append(m.getReturnType().getName()).append(" ").append(m.getName()).append("(").append(paramNames.toString()).append(") {").append(ln);
                         sb.append("try{" + ln);
-                            sb.append("Method m = " + interfaces[0].getName() + ".class.getMethod(\"" + m.getName() + "\",new Class[]{" + paramClasses.toString() + "});" + ln);
-                            sb.append((hasReturnValue(m.getReturnType()) ? "return " : "") + getCaseCode("this.h.invoke(this,m,new Object[]{" + paramValues + "})",m.getReturnType()) + ";" + ln);
+                            sb.append("Method m = ").append(interfaces[0].getName()).append(".class.getMethod(\"").append(m.getName()).append("\",new Class[]{").append(paramClasses.toString()).append("});").append(ln);
+                            sb.append(hasReturnValue(m.getReturnType()) ? "return " : "").append(getCaseCode("this.h.invoke(this,m,new Object[]{" + paramValues + "})", m.getReturnType())).append(";").append(ln);
                         sb.append("}catch(Error _ex) { }");
                         sb.append("catch(Throwable e){" + ln);
                         sb.append("throw new UndeclaredThrowableException(e);" + ln);
@@ -102,13 +101,13 @@ public class GPProxy {
     }
 
 
-    private static Map<Class,Class> mappings = new HashMap<Class, Class>();
+    private static final Map<Class<? extends Integer>, Class<? extends Integer>> MAPPINGS = new HashMap<>();
     static {
-        mappings.put(int.class,Integer.class);
+        MAPPINGS.put(int.class,Integer.class);
     }
 
     private static String getReturnEmptyCode(Class<?> returnClass){
-        if(mappings.containsKey(returnClass)){
+        if(MAPPINGS.containsKey(returnClass)){
             return "return 0;";
         }else if(returnClass == void.class){
             return "";
@@ -118,8 +117,8 @@ public class GPProxy {
     }
 
     private static String getCaseCode(String code,Class<?> returnClass){
-        if(mappings.containsKey(returnClass)){
-            return "((" + mappings.get(returnClass).getName() +  ")" + code + ")." + returnClass.getSimpleName() + "Value()";
+        if(MAPPINGS.containsKey(returnClass)){
+            return "((" + MAPPINGS.get(returnClass).getName() +  ")" + code + ")." + returnClass.getSimpleName() + "Value()";
         }
         return code;
     }
