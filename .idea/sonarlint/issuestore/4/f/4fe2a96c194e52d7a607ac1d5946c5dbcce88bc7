@@ -1,0 +1,7 @@
+
+]
+java:S1182"HUse super.clone() to create and seed the cloned instance to be returned.(™”” 
+p
+java:S1104"UMake jinGuBang a static final constant or non-public and provide accessors if needed.(’ë·Ðþÿÿÿÿ
+h
+java:S2975"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(™”” 

@@ -1,0 +1,8 @@
+
+K
+java:S1874
+"0Remove this use of "Observer"; it is deprecated.(Ùñúÿÿÿÿ
+M
+java:S1874"2Remove this use of "Observable"; it is deprecated.(‹›Àüÿÿÿÿ
+M	java:S106"9Replace this use of System.out or System.err by a logger.(ñ›ù
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Óı°æ

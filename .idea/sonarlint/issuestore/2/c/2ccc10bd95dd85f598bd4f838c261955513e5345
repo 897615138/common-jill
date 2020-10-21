@@ -1,0 +1,7 @@
+
+S	java:S106!"9Replace this use of System.out or System.err by a logger.(·©±“þÿÿÿÿ
+M	java:S106%"9Replace this use of System.out or System.err by a logger.( óš 
+‰
+java:S1130"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(³ ³ß8ëýì£Ó.
+M	java:S106 "9Replace this use of System.out or System.err by a logger.(ÄÃÛ)
+[	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(³ ³ß

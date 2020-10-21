@@ -1,0 +1,5 @@
+
+p
+java:S4042/"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(é‘‚©úÿÿÿÿ8Öíþ£Ó.
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(–Ý–Ò
+U	java:S899/";Do something with the "boolean" value returned by "delete".(é‘‚©úÿÿÿÿ

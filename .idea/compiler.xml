@@ -10,8 +10,10 @@
         <module name="common-arithmetic" />
         <module name="common-pattern" />
         <module name="common-zookeeper" />
-        <module name="common-kafka" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="common-kafka" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

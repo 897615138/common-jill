@@ -1,0 +1,15 @@
+
+o
+java:S2293:"YReplace the type specification in this constructor call with the diamond operator ("<>").(“ªØª
+A
+java:S1452"&Remove usage of generic wildcard type.(Æšİ¬øÿÿÿÿ
+[	java:S112B"FDefine and throw a dedicated exception instead of using a generic one.(’Åè¨
+[	java:S112I"FDefine and throw a dedicated exception instead of using a generic one.(È”«Š
+[	java:S1125"FDefine and throw a dedicated exception instead of using a generic one.(ğ‚®Ê
+A
+java:S14529"&Remove usage of generic wildcard type.(÷û¼êûÿÿÿÿ
+[	java:S112,"FDefine and throw a dedicated exception instead of using a generic one.(ß¥ëä
+[	java:S1121"FDefine and throw a dedicated exception instead of using a generic one.(ß¼Óˆ
+Z	java:S112M"FDefine and throw a dedicated exception instead of using a generic one.(Ü¦œU
+A
+java:S1168)"+Return an empty collection instead of null.(¥¹ï

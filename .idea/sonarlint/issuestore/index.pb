@@ -367,8 +367,6 @@ Hcommon-pattern/src/main/java/pattern/strategy/pay/payport/WechatPay.java,9/4/9
 log/err.log,2/2/229d29d847a284ac77fd71b3a05d07ec41b374c4
 x
 Hcommon-pattern/src/main/java/pattern/adapter/loginadapter/ResultMsg.java,5/c/5cefa8f1f66e83e2efa077316eb8dba90e6a03eb
-\
-,src/main/java/jill/common/util/TimeUtil.java,6/c/6c34e17ede035a0ed27f1d1be151d70f84f48413
 ^
 .src/main/java/jill/mockito/model/TestUtil.java,c/b/cb50665ba1dd208c13fd1160352636118d3e9298
 ^
@@ -411,3 +409,13 @@ s
 Ccommon-zookeeper/src/main/java/zookeeper/curator/ExampleClient.java,3/8/3880180551f41d3d1d6152f88aaa635130d23a08
 {
 Kcommon-zookeeper/src/main/java/zookeeper/curator/LeaderSelectorExample.java,6/9/6905e1fe17647be5b73ebe85f778b36cb588fa9f
+D
+common-kafka/pom.xml,6/4/645e261e804ead94718b7fa1fc81b3f538554525
+T
+$src/main/java/jill/metric/Demo1.java,d/d/dd2ff8865ee6325e7eeb1d257df5edbd83d92a69
+\
+,src/main/java/jill/metric/CacheHitRatio.java,2/3/230c4536958cab969a8d9d07932e102aa6b57b30
+[
++src/main/java/jill/metric/QueueManager.java,8/3/8331581904375d4a716c33af057523826801e840
+Y
+)src/main/java/jill/metric/JobManager.java,d/a/da46b46f2edad7cf4de72a06216733c1b93c48df
