@@ -1,9 +1,0 @@
-
-Z	java:S106,"9Replace this use of System.out or System.err by a logger.(»ô‰üÿÿÿÿ8Ö¯…ıÓ.
-F
-java:S2140#")Use "java.util.Random.nextInt()" instead.(Õÿ“8Ö¯…ıÓ.
-‰
-java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(á¡Û´8Ö¯…ıÓ.
-U	java:S106%"9Replace this use of System.out or System.err by a logger.(ï½·‹8Ö¯…ıÓ.
-U	java:S106)"9Replace this use of System.out or System.err by a logger.(Ø°Ö™8Ö¯…ıÓ.
-Z	java:S106$"9Replace this use of System.out or System.err by a logger.(¶ŠÌÿşÿÿÿÿ8Ö¯…ıÓ.
