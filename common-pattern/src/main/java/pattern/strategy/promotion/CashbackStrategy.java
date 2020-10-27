@@ -2,7 +2,7 @@ package pattern.strategy.promotion;
 
 /**
  * 返现活动
- * Created by Tom
+ * Created by jill
  */
 public class CashbackStrategy implements PromotionStrategy {
 

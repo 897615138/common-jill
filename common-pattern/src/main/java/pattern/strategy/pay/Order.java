@@ -5,7 +5,7 @@ import pattern.strategy.pay.payport.PayStrategy;
 import pattern.strategy.pay.payport.Payment;
 
 /**
- * Created by Tom.
+ * Created by jill.
  */
 public class Order {
     private String uid;

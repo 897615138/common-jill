@@ -2,7 +2,7 @@ package pattern.strategy.promotion;
 
 /**
  * 优惠活动
- * Created by Tom
+ * Created by jill
  */
 public class PromotionActivity {
     private PromotionStrategy promotionStrategy;

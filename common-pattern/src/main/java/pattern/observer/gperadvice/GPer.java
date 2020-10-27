@@ -4,7 +4,7 @@ import java.util.Observable;
 
 /**
  * JDK提供的一种观察者的实现方式，被观察者
- * Created by Tom on 2019/3/17.
+ * Created by jill on 2019/3/17.
  */
 public class GPer extends Observable{
 

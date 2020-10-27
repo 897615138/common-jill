@@ -1,7 +1,7 @@
 package pattern.strategy.promotion;
 /**
  * 无优惠
- * Created by Tom
+ * Created by jill
  */
 public class EmptyStrategy implements PromotionStrategy {
     public void doPromotion() {

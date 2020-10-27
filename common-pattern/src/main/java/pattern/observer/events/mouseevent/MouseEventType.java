@@ -1,7 +1,7 @@
 package pattern.observer.events.mouseevent;
 
 /**
- * Created by Tom.
+ * Created by jill.
  */
 public interface MouseEventType {
     //单击

@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * 促销策略工厂
- * Created by Tom
+ * Created by jill
  */
 public class PromotionStrategyFactory {
     private static Map<String,PromotionStrategy> PROMOTION_STRATEGY_MAP = new HashMap<String, PromotionStrategy>();

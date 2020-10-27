@@ -3,7 +3,7 @@ package pattern.singleton.seriable;
 import java.io.Serializable;
 
 /**
- * Created by Tom.
+ * Created by jill.
  */
 
 //反序列化时导致单例破坏

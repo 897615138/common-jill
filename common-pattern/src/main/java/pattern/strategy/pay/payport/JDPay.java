@@ -2,7 +2,7 @@ package pattern.strategy.pay.payport;
 
 
 /**
- * Created by Tom.
+ * Created by jill.
  */
 public class JDPay extends Payment {
 

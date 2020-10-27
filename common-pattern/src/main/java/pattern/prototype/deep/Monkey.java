@@ -3,7 +3,7 @@ package pattern.prototype.deep;
 import java.util.Date;
 
 /**
- * Created by Tom.
+ * Created by jill.
  */
 public class Monkey {
     public int height;

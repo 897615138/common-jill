@@ -5,7 +5,7 @@ import pattern.observer.events.core.Event;
 
 /**
  * 自己写的逻辑，用于回调
- * Created by Tom.
+ * Created by jill.
  */
 public class MouseEventCallback {
 

@@ -1,7 +1,7 @@
 package pattern.template.course;
 
 /**
- * Created by Tom.
+ * Created by jill.
  */
 public class JavaCourse extends NetworkCourse {
     void checkHomework() {

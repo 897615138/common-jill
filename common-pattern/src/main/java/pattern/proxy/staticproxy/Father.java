@@ -4,7 +4,7 @@ package pattern.proxy.staticproxy;
 import pattern.proxy.Person;
 
 /**
- * Created by Tom on 2019/3/10.
+ * Created by jill on 2019/3/10.
  */
 public class Father implements Person {
     private Son person;

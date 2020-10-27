@@ -1,7 +1,7 @@
 package pattern.strategy.pay;
 
 /**
- * Created by Tom.
+ * Created by jill.
  */
 public class PayStrategyTest {
 

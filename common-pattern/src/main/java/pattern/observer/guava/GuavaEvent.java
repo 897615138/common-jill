@@ -3,7 +3,7 @@ package pattern.observer.guava;
 import com.google.common.eventbus.Subscribe;
 
 /**
- * Created by Tom on 2019/3/17.
+ * Created by jill on 2019/3/17.
  */
 public class GuavaEvent {
 

@@ -4,7 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * 促销活动
- * Created by Tom
+ * Created by jill
  */
 public class PromotionActivityTest {
     public static void main(String[] args) {

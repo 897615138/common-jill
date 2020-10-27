@@ -2,7 +2,7 @@ package pattern.strategy.promotion;
 
 /**
  * 优惠券
- * Created by Tom
+ * Created by jill
  */
 public class CouponStrategy implements PromotionStrategy {
 

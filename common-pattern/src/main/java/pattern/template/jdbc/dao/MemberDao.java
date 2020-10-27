@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.util.List;
 
 /**
- * Created by Tom.
+ * Created by jill.
  */
 public class MemberDao extends JdbcTemplate {
     public MemberDao(DataSource dataSource) {

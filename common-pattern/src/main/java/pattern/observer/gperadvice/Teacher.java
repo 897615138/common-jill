@@ -5,7 +5,7 @@ import java.util.Observer;
 
 /**
  * 观察者
- * Created by Tom on 2019/3/17.
+ * Created by jill on 2019/3/17.
  */
 public class Teacher implements Observer {
     private String name;

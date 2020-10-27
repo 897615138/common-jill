@@ -5,7 +5,7 @@ import pattern.strategy.pay.MsgResult;
 
 /**
  * 支付渠道
- * Created by Tom.
+ * Created by jill.
  */
 public abstract class Payment {
 

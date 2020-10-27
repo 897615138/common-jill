@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
 
 /**
  * 监听器的一种包装,标准事件源格式的定义
- * Created by Tom.
+ * Created by jill.
  */
 public class Event {
     //事件源，事件是由谁发起的保存起来

@@ -1,7 +1,7 @@
 package pattern.singleton.hungry;
 
 /**
- * Created by Tom.
+ * Created by jill.
  */
 
 //饿汉式单例

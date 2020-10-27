@@ -1,7 +1,7 @@
 package pattern.decorator.passport.old;
 
 /**
- * Created by Tom.
+ * Created by jill.
  */
 public class ResultMsg {
 

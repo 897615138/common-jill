@@ -6,7 +6,7 @@ import pattern.template.jdbc.dao.MemberDao;
 import java.util.List;
 
 /**
- * Created by Tom.
+ * Created by jill.
  */
 public class MemberDaoTest {
 

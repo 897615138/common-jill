@@ -2,7 +2,7 @@ package pattern.strategy.promotion;
 
 /**
  * 拼团优惠
- * Created by Tom
+ * Created by jill
  */
 public class GroupbuyStrategy implements PromotionStrategy{
 

@@ -1,7 +1,7 @@
 package pattern.observer.gperadvice;
 
 /**
- * Created by Tom on 2019/3/17.
+ * Created by jill on 2019/3/17.
  */
 public class Question {
 

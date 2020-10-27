@@ -1,7 +1,7 @@
 package pattern.proxy.simpleproxy;
 
 /**
- * Created by Tom.
+ * Created by jill.
  */
 public interface Subject {
     void request();

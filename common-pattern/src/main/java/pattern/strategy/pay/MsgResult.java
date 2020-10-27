@@ -2,7 +2,7 @@ package pattern.strategy.pay;
 
 /**
  * 支付完成以后的状态
- * Created by Tom.
+ * Created by jill.
  */
 public class MsgResult {
     private int code;

@@ -1,7 +1,7 @@
 package pattern.singleton.lazy;
 
 /**
- * Created by Tom.
+ * Created by jill.
  */
 
 //懒汉式单例

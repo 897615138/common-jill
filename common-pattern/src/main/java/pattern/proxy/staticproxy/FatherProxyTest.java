@@ -1,7 +1,7 @@
 package pattern.proxy.staticproxy;
 
 /**
- * Created by Tom on 2019/3/10.
+ * Created by jill on 2019/3/10.
  */
 public class FatherProxyTest {
 

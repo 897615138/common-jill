@@ -4,7 +4,7 @@ package pattern.proxy.dynamicproxy.gpproxy;
 import java.lang.reflect.Method;
 
 /**
- * Created by Tom on 2019/3/10.
+ * Created by jill on 2019/3/10.
  */
 public class GPMeipo implements GPInvocationHandler {
     private Object target;

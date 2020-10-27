@@ -4,7 +4,7 @@ package pattern.observer.events.mouseevent;
 import pattern.observer.events.core.EventLisenter;
 
 /**
- * Created by Tom.
+ * Created by jill.
  */
 public class Mouse extends EventLisenter {
 
