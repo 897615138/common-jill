@@ -6,7 +6,7 @@ import pattern.observer.events.mouseevent.MouseEventCallback;
 import pattern.observer.events.mouseevent.MouseEventType;
 
 /**
- * Created by jill on 2019/3/17.
+ * @author jill on 2019/3/17.
  */
 public class MouseEventTest {
     public static void main(String[] args) {

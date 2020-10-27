@@ -2,8 +2,9 @@ package pattern.strategy.promotion;
 
 /**
  * 促销策略抽象
- * Created by jill
+ *
+ * @author jill
  */
-public interface PromotionStrategy {
+public interface IPromotionStrategy {
     void doPromotion();
 }

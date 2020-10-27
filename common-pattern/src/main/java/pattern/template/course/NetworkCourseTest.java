@@ -1,7 +1,7 @@
 package pattern.template.course;
 
 /**
- * Created by jill on 2019/3/16.
+ * @author jill on 2019/3/16.
  */
 public class NetworkCourseTest {
     public static void main(String[] args) {

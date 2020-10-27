@@ -1,7 +1,7 @@
 package pattern.template.jdbc;
 
 /**
- * Created by jill on 2019/3/16.
+ * @author jill on 2019/3/16.
  */
 public class Member {
 

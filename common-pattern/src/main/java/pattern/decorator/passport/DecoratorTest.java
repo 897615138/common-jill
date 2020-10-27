@@ -6,7 +6,7 @@ import pattern.decorator.passport.upgrade.ISiginForThirdService;
 import pattern.decorator.passport.upgrade.SiginForThirdService;
 
 /**
- * Created by jill on 2019/3/17.
+ * @author jill on 2019/3/17.
  */
 public class DecoratorTest {
 

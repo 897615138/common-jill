@@ -2,7 +2,7 @@ package pattern.factory.abstractfactory;
 
 
 /**
- * Created by jill on.
+ * @author jill on.
  * @author  Jill Wang
  */
 public class JavaVideo implements IVideo {

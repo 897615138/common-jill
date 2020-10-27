@@ -4,7 +4,7 @@ package pattern.proxy.dynamicproxy.jdkproxy;
 import java.lang.reflect.Method;
 
 /**
- * Created by jill on 2019/3/10.
+ * @author jill on 2019/3/10.
  */
 public class JDKProxyTest {
 

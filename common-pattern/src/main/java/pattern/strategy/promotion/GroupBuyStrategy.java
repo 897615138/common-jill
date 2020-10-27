@@ -2,10 +2,12 @@ package pattern.strategy.promotion;
 
 /**
  * 拼团优惠
- * Created by jill
+ *
+ * @author jill
  */
-public class GroupbuyStrategy implements PromotionStrategy{
+public class GroupBuyStrategy implements IPromotionStrategy {
 
+    @Override
     public void doPromotion() {
         System.out.println("拼团，满20人成团，全团享受团购价");
     }

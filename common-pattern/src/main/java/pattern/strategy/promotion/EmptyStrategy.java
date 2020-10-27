@@ -1,9 +1,12 @@
 package pattern.strategy.promotion;
+
 /**
  * 无优惠
- * Created by jill
+ *
+ * @author jill
  */
-public class EmptyStrategy implements PromotionStrategy {
+public class EmptyStrategy implements IPromotionStrategy {
+    @Override
     public void doPromotion() {
         System.out.println("无促销活动");
     }

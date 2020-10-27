@@ -1,18 +1,22 @@
 package pattern.strategy.promotion;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 /**
  * 优惠活动
- * Created by jill
+ *
+ * @author jill
  */
+@AllArgsConstructor
+@NoArgsConstructor
 public class PromotionActivity {
-    private PromotionStrategy promotionStrategy;
+    /**
+     * 优惠活动的策略
+     */
+    private IPromotionStrategy iPromotionStrategy;
 
-    public PromotionActivity(PromotionStrategy promotionStrategy) {
-        this.promotionStrategy = promotionStrategy;
+    public void execute() {
+        iPromotionStrategy.doPromotion();
     }
-
-    public void execute(){
-        promotionStrategy.doPromotion();
-    }
-
 }

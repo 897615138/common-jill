@@ -1,7 +1,7 @@
 package pattern.proxy.dbroute.db;
 
 /**
- * Created by jill on 2019/3/10.
+ * @author jill on 2019/3/10.
  */
 public class DynamicDataSourceEntity {
 

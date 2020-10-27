@@ -5,7 +5,7 @@ import pattern.decorator.passport.old.ISigninService;
 import pattern.decorator.passport.old.ResultMsg;
 
 /**
- * Created by jill on 2019/3/17.
+ * @author jill on 2019/3/17.
  */
 public class SiginForThirdService implements ISiginForThirdService {
 

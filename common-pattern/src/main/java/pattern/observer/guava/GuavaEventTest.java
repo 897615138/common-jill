@@ -4,7 +4,7 @@ import com.google.common.eventbus.EventBus;
 import org.springframework.web.context.ContextLoaderListener;
 
 /**
- * Created by jill on 2019/3/17.
+ * @author jill on 2019/3/17.
  */
 public class GuavaEventTest {
 

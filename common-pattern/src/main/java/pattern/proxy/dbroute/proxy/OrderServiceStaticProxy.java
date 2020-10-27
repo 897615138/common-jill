@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Created by jill on 2019/3/10.
+ * @author jill on 2019/3/10.
  */
 public class OrderServiceStaticProxy implements IOrderService {
     private SimpleDateFormat yearFormat = new SimpleDateFormat("yyyy");

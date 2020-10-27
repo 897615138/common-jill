@@ -5,7 +5,7 @@ import pattern.proxy.Person;
 import pattern.proxy.dynamicproxy.jdkproxy.Girl;
 
 /**
- * Created by jill on 2019/3/10.
+ * @author jill on 2019/3/10.
  */
 public class GPProxyTest {
 

@@ -1,7 +1,7 @@
 package pattern.observer.gperadvice;
 
 /**
- * Created by jill on 2019/3/17.
+ * @author jill on 2019/3/17.
  */
 public class ObserverTest {
     public static void main(String[] args) {
