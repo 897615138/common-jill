@@ -1,10 +1,14 @@
 package pattern.delegate.simple;
 
 /**
- * Created by Tom.
+ * @author jill
  */
 public interface IEmployee {
-
-    public void doing(String command);
+    /**
+     * 员工做事
+     *
+     * @param command 要求
+     */
+    void doing(String command);
 
 }
