@@ -1,7 +1,7 @@
 package pattern.singleton.lazy;
 
 /**
- * Created by jill.
+ * @author jill
  */
 
 //懒汉式单例

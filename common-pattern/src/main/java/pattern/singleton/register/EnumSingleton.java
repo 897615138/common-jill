@@ -1,7 +1,7 @@
 package pattern.singleton.register;
 
 /**
- * Created by jill.
+ * @author jill
  */
 //常量中去使用，常量不就是用来大家都能够共用吗？
 //通常在通用API中使用

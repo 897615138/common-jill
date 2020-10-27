@@ -3,7 +3,7 @@ package pattern.prototype.simple;
 import java.util.List;
 
 /**
- * Created by jill.
+ * @author jill
  */
 public class ConcretePrototypeA implements Prototype {
 

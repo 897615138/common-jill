@@ -1,7 +1,7 @@
 package pattern.decorator.passport.old;
 
 /**
- * Created by jill.
+ * @author jill
  */
 public interface ISigninService {
     ResultMsg regist(String username, String password);

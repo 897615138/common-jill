@@ -1,7 +1,7 @@
 package pattern.prototype.simple;
 
 /**
- * Created by jill.
+ * @author jill
  */
 public class ConcretePrototypeB implements Prototype {
 

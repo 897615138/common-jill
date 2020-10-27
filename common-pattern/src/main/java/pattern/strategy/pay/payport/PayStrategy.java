@@ -5,7 +5,8 @@ import java.util.Map;
 
 /**
  * 支付策略管理
- * Created by jill.
+ *
+ * @author jill
  */
 public class PayStrategy {
     public static final String ALI_PAY = "AliPay";
@@ -14,18 +15,19 @@ public class PayStrategy {
     public static final String WECHAT_PAY = "WechatPay";
     public static final String DEFAULT_PAY = ALI_PAY;
 
-    private static Map<String,Payment> payStrategy = new HashMap<String,Payment>();
+    private static final Map<String, AbstractPayment> PAY_STRATEGY = new HashMap<>();
+
     static {
-        payStrategy.put(ALI_PAY,new AliPay());
-        payStrategy.put(WECHAT_PAY,new WechatPay());
-        payStrategy.put(UNION_PAY,new UnionPay());
-        payStrategy.put(JD_PAY,new JDPay());
+        PAY_STRATEGY.put(ALI_PAY, new AliPay());
+        PAY_STRATEGY.put(WECHAT_PAY, new WechatPay());
+        PAY_STRATEGY.put(UNION_PAY, new UnionPay());
+        PAY_STRATEGY.put(JD_PAY, new JDPay());
     }
 
-    public static Payment get(String payKey){
-        if(!payStrategy.containsKey(payKey)){
-            return payStrategy.get(DEFAULT_PAY);
+    public static AbstractPayment get(String payKey) {
+        if (!PAY_STRATEGY.containsKey(payKey)) {
+            return PAY_STRATEGY.get(DEFAULT_PAY);
         }
-        return payStrategy.get(payKey);
+        return PAY_STRATEGY.get(payKey);
     }
 }

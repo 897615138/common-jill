@@ -3,7 +3,7 @@ package pattern.template.course;
 /**
  * 模板会有一个或者多个未现实方法，
  * 而且这几个未实现方法有固定的执行循序
- * Created by jill.
+ * @author jill
  */
 public abstract class NetworkCourse {
 

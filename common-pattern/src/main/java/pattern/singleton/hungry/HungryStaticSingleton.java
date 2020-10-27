@@ -1,7 +1,7 @@
 package pattern.singleton.hungry;
 
 /**
- * Created by jill.
+ * @author jill
  */
 
 //饿汉式静态块单例

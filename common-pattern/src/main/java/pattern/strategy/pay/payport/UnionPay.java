@@ -1,14 +1,16 @@
 package pattern.strategy.pay.payport;
 
 /**
- * Created by jill.
+ * @author jill
  */
-public class UnionPay extends Payment {
+public class UnionPay extends AbstractPayment {
 
+    @Override
     public String getName() {
         return "银联支付";
     }
 
+    @Override
     protected double queryBalance(String uid) {
         return 120;
     }

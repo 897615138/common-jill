@@ -1,7 +1,7 @@
 package pattern.decorator.passport.old;
 
 /**
- * Created by jill.
+ * @author jill
  */
 public class SigninService implements ISigninService {
 

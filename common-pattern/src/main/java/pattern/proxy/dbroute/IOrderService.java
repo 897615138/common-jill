@@ -1,7 +1,7 @@
 package pattern.proxy.dbroute;
 
 /**
- * Created by jill.
+ * @author jill
  */
 public interface IOrderService {
     int createOrder(Order order);

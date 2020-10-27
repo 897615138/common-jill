@@ -1,7 +1,7 @@
 package pattern.singleton.threadlocal;
 
 /**
- * Created by jill.
+ * @author jill
  */
 public class ThreadLocalSingleton {
     private static final ThreadLocal<ThreadLocalSingleton> threadLocalInstance =

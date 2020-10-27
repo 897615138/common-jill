@@ -1,33 +1,31 @@
 package pattern.strategy.pay;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import pattern.strategy.pay.payport.PayStrategy;
-import pattern.strategy.pay.payport.Payment;
+import pattern.strategy.pay.payport.AbstractPayment;
 
 /**
- * Created by jill.
+ * @author jill
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Order {
     private String uid;
     private String orderId;
     private double amount;
 
-    public Order(String uid,String orderId,double amount){
-        this.uid = uid;
-        this.orderId = orderId;
-        this.amount = amount;
-    }
-
-    //完美地解决了switch的过程，不需要在代码逻辑中写switch了
-    //更不需要写if    else if
-    public MsgResult pay(){
+    public MsgResult pay() {
         return pay(PayStrategy.DEFAULT_PAY);
     }
 
-    public MsgResult pay(String payKey){
-        Payment payment = PayStrategy.get(payKey);
-        System.out.println("欢迎使用" + payment.getName());
+    public MsgResult pay(String payKey) {
+        AbstractPayment abstractPayment = PayStrategy.get(payKey);
+        System.out.println("欢迎使用" + abstractPayment.getName());
         System.out.println("本次交易金额为：" + amount + "，开始扣款...");
-        return payment.pay(uid,amount);
+        return abstractPayment.pay(uid, amount);
     }
 }

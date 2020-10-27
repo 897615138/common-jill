@@ -4,7 +4,7 @@ package pattern.observer.events.mouseevent;
 import pattern.observer.events.core.EventLisenter;
 
 /**
- * Created by jill.
+ * @author jill
  */
 public class Keybord extends EventLisenter {
 

@@ -5,7 +5,7 @@ import java.io.*;
 import java.util.Date;
 
 /**
- * Created by jill.
+ * @author jill
  */
 public class QiTianDaSheng extends Monkey implements Cloneable,Serializable {
 

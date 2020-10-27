@@ -1,7 +1,7 @@
 package pattern.proxy.dbroute;
 
 /**
- * Created by jill.
+ * @author jill
  */
 public class Order {
     private Object orderInfo;
