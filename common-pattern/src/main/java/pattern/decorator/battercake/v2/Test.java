@@ -1,8 +1,6 @@
 package pattern.decorator.battercake.v2;
 
-/**
- * Created by Tom on 2019/3/17.
- */
+
 public class Test {
     public static void main(String[] args) {
         AbstractPancake pancake;

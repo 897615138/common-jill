@@ -5,44 +5,45 @@ import pattern.adapter.loginadapter.ResultMsg;
 
 /**
  * 只扩展
- * Created by Tom on 2019/3/16.
+ * @author jill
  */
 public interface IPassportForThird {
 
     /**
      * QQ登录
-     * @param id
-     * @return
+     *
+     * @param id id
+     * @return 结果
      */
     ResultMsg loginForQQ(String id);
 
     /**
      * 微信登录
-     * @param id
-     * @return
+     * @param id id
+     * @return 结果
      */
     ResultMsg loginForWechat(String id);
 
     /**
      * 记住登录状态后自动登录
-     * @param token
-     * @return
+     * @param token token
+     * @return 结果
      */
     ResultMsg loginForToken(String token);
 
     /**
      * 手机号登录
-     * @param telphone
-     * @param code
-     * @return
+     * @param telephone 手机号
+     * @param code code
+     * @return 结果
      */
-    ResultMsg loginForTelphone(String telphone, String code);
+    ResultMsg loginForTelephone(String telephone, String code);
 
     /**
      * 注册后自动登录
-     * @param username
-     * @param passport
-     * @return
+     * @param username 用户名
+     * @param passport 密码
+     * @return 结果
      */
     ResultMsg loginForRegist(String username, String passport);
 }

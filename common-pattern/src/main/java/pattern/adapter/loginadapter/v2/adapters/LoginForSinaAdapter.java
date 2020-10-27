@@ -3,14 +3,18 @@ package pattern.adapter.loginadapter.v2.adapters;
 
 import pattern.adapter.loginadapter.ResultMsg;
 
+
 /**
- * Created by Tom.
+ * @author jill
  */
 public class LoginForSinaAdapter implements LoginAdapter {
+    @Override
     public boolean support(Object adapter) {
         return adapter instanceof LoginForSinaAdapter;
     }
+
+    @Override
     public ResultMsg login(String id, Object adapter) {
-        return null;
+        return new ResultMsg(200, "Sina", null);
     }
 }

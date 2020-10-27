@@ -1,7 +1,6 @@
 package pattern.delegate.simple;
-
 /**
- * Created by Tom.
+ * @author jill
  */
 public class Boss {
 

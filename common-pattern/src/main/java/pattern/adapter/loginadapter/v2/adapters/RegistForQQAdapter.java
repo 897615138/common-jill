@@ -2,15 +2,18 @@ package pattern.adapter.loginadapter.v2.adapters;
 
 import pattern.adapter.loginadapter.ResultMsg;
 
+
 /**
- * Created by Tom on 2019/3/16.
+ * @author jill
  */
-public class RegistForQQAdapter implements RegistAdapter,LoginAdapter {
+public class RegistForQQAdapter implements RegistAdapter {
+    @Override
     public boolean support(Object adapter) {
         return false;
     }
 
-    public ResultMsg login(String id, Object adapter) {
-        return null;
+    @Override
+    public ResultMsg regist(String id, Object adapter) {
+        return new ResultMsg(200, "qq", null);
     }
 }
