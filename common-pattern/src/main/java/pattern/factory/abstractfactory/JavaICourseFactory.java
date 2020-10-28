@@ -1,15 +1,16 @@
 package pattern.factory.abstractfactory;
 
 /**
- *
- * @author  Jill Wang
+ * @author Jill Wang
  */
-public class JavaCourseFactory implements CourseFactory {
+public class JavaICourseFactory implements ICourseFactory {
 
+    @Override
     public INote createNote() {
         return new JavaNote();
     }
 
+    @Override
     public IVideo createVideo() {
         return new JavaVideo();
     }

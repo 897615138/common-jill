@@ -1,7 +1,7 @@
-package pattern.observer.events.mouseevent;
+package pattern.observer.event_listenor.mouse_event;
 
 
-import pattern.observer.events.core.Event;
+import pattern.observer.event_listenor.core.Event;
 
 /**
  * 自己写的逻辑，用于回调

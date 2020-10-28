@@ -5,8 +5,7 @@ import pattern.factory.ICourse;
 import pattern.factory.PythonCourse;
 
 /**
- *
- * @author  Jill Wang
+ * @author Jill Wang
  */
 public class PythonCourseFactory implements ICourseFactory {
 

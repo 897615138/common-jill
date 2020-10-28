@@ -1,54 +1,53 @@
-package pattern.observer.events.mouseevent;
+package pattern.observer.event_listenor.mouse_event;
 
-
-import pattern.observer.events.core.EventLisenter;
+import pattern.observer.event_listenor.core.EventListener;
 
 /**
  * @author jill
  */
-public class Mouse extends EventLisenter {
+public class Mouse extends EventListener {
 
-    public void click(){
+    public void click() {
         System.out.println("调用单击方法");
         this.trigger(MouseEventType.ON_CLICK);
     }
 
-    public void doubleClick(){
+    public void doubleClick() {
         System.out.println("调用双击方法");
         this.trigger(MouseEventType.ON_DOUBLE_CLICK);
     }
 
-    public void up(){
+    public void up() {
         System.out.println("调用弹起方法");
         this.trigger(MouseEventType.ON_UP);
     }
 
-    public void down(){
+    public void down() {
         System.out.println("调用按下方法");
         this.trigger(MouseEventType.ON_DOWN);
     }
 
-    public void move(){
+    public void move() {
         System.out.println("调用移动方法");
         this.trigger(MouseEventType.ON_MOVE);
     }
 
-    public void wheel(){
+    public void wheel() {
         System.out.println("调用滚动方法");
         this.trigger(MouseEventType.ON_WHEEL);
     }
 
-    public void over(){
+    public void over() {
         System.out.println("调用悬停方法");
         this.trigger(MouseEventType.ON_OVER);
     }
 
-    public void blur(){
+    public void blur() {
         System.out.println("调用获焦方法");
         this.trigger(MouseEventType.ON_BLUR);
     }
 
-    public void focus(){
+    public void focus() {
         System.out.println("调用失焦方法");
         this.trigger(MouseEventType.ON_FOCUS);
     }

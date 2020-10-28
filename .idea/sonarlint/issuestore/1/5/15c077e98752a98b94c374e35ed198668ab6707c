@@ -1,7 +1,7 @@
 
 D
 java:S5164")Call "remove()" on "threadLocalInstance".(ֿ–װרÿÿÿÿ
-a
-java:S4065"FReplace this anonymous class with a call to "ThreadLocal.withInitial".(Êרשÿÿÿÿ
 J
 java:S2440"4Remove this instantiation of "ThreadLocalSingleton".(כמןײ
+a
+java:S4065"FReplace this anonymous class with a call to "ThreadLocal.withInitial".(Êרשÿÿÿÿ

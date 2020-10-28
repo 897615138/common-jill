@@ -1,4 +1,4 @@
-package pattern.observer.guava;
+package pattern.observer.event_bus_guava;
 
 import com.google.common.eventbus.Subscribe;
 

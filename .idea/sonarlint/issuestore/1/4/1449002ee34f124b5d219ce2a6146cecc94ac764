@@ -1,7 +1,7 @@
 
-=
-java:S5164
-"Call "remove()" on "local".(Öí¤Øýÿÿÿÿ8á¥øÙÐ.
 {
 java:S2293
 "YReplace the type specification in this constructor call with the diamond operator ("<>").(Öí¤Øýÿÿÿÿ8á¥øÙÐ.
+=
+java:S5164
+"Call "remove()" on "local".(Öí¤Øýÿÿÿÿ8á¥øÙÐ.

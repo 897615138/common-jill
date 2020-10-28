@@ -1,9 +1,7 @@
 package pattern.factory;
 
-
 /**
- *
- * @author  Jill Wang
+ * @author Jill Wang
  */
 public class JavaCourse implements ICourse {
 

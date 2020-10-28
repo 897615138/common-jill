@@ -227,8 +227,6 @@ w
 Gcommon-pattern/src/main/java/pattern/decorator/passport/old/Member.java,4/e/4e6d5a0eabcb420fd6a9ead66eadc2eb63e588fc
 n
 >common-pattern/src/main/java/pattern/template/jdbc/Member.java,c/7/c7024729b8cf80b11e82eada2ed85e5b90f857d3
-ƒ
-Scommon-pattern/src/main/java/pattern/delegate/mvc/controllers/MemberController.java,e/e/ee0f695b49be454c51c733f5324b4c6f40edd3cc
 u
 Ecommon-pattern/src/main/java/pattern/template/jdbc/dao/MemberDao.java,6/7/6788474f83f20b659778658f66f6a0a885b12fd1
 u
@@ -255,8 +253,6 @@ m
 =common-pattern/src/main/java/pattern/proxy/dbroute/Order.java,5/4/54f14b17846586c4f8fcc89f44239c41073660b4
 l
 <common-pattern/src/main/java/pattern/strategy/pay/Order.java,6/b/6b4ff58ee39b1ae24a67c20a50d1c25dc369adaa
-‚
-Rcommon-pattern/src/main/java/pattern/delegate/mvc/controllers/OrderController.java,c/1/c1928d65c4464144012f12b78395199800b83864
 p
 @common-pattern/src/main/java/pattern/proxy/dbroute/OrderDao.java,7/c/7cedbdf3c38352d71d3572f0ec40cb305b7253ba
 t
@@ -269,8 +265,6 @@ Ucommon-pattern/src/main/java/pattern/proxy/dbroute/proxy/OrderServiceStaticProx
 Ycommon-pattern/src/main/java/pattern/adapter/loginadapter/v2/PassportForThirdAdapter.java,7/1/71b95c0b4fd68ef85f161d029464db8066bb68b6
 ~
 Ncommon-pattern/src/main/java/pattern/adapter/loginadapter/v2/PassportTest.java,6/9/69da2d6374a62db0444fdbb6fb0cfefb58a65a31
-v
-Fcommon-pattern/src/main/java/pattern/strategy/pay/payport/Payment.java,a/8/a8c318528f4f74bf41c548248f9dd14bb16b9424
 z
 Jcommon-pattern/src/main/java/pattern/strategy/pay/payport/PayStrategy.java,4/c/4cfb50cf34a5b785b0046760c7306e5a6e30e405
 f
@@ -287,8 +281,6 @@ Ocommon-pattern/src/main/java/pattern/adapter/poweradapter/PowerAdapterTest.java
 Ncommon-pattern/src/main/java/pattern/strategy/promotion/PromotionActivity.java,6/5/65e6e1b0160bb1b0ddae7fcb003fd6cd21535cc9
 ‚
 Rcommon-pattern/src/main/java/pattern/strategy/promotion/PromotionActivityTest.java,3/7/37c0ae22a8ff1c35af5308b1901f587d36389442
-~
-Ncommon-pattern/src/main/java/pattern/strategy/promotion/PromotionStrategy.java,4/6/466f5406e80ec22fb7a60680097e35966738ce9d
 …
 Ucommon-pattern/src/main/java/pattern/strategy/promotion/PromotionStrategyFactory.java,4/c/4c3ac164144cb122a8432d60fd11f332096acfbe
 t
@@ -335,8 +327,6 @@ o
 ?common-pattern/src/main/java/pattern/proxy/staticproxy/Son.java,b/a/ba731a4f0def9f4c1e03cf3a5cdc33011cc64889
 s
 Ccommon-pattern/src/main/java/pattern/proxy/simpleproxy/Subject.java,9/c/9cad31705649b8311571bfabaf4b12b352c8b979
-ƒ
-Scommon-pattern/src/main/java/pattern/delegate/mvc/controllers/SystemController.java,c/b/cb6352e72abdb72d6514bd00682cadacf563f7f1
 u
 Ecommon-pattern/src/main/java/pattern/observer/gperadvice/Teacher.java,e/b/eb4d111963e168a1d9cc2edc2d5b9919c05638d8
 „
@@ -493,3 +483,15 @@ v
 Fcommon-pattern/src/main/java/pattern/decorator/battercake/v2/Test.java,1/0/102d08f3203085f2a65492103815231e8e008c63
 |
 Lcommon-pattern/src/main/java/pattern/adapter/loginadapter/SignInService.java,2/6/265f9270ae6c02b984cf5a266f6d53e03a7fc9bc
+‚
+Rcommon-pattern/src/main/java/pattern/delegate/mvc/controller/SystemController.java,d/3/d313adafab0db7fcd174a8ebd8d193ad75a48dd0
+
+Qcommon-pattern/src/main/java/pattern/delegate/mvc/controller/OrderController.java,8/7/87a7ded1dbdb23eca3117540ce755276c93832cb
+‚
+Rcommon-pattern/src/main/java/pattern/delegate/mvc/controller/MemberController.java,2/7/2709855e5f3f4add4298b4b71c83adb7732da729
+}
+Mcommon-pattern/src/main/java/pattern/strategy/promotion/GroupBuyStrategy.java,6/4/64d470e5681f7250ef7592b232ce4df722a305a4
+
+Ocommon-pattern/src/main/java/pattern/strategy/promotion/IPromotionStrategy.java,2/9/29da94043cdd580372ebba1bf7ea1a8dca0db702
+~
+Ncommon-pattern/src/main/java/pattern/strategy/pay/payport/AbstractPayment.java,3/9/39e4013abc5ef5192832cd387ad136c8231dfd00

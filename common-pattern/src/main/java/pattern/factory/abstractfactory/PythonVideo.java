@@ -1,8 +1,7 @@
 package pattern.factory.abstractfactory;
 
 /**
- *
- * @author  Jill Wang
+ * @author Jill Wang
  */
 public class PythonVideo implements IVideo {
     @Override

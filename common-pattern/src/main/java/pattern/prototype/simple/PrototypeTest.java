@@ -1,7 +1,6 @@
 package pattern.prototype.simple;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author jill
@@ -15,7 +14,7 @@ public class PrototypeTest {
         // 填充属性，方便测试
         concretePrototype.setAge(18);
         concretePrototype.setName("prototype");
-        List hobbies = new ArrayList<String>();
+        ArrayList<String> hobbies = new ArrayList<>();
         concretePrototype.setHobbies(hobbies);
         System.out.println(concretePrototype);
 
@@ -26,7 +25,7 @@ public class PrototypeTest {
 
         System.out.println("克隆对象中的引用类型地址值：" + concretePrototypeClone.getHobbies());
         System.out.println("原对象中的引用类型地址值：" + concretePrototype.getHobbies());
-        System.out.println("对象地址比较："+(concretePrototypeClone.getHobbies() == concretePrototype.getHobbies()));
+        System.out.println("对象地址比较：" + (concretePrototypeClone.getHobbies() == concretePrototype.getHobbies()));
 
 
     }

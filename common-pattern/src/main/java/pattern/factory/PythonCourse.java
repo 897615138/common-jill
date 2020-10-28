@@ -1,8 +1,7 @@
 package pattern.factory;
 
 /**
- *
- * @author  Jill Wang
+ * @author Jill Wang
  */
 public class PythonCourse implements ICourse {
 

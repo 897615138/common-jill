@@ -2,8 +2,7 @@ package pattern.factory.abstractfactory;
 
 
 /**
- * @author jill on.
- * @author  Jill Wang
+ * @author Jill Wang
  */
 public class JavaVideo implements IVideo {
     @Override
