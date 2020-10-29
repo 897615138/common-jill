@@ -1,6 +1,7 @@
 package pattern.prototype.simple;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 
@@ -8,7 +9,8 @@ import java.util.ArrayList;
  * @author jill
  */
 
-@Data
+@Getter
+@Setter
 public class ConcretePrototypeA implements Prototype {
 
     private int age;

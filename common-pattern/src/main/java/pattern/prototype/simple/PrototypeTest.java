@@ -23,9 +23,9 @@ public class PrototypeTest {
         ConcretePrototypeA concretePrototypeClone = (ConcretePrototypeA) client.startClone(concretePrototype);
         System.out.println(concretePrototypeClone);
 
-        System.out.println("克隆对象中的引用类型地址值：" + concretePrototypeClone.getHobbies());
-        System.out.println("原对象中的引用类型地址值：" + concretePrototype.getHobbies());
-        System.out.println("对象地址比较：" + (concretePrototypeClone.getHobbies() == concretePrototype.getHobbies()));
+        System.out.println("克隆对象中的引用类型地址值：" + concretePrototypeClone);
+        System.out.println("原对象中的引用类型地址值：" + concretePrototype);
+        System.out.println("对象地址比较：" + (concretePrototypeClone == concretePrototype));
 
 
     }

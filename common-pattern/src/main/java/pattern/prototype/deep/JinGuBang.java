@@ -1,9 +1,21 @@
 package pattern.prototype.deep;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
+
 /**
  * @author JillW
  * @date 2020/10/17
  */
-public class JinGuBang {
-    public static final String name="金箍棒";
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class JinGuBang implements Serializable {
+
+    public static final String NAME ="金箍棒";
+    private Integer index;
+    private static final long serialVersionUID = -5052863134988511459L;
 }
