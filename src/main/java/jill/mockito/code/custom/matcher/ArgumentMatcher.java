@@ -19,10 +19,10 @@ public class ArgumentMatcher<T> {
         LinkedList<String> mockedList = mock(LinkedList.class);
         //stubbing using built-in anyInt() argument matcher
         // 使用内置的anyInt()参数匹配器
-        DateTime dateTime = DateUtil.parseDate("1999-07-18");
-        TestMatcher matcher = TestMatcher.builder().name("wj").id(1).birthday(dateTime).build();
-        TestModel testModel = TestModel.builder().name("wj").id(1).birthday(dateTime).build();
-        boolean matches = matcher.matches(testModel);
+        DateTime    dateTime  = DateUtil.parseDate("1999-07-18");
+        TestMatcher matcher   = TestMatcher.builder().name("wj").id(1).birthday(dateTime).build();
+        TestModel   testModel = TestModel.builder().name("wj").id(1).birthday(dateTime).build();
+        boolean     matches   = matcher.matches(testModel);
         //when(mockedList.contains(argThat(isValid()))).thenReturn("element");
         log.info(String.valueOf(matches));
 //        when(mockedList.contains(matcher.matches(build1))

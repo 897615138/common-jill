@@ -1,8 +1,10 @@
 package jill.mockito.code;
 
 import java.util.LinkedList;
+
 import static jill.common.consts.LogConstants.log;
 import static org.mockito.Mockito.*;
+
 /**
  * @author JillW
  * @date 2020/09/30
@@ -10,7 +12,7 @@ import static org.mockito.Mockito.*;
 public class SpyTest {
     public static void main(String[] args) {
         LinkedList<String> list = new LinkedList<>();
-        LinkedList<String> spy = spy(list);
+        LinkedList<String> spy  = spy(list);
 
 //optionally, you can stub out some methods:
 // 你可以为某些函数打桩

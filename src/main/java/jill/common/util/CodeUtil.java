@@ -1,6 +1,7 @@
 package jill.common.util;
 
 import jill.common.consts.CodeConstants;
+
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.util.UUID;
@@ -21,6 +22,7 @@ public class CodeUtil {
         String uuid = UUID.randomUUID().toString().replaceAll(CodeConstants.DASH, CodeConstants.NULL);
         return uuid.toLowerCase();
     }
+
     public static String getMd5(String str) {
         try {
             /*

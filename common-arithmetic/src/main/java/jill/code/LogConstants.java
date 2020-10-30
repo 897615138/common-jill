@@ -8,6 +8,6 @@ import org.slf4j.LoggerFactory;
  * @date 2020/09/30
  */
 public class LogConstants {
-    public static final Logger log = LoggerFactory.getLogger(LogConstants.class);
-    public static final String CROSS_LINE="---------------------------";
+    public static final Logger log        = LoggerFactory.getLogger(LogConstants.class);
+    public static final String CROSS_LINE = "---------------------------";
 }

@@ -10,13 +10,13 @@ public class ObjectDeserializer implements Deserializer<Object> {
 //
 //	}
 
-	/**
-	 * 反序列化
-	 */
-	@Override
-	public Object deserialize(String topic, byte[] data) {
-		return SerializationUtils.deserialize(data);
-	}
+    /**
+     * 反序列化
+     */
+    @Override
+    public Object deserialize(String topic, byte[] data) {
+        return SerializationUtils.deserialize(data);
+    }
 
 //	@Override
 //	public void close() {

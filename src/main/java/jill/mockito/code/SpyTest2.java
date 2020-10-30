@@ -2,8 +2,9 @@ package jill.mockito.code;
 
 import java.util.LinkedList;
 
-import static org.mockito.Mockito.*;
 import static jill.common.consts.LogConstants.log;
+import static org.mockito.Mockito.*;
+
 /**
  * @author JillW
  * @date 2020/09/30
@@ -11,7 +12,7 @@ import static jill.common.consts.LogConstants.log;
 public class SpyTest2 {
     public static void main(String[] args) {
         LinkedList<String> list = new LinkedList<>();
-        LinkedList<String> spy = spy(list);
+        LinkedList<String> spy  = spy(list);
 
 
 //You have to use doReturn() for stubbing

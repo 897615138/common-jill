@@ -3,7 +3,8 @@ package jill.mockito.code;
 import java.util.LinkedList;
 
 import static jill.common.consts.LogConstants.log;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 /**
  * @author JillW
@@ -14,7 +15,7 @@ public class ContinuousTest {
         //创建mock对象
         LinkedList<String> mock = mock(LinkedList.class);
         when(mock.add("some arg"))
-                .thenReturn(true,false,true);
+                .thenReturn(true, false, true);
         //when(mock.someMethod("some arg"))
         //   .thenThrow(new RuntimeException())
         //   .thenReturn("foo");

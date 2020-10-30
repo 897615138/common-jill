@@ -1,10 +1,11 @@
 package zookeeper.framework.curator;
 
 import com.google.common.collect.Lists;
-import org.apache.zookeeper.commonzookeeper.curator.framework.CuratorFramework;
-import org.apache.zookeeper.commonzookeeper.curator.framework.CuratorFrameworkFactory;
-import org.apache.zookeeper.commonzookeeper.curator.retry.ExponentialBackoffRetry;
-import org.apache.zookeeper.commonzookeeper.curator.utils.CloseableUtils;
+import org.apache.curator.framework.CuratorFramework;
+import org.apache.curator.framework.CuratorFrameworkFactory;
+import org.apache.curator.retry.ExponentialBackoffRetry;
+import org.apache.curator.test.TestingServer;
+import org.apache.curator.utils.CloseableUtils;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -15,15 +16,17 @@ import java.util.List;
  * @date 2020/10/19
  */
 public class LeaderSelectorExample {
-    private static final int CLIENT_QTY = 10;
-    private static final String PATH = "/examples/leader";
+    private static final int    CLIENT_QTY = 10;
+    private static final String PATH       = "/examples/leader";
+
     public static void main(String[] args) throws Exception {
-        List<CuratorFramework> clients = Lists.newArrayList();
-        List<ExampleClient> examples = Lists.newArrayList();
-        TestingServer server = new TestingServer();
+        List<CuratorFramework> clients  = Lists.newArrayList();
+        List<ExampleClient>    examples = Lists.newArrayList();
+        TestingServer          server   = new TestingServer();
         try {
             for (int i = 0; i < CLIENT_QTY; ++i) {
-                CuratorFramework client = CuratorFrameworkFactory.newClient(server.getConnectString(), new ExponentialBackoffRetry(1000, 3));
+                CuratorFramework client = CuratorFrameworkFactory
+                        .newClient(server.getConnectString(), new ExponentialBackoffRetry(1000, 3));
                 clients.add(client);
                 ExampleClient example = new ExampleClient(client, PATH, "Client #" + i);
                 examples.add(example);
@@ -35,14 +38,9 @@ public class LeaderSelectorExample {
             new BufferedReader(new InputStreamReader(System.in)).readLine();
         } finally {
             System.out.println("Shutting down...");
-            for (ExampleClient exampleClient : examples) {
-                CloseableUtils.closeQuietly(exampleClient);
-            }
-            for (CuratorFramework client : clients) {
-                CloseableUtils.closeQuietly(client);
-            }
+            for (ExampleClient exampleClient : examples) CloseableUtils.closeQuietly(exampleClient);
+            for (CuratorFramework client : clients) CloseableUtils.closeQuietly(client);
             CloseableUtils.closeQuietly(server);
         }
     }
-}
 }

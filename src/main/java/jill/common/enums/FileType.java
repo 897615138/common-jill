@@ -27,7 +27,7 @@ public enum FileType {
     OTHER(7, "其他");
 
     private final Integer code;
-    private final String desc;
+    private final String  desc;
 
     public static FileType getEnum(int code) {
         for (FileType instance : values()) {

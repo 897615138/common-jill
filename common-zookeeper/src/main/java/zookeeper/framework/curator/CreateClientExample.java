@@ -15,7 +15,7 @@ public class CreateClientExample {
     private static final String PATH = "/example/basic";
 
     public static void main(String[] args) throws Exception {
-        TestingServer server = new TestingServer();
+        TestingServer    server = new TestingServer();
         CuratorFramework client = null;
         try {
             client = createSimple(server.getConnectString());
@@ -33,6 +33,7 @@ public class CreateClientExample {
             CloseableUtils.closeQuietly(server);
         }
     }
+
     public static CuratorFramework createSimple(String connectionString) {
         // these are reasonable arguments for the ExponentialBackoffRetry.
         // The first retry will wait 1 second - the second will wait up to 2 seconds - the
@@ -42,14 +43,16 @@ public class CreateClientExample {
         // The only required arguments are the connection string and the retry policy
         return CuratorFrameworkFactory.newClient(connectionString, retryPolicy);
     }
-    public static CuratorFramework createWithOptions(String connectionString, RetryPolicy retryPolicy, int connectionTimeoutMs, int sessionTimeoutMs) {
+
+    public static CuratorFramework createWithOptions(String connectionString, RetryPolicy retryPolicy,
+                                                     int connectionTimeoutMs, int sessionTimeoutMs) {
         // using the CuratorFrameworkFactory.builder() gives fine grained control
         // over creation options. See the CuratorFrameworkFactory.Builder javadoc details
         return CuratorFrameworkFactory.builder().connectString(connectionString)
-                .retryPolicy(retryPolicy)
-                .connectionTimeoutMs(connectionTimeoutMs)
-                .sessionTimeoutMs(sessionTimeoutMs)
-                // etc. etc.
-                .build();
+                                      .retryPolicy(retryPolicy)
+                                      .connectionTimeoutMs(connectionTimeoutMs)
+                                      .sessionTimeoutMs(sessionTimeoutMs)
+                                      // etc. etc.
+                                      .build();
     }
 }

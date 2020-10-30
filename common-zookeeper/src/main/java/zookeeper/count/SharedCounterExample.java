@@ -24,18 +24,20 @@ import java.util.concurrent.TimeUnit;
  * 这里我们使用trySetCount去设置计数器。 第一个参数提供当前的VersionedValue,如果期间其它client更新了此计数值， 你的更新可能不成功，
  * 但是这时你的client更新了最新的值，所以失败了你可以尝试再更新一次。
  * 而setCount是强制更新计数器的值。
+ *
  * @author JillW
  * @date 2020/10/22
  */
 public class SharedCounterExample implements SharedCountListener {
-    private static final int QTY = 5;
+    private static final int    QTY  = 5;
     private static final String PATH = "/examples/counter";
 
     public static void main(String[] args) throws IOException, Exception {
-        final Random rand = new Random();
+        final Random         rand    = new Random();
         SharedCounterExample example = new SharedCounterExample();
         try (TestingServer server = new TestingServer()) {
-            CuratorFramework client = CuratorFrameworkFactory.newClient(server.getConnectString(), new ExponentialBackoffRetry(1000, 3));
+            CuratorFramework client =
+                    CuratorFrameworkFactory.newClient(server.getConnectString(), new ExponentialBackoffRetry(1000, 3));
             client.start();
 
             SharedCount baseCount = new SharedCount(client, PATH, 0);
@@ -43,34 +45,35 @@ public class SharedCounterExample implements SharedCountListener {
             baseCount.start();
 
             List<SharedCount> examples = Lists.newArrayList();
-            ExecutorService service = Executors.newFixedThreadPool(QTY);
+            ExecutorService   service  = Executors.newFixedThreadPool(QTY);
             for (int i = 0; i < QTY; ++i) {
                 final SharedCount count = new SharedCount(client, PATH, 0);
                 examples.add(count);
                 Callable<Void> task = new Callable<Void>() {
 
-                @Override
-                public Void call () throws Exception {
-                    count.start();
-                    Thread.sleep(rand.nextInt(10000));
-                    System.out.println("Increment:" + count.trySetCount(count.getVersionedValue(), count.getCount() + rand.nextInt(10)));
-                    return null;
-                }
-            } ;
-            service.submit(task);
+                    @Override
+                    public Void call() throws Exception {
+                        count.start();
+                        Thread.sleep(rand.nextInt(10000));
+                        System.out.println("Increment:" + count.trySetCount(count.getVersionedValue(),
+                                                                            count.getCount() + rand.nextInt(10)));
+                        return null;
+                    }
+                };
+                service.submit(task);
+            }
+
+
+            service.shutdown();
+            service.awaitTermination(10, TimeUnit.MINUTES);
+
+            for (int i = 0; i < QTY; ++i) {
+                examples.get(i).close();
+            }
+            baseCount.close();
         }
 
-
-        service.shutdown();
-        service.awaitTermination(10, TimeUnit.MINUTES);
-
-        for (int i = 0; i < QTY; ++i) {
-            examples.get(i).close();
-        }
-        baseCount.close();
     }
-
-}
 
     @Override
     public void stateChanged(CuratorFramework arg0, ConnectionState arg1) {

@@ -9,9 +9,11 @@ import java.util.concurrent.ConcurrentHashMap;
 
 //Spring中的做法，就是用这种注册式单例
 public class ContainerSingleton {
-    private ContainerSingleton(){}
-    private static Map<String,Object> ioc = new ConcurrentHashMap<String,Object>();
-    public static Object getInstance(String className){
+    private static Map<String, Object> ioc = new ConcurrentHashMap<String, Object>();
+
+    private ContainerSingleton() {}
+
+    public static Object getInstance(String className) {
         synchronized (ioc) {
             if (!ioc.containsKey(className)) {
                 Object obj = null;

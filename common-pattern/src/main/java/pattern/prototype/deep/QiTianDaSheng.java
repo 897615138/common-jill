@@ -7,12 +7,13 @@ import java.util.Date;
 /**
  * @author jill
  */
-public class QiTianDaSheng extends Monkey implements Cloneable,Serializable {
-    private static final long serialVersionUID = 5196147874706471254L;
-    public JinGuBang jinGuBang;
-    public  QiTianDaSheng(){
+public class QiTianDaSheng extends Monkey implements Cloneable, Serializable {
+    private static final long      serialVersionUID = 5196147874706471254L;
+    public               JinGuBang jinGuBang;
+
+    public QiTianDaSheng() {
         //只是初始化
-        this.birthday = new Date();
+        this.birthday  = new Date();
         this.jinGuBang = new JinGuBang(1);
     }
 
@@ -22,8 +23,8 @@ public class QiTianDaSheng extends Monkey implements Cloneable,Serializable {
     }
 
 
-    public Object deepClone(){
-        try{
+    public Object deepClone() {
+        try {
 
             //字节数组输出流
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -37,12 +38,12 @@ public class QiTianDaSheng extends Monkey implements Cloneable,Serializable {
             ObjectInputStream ois = new ObjectInputStream(bis);
 
             //从对象输入流里获得对象
-            QiTianDaSheng copy = (QiTianDaSheng)ois.readObject();
+            QiTianDaSheng copy = (QiTianDaSheng) ois.readObject();
             //记录深拷贝的时间
             copy.birthday = new Date();
             return copy;
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
@@ -51,10 +52,11 @@ public class QiTianDaSheng extends Monkey implements Cloneable,Serializable {
 
     /**
      * 浅拷贝
+     *
      * @param target 浅拷贝对象
      * @return 备份对象
      */
-    public QiTianDaSheng shallowClone(QiTianDaSheng target){
+    public QiTianDaSheng shallowClone(QiTianDaSheng target) {
 
         //只是属性值的拷贝
         QiTianDaSheng qiTianDaSheng = new QiTianDaSheng();
@@ -62,8 +64,8 @@ public class QiTianDaSheng extends Monkey implements Cloneable,Serializable {
         qiTianDaSheng.weight = target.height;
 
         qiTianDaSheng.jinGuBang = target.jinGuBang;
-        qiTianDaSheng.birthday = new Date();
-        return  qiTianDaSheng;
+        qiTianDaSheng.birthday  = new Date();
+        return qiTianDaSheng;
     }
 
 

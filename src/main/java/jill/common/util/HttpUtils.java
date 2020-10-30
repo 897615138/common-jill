@@ -36,7 +36,7 @@ import java.util.Map;
  * @author jill
  */
 public class HttpUtils {
-    private final static String INSTANCE= "TLS";
+    private final static String INSTANCE = "TLS";
 
     private final static String HTTPS = "https";
 
@@ -47,7 +47,7 @@ public class HttpUtils {
                                      Map<String, String> query)
             throws Exception {
         HttpClient httpClient = wrapClient(host);
-        HttpGet request = new HttpGet(buildUrl(host, path, query));
+        HttpGet    request    = new HttpGet(buildUrl(host, path, query));
         for (Map.Entry<String, String> e : headers.entrySet()) {
             request.addHeader(e.getKey(), e.getValue());
         }
@@ -176,7 +176,8 @@ public class HttpUtils {
         return httpClient.execute(request);
     }
 
-    private static String buildUrl(String host, String path, Map<String, String> query) throws UnsupportedEncodingException {
+    private static String buildUrl(String host, String path, Map<String, String> query)
+            throws UnsupportedEncodingException {
         StringBuilder sbUrl = new StringBuilder();
         sbUrl.append(host);
         if (!StringUtils.isBlank(path)) {
@@ -224,20 +225,22 @@ public class HttpUtils {
                 public X509Certificate[] getAcceptedIssuers() {
                     return null;
                 }
+
                 @Override
                 public void checkClientTrusted(X509Certificate[] xcs, String str) {
 
                 }
+
                 @Override
                 public void checkServerTrusted(X509Certificate[] xcs, String str) {
 
                 }
             };
-            ctx.init(null, new TrustManager[] { tm }, null);
+            ctx.init(null, new TrustManager[]{tm}, null);
             SSLSocketFactory ssf = new SSLSocketFactory(ctx);
             ssf.setHostnameVerifier(SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
-            ClientConnectionManager ccm = httpClient.getConnectionManager();
-            SchemeRegistry registry = ccm.getSchemeRegistry();
+            ClientConnectionManager ccm      = httpClient.getConnectionManager();
+            SchemeRegistry          registry = ccm.getSchemeRegistry();
             registry.register(new Scheme(HTTPS, PORT, ssf));
         } catch (KeyManagementException | NoSuchAlgorithmException ex) {
             throw new RuntimeException(ex);

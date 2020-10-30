@@ -16,16 +16,18 @@ import java.util.concurrent.TimeUnit;
  * @date 2020/10/22
  */
 public class DistributedDoubleBarrierExample {
-    private static final int QTY = 5;
+    private static final int    QTY  = 5;
     private static final String PATH = "/examples/zookeeper.barrier";
+
     public static void main(String[] args) throws Exception {
         try (TestingServer server = new TestingServer()) {
-            CuratorFramework client = CuratorFrameworkFactory.newClient(server.getConnectString(), new ExponentialBackoffRetry(1000, 3));
+            CuratorFramework client =
+                    CuratorFrameworkFactory.newClient(server.getConnectString(), new ExponentialBackoffRetry(1000, 3));
             client.start();
             ExecutorService service = Executors.newFixedThreadPool(QTY);
             for (int i = 0; i < QTY; ++i) {
                 final DistributedDoubleBarrier barrier = new DistributedDoubleBarrier(client, PATH, QTY);
-                final int index = i;
+                final int                      index   = i;
                 Callable<Void> task = new Callable<Void>() {
                     @Override
                     public Void call() throws Exception {

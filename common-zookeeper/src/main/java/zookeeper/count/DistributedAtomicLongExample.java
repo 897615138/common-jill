@@ -23,15 +23,16 @@ import java.util.concurrent.TimeUnit;
  * @date 2020/10/22
  */
 public class DistributedAtomicLongExample {
-    private static final int QTY = 5;
+    private static final int    QTY  = 5;
     private static final String PATH = "/examples/counter";
 
     public static void main(String[] args) throws IOException, Exception {
         try (TestingServer server = new TestingServer()) {
-            CuratorFramework client = CuratorFrameworkFactory.newClient(server.getConnectString(), new ExponentialBackoffRetry(1000, 3));
+            CuratorFramework client =
+                    CuratorFrameworkFactory.newClient(server.getConnectString(), new ExponentialBackoffRetry(1000, 3));
             client.start();
             List<DistributedAtomicLong> examples = Lists.newArrayList();
-            ExecutorService service = Executors.newFixedThreadPool(QTY);
+            ExecutorService             service  = Executors.newFixedThreadPool(QTY);
             for (int i = 0; i < QTY; ++i) {
                 final DistributedAtomicLong count = new DistributedAtomicLong(client, PATH, new RetryNTimes(10, 10));
 

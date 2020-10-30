@@ -11,6 +11,7 @@ import java.util.Date;
 public class DateConverter {
     public DateConverter() {
     }
+
     public static LocalDateTime convertLocalDateTime(Date date) {
         return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
     }

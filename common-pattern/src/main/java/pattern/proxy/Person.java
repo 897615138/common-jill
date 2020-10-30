@@ -1,9 +1,12 @@
 package pattern.proxy;
 
 /**
- * @author jill on 2019/3/10.
+ * @author jill
  */
-public interface Person {
-
+public
+interface Person {
+    /**
+     * 恋爱
+     */
     void findLove();
 }

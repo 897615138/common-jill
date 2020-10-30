@@ -20,8 +20,8 @@ public class FileUtil {
      */
     public static String getFileName(String fileName) {
         String ext = "";
-        if (StrUtil.isNotEmpty(fileName)&&fileName.contains(FileConstants.DOT)) {
-                ext = fileName.substring(0, fileName.lastIndexOf(FileConstants.DOT));
+        if (StrUtil.isNotEmpty(fileName) && fileName.contains(FileConstants.DOT)) {
+            ext = fileName.substring(0, fileName.lastIndexOf(FileConstants.DOT));
         }
         return ext;
     }
@@ -34,7 +34,8 @@ public class FileUtil {
      */
     public static String getFileExt(String fileName) {
         String ext = "";
-        if (StrUtil.isNotEmpty(fileName) && fileName.contains(FileConstants.DOT) && !fileName.endsWith(FileConstants.DOT)) {
+        if (StrUtil.isNotEmpty(fileName) && fileName.contains(FileConstants.DOT) &&
+            !fileName.endsWith(FileConstants.DOT)) {
             ext = fileName.substring(fileName.lastIndexOf(FileConstants.DOT) + 1);
         }
         return ext;
@@ -106,6 +107,7 @@ public class FileUtil {
         }
         return false;
     }
+
     /**
      * 获取OSSFileKey
      *
@@ -117,13 +119,13 @@ public class FileUtil {
             throw new IllegalArgumentException("arguments is null");
         }
         //这里不能直接加
-        return FileConstants.SYS_PACKAGE +(String)FileConstants.PACKAGE_SEPARATION+
-                FastDateFormat.getInstance("yyyy-MM-dd").format(new Date()) +
-                FileConstants.PACKAGE_SEPARATION +
-                fileName;
+        return FileConstants.SYS_PACKAGE + (String) FileConstants.PACKAGE_SEPARATION +
+               FastDateFormat.getInstance("yyyy-MM-dd").format(new Date()) +
+               FileConstants.PACKAGE_SEPARATION +
+               fileName;
     }
 
-    public static void huToolTest(){
+    public static void huToolTest() {
 
     }
 }

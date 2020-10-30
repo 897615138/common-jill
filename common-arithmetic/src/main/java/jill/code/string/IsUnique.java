@@ -7,31 +7,33 @@ import java.util.Set;
  * @author JillW
  * @date 2020/09/30
  * 字符是否重复
- *
+ * <p>
  * String.indexOf
- *
+ * <p>
  * 1.判断字符串是否为空 !!!!这里就不重复写了
  * if (StrUtil.isNullOrUndefined(str)){
- *             log.error("string.null.or.undefined");
- *         }
+ * log.error("string.null.or.undefined");
+ * }
  * 字符串的字符范围
  * 如果是26个字母(固定大写或者小写)组成的 长度只要>26就一定重复 其他的以此类推
  * 如果是ASCII字符集 128种可能 16个字节的位运算
  * 如果是unicode 没有字符范围 就有很多方法了
  */
 public class IsUnique {
-    static Integer ASCII_NUMBER=128;
-    static Integer LETTERS=52;
+    static Integer ASCII_NUMBER = 128;
+    static Integer LETTERS      = 52;
+
     /**
      * ASCII码
      * java自己的char与int的转换
+     *
      * @param str 字符串
      * @return 是否相同
      */
     public boolean isUnique1(String str) {
         //36.6
 
-        if(str.length()>ASCII_NUMBER){
+        if (str.length() > ASCII_NUMBER) {
             return false;
         }
         int[] arr = new int[128];
@@ -48,14 +50,15 @@ public class IsUnique {
     /**
      * 26英文字母,大小写
      * 位运算 Long
+     *
      * @param str 字符串
      * @return 是否相同
      */
     public boolean isUnique2(String str) {
         //36.3
-        if (str.length()>LETTERS){return false;}
+        if (str.length() > LETTERS) {return false;}
         long bits = 0;
-        int size = str.length();
+        int  size = str.length();
         for (int i = 0; i < size; i++) {
             int move = str.charAt(i) - 'A';
             if ((bits & (1L << move)) != 0) {
@@ -71,6 +74,7 @@ public class IsUnique {
 
     /**
      * 两层循环判断
+     *
      * @param str 字符串
      * @return 是否相同
      */
@@ -88,6 +92,7 @@ public class IsUnique {
 
     /**
      * 用Set的特性
+     *
      * @param str 字符串
      * @return 是否相同
      */
@@ -105,6 +110,7 @@ public class IsUnique {
 
     /**
      * String.indexOf
+     *
      * @param str 字符串
      * @return 是否相同
      */
@@ -122,6 +128,7 @@ public class IsUnique {
 
     /**
      * String.lastIndexOf
+     *
      * @param str 字符串
      * @return 返回
      */

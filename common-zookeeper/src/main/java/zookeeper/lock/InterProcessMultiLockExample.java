@@ -16,16 +16,19 @@ import java.util.concurrent.TimeUnit;
  * 新建一个InterProcessMultiLock， 包含一个重入锁和一个非重入锁。
  * 调用acquire后可以看到线程同时拥有了这两个锁。
  * 调用release看到这两个锁都被释放了。
+ *
  * @author JillW
  * @date 2020/10/22
  */
 public class InterProcessMultiLockExample {
     private static final String PATH1 = "/examples/locks1";
     private static final String PATH2 = "/examples/locks2";
+
     public static void main(String[] args) throws Exception {
         FakeLimitedResource resource = new FakeLimitedResource();
         try (TestingServer server = new TestingServer()) {
-            CuratorFramework client = CuratorFrameworkFactory.newClient(server.getConnectString(), new ExponentialBackoffRetry(1000, 3));
+            CuratorFramework client =
+                    CuratorFrameworkFactory.newClient(server.getConnectString(), new ExponentialBackoffRetry(1000, 3));
             client.start();
 
             InterProcessLock lock1 = new InterProcessMutex(client, PATH1);

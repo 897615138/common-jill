@@ -1,11 +1,12 @@
 package zookeeper.framework.curator;
 
 import com.google.common.collect.Lists;
-import org.apache.zookeeper.commonzookeeper.curator.framework.CuratorFramework;
-import org.apache.zookeeper.commonzookeeper.curator.framework.CuratorFrameworkFactory;
-import org.apache.zookeeper.commonzookeeper.curator.framework.recipes.leader.LeaderLatch;
-import org.apache.zookeeper.commonzookeeper.curator.retry.ExponentialBackoffRetry;
-import org.apache.zookeeper.commonzookeeper.curator.utils.CloseableUtils;
+import org.apache.curator.framework.CuratorFramework;
+import org.apache.curator.framework.CuratorFrameworkFactory;
+import org.apache.curator.framework.recipes.leader.LeaderLatch;
+import org.apache.curator.retry.ExponentialBackoffRetry;
+import org.apache.curator.test.TestingServer;
+import org.apache.curator.utils.CloseableUtils;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -17,15 +18,17 @@ import java.util.concurrent.TimeUnit;
  * @date 2020/10/19
  */
 public class LeaderLatchExample {
-    private static final int CLIENT_QTY = 10;
-    private static final String PATH = "/examples/leader";
+    private static final int    CLIENT_QTY = 10;
+    private static final String PATH       = "/examples/leader";
+
     public static void main(String[] args) throws Exception {
-        List<CuratorFramework> clients = Lists.newArrayList();
-        List<LeaderLatch> examples = Lists.newArrayList();
-        TestingServer server = new TestingServer();
+        List<CuratorFramework> clients  = Lists.newArrayList();
+        List<LeaderLatch>      examples = Lists.newArrayList();
+        TestingServer          server   = new TestingServer();
         try {
             for (int i = 0; i < CLIENT_QTY; ++i) {
-                CuratorFramework client = CuratorFrameworkFactory.newClient(server.getConnectString(), new ExponentialBackoffRetry(1000, 3));
+                CuratorFramework client = CuratorFrameworkFactory
+                        .newClient(server.getConnectString(), new ExponentialBackoffRetry(1000, 3));
                 clients.add(client);
                 LeaderLatch example = new LeaderLatch(client, PATH, "Client #" + i);
                 examples.add(example);
@@ -36,10 +39,10 @@ public class LeaderLatchExample {
             LeaderLatch currentLeader = null;
             for (int i = 0; i < CLIENT_QTY; ++i) {
                 LeaderLatch example = examples.get(i);
-                if (example.hasLeadership())
-                    currentLeader = example;
+                if (example.hasLeadership()) currentLeader = example;
             }
-            System.out.println("current leader is " + currentLeader.getId());
+            assert currentLeader != null;
+            System.out.println("the current leader is " + currentLeader.getId());
             System.out.println("release the leader " + currentLeader.getId());
             currentLeader.close();
             examples.get(0).await(2, TimeUnit.SECONDS);
@@ -52,12 +55,8 @@ public class LeaderLatchExample {
             e.printStackTrace();
         } finally {
             System.out.println("Shutting down...");
-            for (LeaderLatch exampleClient : examples) {
-                CloseableUtils.closeQuietly(exampleClient);
-            }
-            for (CuratorFramework client : clients) {
-                CloseableUtils.closeQuietly(client);
-            }
+            for (LeaderLatch exampleClient : examples) CloseableUtils.closeQuietly(exampleClient);
+            for (CuratorFramework client : clients) CloseableUtils.closeQuietly(client);
             CloseableUtils.closeQuietly(server);
         }
     }

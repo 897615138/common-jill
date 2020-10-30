@@ -1,8 +1,9 @@
 package jill.mockito.code;
+
 import java.util.LinkedList;
-// 静态导入会使代码更简洁
+
 import static jill.common.consts.LogConstants.log;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
 
 /**
  * @author JillW

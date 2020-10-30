@@ -8,22 +8,26 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 请求了一个写锁， 然后降级成读锁。 执行业务处理，然后释放读写锁。
+ *
  * @author JillW
  * @date 2020/10/22
  */
 public class ExampleClientReadWriteLocks {
     private final InterProcessReadWriteLock lock;
-    private final InterProcessMutex readLock;
-    private final InterProcessMutex writeLock;
-    private final FakeLimitedResource resource;
-    private final String clientName;
-    public ExampleClientReadWriteLocks(CuratorFramework client, String lockPath, FakeLimitedResource resource, String clientName) {
-        this.resource = resource;
+    private final InterProcessMutex         readLock;
+    private final InterProcessMutex         writeLock;
+    private final FakeLimitedResource       resource;
+    private final String                    clientName;
+
+    public ExampleClientReadWriteLocks(CuratorFramework client, String lockPath, FakeLimitedResource resource,
+                                       String clientName) {
+        this.resource   = resource;
         this.clientName = clientName;
-        lock = new InterProcessReadWriteLock(client, lockPath);
-        readLock = lock.readLock();
-        writeLock = lock.writeLock();
+        lock            = new InterProcessReadWriteLock(client, lockPath);
+        readLock        = lock.readLock();
+        writeLock       = lock.writeLock();
     }
+
     public void doWork(long time, TimeUnit unit) throws Exception {
         if (!writeLock.acquire(time, unit)) {
             throw new IllegalStateException(clientName + " could not acquire the writeLock");

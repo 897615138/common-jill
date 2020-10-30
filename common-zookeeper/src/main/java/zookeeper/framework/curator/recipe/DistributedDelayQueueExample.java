@@ -21,10 +21,11 @@ import java.util.Date;
  */
 public class DistributedDelayQueueExample {
     private static final String PATH = "/example/queue";
+
     public static void main(String[] args) throws Exception {
-        TestingServer server = new TestingServer();
-        CuratorFramework client = null;
-        DistributedDelayQueue<String> queue = null;
+        TestingServer                 server = new TestingServer();
+        CuratorFramework              client = null;
+        DistributedDelayQueue<String> queue  = null;
         try {
             client = CuratorFrameworkFactory.newClient(server.getConnectString(), new ExponentialBackoffRetry(1000, 3));
             client.getCuratorListenable().addListener(new CuratorListener() {
@@ -35,7 +36,7 @@ public class DistributedDelayQueueExample {
             });
             client.start();
             QueueConsumer<String> consumer = createQueueConsumer();
-            QueueBuilder<String> builder = QueueBuilder.builder(client, consumer, createQueueSerializer(), PATH);
+            QueueBuilder<String>  builder  = QueueBuilder.builder(client, consumer, createQueueSerializer(), PATH);
             queue = builder.buildDelayQueue();
             queue.start();
 
@@ -43,33 +44,37 @@ public class DistributedDelayQueueExample {
                 queue.put("test-" + i, System.currentTimeMillis() + 10000);
             }
             System.out.println(new Date().getTime() + ": already put all items");
-        Thread.sleep(20000);
+            Thread.sleep(20000);
 
-    } catch (Exception ex) {
-    } finally {
-        CloseableUtils.closeQuietly(queue);
-        CloseableUtils.closeQuietly(client);
-        CloseableUtils.closeQuietly(server);
+        } catch (Exception ex) {
+        } finally {
+            CloseableUtils.closeQuietly(queue);
+            CloseableUtils.closeQuietly(client);
+            CloseableUtils.closeQuietly(server);
+        }
     }
-}
+
     private static QueueSerializer<String> createQueueSerializer() {
         return new QueueSerializer<String>() {
             @Override
             public byte[] serialize(String item) {
                 return item.getBytes();
             }
+
             @Override
             public String deserialize(byte[] bytes) {
                 return new String(bytes);
             }
         };
     }
+
     private static QueueConsumer<String> createQueueConsumer() {
         return new QueueConsumer<String>() {
             @Override
             public void stateChanged(CuratorFramework client, ConnectionState newState) {
                 System.out.println("connection new state: " + newState.name());
             }
+
             @Override
             public void consumeMessage(String message) throws Exception {
                 System.out.println(new Date().getTime() + ": consume one message: " + message);

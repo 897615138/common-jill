@@ -5,6 +5,7 @@ import lombok.Getter;
 
 /**
  * Banner平台类型
+ *
  * @author JillW
  * @date 2020/10/10
  */
@@ -23,12 +24,11 @@ public enum EmBannerPortalType {
     /**
      * 网页
      */
-    WEB("web","网页"),
+    WEB("web", "网页"),
     /**
-     *京东
+     * 京东
      */
-    JD("jd" ,"京东")
-    ;
+    JD("jd", "京东");
 
     private String code;
     private String message;

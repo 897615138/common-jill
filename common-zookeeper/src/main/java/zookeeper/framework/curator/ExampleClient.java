@@ -14,17 +14,20 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @date 2020/10/19
  */
 public class ExampleClient extends LeaderSelectorListenerAdapter implements Closeable {
-    private final String name;
+    private final String         name;
     private final LeaderSelector leaderSelector;
-    private final AtomicInteger leaderCount = new AtomicInteger();
+    private final AtomicInteger  leaderCount = new AtomicInteger();
+
     public ExampleClient(CuratorFramework client, String path, String name) {
-        this.name = name;
+        this.name      = name;
         leaderSelector = new LeaderSelector(client, path, this);
         leaderSelector.autoRequeue();
     }
+
     public void start() throws IOException {
         leaderSelector.start();
     }
+
     @Override
     public void close() throws IOException {
         leaderSelector.close();

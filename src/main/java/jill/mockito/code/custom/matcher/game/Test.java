@@ -11,7 +11,7 @@ import static org.mockito.Mockito.*;
 public class Test {
     public static void main(String[] args) {
         final GameDao gameDao = mock(GameDao.class);
-        Game test1 = Game.builder().type("签到").rate(7).build();
+        Game          test1   = Game.builder().type("签到").rate(7).build();
         gameDao.addRate(test1);
         verify(gameDao).addRate(argThat(new PartyMatcher<>(Game::getRate, 7)));
         verify(gameDao).addRate(argThat(new PartyMatcher<>(Game::getType, "签到")));
