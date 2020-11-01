@@ -2,8 +2,6 @@ package zookeeper.framework.curator.recipe;
 
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
-import org.apache.curator.framework.api.CuratorEvent;
-import org.apache.curator.framework.api.CuratorListener;
 import org.apache.curator.framework.recipes.queue.DistributedDelayQueue;
 import org.apache.curator.framework.recipes.queue.QueueBuilder;
 import org.apache.curator.framework.recipes.queue.QueueConsumer;
@@ -23,30 +21,24 @@ public class DistributedDelayQueueExample {
     private static final String PATH = "/example/queue";
 
     public static void main(String[] args) throws Exception {
-        TestingServer                 server = new TestingServer();
+        TestingServer           server = new TestingServer();
         CuratorFramework              client = null;
         DistributedDelayQueue<String> queue  = null;
         try {
             client = CuratorFrameworkFactory.newClient(server.getConnectString(), new ExponentialBackoffRetry(1000, 3));
-            client.getCuratorListenable().addListener(new CuratorListener() {
-                @Override
-                public void eventReceived(CuratorFramework client, CuratorEvent event) throws Exception {
-                    System.out.println("CuratorEvent: " + event.getType().name());
-                }
-            });
+            client.getCuratorListenable().addListener(
+                    (client1, event) -> System.out.println("CuratorEvent: " + event.getType().name()));
             client.start();
             QueueConsumer<String> consumer = createQueueConsumer();
             QueueBuilder<String>  builder  = QueueBuilder.builder(client, consumer, createQueueSerializer(), PATH);
             queue = builder.buildDelayQueue();
             queue.start();
 
-            for (int i = 0; i < 10; i++) {
-                queue.put("test-" + i, System.currentTimeMillis() + 10000);
-            }
-            System.out.println(new Date().getTime() + ": already put all items");
+            for (int i = 0; i < 10; i++) queue.put("test-" + i, System.currentTimeMillis() + 10000);
+            System.out.println(System.currentTimeMillis() + ": already put all items");
             Thread.sleep(20000);
 
-        } catch (Exception ex) {
+        } catch (Exception ignored) {
         } finally {
             CloseableUtils.closeQuietly(queue);
             CloseableUtils.closeQuietly(client);

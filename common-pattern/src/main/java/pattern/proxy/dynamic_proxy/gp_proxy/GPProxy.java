@@ -78,7 +78,7 @@ class GPProxy {
         sb.append("}" + LN);
         //每个接口
         //每个方法
-        for (Class<?> anInterface : interfaces) {
+        for (Class<?> anInterface : interfaces)
             for (java.lang.reflect.Method m : anInterface.getMethods()) {
                 //每个参数
                 Class<?>[] params = m.getParameterTypes();
@@ -118,23 +118,21 @@ class GPProxy {
                 sb.append(getReturnEmptyCode(m.getReturnType()));
                 sb.append("}");
             }
-        }
         sb.append("}" + LN);
         return sb.toString();
     }
 
     private static String getReturnEmptyCode(Class<?> returnClass) {
-        if (MAPPINGS.containsKey(returnClass)) { return "return 0;"; } else if (returnClass == void.class) {
-            return "";
-        } else { return "return null;"; }
+        if (MAPPINGS.containsKey(returnClass)) return "return 0;";
+        else if (returnClass == void.class) return "";
+        else
+            return "return null;";
     }
 
     private static String getCaseCode(String code, Class<?> returnClass) {
-        if (MAPPINGS.containsKey(returnClass)) {
-            return "((" + MAPPINGS.get(returnClass).getName() + ")" + code + ")."
-                   + returnClass.getSimpleName()
-                   + "Value()";
-        }
+        if (MAPPINGS.containsKey(returnClass)) return "((" + MAPPINGS.get(returnClass).getName() + ")" + code + ")."
+                                                      + returnClass.getSimpleName()
+                                                      + "Value()";
         return code;
     }
 

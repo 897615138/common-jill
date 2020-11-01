@@ -18,9 +18,9 @@ public class MemberDao extends JdbcTemplate {
     }
 
     public List<?> selectAll() {
-        String sql = "select * from t_member";
+        final String sql = "select * from t_member";
         return super.executeQuery(sql, new RowMapper<Member>() {
-            public Member mapRow(ResultSet rs, int rowNum) throws Exception {
+            @Override public Member mapRow(ResultSet rs, int rowNum) throws Exception {
                 Member member = new Member();
                 //字段过多，原型模式
                 member.setUsername(rs.getString("username"));

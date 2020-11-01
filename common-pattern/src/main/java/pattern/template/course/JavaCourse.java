@@ -3,8 +3,8 @@ package pattern.template.course;
 /**
  * @author jill
  */
-public class JavaCourse extends NetworkCourse {
-    void checkHomework() {
+class JavaCourse extends NetworkCourse {
+    @Override void checkHomework() {
         System.out.println("检查Java的架构课件");
     }
 }

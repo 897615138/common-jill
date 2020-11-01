@@ -28,7 +28,7 @@ class GPClassLoader extends ClassLoader {
                 try (FileInputStream in = new FileInputStream(classFile)) {
                     out = new ByteArrayOutputStream();
                     byte[] buff = new byte[1024];
-                    int    len;
+                    int          len;
                     while ((len = in.read(buff)) != -1) out.write(buff, 0, len);
                     return defineClass(className, out.toByteArray(), 0, out.size());
                 } catch (Exception e) {
