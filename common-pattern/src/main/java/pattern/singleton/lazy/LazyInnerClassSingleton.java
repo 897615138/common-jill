@@ -17,9 +17,13 @@ public class LazyInnerClassSingleton {
     private LazyInnerClassSingleton() {
     }
 
-    //每一个关键字都不是多余的
-    //static 是为了使单例的空间共享
-    //保证这个方法不会被重写，重载
+    /**
+     * 每一个关键字都不是多余的
+     * static 是为了使单例的空间共享
+     * 保证这个方法不会被重写，重载
+     *
+     * @return 实例
+     */
     public static LazyInnerClassSingleton getInstance() {
         //在返回结果以前，一定会先加载内部类
         return LazyHolder.LAZY;

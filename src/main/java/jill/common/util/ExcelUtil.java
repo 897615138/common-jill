@@ -26,8 +26,8 @@ import java.util.List;
  */
 @Slf4j
 public class ExcelUtil {
-    private static ReadSheet  initReadSheet;
-    private static WriteSheet initWriteSheet;
+    private static final ReadSheet initReadSheet;
+    private static final WriteSheet initWriteSheet;
 
     static {
         initReadSheet = new ReadSheet(1, "sheet-name");
@@ -55,25 +55,21 @@ public class ExcelUtil {
      * headLineMun: 从第几行开始读取数据，默认为0, 表示从第一行开始读取
      * clazz: 返回数据List<Object> 中Object的类名
      */
-    public static List<Object> readLessThan1000RowByReadSheet(String filePath, ReadSheet sheet) {
-        if (StrUtil.isBlank(filePath)) {
-            return ListUtil.list(false);
-        }
+    private static List<Object> readLessThan1000RowByReadSheet(String filePath, ReadSheet sheet) {
+        if (StrUtil.isBlank(filePath)) return ListUtil.list(false);
 
         sheet = sheet != null ? sheet : initReadSheet;
-        InputStream  fileStream = null;
-        List<Object> objects    = ListUtil.list(false);
+        InputStream fileStream = null;
+        List<Object> objects = ListUtil.list(false);
         try {
             fileStream = new FileInputStream(filePath);
-            objects    = EasyExcel.read(fileStream).sheet(sheet.getSheetName()).doReadSync();
+            objects = EasyExcel.read(fileStream).sheet(sheet.getSheetName()).doReadSync();
         } catch (FileNotFoundException e) {
             log.info("找不到文件或文件路径错误, 文件：{}", filePath);
         } finally {
             try {
 
-                if (fileStream != null) {
-                    fileStream.close();
-                }
+                if (fileStream != null) fileStream.close();
             } catch (IOException e) {
                 log.info("excel文件读取失败, 失败原因：{}", e.getMessage());
             }
@@ -98,10 +94,8 @@ public class ExcelUtil {
      * @param filePath 文件路径
      * @return List
      */
-    public static List<Object> readMoreThan1000RowByReadSheet(String filePath, ReadSheet sheet) {
-        if (StrUtil.isNotBlank(filePath)) {
-            return ListUtil.list(false);
-        }
+    private static List<Object> readMoreThan1000RowByReadSheet(String filePath, ReadSheet sheet) {
+        if (StrUtil.isNotBlank(filePath)) return ListUtil.list(false);
 
         sheet = sheet != null ? sheet : initReadSheet;
 
@@ -115,20 +109,18 @@ public class ExcelUtil {
             log.error("找不到文件或文件路径错误, 文件：{}", filePath);
         } finally {
             try {
-                if (fileStream != null) {
-                    fileStream.close();
-                }
+                if (fileStream != null) fileStream.close();
             } catch (IOException e) {
                 log.error("excel文件读取失败, 失败原因：{}", e.getMessage());
             }
         }
-        return null;
+        return Collections.emptyList();
     }
 
     /**
      * 生成excle
      *
-     * @param filePath 绝对路径, 如：/home/chenmingjian/Downloads/aaa.xlsx
+     * @param filePath 绝对路径, 如：/home/jill/Downloads/aaa.xlsx
      * @param data     数据源
      * @param head     表头
      */
@@ -139,13 +131,13 @@ public class ExcelUtil {
     /**
      * 生成excle
      *
-     * @param filePath 绝对路径, 如：/home/chenmingjian/Downloads/aaa.xlsx
+     * @param filePath 绝对路径, 如：/home/jill/Downloads/aaa.xlsx
      * @param data     数据源
      * @param sheet    excel页面样式
      * @param head     表头
      */
-    public static void writeSimpleByReadSheet(String filePath, List<List<Object>> data, List<String> head,
-                                              WriteSheet sheet) {
+    private static void writeSimpleByReadSheet(String filePath, List<List<Object>> data, List<String> head,
+                                               WriteSheet sheet) {
         sheet = (sheet != null) ? sheet : initWriteSheet;
 
         if (head != null) {
@@ -155,22 +147,18 @@ public class ExcelUtil {
         }
 
         OutputStream outputStream = null;
-        ExcelWriter  writer       = null;
+        ExcelWriter writer = null;
         try {
             outputStream = new FileOutputStream(filePath);
-            writer       = EasyExcelFactory.getWriter(outputStream);
+            writer = EasyExcelFactory.getWriter(outputStream);
             writer.write(data, sheet);
         } catch (FileNotFoundException e) {
             log.error("找不到文件或文件路径错误, 文件：{}", filePath);
         } finally {
             try {
-                if (writer != null) {
-                    writer.finish();
-                }
+                if (writer != null) writer.finish();
 
-                if (outputStream != null) {
-                    outputStream.close();
-                }
+                if (outputStream != null) outputStream.close();
 
             } catch (IOException e) {
                 log.error("excel文件导出失败, 失败原因：{}", e.getMessage());
@@ -183,7 +171,7 @@ public class ExcelUtil {
     /**
      * 生成excle
      *
-     * @param filePath 绝对路径, 如：/home/chenmingjian/Downloads/aaa.xlsx
+     * @param filePath 绝对路径, 如：/home/jill/Downloads/aaa.xlsx
      * @param data     数据源
      */
     public static void writeWithTemplate(String filePath, List<? extends BaseRowModel> data) {
@@ -193,36 +181,30 @@ public class ExcelUtil {
     /**
      * 生成excle
      *
-     * @param filePath 绝对路径, 如：/home/chenmingjian/Downloads/aaa.xlsx
+     * @param filePath 绝对路径, 如：/home/jill/Downloads/aaa.xlsx
      * @param data     数据源
      * @param sheet    excle页面样式
      */
-    public static void writeWithTemplateAndReadSheet(String filePath, List<? extends BaseRowModel> data,
-                                                     WriteSheet sheet) {
-        if (CollectionUtil.isEmpty(data)) {
-            return;
-        }
+    private static void writeWithTemplateAndReadSheet(String filePath, List<? extends BaseRowModel> data,
+                                                      WriteSheet sheet) {
+        if (CollectionUtil.isEmpty(data)) return;
 
         sheet = (sheet != null) ? sheet : initWriteSheet;
         sheet.setClazz(data.get(0).getClass());
 
         OutputStream outputStream = null;
-        ExcelWriter  writer       = null;
+        ExcelWriter writer = null;
         try {
             outputStream = new FileOutputStream(filePath);
-            writer       = EasyExcelFactory.getWriter(outputStream);
+            writer = EasyExcelFactory.getWriter(outputStream);
             writer.write(data, sheet);
         } catch (FileNotFoundException e) {
             log.error("找不到文件或文件路径错误, 文件：{}", filePath);
         } finally {
             try {
-                if (writer != null) {
-                    writer.finish();
-                }
+                if (writer != null) writer.finish();
 
-                if (outputStream != null) {
-                    outputStream.close();
-                }
+                if (outputStream != null) outputStream.close();
             } catch (IOException e) {
                 log.error("excel文件导出失败, 失败原因：{}", e.getMessage());
             }
@@ -233,24 +215,21 @@ public class ExcelUtil {
     /**
      * 生成多ReadSheet的excle
      *
-     * @param filePath                绝对路径, 如：/home/chenmingjian/Downloads/aaa.xlsx
-     * @param multipleSheetProperties
+     * @param filePath                绝对路径, 如：/home/jill/Downloads/aaa.xlsx
+     * @param multipleSheetProperties m
      */
     public static void writeWithMultipleSheet(String filePath, List<MultipleSheetProperty> multipleSheetProperties) {
-        if (CollectionUtil.isEmpty(multipleSheetProperties)) {
-            return;
-        }
+        if (CollectionUtil.isEmpty(multipleSheetProperties)) return;
         OutputStream outputStream = null;
-        ExcelWriter  writer       = null;
+        ExcelWriter writer = null;
         try {
             outputStream = new FileOutputStream(filePath);
-            writer       = EasyExcelFactory.getWriter(outputStream);
+            writer = EasyExcelFactory.getWriter(outputStream);
             for (MultipleSheetProperty multipleSheelPropety : multipleSheetProperties) {
                 WriteSheet sheet =
                         multipleSheelPropety.getSheet() != null ? multipleSheelPropety.getSheet() : initWriteSheet;
-                if (!CollectionUtil.isEmpty(multipleSheelPropety.getData())) {
+                if (!CollectionUtil.isEmpty(multipleSheelPropety.getData()))
                     sheet.setClazz(multipleSheelPropety.getData().get(0).getClass());
-                }
                 writer.write(multipleSheelPropety.getData(), sheet);
             }
 
@@ -258,13 +237,9 @@ public class ExcelUtil {
             log.error("找不到文件或文件路径错误, 文件：{}", filePath);
         } finally {
             try {
-                if (writer != null) {
-                    writer.finish();
-                }
+                if (writer != null) writer.finish();
 
-                if (outputStream != null) {
-                    outputStream.close();
-                }
+                if (outputStream != null) outputStream.close();
             } catch (IOException e) {
                 log.error("excel文件导出失败, 失败原因：{}", e);
             }
@@ -276,7 +251,7 @@ public class ExcelUtil {
     /*********************匿名内部类开始，可以提取出去******************************/
 
     @Data
-    public static class MultipleSheetProperty {
+    private static class MultipleSheetProperty {
 
         private List<? extends BaseRowModel> data;
 
@@ -302,9 +277,7 @@ public class ExcelUtil {
         public void invoke(Object object, AnalysisContext context) {
             //当前行
             // context.getCurrentRowNum()
-            if (object != null) {
-                datas.add(object);
-            }
+            if (object != null) datas.add(object);
         }
 
 
@@ -317,7 +290,5 @@ public class ExcelUtil {
         }
 
     }
-
-    /************************匿名内部类结束，可以提取出去***************************/
 
 }

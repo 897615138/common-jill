@@ -190,7 +190,7 @@ public class KafkaConfig {
 //		configs.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,StringDeserializer.class);
 //		configs.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, ObjectDeserializer.class);
         configs.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
-                    ObjectDeserializer.class); //需要把原来的消息删掉，不然会出现反序列化失败的问题
+                ObjectDeserializer.class); //需要把原来的消息删掉，不然会出现反序列化失败的问题
 
         return new DefaultKafkaConsumerFactory<>(configs);
     }

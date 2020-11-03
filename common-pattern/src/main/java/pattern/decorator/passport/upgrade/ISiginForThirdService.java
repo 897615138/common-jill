@@ -11,38 +11,43 @@ public interface ISiginForThirdService extends ISigninService {
 
     /**
      * QQ登录
-     * @param id
-     * @return
+     *
+     * @param id id
+     * @return return
      */
-    ResultMsg loginForQQ(String id);
+    ResultMsg loginForQq(String id);
 
     /**
      * 微信登录
-     * @param id
-     * @return
+     *
+     * @param id id
+     * @return return
      */
     ResultMsg loginForWechat(String id);
 
     /**
      * 记住登录状态后自动登录
-     * @param token
-     * @return
+     *
+     * @param token token
+     * @return return
      */
     ResultMsg loginForToken(String token);
 
     /**
      * 手机号登录
-     * @param telphone
-     * @param code
-     * @return
+     *
+     * @param telephone t
+     * @param code      c
+     * @return r
      */
-    ResultMsg loginForTelphone(String telphone, String code);
+    ResultMsg loginForTelephone(String telephone, String code);
 
     /**
      * 注册后自动登录
-     * @param username
-     * @param passport
-     * @return
+     *
+     * @param username u
+     * @param passport p
+     * @return r
      */
     ResultMsg loginForRegist(String username, String passport);
 }

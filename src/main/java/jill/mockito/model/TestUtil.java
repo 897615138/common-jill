@@ -15,10 +15,10 @@ import java.util.List;
  */
 public class TestUtil {
     public static void main(String[] args) {
-        Game            game1 = Game.builder().type("1").rate(2).build();
-        Game            game2 = Game.builder().type("2").rate(3).build();
+        Game game1 = Game.builder().type("1").rate(2).build();
+        Game game2 = Game.builder().type("2").rate(3).build();
         ArrayList<Game> games = CollUtil.newArrayList(game1, game2);
-        String          s     = JSONUtil.toJsonStr(games);
+        String s = JSONUtil.toJsonStr(games);
         System.out.println(s);
         JSONArray objects = JSONUtil.parseArray(s);
         System.out.println(objects);
@@ -29,7 +29,7 @@ public class TestUtil {
         System.out.println(game1);
 
         DateTime dateTime = DateUtil.parseCST("Tue Oct 13 14:00:00 CST 2020");
-        String   s1       = DateUtil.formatDateTime(dateTime);
+        String s1 = DateUtil.formatDateTime(dateTime);
         System.out.println(s1);
     }
 

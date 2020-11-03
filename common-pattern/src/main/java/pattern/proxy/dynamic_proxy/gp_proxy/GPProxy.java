@@ -18,7 +18,7 @@ class GPProxy {
     /**
      * 换行符
      */
-    private static final String                                                  LN       = "\r\n";
+    private static final String LN = "\r\n";
     private static final Map<Class<? extends Integer>, Class<? extends Integer>> MAPPINGS = new HashMap<>();
 
     static {
@@ -41,8 +41,8 @@ class GPProxy {
             }
 
             //3、把生成的.java文件编译成.class文件 获得系统编译器
-            JavaCompiler                                   compiler = ToolProvider.getSystemJavaCompiler();
-            StandardJavaFileManager                        manage   = compiler.getStandardFileManager(null, null, null);
+            JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+            StandardJavaFileManager manage = compiler.getStandardFileManager(null, null, null);
             Iterable<? extends javax.tools.JavaFileObject> iterable = manage.getJavaFileObjects(f);
 
             JavaCompiler.CompilationTask task = compiler.getTask(null, manage, null, null, null, iterable);
@@ -50,8 +50,8 @@ class GPProxy {
             manage.close();
 
             //4、编译生成的.class文件加载到JVM中来
-            Class<?>                         proxyClass = classLoader.findClass("$Proxy0");
-            java.lang.reflect.Constructor<?> c          = proxyClass.getConstructor(GPInvocationHandler.class);
+            Class<?> proxyClass = classLoader.findClass("$Proxy0");
+            java.lang.reflect.Constructor<?> c = proxyClass.getConstructor(GPInvocationHandler.class);
             f.delete();
 
             //5、返回字节码重组以后的新的代理对象
@@ -89,9 +89,9 @@ class GPProxy {
                 //参数类型
                 StringBuilder paramClasses = new StringBuilder();
                 for (int i = 0; i < params.length; i++) {
-                    Class<?> clazz     = params[i];
-                    String   type      = clazz.getName();
-                    String   paramName = toLowerFirstCase(clazz.getSimpleName());
+                    Class<?> clazz = params[i];
+                    String type = clazz.getName();
+                    String paramName = toLowerFirstCase(clazz.getSimpleName());
                     paramNames.append(type).append(" ").append(paramName);
                     paramValues.append(paramName);
                     paramClasses.append(clazz.getName()).append(".class");
@@ -103,14 +103,14 @@ class GPProxy {
                 }
 
                 sb.append("public ").append(m.getReturnType().getName()).append(" ").append(m.getName()).append("(")
-                  .append(paramNames.toString()).append(") {").append(LN);
+                        .append(paramNames.toString()).append(") {").append(LN);
                 sb.append("try{" + LN);
                 sb.append("Method m = ").append(interfaces[0].getName()).append(".class.getMethod(\"").append(
                         m.getName()).append("\",new Class[]{").append(paramClasses.toString()).append("});").append(
                         LN);
                 sb.append(hasReturnValue(m.getReturnType()) ? "return " : "").append(
                         getCaseCode("this.h.invoke(this,m,new Object[]{" + paramValues + "})", m.getReturnType()))
-                  .append(";").append(LN);
+                        .append(";").append(LN);
                 sb.append("}catch(Error _ex) { }");
                 sb.append("catch(Throwable e){" + LN);
                 sb.append("throw new UndeclaredThrowableException(e);" + LN);
@@ -125,14 +125,13 @@ class GPProxy {
     private static String getReturnEmptyCode(Class<?> returnClass) {
         if (MAPPINGS.containsKey(returnClass)) return "return 0;";
         else if (returnClass == void.class) return "";
-        else
-            return "return null;";
+        else return "return null;";
     }
 
     private static String getCaseCode(String code, Class<?> returnClass) {
         if (MAPPINGS.containsKey(returnClass)) return "((" + MAPPINGS.get(returnClass).getName() + ")" + code + ")."
-                                                      + returnClass.getSimpleName()
-                                                      + "Value()";
+                + returnClass.getSimpleName()
+                + "Value()";
         return code;
     }
 

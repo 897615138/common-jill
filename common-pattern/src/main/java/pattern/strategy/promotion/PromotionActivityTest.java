@@ -30,7 +30,8 @@ public class PromotionActivityTest {
 
     public static void main(String[] args) {
         String promotionKey = "GROUP_BUY";
-        PromotionActivity promotionActivity = new PromotionActivity(PromotionStrategyFactory.getPromotionStrategy(promotionKey));
+        PromotionActivity promotionActivity =
+                new PromotionActivity(PromotionStrategyFactory.getPromotionStrategy(promotionKey));
         promotionActivity.execute();
     }
 }

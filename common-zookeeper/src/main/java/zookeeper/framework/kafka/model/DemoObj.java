@@ -1,13 +1,8 @@
 package zookeeper.framework.kafka.model;
 
-/**
- * @author JillW
- * @date 2020/10/21
- */
-
 import java.io.Serializable;
 
-public class DemoObj implements Serializable{
+public class DemoObj implements Serializable {
     private static final long serialVersionUID = -8094247978023094250L;
     private Long id;
     private String data;

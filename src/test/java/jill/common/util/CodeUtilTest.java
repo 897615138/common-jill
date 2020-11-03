@@ -1,24 +1,30 @@
 package jill.common.util;
 
 import cn.hutool.core.util.CharsetUtil;
+import org.junit.Assert;
 import org.junit.Test;
 
 import static jill.common.consts.LogConstants.log;
 
 public class CodeUtilTest {
-    static final String TEST="test";
+    private static final String TEST = "test";
 
     @Test
     public void uuid() {
         log.info(CodeUtil.genUuid());
+        Assert.assertNotNull(CodeUtil.genUuid());
     }
 
     @Test
-    public void getMd5(){log.info(CodeUtil.getMd5(TEST));}
+    public void getMd5() {
+//        log.info(CodeUtil.getMd5(TEST));
+        Assert.assertNotNull(CodeUtil.getMd5(TEST));
+    }
 
     @Test
-    public void charSet(){
+    public void charSet() {
         log.info(String.valueOf(CharsetUtil.charset("GBK")));
         log.info(String.valueOf(CharsetUtil.parse("GBK")));
+        Assert.assertNotNull(CharsetUtil.charset("GBK"));
     }
 }

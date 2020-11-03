@@ -1,11 +1,13 @@
-package pattern.proxy.dbroute;
+package pattern.proxy.db_route;
 
 /**
  * @author jill
  */
 public class Order {
     private Object orderInfo;
-    //订单创建时间进行按年分库
+    /**
+     * 订单创建时间进行按年分库
+     */
     private Long createTime;
     private String id;
 
@@ -21,7 +23,7 @@ public class Order {
         return createTime;
     }
 
-    public void setCreateTime(Long createTime) {
+    void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 

@@ -66,7 +66,9 @@ public class EventListener {
      * @param trigger 触发器
      */
     protected void trigger(String trigger) {
-        if (!this.events.containsKey(trigger)) {return;}
+        if (!this.events.containsKey(trigger)) {
+            return;
+        }
         trigger(this.events.get(trigger).setTrigger(trigger));
     }
 

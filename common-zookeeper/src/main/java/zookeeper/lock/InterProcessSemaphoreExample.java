@@ -19,8 +19,8 @@ import java.util.concurrent.TimeUnit;
  * @date 2020/10/22
  */
 public class InterProcessSemaphoreExample {
-    private static final int    MAX_LEASE = 10;
-    private static final String PATH      = "/examples/locks";
+    private static final int MAX_LEASE = 10;
+    private static final String PATH = "/examples/locks";
 
     public static void main(String[] args) throws Exception {
         FakeLimitedResource resource = new FakeLimitedResource();
@@ -29,7 +29,7 @@ public class InterProcessSemaphoreExample {
                     CuratorFrameworkFactory.newClient(server.getConnectString(), new ExponentialBackoffRetry(1000, 3));
             client.start();
             InterProcessSemaphoreV2 semaphore = new InterProcessSemaphoreV2(client, PATH, MAX_LEASE);
-            Collection<Lease>       leases    = semaphore.acquire(5);
+            Collection<Lease> leases = semaphore.acquire(5);
             System.out.println("get " + leases.size() + " leases");
             Lease lease = semaphore.acquire();
             System.out.println("get another lease");

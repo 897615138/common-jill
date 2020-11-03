@@ -11,8 +11,6 @@ import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.apache.curator.test.TestingServer;
 import org.apache.curator.utils.CloseableUtils;
 
-import java.util.Date;
-
 /**
  * @author JillW
  * @date 2020/10/22
@@ -21,16 +19,16 @@ public class DistributedDelayQueueExample {
     private static final String PATH = "/example/queue";
 
     public static void main(String[] args) throws Exception {
-        TestingServer           server = new TestingServer();
-        CuratorFramework              client = null;
-        DistributedDelayQueue<String> queue  = null;
+        TestingServer server = new TestingServer();
+        CuratorFramework client = null;
+        DistributedDelayQueue<String> queue = null;
         try {
             client = CuratorFrameworkFactory.newClient(server.getConnectString(), new ExponentialBackoffRetry(1000, 3));
             client.getCuratorListenable().addListener(
                     (client1, event) -> System.out.println("CuratorEvent: " + event.getType().name()));
             client.start();
             QueueConsumer<String> consumer = createQueueConsumer();
-            QueueBuilder<String>  builder  = QueueBuilder.builder(client, consumer, createQueueSerializer(), PATH);
+            QueueBuilder<String> builder = QueueBuilder.builder(client, consumer, createQueueSerializer(), PATH);
             queue = builder.buildDelayQueue();
             queue.start();
 
@@ -69,7 +67,7 @@ public class DistributedDelayQueueExample {
 
             @Override
             public void consumeMessage(String message) throws Exception {
-                System.out.println(new Date().getTime() + ": consume one message: " + message);
+                System.out.println(System.currentTimeMillis() + ": consume one message: " + message);
             }
         };
     }

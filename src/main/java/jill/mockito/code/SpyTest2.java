@@ -12,7 +12,7 @@ import static org.mockito.Mockito.*;
 public class SpyTest2 {
     public static void main(String[] args) {
         LinkedList<String> list = new LinkedList<>();
-        LinkedList<String> spy  = spy(list);
+        LinkedList<String> spy = spy(list);
 
 
 //You have to use doReturn() for stubbing

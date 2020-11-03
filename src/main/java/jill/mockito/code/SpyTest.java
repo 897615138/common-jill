@@ -12,7 +12,7 @@ import static org.mockito.Mockito.*;
 public class SpyTest {
     public static void main(String[] args) {
         LinkedList<String> list = new LinkedList<>();
-        LinkedList<String> spy  = spy(list);
+        LinkedList<String> spy = spy(list);
 
 //optionally, you can stub out some methods:
 // 你可以为某些函数打桩

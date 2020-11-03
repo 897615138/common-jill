@@ -14,6 +14,6 @@ import java.util.Date;
 @Builder
 @ToString
 public class TimeModel {
-private Date startAt;
-private Date endAt;
+    private Date startAt;
+    private Date endAt;
 }

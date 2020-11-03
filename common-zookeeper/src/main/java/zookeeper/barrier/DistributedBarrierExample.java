@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
  * @date 2020/10/22
  */
 public class DistributedBarrierExample {
-    private static final int    QTY  = 5;
+    private static final int QTY = 5;
     private static final String PATH = "/examples/zookeeper.barrier";
 
     public static void main(String[] args) throws Exception {
@@ -28,23 +28,20 @@ public class DistributedBarrierExample {
             CuratorFramework client =
                     CuratorFrameworkFactory.newClient(server.getConnectString(), new ExponentialBackoffRetry(1000, 3));
             client.start();
-            ExecutorService    service        = Executors.newFixedThreadPool(QTY);
+            ExecutorService service = Executors.newFixedThreadPool(QTY);
             DistributedBarrier controlBarrier = new DistributedBarrier(client, PATH);
             controlBarrier.setBarrier();
 
             for (int i = 0; i < QTY; ++i) {
                 final DistributedBarrier barrier = new DistributedBarrier(client, PATH);
-                final int                index   = i;
-                Callable<Void> task = new Callable<Void>() {
-                    @Override
-                    public Void call() throws Exception {
+                final int index = i;
+                Callable<Void> task = () -> {
 
-                        Thread.sleep((long) (3 * Math.random()));
-                        System.out.println("Client #" + index + " waits on Barrier");
-                        barrier.waitOnBarrier();
-                        System.out.println("Client #" + index + " begins");
-                        return null;
-                    }
+                    Thread.sleep((long) (3 * Math.random()));
+                    System.out.println("Client #" + index + " waits on Barrier");
+                    barrier.waitOnBarrier();
+                    System.out.println("Client #" + index + " begins");
+                    return null;
                 };
                 service.submit(task);
             }

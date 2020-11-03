@@ -1,17 +1,18 @@
 package pattern.template.course;
 
 /**
- * @author jill on 2019/3/16.
+ * @author jill
  */
-public class BigDataCourse extends NetworkCourse {
+public class BigDataCourseAbstract extends AbstractNetworkCourse {
 
-    private boolean needHomeworkFlag = false;
+    private final boolean needHomeworkFlag;
 
-    BigDataCourse(boolean needHomeworkFlag) {
+    BigDataCourseAbstract(boolean needHomeworkFlag) {
         this.needHomeworkFlag = needHomeworkFlag;
     }
 
-    @Override void checkHomework() {
+    @Override
+    void checkHomework() {
         System.out.println("检查大数据的课后作业");
     }
 

@@ -14,7 +14,7 @@ public class DecoratorTest {
 
         //满足一个is-a
         ISiginForThirdService siginForThirdService = new SiginForThirdService(new SigninService());
-        siginForThirdService.loginForQQ("sdfasfdasfsf");
+        siginForThirdService.loginForQq("sdfasfdasfsf");
 
     }
 

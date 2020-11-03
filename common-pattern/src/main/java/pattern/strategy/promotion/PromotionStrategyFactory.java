@@ -8,8 +8,9 @@ import java.util.Map;
  *
  * @author jill
  */
-public class PromotionStrategyFactory {
+class PromotionStrategyFactory {
     private static final Map<String, IPromotionStrategy> PROMOTION_STRATEGY_MAP = new HashMap<>();
+    private static final IPromotionStrategy NON_PROMOTION = new EmptyStrategy();
 
     static {
         PROMOTION_STRATEGY_MAP.put(PromotionKey.COUPON, new CouponStrategy());
@@ -17,12 +18,10 @@ public class PromotionStrategyFactory {
         PROMOTION_STRATEGY_MAP.put(PromotionKey.GROUP_BUY, new GroupBuyStrategy());
     }
 
-    private static final IPromotionStrategy NON_PROMOTION = new EmptyStrategy();
-
     private PromotionStrategyFactory() {
     }
 
-    public static IPromotionStrategy getPromotionStrategy(String promotionKey) {
+    static IPromotionStrategy getPromotionStrategy(String promotionKey) {
         IPromotionStrategy iPromotionStrategy = PROMOTION_STRATEGY_MAP.get(promotionKey);
         return iPromotionStrategy == null ? NON_PROMOTION : iPromotionStrategy;
     }

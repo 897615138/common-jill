@@ -16,21 +16,19 @@ import java.util.concurrent.TimeUnit;
  * @date 2020/10/22
  */
 public class DistributedDoubleBarrierExample {
-    private static final int    QTY  = 5;
+    private static final int QTY = 5;
     private static final String PATH = "/examples/zookeeper.barrier";
 
     public static void main(String[] args) throws Exception {
         try (TestingServer server = new TestingServer()) {
-            CuratorFramework client =
-                    CuratorFrameworkFactory.newClient(server.getConnectString(), new ExponentialBackoffRetry(1000, 3));
-            client.start();
-            ExecutorService service = Executors.newFixedThreadPool(QTY);
-            for (int i = 0; i < QTY; ++i) {
-                final DistributedDoubleBarrier barrier = new DistributedDoubleBarrier(client, PATH, QTY);
-                final int                      index   = i;
-                Callable<Void> task = new Callable<Void>() {
-                    @Override
-                    public Void call() throws Exception {
+            ExecutorService service;
+            try (CuratorFramework client = CuratorFrameworkFactory.newClient(server.getConnectString(), new ExponentialBackoffRetry(1000, 3))) {
+                client.start();
+                service = Executors.newFixedThreadPool(QTY);
+                for (int i = 0; i < QTY; ++i) {
+                    DistributedDoubleBarrier barrier = new DistributedDoubleBarrier(client, PATH, QTY);
+                    int index = i;
+                    Callable<Void> task = () -> {
 
                         Thread.sleep((long) (3 * Math.random()));
                         System.out.println("Client #" + index + " enters");
@@ -40,9 +38,9 @@ public class DistributedDoubleBarrierExample {
                         barrier.leave();
                         System.out.println("Client #" + index + " left");
                         return null;
-                    }
-                };
-                service.submit(task);
+                    };
+                    service.submit(task);
+                }
             }
 
 

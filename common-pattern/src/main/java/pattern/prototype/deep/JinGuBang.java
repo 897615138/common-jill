@@ -15,7 +15,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class JinGuBang implements Serializable {
 
-    public static final String NAME ="金箍棒";
-    private Integer index;
+    public static final String NAME = "金箍棒";
     private static final long serialVersionUID = -5052863134988511459L;
+    private Integer index;
 }

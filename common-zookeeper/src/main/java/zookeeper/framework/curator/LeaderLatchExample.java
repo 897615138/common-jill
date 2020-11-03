@@ -18,13 +18,13 @@ import java.util.concurrent.TimeUnit;
  * @date 2020/10/19
  */
 public class LeaderLatchExample {
-    private static final int    CLIENT_QTY = 10;
-    private static final String PATH       = "/examples/leader";
+    private static final int CLIENT_QTY = 10;
+    private static final String PATH = "/examples/leader";
 
     public static void main(String[] args) throws Exception {
-        List<CuratorFramework> clients  = Lists.newArrayList();
-        List<LeaderLatch>      examples = Lists.newArrayList();
-        TestingServer          server   = new TestingServer();
+        List<CuratorFramework> clients = Lists.newArrayList();
+        List<LeaderLatch> examples = Lists.newArrayList();
+        TestingServer server = new TestingServer();
         try {
             for (int i = 0; i < CLIENT_QTY; ++i) {
                 CuratorFramework client = CuratorFrameworkFactory

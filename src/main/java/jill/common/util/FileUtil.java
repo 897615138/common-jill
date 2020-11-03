@@ -35,7 +35,7 @@ public class FileUtil {
     public static String getFileExt(String fileName) {
         String ext = "";
         if (StrUtil.isNotEmpty(fileName) && fileName.contains(FileConstants.DOT) &&
-            !fileName.endsWith(FileConstants.DOT)) {
+                !fileName.endsWith(FileConstants.DOT)) {
             ext = fileName.substring(fileName.lastIndexOf(FileConstants.DOT) + 1);
         }
         return ext;
@@ -120,9 +120,9 @@ public class FileUtil {
         }
         //这里不能直接加
         return FileConstants.SYS_PACKAGE + (String) FileConstants.PACKAGE_SEPARATION +
-               FastDateFormat.getInstance("yyyy-MM-dd").format(new Date()) +
-               FileConstants.PACKAGE_SEPARATION +
-               fileName;
+                FastDateFormat.getInstance("yyyy-MM-dd").format(new Date()) +
+                FileConstants.PACKAGE_SEPARATION +
+                fileName;
     }
 
     public static void huToolTest() {

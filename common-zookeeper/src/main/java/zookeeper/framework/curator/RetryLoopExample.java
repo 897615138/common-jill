@@ -5,7 +5,7 @@ package zookeeper.framework.curator;
  * @date 2020/10/20
  */
 public class RetryLoopExample {
-//    public static void main(String[] args) {
+    public static void main(String[] args) {
 //        RetryLoop retryLoop = client.newRetryLoop();
 //        while ( retryLoop.shouldContinue() )
 //        {
@@ -13,7 +13,8 @@ public class RetryLoopExample {
 //            {
 //                // perform your work
 //       ...
-//                // it's important to re\-get the ZK instance as there may have been an error and the instance was re\-created
+//                // it's important to re\-get the ZK instance as there may have been an error and the instance was
+//               re\-created
 //                ZooKeeper zk = client.getZookeeper();
 //                retryLoop.markComplete();
 //            }
@@ -34,6 +35,6 @@ public class RetryLoopExample {
 //                return null;
 //            }
 //        });
-//    }
+    }
 
 }

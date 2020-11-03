@@ -23,9 +23,9 @@ public class NodeCacheExample {
     private static final String PATH = "/example/nodeCache";
 
     public static void main(String[] args) throws Exception {
-        TestingServer    server = new TestingServer();
+        TestingServer server = new TestingServer();
         CuratorFramework client = null;
-        NodeCache        cache  = null;
+        NodeCache cache = null;
         try {
             client = CuratorFrameworkFactory.newClient(server.getConnectString(), new ExponentialBackoffRetry(1000, 3));
             client.start();
@@ -39,17 +39,13 @@ public class NodeCacheExample {
         }
     }
 
-    private static void addListener(final NodeCache cache) {
+    private static void addListener(NodeCache cache) {
         // a PathChildrenCacheListener is optional. Here, it's used just to log
         // changes
-        NodeCacheListener listener = new NodeCacheListener() {
-            @Override
-            public void nodeChanged() throws Exception {
-                if (cache.getCurrentData() != null) {
-                    System.out.println("Node changed: " + cache.getCurrentData().getPath() + ", value: " +
-                                       new String(cache.getCurrentData().getData()));
-                }
-            }
+        NodeCacheListener listener = () -> {
+            if (cache.getCurrentData() != null)
+                System.out.println("Node changed: " + cache.getCurrentData().getPath() + ", value: " +
+                        new String(cache.getCurrentData().getData()));
         };
         cache.getListenable().addListener(listener);
     }
@@ -58,47 +54,38 @@ public class NodeCacheExample {
         printHelp();
         try {
             addListener(cache);
-            BufferedReader in   = new BufferedReader(new InputStreamReader(System.in));
-            boolean        done = false;
+            BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+            boolean done = false;
             while (!done) {
                 System.out.print("> ");
                 String line = in.readLine();
-                if (line == null) {
-                    break;
+                if (line == null) break;
+                else {
+                    String command = line.trim();
+                    String[] parts = command.split("\\s");
+                    //                    continue;
+                    if (parts.length == 0) System.out.println("continue");
+                    String operation = parts[0];
+                    String[] args = Arrays.copyOfRange(parts, 1, parts.length);
+                    if (operation.equalsIgnoreCase("help") || operation.equalsIgnoreCase("?")) printHelp();
+                    else if (operation.equalsIgnoreCase("q") || operation.equalsIgnoreCase("quit")) done = true;
+                    else if (operation.equals("set")) setValue(client, command, args);
+                    else if (operation.equals("remove")) remove(client);
+                    else if (operation.equals("show")) show(cache);
                 }
-                String   command = line.trim();
-                String[] parts   = command.split("\\s");
-                if (parts.length == 0) {
-                    continue;
-                }
-                String operation = parts[0];
-                String args[]    = Arrays.copyOfRange(parts, 1, parts.length);
-                if (operation.equalsIgnoreCase("help") || operation.equalsIgnoreCase("?")) {
-                    printHelp();
-                } else if (operation.equalsIgnoreCase("q") || operation.equalsIgnoreCase("quit")) {
-                    done = true;
-                } else if (operation.equals("set")) {
-                    setValue(client, command, args);
-                } else if (operation.equals("remove")) {
-                    remove(client);
-                } else if (operation.equals("show")) {
-                    show(cache);
-                }
-                Thread.sleep(1000); // just to allow the console output to catch
+//                Thread.sleep(1000); // just to allow the console output to catch
                 // up
             }
         } catch (Exception ex) {
             ex.printStackTrace();
-        } finally {
         }
     }
 
     private static void show(NodeCache cache) {
-        if (cache.getCurrentData() != null) {
+        if (cache.getCurrentData() != null)
             System.out.println(cache.getCurrentData().getPath() + " = " + new String(cache.getCurrentData().getData()));
-        } else {
+        else
             System.out.println("zookeeper.cache don't set a value");
-        }
     }
 
     private static void remove(CuratorFramework client) throws Exception {

@@ -15,7 +15,8 @@ class HungryStaticSingleton {
         hungrySingleton = new HungryStaticSingleton();
     }
 
-    private HungryStaticSingleton() {}
+    private HungryStaticSingleton() {
+    }
 
     public static HungryStaticSingleton getInstance() {
         return hungrySingleton;

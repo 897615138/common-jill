@@ -9,9 +9,10 @@ public interface ISigninService {
 
     /**
      * 登录的方法
-     * @param username
-     * @param password
-     * @return
+     *
+     * @param username u
+     * @param password p
+     * @return re
      */
     ResultMsg login(String username, String password);
 }

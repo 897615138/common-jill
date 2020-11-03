@@ -9,5 +9,5 @@ import org.slf4j.LoggerFactory;
  */
 public class LogConstants {
     public static final Logger log = LoggerFactory.getLogger(LogConstants.class);
-    public static final String CROSS_LINE="---------------------------";
+    public static final String CROSS_LINE = "---------------------------";
 }

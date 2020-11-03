@@ -5,6 +5,7 @@ import pattern.adapter.loginadapter.ResultMsg;
 
 /**
  * 只扩展
+ *
  * @author jill
  */
 public interface IPassportForThird {
@@ -19,6 +20,7 @@ public interface IPassportForThird {
 
     /**
      * 微信登录
+     *
      * @param id id
      * @return 结果
      */
@@ -26,6 +28,7 @@ public interface IPassportForThird {
 
     /**
      * 记住登录状态后自动登录
+     *
      * @param token token
      * @return 结果
      */
@@ -33,14 +36,16 @@ public interface IPassportForThird {
 
     /**
      * 手机号登录
+     *
      * @param telephone 手机号
-     * @param code code
+     * @param code      code
      * @return 结果
      */
     ResultMsg loginForTelephone(String telephone, String code);
 
     /**
      * 注册后自动登录
+     *
      * @param username 用户名
      * @param passport 密码
      * @return 结果

@@ -4,8 +4,7 @@ package pattern.factory.factorymethod;
 import pattern.factory.ICourse;
 
 /**
- *
- * @author  Jill Wang
+ * @author Jill Wang
  */
 public class FactoryMethodTest {
 

@@ -14,7 +14,7 @@ public class Client {
 
     private Prototype prototype;
 
-    public Prototype startClone(Prototype concretePrototype){
+    public Prototype startClone(Prototype concretePrototype) {
         return concretePrototype.clone();
     }
 

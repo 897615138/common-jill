@@ -1,14 +1,13 @@
 package pattern.adapter.poweradapter;
 
 /**
- *
  * @author jill
  */
 public class PowerAdapter implements DC5 {
 
-   private final AC220 ac220;
+    private final AC220 ac220;
 
-    public PowerAdapter(AC220 ac220) {
+    PowerAdapter(AC220 ac220) {
         this.ac220 = ac220;
     }
 

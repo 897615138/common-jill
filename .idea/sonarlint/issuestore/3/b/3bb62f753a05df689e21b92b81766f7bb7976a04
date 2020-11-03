@@ -1,55 +1,25 @@
 
-W
-java:S1874Ó"9Remove this use of "DefaultHttpClient"; it is deprecated.(è—ÄŒ8ƒ½û£Ì.
-[
-java:S1874î"8Remove this use of "SSLSocketFactory"; it is deprecated.(Å…Û„ıÿÿÿÿ8ƒ½û£Ì.
+D
+java:S1168â"&Return an empty array instead of null.(¥¹ï8ƒ½û£Ì.
+^
+java:S4830æ"@Enable server certificate validation on this SSL/TLS connection.(‰Ëœ¶8ƒ½û£Ì.
+c
+java:S4830ë"@Enable server certificate validation on this SSL/TLS connection.(¯éƒàûÿÿÿÿ8ƒ½û£Ì.
 {
 java:S2293H"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ÿ“æÿùÿÿÿÿ8ƒ½û£Ì.
 J
-java:S1172}"-Remove this unused method parameter "method".(¹¿Û™8ƒ½û£Ì.
-D
-java:S1168á"&Return an empty array instead of null.(¥¹ï8ƒ½û£Ì.
-g	java:S112m"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ8ƒ½û£Ì.
-g	java:S112Y"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ8ƒ½û£Ì.
-g	java:S1120"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ8ƒ½û£Ì.
-J
-java:S1172;"-Remove this unused method parameter "method".(ÂóŒ…8ƒ½û£Ì.
-Q
-java:S2864J"4Iterate over the "entrySet" instead of the "keySet".(µÓÎ™8ƒ½û£Ì.
-L
-java:S1874ñ".Remove this use of "Scheme"; it is deprecated.(Ÿ¹ƒ8ƒ½û£Ì.
-^
-java:S4830ä"@Enable server certificate validation on this SSL/TLS connection.(‰Ëœ¶8ƒ½û£Ì.
-c
-java:S4830è"@Enable server certificate validation on this SSL/TLS connection.(¯éƒàûÿÿÿÿ8ƒ½û£Ì.
-h	java:S112ó"FDefine and throw a dedicated exception instead of using a generic one.(¼ÿ¾¹ÿÿÿÿÿ8ƒ½û£Ì.
-b
-java:S1874ï"?Remove this use of "ClientConnectionManager"; it is deprecated.(¯æ¤µùÿÿÿÿ8ƒ½û£Ì.
-h	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ8ƒ½û£Ì.
-J
-java:S1172-"-Remove this unused method parameter "method".(îçâ8ƒ½û£Ì.
-u
-java:S3776³"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(ÿ©ã”ûÿÿÿÿ8ƒ½û£Ì.
-Ÿ
-java:S1186ä"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‰Ëœ¶8ƒ½û£Ì.
-[
-java:S1874í"8Remove this use of "SSLSocketFactory"; it is deprecated.(Ğ‚ÛÎøÿÿÿÿ8ƒ½û£Ì.
-J
 java:S1172U"-Remove this unused method parameter "method".(ÂóŒ…8ƒ½û£Ì.
+J
+java:S1172}"-Remove this unused method parameter "method".(¹¿Û™8ƒ½û£Ì.
 P
 java:S1172¥"-Remove this unused method parameter "method".(Î²®šşÿÿÿÿ8ƒ½û£Ì.
-h	java:S112¨"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ8ƒ½û£Ì.
-K
-java:S1172‘"-Remove this unused method parameter "method".(¹¿Û™8ƒ½û£Ì.
-g	java:S112?"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ8ƒ½û£Ì.
+J
+java:S1172;"-Remove this unused method parameter "method".(ÂóŒ…8ƒ½û£Ì.
 J
 java:S1172i"-Remove this unused method parameter "method".(ÂóŒ…8ƒ½û£Ì.
-[
-java:S1874í"8Remove this use of "SSLSocketFactory"; it is deprecated.(Ğ‚ÛÎøÿÿÿÿ8ƒ½û£Ì.
-T
-java:S1874ğ"6Remove this use of "SchemeRegistry"; it is deprecated.(ñ³ÑŸ8ƒ½û£Ì.
-¤
-java:S1186è"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¯éƒàûÿÿÿÿ8ƒ½û£Ì.
-h	java:S112•"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ8ƒ½û£Ì.
-_
-java:S1874ï"<Remove this use of "getConnectionManager"; it is deprecated.(¯æ¤µùÿÿÿÿ8ƒ½û£Ì.
+J
+java:S1172-"-Remove this unused method parameter "method".(îçâ8ƒ½û£Ì.
+Q
+java:S2864J"4Iterate over the "entrySet" instead of the "keySet".(µÓÎ™8ƒ½û£Ì.
+K
+java:S1172‘"-Remove this unused method parameter "method".(¹¿Û™8ƒ½û£Ì.

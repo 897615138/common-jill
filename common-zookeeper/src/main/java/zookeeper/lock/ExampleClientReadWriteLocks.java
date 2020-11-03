@@ -14,18 +14,18 @@ import java.util.concurrent.TimeUnit;
  */
 public class ExampleClientReadWriteLocks {
     private final InterProcessReadWriteLock lock;
-    private final InterProcessMutex         readLock;
-    private final InterProcessMutex         writeLock;
-    private final FakeLimitedResource       resource;
-    private final String                    clientName;
+    private final InterProcessMutex readLock;
+    private final InterProcessMutex writeLock;
+    private final FakeLimitedResource resource;
+    private final String clientName;
 
     public ExampleClientReadWriteLocks(CuratorFramework client, String lockPath, FakeLimitedResource resource,
                                        String clientName) {
-        this.resource   = resource;
+        this.resource = resource;
         this.clientName = clientName;
-        lock            = new InterProcessReadWriteLock(client, lockPath);
-        readLock        = lock.readLock();
-        writeLock       = lock.writeLock();
+        lock = new InterProcessReadWriteLock(client, lockPath);
+        readLock = lock.readLock();
+        writeLock = lock.writeLock();
     }
 
     public void doWork(long time, TimeUnit unit) throws Exception {

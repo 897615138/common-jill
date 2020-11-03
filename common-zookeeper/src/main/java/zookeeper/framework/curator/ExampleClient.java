@@ -5,7 +5,6 @@ import org.apache.curator.framework.recipes.leader.LeaderSelector;
 import org.apache.curator.framework.recipes.leader.LeaderSelectorListenerAdapter;
 
 import java.io.Closeable;
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -14,28 +13,28 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @date 2020/10/19
  */
 public class ExampleClient extends LeaderSelectorListenerAdapter implements Closeable {
-    private final String         name;
+    private final String name;
     private final LeaderSelector leaderSelector;
-    private final AtomicInteger  leaderCount = new AtomicInteger();
+    private final AtomicInteger leaderCount = new AtomicInteger();
 
-    public ExampleClient(CuratorFramework client, String path, String name) {
-        this.name      = name;
+    ExampleClient(CuratorFramework client, String path, String name) {
+        this.name = name;
         leaderSelector = new LeaderSelector(client, path, this);
         leaderSelector.autoRequeue();
     }
 
-    public void start() throws IOException {
+    public void start() {
         leaderSelector.start();
     }
 
     @Override
-    public void close() throws IOException {
+    public void close() {
         leaderSelector.close();
     }
 
     @Override
-    public void takeLeadership(CuratorFramework client) throws Exception {
-        final int waitSeconds = (int) (5 * Math.random()) + 1;
+    public void takeLeadership(CuratorFramework client) {
+        int waitSeconds = (int) (5 * Math.random()) + 1;
         System.out.println(name + " is now the leader. Waiting " + waitSeconds + " seconds...");
         System.out.println(name + " has been leader " + leaderCount.getAndIncrement() + " time(s) before.");
         try {

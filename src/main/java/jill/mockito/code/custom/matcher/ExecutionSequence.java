@@ -32,7 +32,7 @@ public class ExecutionSequence {
 
         // B. Multiple mocks that must be used in a particular order
         // B .验证多个mock对象的函数执行顺序
-        LinkedList<String> firstMock  = mock(LinkedList.class);
+        LinkedList<String> firstMock = mock(LinkedList.class);
         LinkedList<String> secondMock = mock(LinkedList.class);
 
         //using mocks

@@ -9,7 +9,7 @@ import pattern.decorator.passport.old.ResultMsg;
  */
 public class SiginForThirdService implements ISiginForThirdService {
 
-    private ISigninService signinService;
+    private final ISigninService signinService;
 
     public SiginForThirdService(ISigninService signinService) {
         this.signinService = signinService;
@@ -17,16 +17,16 @@ public class SiginForThirdService implements ISiginForThirdService {
 
     @Override
     public ResultMsg regist(String username, String password) {
-        return signinService.regist(username,password);
+        return signinService.regist(username, password);
     }
 
     @Override
     public ResultMsg login(String username, String password) {
-        return signinService.login(username,password);
+        return signinService.login(username, password);
     }
 
     @Override
-    public ResultMsg loginForQQ(String id) {
+    public ResultMsg loginForQq(String id) {
         return null;
     }
 
@@ -41,7 +41,7 @@ public class SiginForThirdService implements ISiginForThirdService {
     }
 
     @Override
-    public ResultMsg loginForTelphone(String telphone, String code) {
+    public ResultMsg loginForTelephone(String telephone, String code) {
         return null;
     }
 

@@ -9,8 +9,8 @@ import java.util.Observable;
  */
 public class ObserverJ extends Observable {
 
-    private final String name = "Observer生态圈";
     private static ObserverJ observerJ = null;
+    private final String name = "Observer生态圈";
 
     private ObserverJ() {
     }
@@ -21,9 +21,7 @@ public class ObserverJ extends Observable {
      * @return 获取对象
      */
     public static ObserverJ getInstance() {
-        if (null == observerJ) {
-            observerJ = new ObserverJ();
-        }
+        if (null == observerJ) observerJ = new ObserverJ();
         return observerJ;
     }
 
@@ -31,8 +29,8 @@ public class ObserverJ extends Observable {
         return name;
     }
 
-    public void publishQuestion(Question question) {
-        System.out.println(question.getUserName() + "在" + this.name + "上提交了一个问题。");
+    void publishQuestion(Question question) {
+        System.out.println(question.getUserName() + "在" + name + "上提交了一个问题。");
         setChanged();
         notifyObservers(question);
     }

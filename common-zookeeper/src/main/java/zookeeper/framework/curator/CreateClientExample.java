@@ -15,7 +15,7 @@ public class CreateClientExample {
     private static final String PATH = "/example/basic";
 
     public static void main(String[] args) throws Exception {
-        TestingServer    server = new TestingServer();
+        TestingServer server = new TestingServer();
         CuratorFramework client = null;
         try {
             client = createSimple(server.getConnectString());
@@ -49,10 +49,10 @@ public class CreateClientExample {
         // using the CuratorFrameworkFactory.builder() gives fine grained control
         // over creation options. See the CuratorFrameworkFactory.Builder javadoc details
         return CuratorFrameworkFactory.builder().connectString(connectionString)
-                                      .retryPolicy(retryPolicy)
-                                      .connectionTimeoutMs(connectionTimeoutMs)
-                                      .sessionTimeoutMs(sessionTimeoutMs)
-                                      // etc. etc.
-                                      .build();
+                .retryPolicy(retryPolicy)
+                .connectionTimeoutMs(connectionTimeoutMs)
+                .sessionTimeoutMs(sessionTimeoutMs)
+                // etc. etc.
+                .build();
     }
 }

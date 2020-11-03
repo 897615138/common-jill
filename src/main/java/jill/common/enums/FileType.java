@@ -1,6 +1,3 @@
-/**
- * Copyright (C), 2012-2019, 杭州端点网络科技有限公司
- */
 package jill.common.enums;
 
 import cn.hutool.core.util.PageUtil;
@@ -27,7 +24,7 @@ public enum FileType {
     OTHER(7, "其他");
 
     private final Integer code;
-    private final String  desc;
+    private final String desc;
 
     public static FileType getEnum(int code) {
         for (FileType instance : values()) {
@@ -54,8 +51,8 @@ public enum FileType {
         int[] ints = PageUtil.transToStartEnd(2, 2);
 
 
-        for (int i = 0; i < ints.length; i++) {
-            System.out.println(ints[i]);
+        for (int anInt : ints) {
+            System.out.println(anInt);
         }
 
     }

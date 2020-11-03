@@ -12,13 +12,13 @@ import java.util.concurrent.TimeUnit;
  * @date 2020/10/22
  */
 public class ExampleClientThatLocks {
-    private final InterProcessMutex   lock;
+    private final InterProcessMutex lock;
     private final FakeLimitedResource resource;
-    private final String              clientName;
+    private final String clientName;
 
     public ExampleClientThatLocks(CuratorFramework client, String lockPath, FakeLimitedResource resource,
                                   String clientName) {
-        this.resource   = resource;
+        this.resource = resource;
         this.clientName = clientName;
         //InterProcessMutex换成不可重入锁InterProcessSemaphoreMutex
         //线程被阻塞在第二个acquire上 是不可重入的

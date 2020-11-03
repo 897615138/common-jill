@@ -8,12 +8,12 @@ import java.util.Date;
  * @author jill
  */
 public class QiTianDaSheng extends Monkey implements Cloneable, Serializable {
-    private static final long      serialVersionUID = 5196147874706471254L;
-    public               JinGuBang jinGuBang;
+    private static final long serialVersionUID = 5196147874706471254L;
+    public JinGuBang jinGuBang;
 
     public QiTianDaSheng() {
         //只是初始化
-        this.birthday  = new Date();
+        this.birthday = new Date();
         this.jinGuBang = new JinGuBang(1);
     }
 
@@ -64,7 +64,7 @@ public class QiTianDaSheng extends Monkey implements Cloneable, Serializable {
         qiTianDaSheng.weight = target.height;
 
         qiTianDaSheng.jinGuBang = target.jinGuBang;
-        qiTianDaSheng.birthday  = new Date();
+        qiTianDaSheng.birthday = new Date();
         return qiTianDaSheng;
     }
 

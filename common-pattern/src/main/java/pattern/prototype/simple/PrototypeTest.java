@@ -19,7 +19,7 @@ public class PrototypeTest {
         System.out.println(concretePrototype);
 
         // 创建Client对象，准备开始克隆
-        Client             client                 = new Client(concretePrototype);
+        Client client = new Client(concretePrototype);
         ConcretePrototypeA concretePrototypeClone = (ConcretePrototypeA) client.startClone(concretePrototype);
         System.out.println(concretePrototypeClone);
 

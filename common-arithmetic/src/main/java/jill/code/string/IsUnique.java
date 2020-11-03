@@ -20,8 +20,8 @@ import java.util.Set;
  * 如果是unicode 没有字符范围 就有很多方法了
  */
 public class IsUnique {
-    static Integer ASCII_NUMBER = 128;
-    static Integer LETTERS      = 52;
+    private static final Integer ASCII_NUMBER = 128;
+    private static final Integer LETTERS = 52;
 
     /**
      * ASCII码
@@ -30,18 +30,14 @@ public class IsUnique {
      * @param str 字符串
      * @return 是否相同
      */
-    public boolean isUnique1(String str) {
+    public static boolean isUnique1(String str) {
         //36.6
 
-        if (str.length() > ASCII_NUMBER) {
-            return false;
-        }
+        if (str.length() > ASCII_NUMBER) return false;
         int[] arr = new int[128];
         for (int i = 0; i < str.length(); i++) {
             //把字符和数组关联
-            if (arr[str.charAt(i)] != 0) {
-                return false;
-            }
+            if (arr[str.charAt(i)] != 0) return false;
             arr[str.charAt(i)]++;
         }
         return true;
@@ -54,20 +50,17 @@ public class IsUnique {
      * @param str 字符串
      * @return 是否相同
      */
-    public boolean isUnique2(String str) {
+    public static boolean isUnique2(String str) {
         //36.3
-        if (str.length() > LETTERS) {return false;}
+        if (str.length() > LETTERS) return false;
         long bits = 0;
-        int  size = str.length();
+        int size = str.length();
         for (int i = 0; i < size; i++) {
             int move = str.charAt(i) - 'A';
-            if ((bits & (1L << move)) != 0) {
-                //有重复的，直接返回false
-                return false;
-            } else {
-                //标记当前位置有这个字符
-                bits |= (1L << move);
-            }
+            //有重复的，直接返回false
+            //标记当前位置有这个字符
+            if ((bits & (1L << move)) != 0) return false;
+            else bits |= (1L << move);
         }
         return true;
     }
@@ -78,15 +71,10 @@ public class IsUnique {
      * @param str 字符串
      * @return 是否相同
      */
-    public boolean isUnique3(String str) {
+    public static boolean isUnique3(String str) {
         //36.4
-        for (int i = 0; i < str.length(); i++) {
-            for (int j = i + 1; j < str.length(); j++) {
-                if (str.charAt(i) == str.charAt(j)) {
-                    return false;
-                }
-            }
-        }
+        for (int i = 0; i < str.length(); i++)
+            for (int j = i + 1; j < str.length(); j++) if (str.charAt(i) == str.charAt(j)) return false;
         return true;
     }
 
@@ -96,15 +84,11 @@ public class IsUnique {
      * @param str 字符串
      * @return 是否相同
      */
-    public boolean isUnique4(String str) {
+    public static boolean isUnique4(String str) {
         //36.8
         Set<Character> set = new HashSet<>();
-        for (int i = 0; i < str.length(); i++) {
-            //如果有重复的直接返回false
-            if (!set.add(str.charAt(i))) {
-                return false;
-            }
-        }
+        //如果有重复的直接返回false
+        for (int i = 0; i < str.length(); i++) if (!set.add(str.charAt(i))) return false;
         return true;
     }
 
@@ -114,14 +98,12 @@ public class IsUnique {
      * @param str 字符串
      * @return 是否相同
      */
-    public boolean isUnique5(String str) {
+    public static boolean isUnique5(String str) {
         //36.3
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
             //查看后面是否有当前字符
-            if (str.indexOf(c, i + 1) != -1) {
-                return false;
-            }
+            if (str.indexOf(c, i + 1) != -1) return false;
         }
         return true;
     }
@@ -132,21 +114,19 @@ public class IsUnique {
      * @param str 字符串
      * @return 返回
      */
-    public boolean isUnique6(String str) {
+    public static boolean isUnique6(String str) {
         //36.5
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
             //判断当前字符从前面和后面索引是否相同，如果不相同，
             //说明有重复的字符，直接返回false
-            if (i != str.lastIndexOf(c)) {
-                return false;
-            }
+            if (i != str.lastIndexOf(c)) return false;
         }
         return true;
     }
 
 
-    public boolean isUnique7(String str) {
+    public static boolean isUnique7(String str) {
         //实测很慢
         return str.chars().distinct().count() == str.length();
     }

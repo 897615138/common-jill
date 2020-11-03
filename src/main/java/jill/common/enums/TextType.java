@@ -1,6 +1,3 @@
-/**
- * Copyright (C), 2012-2019, 杭州端点网络科技有限公司
- */
 package jill.common.enums;
 
 import lombok.AllArgsConstructor;

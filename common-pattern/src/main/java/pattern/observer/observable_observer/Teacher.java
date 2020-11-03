@@ -11,7 +11,7 @@ import java.util.Observer;
 public class Teacher implements Observer {
     private final String name;
 
-    public Teacher(String name) {
+    Teacher(String name) {
         this.name = name;
     }
 

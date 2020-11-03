@@ -1,18 +1,17 @@
-package pattern.proxy.dynamicproxy.jdkproxy;
+package pattern.proxy.dynamic_proxy.jdk_proxy;
 
 
 import java.lang.reflect.Method;
 
 /**
- * @author jill on 2019/3/10.
+ * @author jill
  */
 public class JDKProxyTest {
 
     public static void main(String[] args) {
         try {
-
-            Object obj = new JDKMeipo().getInstance(new Girl());
-            Method method = obj.getClass().getMethod("findLove",null);
+            Object obj = new JDKMeiPo().getInstance(new Girl());
+            Method method = obj.getClass().getMethod("findLove");
             method.invoke(obj);
 
             //obj.findLove();
@@ -23,10 +22,9 @@ public class JDKProxyTest {
 //            os.write(bytes);
 //            os.close();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
 
 
     }

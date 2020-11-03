@@ -17,6 +17,7 @@ public class StreamUtil {
      * 输入流
      */
     private InputStream inputStream;
+
     /**
      * 输入流转输出流
      *

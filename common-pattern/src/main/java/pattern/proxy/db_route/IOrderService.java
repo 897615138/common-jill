@@ -1,4 +1,4 @@
-package pattern.proxy.dbroute;
+package pattern.proxy.db_route;
 
 /**
  * @author jill

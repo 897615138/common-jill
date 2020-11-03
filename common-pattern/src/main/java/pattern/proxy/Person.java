@@ -8,5 +8,5 @@ interface Person {
     /**
      * 恋爱
      */
-    void findLove();
+    void findLove() throws Throwable;
 }

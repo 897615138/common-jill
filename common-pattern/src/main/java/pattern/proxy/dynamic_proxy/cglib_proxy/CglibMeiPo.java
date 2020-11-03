@@ -31,7 +31,8 @@ class CglibMeiPo implements MethodInterceptor {
         return enhancer.create();
     }
 
-    @Override public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy)
+    @Override
+    public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy)
             throws Throwable {
         before();
         Object obj = methodProxy.invokeSuper(o, objects);

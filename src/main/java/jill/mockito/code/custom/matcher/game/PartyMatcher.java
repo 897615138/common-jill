@@ -12,15 +12,16 @@ public class PartyMatcher<T> extends ArgumentMatcher<T> implements org.mockito.A
     private final Object value;
     private final Function<T, Object> function;
 
-    public PartyMatcher(Function<T, Object> getProperty, Object value) {
+    PartyMatcher(Function<T, Object> getProperty, Object value) {
         this.value = value;
-        this.function = getProperty;
+        function = getProperty;
     }
 
     public static <F> PartyMatcher<F> partyMatcher(Function<F, Object> getProperty, Object value) {
         return new PartyMatcher<>(getProperty, value);
     }
 
+    @Override
     public boolean matches(T o) {
         return function.apply(o).equals(value);
     }

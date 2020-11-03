@@ -4,8 +4,9 @@ import java.sql.ResultSet;
 
 /**
  * ORM映射定制化的接口
- * @author jill on 2019/3/16.
+ *
+ * @author jill
  */
 public interface RowMapper<T> {
-    T mapRow(ResultSet rs,int rowNum) throws Exception;
+    T mapRow(ResultSet rs, int rowNum) throws Exception;
 }

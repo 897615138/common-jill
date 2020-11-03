@@ -1,6 +1,3 @@
-/**
- * Copyright (C), 2012-2019, 杭州端点网络科技有限公司
- */
 package jill.common.enums;
 
 
@@ -18,7 +15,8 @@ import java.util.Objects;
 @AllArgsConstructor
 public enum ImageType {
 
-    //{"xls", "doc", "ppt", "movie", "avi", "rgb", "png", "jpe", "jpg", "jpeg", "gif", "bmp", "wav", "ra", "rm", "mp3", "mpga", "pdf"};
+    //{"xls", "doc", "ppt", "movie", "avi", "rgb", "png", "jpe", "jpg", "jpeg", "gif", "bmp", "wav", "ra", "rm", 
+    //"mp3", "mpga", "pdf"};
 
     PNG("png"),
     // JPE("jpe"),

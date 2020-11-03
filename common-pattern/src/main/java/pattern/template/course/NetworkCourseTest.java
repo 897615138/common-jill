@@ -1,17 +1,17 @@
 package pattern.template.course;
 
 /**
- * @author jill on 2019/3/16.
+ * @author jill
  */
 public class NetworkCourseTest {
     public static void main(String[] args) {
 
         System.out.println("---Java架构师课程---");
-        NetworkCourse javaCourse = new JavaCourse();
+        AbstractNetworkCourse javaCourse = new JavaCourseAbstract();
         javaCourse.createCourse();
 
         System.out.println("---大数据课程---");
-        NetworkCourse bigDataCourse = new BigDataCourse(true);
+        AbstractNetworkCourse bigDataCourse = new BigDataCourseAbstract(true);
         bigDataCourse.createCourse();
 
     }

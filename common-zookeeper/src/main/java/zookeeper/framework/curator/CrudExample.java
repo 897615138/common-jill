@@ -2,7 +2,6 @@ package zookeeper.framework.curator;
 
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.api.BackgroundCallback;
-import org.apache.curator.framework.api.CuratorEvent;
 import org.apache.curator.framework.api.CuratorListener;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.Watcher;
@@ -41,11 +40,8 @@ public class CrudExample {
 
     public static void setDataAsync(CuratorFramework client, String path, byte[] payload) throws Exception {
         // this is one method of getting event/async notifications
-        CuratorListener listener = new CuratorListener() {
-            @Override
-            public void eventReceived(CuratorFramework client, CuratorEvent event) throws Exception {
-                // examine event for details
-            }
+        CuratorListener listener = (client1, event) -> {
+            // examine event for details
         };
         client.getCuratorListenable().addListener(listener);
         // set data for the given node asynchronously. The completion
@@ -71,18 +67,11 @@ public class CrudExample {
     }
 
     public static List<String> watchedGetChildren(CuratorFramework client, String path) throws Exception {
-        /**
-         * Get children and set a watcher on the node. The watcher notification
-         * will come through the CuratorListener (see setDataAsync() above).
-         */
         return client.getChildren().watched().forPath(path);
     }
 
     public static List<String> watchedGetChildren(CuratorFramework client, String path, Watcher watcher)
             throws Exception {
-        /**
-         * Get children and set the given watcher on the node.
-         */
         return client.getChildren().usingWatcher(watcher).forPath(path);
     }
 }

@@ -32,17 +32,17 @@ public class DispatcherServlet extends HttpServlet {
     public void init() throws ServletException {
         try {
             handlerMapping.add(new Handler()
-                                       .setController(MemberController.class.newInstance())
-                                       .setMethod(MemberController.class.getMethod("getMemberById", String.class))
-                                       .setUrl("/web/getMemberById.json"));
+                    .setController(MemberController.class.newInstance())
+                    .setMethod(MemberController.class.getMethod("getMemberById", String.class))
+                    .setUrl("/web/getMemberById.json"));
             handlerMapping.add(new Handler()
-                                       .setController(OrderController.class.newInstance())
-                                       .setMethod(OrderController.class.getMethod("getOrderById", String.class))
-                                       .setUrl("/web/getOrderById.json"));
+                    .setController(OrderController.class.newInstance())
+                    .setMethod(OrderController.class.getMethod("getOrderById", String.class))
+                    .setUrl("/web/getOrderById.json"));
             handlerMapping.add(new Handler()
-                                       .setController(SystemController.class.newInstance())
-                                       .setMethod(SystemController.class.getMethod("logout"))
-                                       .setUrl("/web/logout.json"));
+                    .setController(SystemController.class.newInstance())
+                    .setMethod(SystemController.class.getMethod("logout"))
+                    .setUrl("/web/logout.json"));
         } catch (Exception ignored) {
             throw new ServletException("fail");
         }

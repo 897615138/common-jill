@@ -17,7 +17,7 @@ public
 class OrderServiceDynamicProxy implements GPInvocationHandler {
 
     private final SimpleDateFormat yearFormat = new SimpleDateFormat("yyyy");
-    private       Object           proxyObj;
+    private Object proxyObj;
 
     private static void after() {
         System.out.println("Proxy after method");
@@ -46,7 +46,7 @@ class OrderServiceDynamicProxy implements GPInvocationHandler {
             System.out.println("Proxy before method");
 
             //约定优于配置
-            Long    time     = (Long) target.getClass().getMethod("getCreateTime").invoke(target);
+            Long time = (Long) target.getClass().getMethod("getCreateTime").invoke(target);
             Integer dbRouter = Integer.valueOf(yearFormat.format(new Date(time)));
             System.out.println("静态代理类自动分配到【DB_" + dbRouter + "】数据源处理数据");
             DynamicDataSourceEntity.set(dbRouter);

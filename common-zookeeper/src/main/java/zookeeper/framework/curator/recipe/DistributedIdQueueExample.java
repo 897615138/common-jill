@@ -21,16 +21,16 @@ public class DistributedIdQueueExample {
     private static final String PATH = "/example/queue";
 
     public static void main(String[] args) throws Exception {
-        TestingServer        server = new TestingServer();
-        CuratorFramework           client = null;
-        DistributedIdQueue<String> queue  = null;
+        TestingServer server = new TestingServer();
+        CuratorFramework client = null;
+        DistributedIdQueue<String> queue = null;
         try {
             client = CuratorFrameworkFactory.newClient(server.getConnectString(), new ExponentialBackoffRetry(1000, 3));
             client.getCuratorListenable().addListener(
                     (client1, event) -> System.out.println("CuratorEvent: " + event.getType().name()));
             client.start();
             QueueConsumer<String> consumer = createQueueConsumer();
-            QueueBuilder<String>  builder  = QueueBuilder.builder(client, consumer, createQueueSerializer(), PATH);
+            QueueBuilder<String> builder = QueueBuilder.builder(client, consumer, createQueueSerializer(), PATH);
             queue = builder.buildIdQueue();
             queue.start();
 

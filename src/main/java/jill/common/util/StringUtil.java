@@ -6,7 +6,7 @@ package jill.common.util;
  * 字符串工具
  */
 public class StringUtil {
-    public static Boolean isUniqueChar(String str){
+    public static Boolean isUniqueChar(String str) {
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
             //查看后面是否有当前字符

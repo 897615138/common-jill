@@ -10,7 +10,6 @@ import org.apache.curator.framework.state.ConnectionState;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.apache.curator.test.TestingServer;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.Callable;
@@ -29,48 +28,42 @@ import java.util.concurrent.TimeUnit;
  * @date 2020/10/22
  */
 public class SharedCounterExample implements SharedCountListener {
-    private static final int    QTY  = 5;
+    private static final int QTY = 5;
     private static final String PATH = "/examples/counter";
 
-    public static void main(String[] args) throws IOException, Exception {
-        final Random         rand    = new Random();
+    public static void main(String[] args) throws Exception {
+        Random rand = new Random();
         SharedCounterExample example = new SharedCounterExample();
         try (TestingServer server = new TestingServer()) {
             CuratorFramework client =
                     CuratorFrameworkFactory.newClient(server.getConnectString(), new ExponentialBackoffRetry(1000, 3));
             client.start();
 
-            SharedCount baseCount = new SharedCount(client, PATH, 0);
-            baseCount.addListener(example);
-            baseCount.start();
+            try (SharedCount baseCount = new SharedCount(client, PATH, 0)) {
+                baseCount.addListener(example);
+                baseCount.start();
 
-            List<SharedCount> examples = Lists.newArrayList();
-            ExecutorService   service  = Executors.newFixedThreadPool(QTY);
-            for (int i = 0; i < QTY; ++i) {
-                final SharedCount count = new SharedCount(client, PATH, 0);
-                examples.add(count);
-                Callable<Void> task = new Callable<Void>() {
-
-                    @Override
-                    public Void call() throws Exception {
+                List<SharedCount> examples = Lists.newArrayList();
+                ExecutorService service = Executors.newFixedThreadPool(QTY);
+                for (int i = 0; i < QTY; ++i) {
+                    SharedCount count = new SharedCount(client, PATH, 0);
+                    examples.add(count);
+                    Callable<Void> task = () -> {
                         count.start();
                         Thread.sleep(rand.nextInt(10000));
                         System.out.println("Increment:" + count.trySetCount(count.getVersionedValue(),
-                                                                            count.getCount() + rand.nextInt(10)));
+                                count.getCount() + rand.nextInt(10)));
                         return null;
-                    }
-                };
-                service.submit(task);
+                    };
+                    service.submit(task);
+                }
+
+
+                service.shutdown();
+                service.awaitTermination(10, TimeUnit.MINUTES);
+
+                for (int i = 0; i < QTY; ++i) examples.get(i).close();
             }
-
-
-            service.shutdown();
-            service.awaitTermination(10, TimeUnit.MINUTES);
-
-            for (int i = 0; i < QTY; ++i) {
-                examples.get(i).close();
-            }
-            baseCount.close();
         }
 
     }

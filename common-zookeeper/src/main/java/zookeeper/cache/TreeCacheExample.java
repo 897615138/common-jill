@@ -1,4 +1,5 @@
 package zookeeper.cache;
+/*
 
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
@@ -20,14 +21,14 @@ import java.util.Map;
 /**
  * @author JillW
  * @date 2020/10/22
- */
+ * /
 public class TreeCacheExample {
     private static final String PATH = "/example/treeCache";
 
     public static void main(String[] args) throws Exception {
-        TestingServer    server = new TestingServer();
+        TestingServer server = new TestingServer();
         CuratorFramework client = null;
-        TreeCache        cache  = null;
+        TreeCache cache = null;
         try {
             client = CuratorFrameworkFactory.newClient(server.getConnectString(), new ExponentialBackoffRetry(1000, 3));
             client.start();
@@ -41,30 +42,27 @@ public class TreeCacheExample {
         }
     }
 
-    private static void addListener(final TreeCache cache) {
-        TreeCacheListener listener = new TreeCacheListener() {
-            @Override
-            public void childEvent(CuratorFramework client, TreeCacheEvent event) throws Exception {
-                switch (event.getType()) {
-                    case NODE_ADDED: {
-                        System.out.println(
-                                "TreeNode added: " + ZKPaths.getNodeFromPath(event.getData().getPath()) + ", value: "
-                                + new String(event.getData().getData()));
-                        break;
-                    }
-                    case NODE_UPDATED: {
-                        System.out.println(
-                                "TreeNode changed: " + ZKPaths.getNodeFromPath(event.getData().getPath()) + ", value: "
-                                + new String(event.getData().getData()));
-                        break;
-                    }
-                    case NODE_REMOVED: {
-                        System.out.println("TreeNode removed: " + ZKPaths.getNodeFromPath(event.getData().getPath()));
-                        break;
-                    }
-                    default:
-                        System.out.println("Other event: " + event.getType().name());
+    private static void addListener(TreeCache cache) {
+        TreeCacheListener listener = (client, event) -> {
+            switch (event.getType()) {
+                case TreeCacheEvent.Type.NODE_ADDED: {
+                    System.out.println(
+                            "TreeNode added: " + ZKPaths.getNodeFromPath(event.getData().getPath()) + ", value: "
+                                    + new String(event.getData().getData()));
+                    break;
                 }
+                case TreeCacheEvent.Type.NODE_UPDATED: {
+                    System.out.println(
+                            "TreeNode changed: " + ZKPaths.getNodeFromPath(event.getData().getPath()) + ", value: "
+                                    + new String(event.getData().getData()));
+                    break;
+                }
+                case TreeCacheEvent.Type.NODE_REMOVED: {
+                    System.out.println("TreeNode removed: " + ZKPaths.getNodeFromPath(event.getData().getPath()));
+                    break;
+                }
+                default:
+                    System.out.println("Other event: " + event.getType().name());
             }
         };
         cache.getListenable().addListener(listener);
@@ -75,32 +73,23 @@ public class TreeCacheExample {
         printHelp();
         try {
             addListener(cache);
-            BufferedReader in   = new BufferedReader(new InputStreamReader(System.in));
-            boolean        done = false;
+            BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+            boolean done = false;
             while (!done) {
                 System.out.print("> ");
                 String line = in.readLine();
-                if (line == null) {
-                    break;
-                }
-                String   command = line.trim();
-                String[] parts   = command.split("\\s");
-                if (parts.length == 0) {
-                    continue;
-                }
+                if (line == null) break;
+                String command = line.trim();
+                String[] parts = command.split("\\s");
+                //                    continue;
+                if (parts.length == 0) System.out.println("continue");
                 String operation = parts[0];
-                String args[]    = Arrays.copyOfRange(parts, 1, parts.length);
-                if (operation.equalsIgnoreCase("help") || operation.equalsIgnoreCase("?")) {
-                    printHelp();
-                } else if (operation.equalsIgnoreCase("q") || operation.equalsIgnoreCase("quit")) {
-                    done = true;
-                } else if (operation.equals("set")) {
-                    setValue(client, command, args);
-                } else if (operation.equals("remove")) {
-                    remove(client, command, args);
-                } else if (operation.equals("list")) {
-                    list(cache);
-                }
+                String[] args = Arrays.copyOfRange(parts, 1, parts.length);
+                if (operation.equalsIgnoreCase("help") || operation.equalsIgnoreCase("?")) printHelp();
+                else if (operation.equalsIgnoreCase("q") || operation.equalsIgnoreCase("quit")) done = true;
+                else if (operation.equals("set")) setValue(client, command, args);
+                else if (operation.equals("remove")) remove(client, command, args);
+                else if (operation.equals("list")) list(cache);
                 Thread.sleep(1000); // just to allow the console output to catch
                 // up
             }
@@ -109,13 +98,10 @@ public class TreeCacheExample {
     }
 
     private static void list(TreeCache cache) {
-        if (cache.getCurrentChildren(PATH).size() == 0) {
-            System.out.println("* empty *");
-        } else {
-            for (Map.Entry<String, ChildData> entry : cache.getCurrentChildren(PATH).entrySet()) {
+        if (cache.getCurrentChildren(PATH).size() == 0) System.out.println("* empty *");
+        else
+            for (Map.Entry<String, ChildData> entry : cache.getCurrentChildren(PATH).entrySet())
                 System.out.println(entry.getKey() + " = " + new String(entry.getValue().getData()));
-            }
-        }
     }
 
     private static void remove(CuratorFramework client, String command, String[] args) throws Exception {
@@ -146,7 +132,7 @@ public class TreeCacheExample {
             System.err.println("Invalid node name" + name);
             return;
         }
-        String path  = ZKPaths.makePath(PATH, name);
+        String path = ZKPaths.makePath(PATH, name);
         byte[] bytes = args[1].getBytes();
         try {
             client.setData().forPath(path, bytes);
@@ -165,3 +151,4 @@ public class TreeCacheExample {
         System.out.println();
     }
 }
+*/

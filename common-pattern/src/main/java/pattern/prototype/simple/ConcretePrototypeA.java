@@ -20,9 +20,9 @@ public class ConcretePrototypeA implements Prototype {
     @Override
     public ConcretePrototypeA clone() {
         ConcretePrototypeA concretePrototype = new ConcretePrototypeA();
-        concretePrototype.setAge(this.age);
-        concretePrototype.setName(this.name);
-        concretePrototype.setHobbies(this.hobbies);
+        concretePrototype.setAge(age);
+        concretePrototype.setName(name);
+        concretePrototype.setHobbies(hobbies);
         return concretePrototype;
     }
 }

@@ -28,13 +28,13 @@ public class SimpleProducer {
      */
     public void sendMessage(String topicName, String data) {
         logger.info(MessageFormat.format("开始向Kafka推送数据：主题:{0},数据:{1}",
-                                         topicName, data));
+                topicName, data));
         try {
             kafkaTemplate.send(topicName, data);
             logger.info("推送数据成功！");
         } catch (Exception e) {
             logger.error(MessageFormat.format("推送数据出错，topic:{0},data:{1}",
-                                              topicName, data));
+                    topicName, data));
         }
     }
 
@@ -46,7 +46,7 @@ public class SimpleProducer {
      */
     public void sendObjectMessage(String topicName, Object data) {
         logger.info(MessageFormat.format("开始向Kafka推送数据：主题:{0},数据:{1}",
-                                         topicName, data));
+                topicName, data));
         try {
             kafkaTemplate.send(topicName, data);
             logger.info("推送数据成功！");

@@ -9,12 +9,11 @@ import java.util.Map;
  * @author jill
  */
 public class PayStrategy {
-    public static final String ALI_PAY = "AliPay";
-    public static final String JD_PAY = "JdPay";
-    public static final String UNION_PAY = "UnionPay";
-    public static final String WECHAT_PAY = "WechatPay";
+    private static final String ALI_PAY = "AliPay";
     public static final String DEFAULT_PAY = ALI_PAY;
-
+    private static final String JD_PAY = "JdPay";
+    private static final String UNION_PAY = "UnionPay";
+    private static final String WECHAT_PAY = "WechatPay";
     private static final Map<String, AbstractPayment> PAY_STRATEGY = new HashMap<>();
 
     static {
@@ -25,9 +24,7 @@ public class PayStrategy {
     }
 
     public static AbstractPayment get(String payKey) {
-        if (!PAY_STRATEGY.containsKey(payKey)) {
-            return PAY_STRATEGY.get(DEFAULT_PAY);
-        }
+        if (!PAY_STRATEGY.containsKey(payKey)) return PAY_STRATEGY.get(DEFAULT_PAY);
         return PAY_STRATEGY.get(payKey);
     }
 }

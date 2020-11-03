@@ -17,15 +17,8 @@ import java.util.Comparator;
 @ToString
 
 public class Game {
+    Comparator<Game> comparator;
     private String type;
     private int rate;
-
-    Comparator<Game> comparator = new Comparator<Game>(){
-
-        @Override
-        public int compare(Game o1, Game o2) {
-            return 0;
-        }
-    };
 }
 

@@ -11,20 +11,20 @@ import java.lang.reflect.UndeclaredThrowableException;
 
 public
 class Proxy0 implements pattern.proxy.Person {
-    private GPInvocationHandler h;
+    private final GPInvocationHandler h;
 
     public Proxy0(GPInvocationHandler h) {
         this.h = h;
     }
 
     @Override
-    public void findLove() {
+    public void findLove() throws Throwable {
         try {
             Method m = pattern.proxy.Person.class.getMethod("findLove");
             h.invoke(this, m, new Object[]{});
-        } catch (Error ignored) {
-        } catch (Throwable e) {
-            throw new UndeclaredThrowableException(e);
+        } catch (Exception throwable) {
+            throwable.printStackTrace();
+            throw new UndeclaredThrowableException(throwable);
         }
     }
 }
