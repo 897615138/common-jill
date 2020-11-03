@@ -104,7 +104,7 @@ public class ExcelUtil {
             fileStream = new FileInputStream(filePath);
             ExcelListener excelListener = new ExcelListener();
             EasyExcel.read(fileStream, excelListener).sheet(sheet.getSheetNo()).doRead();
-            return excelListener.getDatas();
+            return excelListener.getData();
         } catch (FileNotFoundException e) {
             log.error("找不到文件或文件路径错误, 文件：{}", filePath);
         } finally {
@@ -118,7 +118,7 @@ public class ExcelUtil {
     }
 
     /**
-     * 生成excle
+     * 生成excel
      *
      * @param filePath 绝对路径, 如：/home/jill/Downloads/aaa.xlsx
      * @param data     数据源
@@ -129,7 +129,7 @@ public class ExcelUtil {
     }
 
     /**
-     * 生成excle
+     * 生成excel
      *
      * @param filePath 绝对路径, 如：/home/jill/Downloads/aaa.xlsx
      * @param data     数据源
@@ -169,7 +169,7 @@ public class ExcelUtil {
 
 
     /**
-     * 生成excle
+     * 生成excel
      *
      * @param filePath 绝对路径, 如：/home/jill/Downloads/aaa.xlsx
      * @param data     数据源
@@ -179,11 +179,11 @@ public class ExcelUtil {
     }
 
     /**
-     * 生成excle
+     * 生成excel
      *
      * @param filePath 绝对路径, 如：/home/jill/Downloads/aaa.xlsx
      * @param data     数据源
-     * @param sheet    excle页面样式
+     * @param sheet    excel页面样式
      */
     private static void writeWithTemplateAndReadSheet(String filePath, List<? extends BaseRowModel> data,
                                                       WriteSheet sheet) {
@@ -213,7 +213,7 @@ public class ExcelUtil {
     }
 
     /**
-     * 生成多ReadSheet的excle
+     * 生成多ReadSheet的excel
      *
      * @param filePath                绝对路径, 如：/home/jill/Downloads/aaa.xlsx
      * @param multipleSheetProperties m
@@ -225,12 +225,12 @@ public class ExcelUtil {
         try {
             outputStream = new FileOutputStream(filePath);
             writer = EasyExcelFactory.getWriter(outputStream);
-            for (MultipleSheetProperty multipleSheelPropety : multipleSheetProperties) {
+            for (MultipleSheetProperty multipleSheelaProphet : multipleSheetProperties) {
                 WriteSheet sheet =
-                        multipleSheelPropety.getSheet() != null ? multipleSheelPropety.getSheet() : initWriteSheet;
-                if (!CollectionUtil.isEmpty(multipleSheelPropety.getData()))
-                    sheet.setClazz(multipleSheelPropety.getData().get(0).getClass());
-                writer.write(multipleSheelPropety.getData(), sheet);
+                        multipleSheelaProphet.getSheet() != null ? multipleSheelaProphet.getSheet() : initWriteSheet;
+                if (!CollectionUtil.isEmpty(multipleSheelaProphet.getData()))
+                    sheet.setClazz(multipleSheelaProphet.getData().get(0).getClass());
+                writer.write(multipleSheelaProphet.getData(), sheet);
             }
 
         } catch (FileNotFoundException e) {
@@ -241,7 +241,7 @@ public class ExcelUtil {
 
                 if (outputStream != null) outputStream.close();
             } catch (IOException e) {
-                log.error("excel文件导出失败, 失败原因：{}", e);
+                log.error("excel文件导出失败, 失败原因：{}", e.getMessage());
             }
         }
 
@@ -267,7 +267,7 @@ public class ExcelUtil {
     @Setter
     public static class ExcelListener extends AnalysisEventListener {
 
-        private List<Object> datas = new ArrayList<>();
+        private List<Object> data = new ArrayList<>();
 
         /**
          * 逐行解析
@@ -277,7 +277,7 @@ public class ExcelUtil {
         public void invoke(Object object, AnalysisContext context) {
             //当前行
             // context.getCurrentRowNum()
-            if (object != null) datas.add(object);
+            if (object != null) data.add(object);
         }
 
 

@@ -7,8 +7,8 @@ public class BigDataCourseAbstract extends AbstractNetworkCourse {
 
     private final boolean needHomeworkFlag;
 
-    BigDataCourseAbstract(boolean needHomeworkFlag) {
-        this.needHomeworkFlag = needHomeworkFlag;
+    BigDataCourseAbstract() {
+        needHomeworkFlag = true;
     }
 
     @Override

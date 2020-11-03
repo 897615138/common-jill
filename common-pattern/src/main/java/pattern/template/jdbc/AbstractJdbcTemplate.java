@@ -48,14 +48,14 @@ public abstract class AbstractJdbcTemplate {
         return conn.prepareStatement(sql);
     }
 
-    protected List<?> executeQuery(String sql, RowMapper<?> rowMapper, Object[] values) {
+    protected List<?> executeQuery(RowMapper<?> rowMapper) {
         try {
             //1、获取连接
             Connection conn = getConnection();
             //2、创建语句集
-            PreparedStatement pstm = createPrepareStatement(conn, sql);
+            PreparedStatement pstm = createPrepareStatement(conn, "select * from t_member");
             //3、执行语句集
-            ResultSet rs = executeQuery(pstm, values);
+            ResultSet rs = executeQuery(pstm, null);
             //4、处理结果集
             List<?> result = paresResultSet(rs, rowMapper);
             //5、关闭结果集

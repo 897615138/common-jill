@@ -13,7 +13,6 @@ import java.util.concurrent.TimeUnit;
  * @date 2020/10/22
  */
 public class ExampleClientReadWriteLocks {
-    private final InterProcessReadWriteLock lock;
     private final InterProcessMutex readLock;
     private final InterProcessMutex writeLock;
     private final FakeLimitedResource resource;
@@ -23,20 +22,18 @@ public class ExampleClientReadWriteLocks {
                                        String clientName) {
         this.resource = resource;
         this.clientName = clientName;
-        lock = new InterProcessReadWriteLock(client, lockPath);
+        InterProcessReadWriteLock lock = new InterProcessReadWriteLock(client, lockPath);
         readLock = lock.readLock();
         writeLock = lock.writeLock();
     }
 
     public void doWork(long time, TimeUnit unit) throws Exception {
-        if (!writeLock.acquire(time, unit)) {
+        if (!writeLock.acquire(time, unit))
             throw new IllegalStateException(clientName + " could not acquire the writeLock");
-        }
         System.out.println(clientName + " has the writeLock");
 
-        if (!readLock.acquire(time, unit)) {
+        if (!readLock.acquire(time, unit))
             throw new IllegalStateException(clientName + " could not acquire the readLock");
-        }
         System.out.println(clientName + " has the readLock too");
 
         try {

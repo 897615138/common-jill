@@ -3,7 +3,7 @@ package pattern.decorator.passport.old;
 /**
  * @author jill
  */
-public interface ISigninService {
+public interface ISignInService {
     ResultMsg regist(String username, String password);
 
 

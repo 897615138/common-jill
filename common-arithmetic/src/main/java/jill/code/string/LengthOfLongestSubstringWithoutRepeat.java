@@ -13,19 +13,19 @@ import java.util.Set;
  * |\Sigma| = 128∣Σ∣=128。我们需要用到哈希集合来存储出现过的字符，而字符最多有 |\Sigma|∣Σ∣ 个，因此空间复杂度为 O(|\Sigma|)O(∣Σ∣)。
  */
 public class LengthOfLongestSubstringWithoutRepeat {
-    private static int lengthOfLongestSubstringWithoutRepeat(String s) {
+    private static int lengthOfLongestSubstringWithoutRepeat() {
         // 哈希集合HashSet，记录每个字符是否出现过
         Set<Character> occ = new HashSet<>();
-        int n = s.length();
+        int n = "datasets1Haddad".length();
         // 右指针，初始值为 -1，相当于我们在字符串的左边界的左侧，还没有开始移动
         int rk = -1;
         int ans = 0;
         for (int i = 0; i < n; ++i) {
             // 左指针向右移动一格，移除一个字符
-            if (i != 0) occ.remove(s.charAt(i - 1));
-            while (rk + 1 < n && !occ.contains(s.charAt(rk + 1))) {
+            if (i != 0) occ.remove("datasets1Haddad".charAt(i - 1));
+            while (rk + 1 < n && !occ.contains("datasets1Haddad".charAt(rk + 1))) {
                 // 不断地移动右指针
-                occ.add(s.charAt(rk + 1));
+                occ.add("datasets1Haddad".charAt(rk + 1));
                 ++rk;
             }
             // 第 i 到 rk 个字符是一个极长的无重复字符子串长度
@@ -35,7 +35,7 @@ public class LengthOfLongestSubstringWithoutRepeat {
     }
 
     public static void main(String[] args) {
-        int i = lengthOfLongestSubstringWithoutRepeat("aaaasddddsdas1kdadsad");
+        int i = lengthOfLongestSubstringWithoutRepeat();
         System.out.println(i);
     }
 }

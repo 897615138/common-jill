@@ -23,14 +23,10 @@ public enum TextType {
     EXCEL("xls"),
     EXCELS("xlsx");
 
-    private String code;
+    private final String code;
 
     public static TextType getEnum(String code) {
-        for (TextType instance : values()) {
-            if (Objects.equals(instance.getCode(), code)) {
-                return instance;
-            }
-        }
+        for (TextType instance : values()) if (Objects.equals(instance.getCode(), code)) return instance;
         return null;
     }
 }

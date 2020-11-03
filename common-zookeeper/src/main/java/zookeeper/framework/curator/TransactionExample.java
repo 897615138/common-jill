@@ -24,9 +24,8 @@ public class TransactionExample {
                         .and().delete().forPath("/yet/another/path")
                         .and().commit(); // IMPORTANT!
         // called
-        for (CuratorTransactionResult result : results) {
+        for (CuratorTransactionResult result : results)
             System.out.println(result.getForPath() + " - " + result.getType());
-        }
         return results;
     }
 

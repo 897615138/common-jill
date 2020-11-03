@@ -15,7 +15,19 @@ public class EventListener {
     /**
      * JDK底层的Listener通常也是这样来设计的
      */
-    protected Map<String, Event> events = new HashMap<>();
+    private final Map<String, Event> events = new HashMap<>();
+
+    /**
+     * 逻辑处理的私有方法，首字母大写
+     *
+     * @param str 字符串
+     * @return 首字母大写
+     */
+    private static String toUpperFirstCase(String str) {
+        char[] chars = str.toCharArray();
+        chars[0] -= 32;
+        return String.valueOf(chars);
+    }
 
     /**
      * 事件名称和一个目标对象来触发事件
@@ -25,7 +37,7 @@ public class EventListener {
      */
     public void addListener(String eventType, Object target) {
         try {
-            this.addListener(
+            addListener(
                     eventType,
                     target,
                     target.getClass().getMethod("on" + toUpperFirstCase(eventType), Event.class));
@@ -34,11 +46,10 @@ public class EventListener {
         }
     }
 
-    public void addListener(String eventType, Object target, Method callback) {
+    private void addListener(String eventType, Object target, Method callback) {
         //注册事件
         events.put(eventType, new Event(target, callback));
     }
-
 
     /**
      * 触发，只要有动作就触发
@@ -51,10 +62,8 @@ public class EventListener {
 
         try {
             //发起回调
-            if (event.getCallback() != null) {
-                //用反射调用它的回调函数
-                event.getCallback().invoke(event.getTarget(), event);
-            }
+            //用反射调用它的回调函数
+            if (event.getCallback() != null) event.getCallback().invoke(event.getTarget(), event);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -66,22 +75,8 @@ public class EventListener {
      * @param trigger 触发器
      */
     protected void trigger(String trigger) {
-        if (!this.events.containsKey(trigger)) {
-            return;
-        }
-        trigger(this.events.get(trigger).setTrigger(trigger));
-    }
-
-    /**
-     * 逻辑处理的私有方法，首字母大写
-     *
-     * @param str 字符串
-     * @return 首字母大写
-     */
-    private String toUpperFirstCase(String str) {
-        char[] chars = str.toCharArray();
-        chars[0] -= 32;
-        return String.valueOf(chars);
+        if (!events.containsKey(trigger)) return;
+        trigger(events.get(trigger).setTrigger(trigger));
     }
 
 }

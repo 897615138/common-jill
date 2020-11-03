@@ -9,7 +9,7 @@ public abstract class AbstractPancakeDecorator extends AbstractPancake {
      */
     private final AbstractPancake pancake;
 
-    public AbstractPancakeDecorator(AbstractPancake pancake) {
+    AbstractPancakeDecorator(AbstractPancake pancake) {
         this.pancake = pancake;
     }
 

@@ -11,7 +11,7 @@ public class NetworkCourseTest {
         javaCourse.createCourse();
 
         System.out.println("---大数据课程---");
-        AbstractNetworkCourse bigDataCourse = new BigDataCourseAbstract(true);
+        AbstractNetworkCourse bigDataCourse = new BigDataCourseAbstract();
         bigDataCourse.createCourse();
 
     }

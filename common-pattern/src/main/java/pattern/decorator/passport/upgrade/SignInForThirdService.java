@@ -1,28 +1,28 @@
 package pattern.decorator.passport.upgrade;
 
 
-import pattern.decorator.passport.old.ISigninService;
+import pattern.decorator.passport.old.ISignInService;
 import pattern.decorator.passport.old.ResultMsg;
 
 /**
- * @author jill on 2019/3/17.
+ * @author jill
  */
-public class SiginForThirdService implements ISiginForThirdService {
+public class SignInForThirdService implements ISignInForThirdService {
 
-    private final ISigninService signinService;
+    private final ISignInService signInService;
 
-    public SiginForThirdService(ISigninService signinService) {
-        this.signinService = signinService;
+    public SignInForThirdService(ISignInService signInService) {
+        this.signInService = signInService;
     }
 
     @Override
     public ResultMsg regist(String username, String password) {
-        return signinService.regist(username, password);
+        return signInService.regist(username, password);
     }
 
     @Override
     public ResultMsg login(String username, String password) {
-        return signinService.login(username, password);
+        return signInService.login(username, password);
     }
 
     @Override

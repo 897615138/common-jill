@@ -60,7 +60,7 @@ public class DiscoveryExample {
         try {
             BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
             boolean done = false;
-            if (!done) do {
+            do {
                 System.out.print("> ");
                 String line = in.readLine();
                 if (line == null) break;
@@ -74,8 +74,7 @@ public class DiscoveryExample {
                 else if (operation.equalsIgnoreCase("q") || operation.equalsIgnoreCase("quit")) done = true;
                 else if (operation.equals("add")) addInstance(args, client, command, servers);
                 else if (operation.equals("delete")) deleteInstance(args, command, servers);
-                else if (operation.equals("random"))
-                    listRandomInstance(args, serviceDiscovery, providers, command);
+                else if (operation.equals("random")) listRandomInstance(args, serviceDiscovery, providers, command);
                 else if (operation.equals("list")) listInstances(serviceDiscovery);
             } while (!done);
         } finally {
@@ -137,7 +136,7 @@ public class DiscoveryExample {
             return;
         }
         String serviceName = args[0];
-        ExampleServer server = servers.stream().filter(server1 -> server1.getThisInstance().getName().endsWith(serviceName)).findFirst().orElseGet(() -> null);
+        ExampleServer server = servers.stream().filter(server1 -> server1.getThisInstance().getName().endsWith(serviceName)).findFirst().orElse(null);
         if (server == null) {
             System.err.println("No servers found named: " + serviceName);
             return;
