@@ -70,12 +70,27 @@ public class DiscoveryExample {
                 if (parts.length == 0) System.out.println("continue");
                 String operation = parts[0];
                 String[] args = Arrays.copyOfRange(parts, 1, parts.length);
-                if (operation.equalsIgnoreCase("help") || operation.equalsIgnoreCase("?")) printHelp();
-                else if (operation.equalsIgnoreCase("q") || operation.equalsIgnoreCase("quit")) done = true;
-                else if (operation.equals("add")) addInstance(args, client, command, servers);
-                else if (operation.equals("delete")) deleteInstance(args, command, servers);
-                else if (operation.equals("random")) listRandomInstance(args, serviceDiscovery, providers, command);
-                else if (operation.equals("list")) listInstances(serviceDiscovery);
+                if ("help".equalsIgnoreCase(operation) || "?".equalsIgnoreCase(operation)) printHelp();
+                else
+                    if ("q".equalsIgnoreCase(operation) || "quit".equalsIgnoreCase(operation)) {
+                        done = true;
+                    } else {
+                        if ("add".equals(operation)) {
+                            addInstance(args, client, command, servers);
+                        } else {
+                            if ("delete".equals(operation)) {
+                                deleteInstance(args, command, servers);
+                            } else {
+                                if ("random".equals(operation)) {
+                                    listRandomInstance(args, serviceDiscovery, providers, command);
+                                } else {
+                                    if ("list".equals(operation)) {
+                                        listInstances(serviceDiscovery);
+                                    }
+                                }
+                            }
+                        }
+                    }
             } while (!done);
         } finally {
             for (ExampleServer server : servers) CloseableUtils.closeQuietly(server);

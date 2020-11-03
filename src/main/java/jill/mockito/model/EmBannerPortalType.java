@@ -41,7 +41,10 @@ public enum EmBannerPortalType {
      * @throws IllegalArgumentException 如果 code 没有对应的 StatusEnum 。
      */
     public static EmBannerPortalType findEnum(String code) {
-        for (EmBannerPortalType obj : values()) if (obj.getCode().equals(code)) return obj;
+        for (EmBannerPortalType obj : values())
+            if (obj.getCode().equals(code)) {
+                return obj;
+            }
         throw new IllegalArgumentException("ResultInfo EmBannerPictureType not legal:" + code);
     }
 }

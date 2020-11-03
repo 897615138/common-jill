@@ -39,13 +39,12 @@ public abstract class AbstractJdbcTemplate {
         return result;
     }
 
-    private static ResultSet executeQuery(PreparedStatement pstm, Object[] values) throws Exception {
-        for (int i = 0; i < values.length; i++) pstm.setObject(i, values[i]);
+    private static ResultSet executeQuery(PreparedStatement pstm) throws Exception {
         return pstm.executeQuery();
     }
 
-    private static PreparedStatement createPrepareStatement(Connection conn, String sql) throws Exception {
-        return conn.prepareStatement(sql);
+    private static PreparedStatement createPrepareStatement(Connection conn) throws Exception {
+        return conn.prepareStatement("select * from t_member");
     }
 
     protected List<?> executeQuery(RowMapper<?> rowMapper) {
@@ -53,9 +52,9 @@ public abstract class AbstractJdbcTemplate {
             //1、获取连接
             Connection conn = getConnection();
             //2、创建语句集
-            PreparedStatement pstm = createPrepareStatement(conn, "select * from t_member");
+            PreparedStatement pstm = createPrepareStatement(conn);
             //3、执行语句集
-            ResultSet rs = executeQuery(pstm, null);
+            ResultSet rs = executeQuery(pstm);
             //4、处理结果集
             List<?> result = paresResultSet(rs, rowMapper);
             //5、关闭结果集
