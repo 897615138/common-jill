@@ -20,7 +20,10 @@ public enum GifType {
     private final String code;
 
     public static GifType getEnum(String code) {
-        for (GifType instance : values()) if (Objects.equals(instance.getCode(), code)) return instance;
+        for (GifType instance : values())
+            if (Objects.equals(instance.getCode(), code)) {
+                return instance;
+            }
         return null;
         // throw new IllegalArgumentException("unexpected CmsImageType value: " + code);
     }

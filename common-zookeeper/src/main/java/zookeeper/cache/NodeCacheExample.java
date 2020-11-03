@@ -68,10 +68,22 @@ public class NodeCacheExample {
                     String operation = parts[0];
                     String[] args = Arrays.copyOfRange(parts, 1, parts.length);
                     if ("help".equalsIgnoreCase(operation) || "?".equalsIgnoreCase(operation)) printHelp();
-                    else if ("q".equalsIgnoreCase(operation) || "quit".equalsIgnoreCase(operation)) done = true;
-                    else if ("set".equals(operation)) setValue(client, command, args);
-                    else if ("remove".equals(operation)) remove(client);
-                    else if ("show".equals(operation)) show(cache);
+                    else
+                        if ("q".equalsIgnoreCase(operation) || "quit".equalsIgnoreCase(operation)) {
+                            done = true;
+                        } else {
+                            if ("set".equals(operation)) {
+                                setValue(client, command, args);
+                            } else {
+                                if ("remove".equals(operation)) {
+                                    remove(client);
+                                } else {
+                                    if ("show".equals(operation)) {
+                                        show(cache);
+                                    }
+                                }
+                            }
+                        }
                 }
 //                Thread.sleep(1000); // just to allow the console output to catch
                 // up

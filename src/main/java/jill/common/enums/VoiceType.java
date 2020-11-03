@@ -23,7 +23,10 @@ public enum VoiceType {
     private final String code;
 
     public static VoiceType getEnum(String code) {
-        for (VoiceType instance : values()) if (Objects.equals(instance.getCode(), code)) return instance;
+        for (VoiceType instance : values())
+            if (Objects.equals(instance.getCode(), code)) {
+                return instance;
+            }
         return null;
         // throw new IllegalArgumentException("unexpected VoiceType value: " + code);
     }
