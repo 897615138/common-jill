@@ -8,11 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="common-arithmetic" />
-        <module name="common-pattern" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="common-arithmetic" target="8" />
       <module name="common-kafka" target="8" />
+      <module name="common-pattern" target="8" />
       <module name="common-zookeeper" target="1.8" />
     </bytecodeTargetLevel>
   </component>
