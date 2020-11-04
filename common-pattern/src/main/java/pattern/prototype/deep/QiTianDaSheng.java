@@ -3,6 +3,7 @@ package pattern.prototype.deep;
 
 import java.io.*;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * @author jill
@@ -18,36 +19,49 @@ public class QiTianDaSheng extends Monkey implements Cloneable, Serializable {
     }
 
     @Override
-    protected Object clone() {
+    public Object clone() {
         return this.deepClone();
     }
 
 
     public Object deepClone() {
+
+        //字节数组输出流
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        //根据字节数组输出流产生对象输出流
+        ObjectOutputStream oos = null;
         try {
-
-            //字节数组输出流
-            ByteArrayOutputStream bos = new ByteArrayOutputStream();
-            //根据字节数组输出流产生对象输出流
-            ObjectOutputStream oos = new ObjectOutputStream(bos);
-            //对象输出流写入当前对象
-            oos.writeObject(this);
-            //根据字节数组输出流转化的字节数组产生字节数组输入流
-            ByteArrayInputStream bis = new ByteArrayInputStream(bos.toByteArray());
-            //根据字节数组输入流生成对象输入流
-            ObjectInputStream ois = new ObjectInputStream(bis);
-
-            //从对象输入流里获得对象
-            QiTianDaSheng copy = (QiTianDaSheng) ois.readObject();
-            //记录深拷贝的时间
-            copy.birthday = new Date();
-            return copy;
-
-        } catch (Exception e) {
+            oos = new ObjectOutputStream(bos);
+        } catch (IOException e) {
             e.printStackTrace();
-            return null;
+        }
+        //对象输出流写入当前对象
+        try {
+            Objects.requireNonNull(oos).writeObject(this);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
+        //根据字节数组输出流转化的字节数组产生字节数组输入流
+        ByteArrayInputStream bis = new ByteArrayInputStream(bos.toByteArray());
+        //根据字节数组输入流生成对象输入流
+        ObjectInputStream ois = null;
+        try {
+            ois = new ObjectInputStream(bis);
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+
+        //从对象输入流里获得对象
+        QiTianDaSheng copy = null;
+        try {
+            copy = (QiTianDaSheng) Objects.requireNonNull(ois).readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        //记录深拷贝的时间
+        Objects.requireNonNull(copy).birthday = new Date();
+        return copy;
     }
 
     /**

@@ -1,8 +1,13 @@
 package pattern.proxy.db;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 /**
  * @author jill
  */
+@AllArgsConstructor
+@NoArgsConstructor
 public class OrderServiceImpl implements IOrderService {
 
     /**

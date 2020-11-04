@@ -95,7 +95,7 @@ public class NodeCacheExample {
 
     private static void show(NodeCache cache) {
         if (cache.getCurrentData() != null)
-            System.out.println(cache.getCurrentData().getPath() + " = " + new String(cache.getCurrentData().getData()));
+            System.out.println(cache.getCurrentData().getPath() + " = " + cache.getCurrentData().getData());
         else
             System.out.println("zookeeper.cache don't set a value");
     }

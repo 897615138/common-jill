@@ -25,7 +25,7 @@ public class CreateClientExample {
 
             client = createWithOptions(server.getConnectString(), new ExponentialBackoffRetry(1000, 3), 1000, 1000);
             client.start();
-            System.out.println(new String(client.getData().forPath(PATH)));
+            System.out.println(client.getData().forPath(PATH));
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
