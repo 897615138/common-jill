@@ -1,6 +1,6 @@
 package jill.common.util;
 //
-//import jill.common.consts.CodeConstants;
+//import jill.common.consts.CodeConstant;
 //import org.apache.commons.lang3.StringUtils;
 //import org.apache.http.HttpResponse;
 //import org.apache.http.NameValuePair;
@@ -74,8 +74,8 @@ package jill.common.util;
 //            for (String key : bodes.keySet()) {
 //                nameValuePairList.add(new BasicNameValuePair(key, bodes.get(key)));
 //            }
-//            UrlEncodedFormEntity formEntity = new UrlEncodedFormEntity(nameValuePairList, CodeConstants.CHAR_SET);
-//            formEntity.setContentType(CodeConstants.CONTENT_TYPE);
+//            UrlEncodedFormEntity formEntity = new UrlEncodedFormEntity(nameValuePairList, CodeConstant.CHAR_SET);
+//            formEntity.setContentType(CodeConstant.CONTENT_TYPE);
 //            request.setEntity(formEntity);
 //        }
 //
@@ -95,7 +95,7 @@ package jill.common.util;
 //        }
 //
 //        if (StringUtils.isNotBlank(body)) {
-//            request.setEntity(new StringEntity(body, CodeConstants.CHAR_SET));
+//            request.setEntity(new StringEntity(body, CodeConstant.CHAR_SET));
 //        }
 //
 //        return httpClient.execute(request);
@@ -135,7 +135,7 @@ package jill.common.util;
 //        }
 //
 //        if (StringUtils.isNotBlank(body)) {
-//            request.setEntity(new StringEntity(body, CodeConstants.CHAR_SET));
+//            request.setEntity(new StringEntity(body, CodeConstant.CHAR_SET));
 //        }
 //
 //        return httpClient.execute(request);
@@ -196,7 +196,7 @@ package jill.common.util;
 //                    sbQuery.append(queryT.getKey());
 //                    if (!StringUtils.isBlank(queryT.getValue())) {
 //                        sbQuery.append("=");
-//                        sbQuery.append(URLEncoder.encode(queryT.getValue(), CodeConstants.CHAR_SET));
+//                        sbQuery.append(URLEncoder.encode(queryT.getValue(), CodeConstant.CHAR_SET));
 //                    }
 //                }
 //            }
@@ -210,7 +210,7 @@ package jill.common.util;
 //
 //    private static HttpClient wrapClient(String host) {
 //        HttpClient httpClient = new DefaultHttpClient();
-//        if (host.startsWith(CodeConstants.WEB_PREFIX_TWO)) {
+//        if (host.startsWith(CodeConstant.WEB_PREFIX_TWO)) {
 //            sslClient(httpClient);
 //        }
 //

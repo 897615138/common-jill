@@ -6,7 +6,7 @@ import jill.mockito.model.TestModel;
 
 import java.util.LinkedList;
 
-import static jill.common.consts.LogConstants.log;
+import static jill.common.constant.LogConstant.log;
 import static org.mockito.Mockito.*;
 
 /**

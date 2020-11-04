@@ -3,7 +3,7 @@ package jill.common.util;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static jill.common.consts.LogConstants.log;
+import static jill.common.constant.LogConstant.log;
 
 public class IpUtilTest {
     @Test

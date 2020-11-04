@@ -2,7 +2,7 @@ package jill.mockito.code.custom.matcher.game;
 
 import jill.mockito.model.Game;
 
-import static jill.common.consts.LogConstants.log;
+import static jill.common.constant.LogConstant.log;
 
 /**
  * @author JillW

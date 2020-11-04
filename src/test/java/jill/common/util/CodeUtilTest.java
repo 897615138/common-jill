@@ -4,7 +4,7 @@ import cn.hutool.core.util.CharsetUtil;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static jill.common.consts.LogConstants.log;
+import static jill.common.constant.LogConstant.log;
 
 public class CodeUtilTest {
     private static final String TEST = "test";

@@ -1,12 +1,12 @@
 package jill.common.util;
 
-import jill.common.consts.CodeConstants;
+import jill.common.constant.CodeConstant;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.util.UUID;
 
-import static jill.common.consts.LogConstants.log;
+import static jill.common.constant.LogConstant.log;
 
 
 /**
@@ -19,7 +19,7 @@ public class CodeUtil {
      * @return uuid
      */
     public static String genUuid() {
-        String uuid = UUID.randomUUID().toString().replaceAll(CodeConstants.DASH, CodeConstants.NULL);
+        String uuid = UUID.randomUUID().toString().replaceAll(CodeConstant.DASH, CodeConstant.NULL);
         return uuid.toLowerCase();
     }
 

@@ -4,7 +4,7 @@ import org.mockito.InOrder;
 
 import java.util.LinkedList;
 
-import static jill.common.consts.LogConstants.log;
+import static jill.common.constant.LogConstant.log;
 import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.mock;
 

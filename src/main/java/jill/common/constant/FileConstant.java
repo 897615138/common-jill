@@ -1,9 +1,9 @@
-package jill.common.consts;
+package jill.common.constant;
 
 /**
  * @author jill
  */
-public class FileConstants {
+public class FileConstant {
     public static final String DOT = ".";
     public static final Long DEFAULT_IMAGE_SIZE = 20 * 1024 * 1024L;
     public static final Long DEFAULT_GIF_SIZE = 100 * 1024 * 1024L;

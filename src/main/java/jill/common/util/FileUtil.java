@@ -2,7 +2,7 @@ package jill.common.util;
 //
 //import cn.hutool.core.date.format.FastDateFormat;
 //import cn.hutool.core.util.StrUtil;
-//import jill.common.consts.FileConstants;
+//import jill.common.consts.FileConstant;
 //import jill.common.enums.*;
 //
 //import java.util.Date;
@@ -20,8 +20,8 @@ package jill.common.util;
 //     */
 //    static String getFileName(String fileName) {
 //        String ext = "";
-//        if (StrUtil.isNotEmpty(fileName) && fileName.contains(FileConstants.DOT))
-//            ext = fileName.substring(0, fileName.lastIndexOf(FileConstants.DOT));
+//        if (StrUtil.isNotEmpty(fileName) && fileName.contains(FileConstant.DOT))
+//            ext = fileName.substring(0, fileName.lastIndexOf(FileConstant.DOT));
 //        return ext;
 //    }
 //
@@ -33,9 +33,9 @@ package jill.common.util;
 //     */
 //    static String getFileExt(String fileName) {
 //        String ext = "";
-//        if (StrUtil.isNotEmpty(fileName) && fileName.contains(FileConstants.DOT) &&
-//                !fileName.endsWith(FileConstants.DOT))
-//            ext = fileName.substring(fileName.lastIndexOf(FileConstants.DOT) + 1);
+//        if (StrUtil.isNotEmpty(fileName) && fileName.contains(FileConstant.DOT) &&
+//                !fileName.endsWith(FileConstant.DOT))
+//            ext = fileName.substring(fileName.lastIndexOf(FileConstant.DOT) + 1);
 //        return ext;
 //    }
 //
@@ -78,19 +78,19 @@ package jill.common.util;
 //        if (Objects.isNull(fileType)) return false;
 //        switch (fileType) {
 //            case FileType.GIF:
-//                if (size > FileConstants.DEFAULT_GIF_SIZE) return true;
+//                if (size > FileConstant.DEFAULT_GIF_SIZE) return true;
 //                break;
 //            case FileType.IMG:
-//                if (size > FileConstants.DEFAULT_IMAGE_SIZE) return true;
+//                if (size > FileConstant.DEFAULT_IMAGE_SIZE) return true;
 //                break;
 //            case FileType.TEXT:
-//                if (size > FileConstants.DEFAULT_TEXT_SIZE) return true;
+//                if (size > FileConstant.DEFAULT_TEXT_SIZE) return true;
 //                break;
 //            case FileType.VIDEO:
-//                if (size > FileConstants.DEFAULT_VIDEO_SIZE) return true;
+//                if (size > FileConstant.DEFAULT_VIDEO_SIZE) return true;
 //                break;
 //            case FileType.VOICE:
-//                if (size > FileConstants.DEFAULT_VOICE_SIZE) return true;
+//                if (size > FileConstant.DEFAULT_VOICE_SIZE) return true;
 //                break;
 //            default:
 //                break;
@@ -106,9 +106,9 @@ package jill.common.util;
 //    static String getOssFileKey(String fileName) {
 //        if (StrUtil.isBlank(fileName)) throw new IllegalArgumentException("arguments is null");
 //        //这里不能直接加
-//        return FileConstants.SYS_PACKAGE + (String) FileConstants.PACKAGE_SEPARATION +
+//        return FileConstant.SYS_PACKAGE + (String) FileConstant.PACKAGE_SEPARATION +
 //                FastDateFormat.getInstance("yyyy-MM-dd").format(new Date()) +
-//                FileConstants.PACKAGE_SEPARATION +
+//                FileConstant.PACKAGE_SEPARATION +
 //                fileName;
 //    }
 //

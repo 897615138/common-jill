@@ -1,9 +1,9 @@
-package jill.common.consts;
+package jill.common.constant;
 
 /**
  * @author jill
  */
-public class CodeConstants {
+public class CodeConstant {
     public static final String DASH = "-";
     public static final String NULL = "";
     public static final String CONTENT_TYPE = "application/x-www-form-urlencoded; charset=UTF-8";
