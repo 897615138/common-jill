@@ -14,7 +14,7 @@ import static org.mockito.Mockito.*;
 public class Foo {
     public static void main(String[] args) {
         //创建mock对象
-        LinkedList<String> mockedList = mock(LinkedList.class);
+        LinkedList mockedList = mock(LinkedList.class);
         log.info("ok");
         //Creates mock with different default answer & name
         //用不同的默认结果和名字去创建`mock`

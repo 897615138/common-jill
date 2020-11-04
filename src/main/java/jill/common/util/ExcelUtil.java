@@ -24,6 +24,7 @@ import java.util.List;
 /**
  * @author jill
  */
+@SuppressWarnings("ALL")
 @Slf4j
 public class ExcelUtil {
     private static final ReadSheet initReadSheet;
@@ -250,6 +251,7 @@ public class ExcelUtil {
 
     /*********************匿名内部类开始，可以提取出去******************************/
 
+    @SuppressWarnings("deprecation")
     @Data
     private static class MultipleSheetProperty {
 

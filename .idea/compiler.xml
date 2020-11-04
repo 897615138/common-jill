@@ -9,11 +9,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="common-arithmetic" />
         <module name="common-pattern" />
-        <module name="common-zookeeper" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="common-kafka" target="8" />
+      <module name="common-zookeeper" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

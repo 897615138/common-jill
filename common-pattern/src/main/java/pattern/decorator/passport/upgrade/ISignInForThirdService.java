@@ -7,6 +7,7 @@ import pattern.decorator.passport.old.ResultMsg;
 /**
  * @author jill on 2019/3/17.
  */
+@SuppressWarnings("ALL")
 public interface ISignInForThirdService extends ISignInService {
 
     /**

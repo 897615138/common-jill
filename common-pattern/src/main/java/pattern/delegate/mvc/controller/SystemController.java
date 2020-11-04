@@ -5,6 +5,7 @@ package pattern.delegate.mvc.controller;
  */
 public class SystemController {
 
+    @SuppressWarnings("EmptyMethod")
     public void logout() {
     }
 }

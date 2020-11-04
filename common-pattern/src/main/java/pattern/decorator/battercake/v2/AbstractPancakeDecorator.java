@@ -16,6 +16,7 @@ public abstract class AbstractPancakeDecorator extends AbstractPancake {
     /**
      * 附加的方法
      */
+    @SuppressWarnings("EmptyMethod")
     protected abstract void doSomething();
 
     @Override

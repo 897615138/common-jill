@@ -7,6 +7,7 @@ import pattern.adapter.loginadapter.ResultMsg;
 /**
  * @author jill
  */
+@SuppressWarnings("ALL")
 public interface RegistAdapter {
     /**
      * 适配器是否支持

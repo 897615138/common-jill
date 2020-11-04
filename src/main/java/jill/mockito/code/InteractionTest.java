@@ -9,12 +9,13 @@ import static org.mockito.Mockito.*;
  * @author JillW
  * @date 2020/09/30
  */
+@SuppressWarnings("ALL")
 public class InteractionTest {
     public static void main(String[] args) {
         //创建mock对象
-        LinkedList<String> mockOne = mock(LinkedList.class);
-        LinkedList<String> mockTwo = mock(LinkedList.class);
-        LinkedList<String> mockThree = mock(LinkedList.class);
+        LinkedList mockOne = mock(LinkedList.class);
+        LinkedList mockTwo = mock(LinkedList.class);
+        LinkedList mockThree = mock(LinkedList.class);
         //using mocks - only mockOne is interacted
         // 使用Mock对象
         mockOne.add("one");

@@ -14,7 +14,7 @@ public class DoThrowTest {
 
     public static void main(String[] args) {
         //创建mock对象
-        LinkedList<String> mockedList = mock(LinkedList.class);
+        LinkedList mockedList = mock(LinkedList.class);
         doThrow(new RuntimeException()).when(mockedList).clear();
         //following throws RuntimeException:
         //调用这句代码会抛出异常

@@ -9,10 +9,11 @@ import static org.mockito.Mockito.*;
  * @author JillW
  * @date 2020/09/30
  */
+@SuppressWarnings("ALL")
 public class TimeTest {
     public static void main(String[] args) {
         //创建mock对象
-        LinkedList<String> mockedList = mock(LinkedList.class);
+        LinkedList mockedList = mock(LinkedList.class);
         //using mock
         mockedList.add("once");
 

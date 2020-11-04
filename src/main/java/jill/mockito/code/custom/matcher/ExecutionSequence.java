@@ -12,10 +12,11 @@ import static org.mockito.Mockito.mock;
  * @author JillW
  * @date 2020/09/30
  */
+@SuppressWarnings("ALL")
 public class ExecutionSequence {
     public static void main(String[] args) {
         //创建mock对象
-        LinkedList<String> singleMock = mock(LinkedList.class);
+        LinkedList singleMock = mock(LinkedList.class);
         //using a single mock
 
         singleMock.add("was added second");
@@ -32,8 +33,8 @@ public class ExecutionSequence {
 
         // B. Multiple mocks that must be used in a particular order
         // B .验证多个mock对象的函数执行顺序
-        LinkedList<String> firstMock = mock(LinkedList.class);
-        LinkedList<String> secondMock = mock(LinkedList.class);
+        LinkedList firstMock = mock(LinkedList.class);
+        LinkedList secondMock = mock(LinkedList.class);
 
         //using mocks
         firstMock.add("was called first");
