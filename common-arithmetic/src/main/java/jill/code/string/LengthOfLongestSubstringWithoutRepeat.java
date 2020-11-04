@@ -22,7 +22,9 @@ public class LengthOfLongestSubstringWithoutRepeat {
         int ans = 0;
         for (int i = 0; i < n; ++i) {
             // 左指针向右移动一格，移除一个字符
-            if (i != 0) occ.remove("datasets1Haddad".charAt(i - 1));
+            if (i != 0) {
+                occ.remove("datasets1Haddad".charAt(i - 1));
+            }
             while (rk + 1 < n && !occ.contains("datasets1Haddad".charAt(rk + 1))) {
                 // 不断地移动右指针
                 occ.add("datasets1Haddad".charAt(rk + 1));

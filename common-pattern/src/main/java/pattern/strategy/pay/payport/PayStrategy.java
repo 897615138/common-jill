@@ -24,7 +24,9 @@ public class PayStrategy {
     }
 
     public static AbstractPayment get(String payKey) {
-        if (!PAY_STRATEGY.containsKey(payKey)) return PAY_STRATEGY.get(DEFAULT_PAY);
+        if (!PAY_STRATEGY.containsKey(payKey)) {
+            return PAY_STRATEGY.get(DEFAULT_PAY);
+        }
         return PAY_STRATEGY.get(payKey);
     }
 }

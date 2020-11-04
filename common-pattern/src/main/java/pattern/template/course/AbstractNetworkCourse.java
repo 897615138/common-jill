@@ -45,7 +45,9 @@ public abstract class AbstractNetworkCourse {
         postSource();
 
         //6、布置作业，有些课是没有作业，有些课是有作业的 如果有作业的话，检查作业，如果没作业，完成了
-        if (needHomework()) checkHomework();
+        if (needHomework()) {
+            checkHomework();
+        }
     }
 
     abstract void checkHomework();

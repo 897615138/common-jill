@@ -1,4 +1,4 @@
-package pattern.observer.listener.mouse_event;
+package pattern.observer.listener.mouse;
 
 import pattern.observer.listener.core.EventListener;
 

@@ -35,7 +35,9 @@ public abstract class AbstractJdbcTemplate {
     private static List<?> paresResultSet(ResultSet rs, RowMapper<?> rowMapper) throws Exception {
         List<Object> result = new ArrayList<>();
         int rowNum = 1;
-        while (rs.next()) result.add(rowMapper.mapRow(rs, rowNum++));
+        while (rs.next()) {
+            result.add(rowMapper.mapRow(rs, rowNum++));
+        }
         return result;
     }
 

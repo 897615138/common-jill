@@ -1,6 +1,9 @@
 package pattern.decorator.battercake.v2;
 
 
+/**
+ * @author jill
+ */
 public class Test {
     public static void main(String[] args) {
         AbstractPancake pancake;

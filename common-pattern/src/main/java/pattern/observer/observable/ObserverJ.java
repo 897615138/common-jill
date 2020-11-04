@@ -21,7 +21,9 @@ public class ObserverJ extends Observable {
      * @return 获取对象
      */
     public static ObserverJ getInstance() {
-        if (null == observerJ) observerJ = new ObserverJ();
+        if (null == observerJ) {
+            observerJ = new ObserverJ();
+        }
         return observerJ;
     }
 

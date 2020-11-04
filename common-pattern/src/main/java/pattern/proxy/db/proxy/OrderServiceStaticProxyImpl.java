@@ -9,14 +9,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * @author jill on 2019/3/10.
+ * @author jill
  */
-public class OrderServiceStaticProxy implements IOrderService {
+public class OrderServiceStaticProxyImpl implements IOrderService {
     private final SimpleDateFormat yearFormat = new SimpleDateFormat("yyyy");
 
     private final IOrderService orderService;
 
-    public OrderServiceStaticProxy(IOrderService orderService) {
+    public OrderServiceStaticProxyImpl(IOrderService orderService) {
         this.orderService = orderService;
     }
 

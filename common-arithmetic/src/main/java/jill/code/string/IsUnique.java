@@ -33,11 +33,15 @@ public class IsUnique {
     public static boolean isUnique1(String str) {
         //36.6
 
-        if (str.length() > ASCII_NUMBER) return false;
+        if (str.length() > ASCII_NUMBER) {
+            return false;
+        }
         int[] arr = new int[128];
         for (int i = 0; i < str.length(); i++) {
             //把字符和数组关联
-            if (arr[str.charAt(i)] != 0) return false;
+            if (arr[str.charAt(i)] != 0) {
+                return false;
+            }
             arr[str.charAt(i)]++;
         }
         return true;
@@ -52,15 +56,20 @@ public class IsUnique {
      */
     public static boolean isUnique2(String str) {
         //36.3
-        if (str.length() > LETTERS) return false;
+        if (str.length() > LETTERS) {
+            return false;
+        }
         long bits = 0;
         int size = str.length();
         for (int i = 0; i < size; i++) {
             int move = str.charAt(i) - 'A';
             //有重复的，直接返回false
             //标记当前位置有这个字符
-            if ((bits & (1L << move)) != 0) return false;
-            else bits |= (1L << move);
+            if ((bits & (1L << move)) != 0) {
+                return false;
+            } else {
+                bits |= (1L << move);
+            }
         }
         return true;
     }
@@ -73,12 +82,13 @@ public class IsUnique {
      */
     public static boolean isUnique3(String str) {
         //36.4
-        for (int i = 0; i < str.length(); i++)
+        for (int i = 0; i < str.length(); i++) {
             for (int j = i + 1; j < str.length(); j++) {
                 if (str.charAt(i) == str.charAt(j)) {
                     return false;
                 }
             }
+        }
         return true;
     }
 
@@ -92,10 +102,11 @@ public class IsUnique {
         //36.8
         Set<Character> set = new HashSet<>();
         //如果有重复的直接返回false
-        for (int i = 0; i < str.length(); i++)
+        for (int i = 0; i < str.length(); i++) {
             if (!set.add(str.charAt(i))) {
                 return false;
             }
+        }
         return true;
     }
 
@@ -110,7 +121,9 @@ public class IsUnique {
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
             //查看后面是否有当前字符
-            if (str.indexOf(c, i + 1) != -1) return false;
+            if (str.indexOf(c, i + 1) != -1) {
+                return false;
+            }
         }
         return true;
     }
@@ -127,7 +140,9 @@ public class IsUnique {
             char c = str.charAt(i);
             //判断当前字符从前面和后面索引是否相同，如果不相同，
             //说明有重复的字符，直接返回false
-            if (i != str.lastIndexOf(c)) return false;
+            if (i != str.lastIndexOf(c)) {
+                return false;
+            }
         }
         return true;
     }

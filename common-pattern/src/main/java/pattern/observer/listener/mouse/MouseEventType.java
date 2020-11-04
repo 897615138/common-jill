@@ -1,4 +1,4 @@
-package pattern.observer.listener.mouse_event;
+package pattern.observer.listener.mouse;
 
 /**
  * @author jill

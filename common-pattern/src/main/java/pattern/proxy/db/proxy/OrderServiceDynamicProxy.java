@@ -39,7 +39,9 @@ class OrderServiceDynamicProxy implements GPInvocationHandler {
         return object;
     }
 
-    //target 应该是订单对象Order
+    /**
+     * @param target 订单对象Order
+     */
     private void before(Object target) {
         try {
             //进行数据源的切换

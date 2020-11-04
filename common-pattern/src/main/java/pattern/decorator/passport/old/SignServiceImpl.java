@@ -3,7 +3,7 @@ package pattern.decorator.passport.old;
 /**
  * @author jill
  */
-public class SignService implements ISignInService {
+public class SignServiceImpl implements ISignInService {
 
     @Override
     public ResultMsg regist(String username, String password) {

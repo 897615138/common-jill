@@ -7,11 +7,11 @@ import pattern.decorator.passport.old.ResultMsg;
 /**
  * @author jill
  */
-public class SignInForThirdService implements ISignInForThirdService {
+public class SignInForThirdServiceImpl implements ISignInForThirdService {
 
     private final ISignInService signInService;
 
-    public SignInForThirdService(ISignInService signInService) {
+    public SignInForThirdServiceImpl(ISignInService signInService) {
         this.signInService = signInService;
     }
 

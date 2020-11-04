@@ -1,8 +1,8 @@
 package pattern.observer.listener;
 
-import pattern.observer.listener.mouse_event.Mouse;
-import pattern.observer.listener.mouse_event.MouseEventCallback;
-import pattern.observer.listener.mouse_event.MouseEventType;
+import pattern.observer.listener.mouse.Mouse;
+import pattern.observer.listener.mouse.MouseEventCallback;
+import pattern.observer.listener.mouse.MouseEventType;
 
 /**
  * @author jill

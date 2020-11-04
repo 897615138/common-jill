@@ -11,7 +11,7 @@ public class PassportTest {
 
         IPassportForThird passportForThird = new PassportForThirdAdapter();
 
-        ResultMsg resultMsg = passportForThird.loginForQQ("");
+        ResultMsg resultMsg = passportForThird.loginForQq("");
         System.out.println(resultMsg);
 
     }

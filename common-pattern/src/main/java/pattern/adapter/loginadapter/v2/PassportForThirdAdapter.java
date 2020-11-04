@@ -13,7 +13,7 @@ import pattern.adapter.loginadapter.v2.adapters.*;
 public class PassportForThirdAdapter extends SignInService implements IPassportForThird {
 
     @Override
-    public ResultMsg loginForQQ(String id) {
+    public ResultMsg loginForQq(String id) {
         return processLogin(id, LoginForQQAdapter.class);
     }
 

@@ -1,5 +1,8 @@
 package pattern.decorator.battercake.v2;
 
+/**
+ * @author jill
+ */
 public class EggDecorator extends AbstractPancakeDecorator {
     public EggDecorator(AbstractPancake pancake) {
         super(pancake);

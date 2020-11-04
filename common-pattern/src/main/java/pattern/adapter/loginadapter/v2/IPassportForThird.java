@@ -16,7 +16,7 @@ public interface IPassportForThird {
      * @param id id
      * @return 结果
      */
-    ResultMsg loginForQQ(String id);
+    ResultMsg loginForQq(String id);
 
     /**
      * 微信登录

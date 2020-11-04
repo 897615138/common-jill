@@ -26,10 +26,11 @@ public enum TextType {
     private final String code;
 
     public static TextType getEnum(String code) {
-        for (TextType instance : values())
+        for (TextType instance : values()) {
             if (Objects.equals(instance.getCode(), code)) {
                 return instance;
             }
+        }
         return null;
     }
 }

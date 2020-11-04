@@ -25,7 +25,7 @@ class CglibTest {
      */
             System.setProperty(
                     DebuggingClassWriter.DEBUG_LOCATION_PROPERTY,
-                    "/Users/terminus/IdeaProjects/common-jill/common-pattern/src/main/java/pattern/proxy"
+                    "/Users/jill/IdeaProjects/common-jill/common-pattern/src/main/java/pattern/proxy"
                             + "/dynamic_proxy/cglib_proxy"
             );
 

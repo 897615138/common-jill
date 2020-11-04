@@ -7,28 +7,30 @@ public class DynamicDataSourceEntity {
 
     private final static String DEFAULT_SOURCE = null;
 
-    private final static ThreadLocal<String> local = new ThreadLocal<>();
+    private final static ThreadLocal<String> LOCAL = new ThreadLocal<>();
 
     private DynamicDataSourceEntity() {
     }
 
 
     public static String get() {
-        return local.get();
+        return LOCAL.get();
     }
 
     public static void restore() {
-        local.set(DEFAULT_SOURCE);
+        LOCAL.set(DEFAULT_SOURCE);
     }
 
-    //DB_2018
-    //DB_2019
     public static void set(String source) {
-        local.set(source);
+        LOCAL.set(source);
     }
 
     public static void set(int year) {
-        local.set("DB_" + year);
+        LOCAL.set("DB_" + year);
+    }
+
+    public static void removeThreadLocal(){
+        LOCAL.remove();
     }
 
 }

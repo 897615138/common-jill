@@ -15,7 +15,7 @@ public class ContainerSingleton {
     /**
      * ioc 并发的HashMap
      */
-    private static final Map<String, Object> ioc = new ConcurrentHashMap<>();
+    private static final Map<String, Object> IOC = new ConcurrentHashMap<>();
 
     /**
      * 获得实例
@@ -24,20 +24,22 @@ public class ContainerSingleton {
      * @return 对象
      */
     public static Object getInstance(String className) {
-        synchronized (ioc) {
+        synchronized (IOC) {
             //从HashMap中取出
             //存在就直接返回存的实例
-            if (!ioc.containsKey(className)) {
+            if (!IOC.containsKey(className)) {
                 Object obj = null;
                 try {
                     //不存在就存进去再返回
                     obj = Class.forName(className).newInstance();
-                    ioc.put(className, obj);
+                    IOC.put(className, obj);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
                 return obj;
-            } else return ioc.get(className);
+            } else {
+                return IOC.get(className);
+            }
         }
     }
 }

@@ -17,7 +17,9 @@ public class LazySimpleSingleton {
     }
 
     public synchronized static LazySimpleSingleton getInstance() {
-        if (lazy == null) lazy = new LazySimpleSingleton();
+        if (lazy == null) {
+            lazy = new LazySimpleSingleton();
+        }
         return lazy;
     }
 }

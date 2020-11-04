@@ -63,7 +63,9 @@ public class EventListener {
         try {
             //发起回调
             //用反射调用它的回调函数
-            if (event.getCallback() != null) event.getCallback().invoke(event.getTarget(), event);
+            if (event.getCallback() != null) {
+                event.getCallback().invoke(event.getTarget(), event);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -75,7 +77,9 @@ public class EventListener {
      * @param trigger 触发器
      */
     protected void trigger(String trigger) {
-        if (!events.containsKey(trigger)) return;
+        if (!events.containsKey(trigger)) {
+            return;
+        }
         trigger(events.get(trigger).setTrigger(trigger));
     }
 

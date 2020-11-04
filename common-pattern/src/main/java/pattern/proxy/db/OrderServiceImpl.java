@@ -3,7 +3,7 @@ package pattern.proxy.db;
 /**
  * @author jill
  */
-public class OrderService implements IOrderService {
+public class OrderServiceImpl implements IOrderService {
 
     /**
      * @Autowired
@@ -11,7 +11,7 @@ public class OrderService implements IOrderService {
     private OrderDao orderDao;
 
     /**
-     * OrderService() {
+     * OrderServiceImpl() {
      * //如果使用Spring应该是自动注入的
      * //我们为了使用方便，在构造方法中将orderDao直接初始化了
      * orderDao = new OrderDao();
