@@ -9,6 +9,10 @@ package jill.common.util;
 public class CharUtil {
     /**
      * Character -> Integer
+     * 转大写
+     *      char[] wordArray = word.toCharArray();
+     *         wordArray[0]-=32;
+     *         return String.valueOf(wordArray);
      *
      * @param c Character
      * @return Integer
@@ -19,9 +23,9 @@ public class CharUtil {
 
     public static void change(char[] element, int aPosition, int bPosition) {
         //中间量
-        char temp_wj = element[aPosition];
+        char temp = element[aPosition];
         element[aPosition] = element[bPosition];
-        element[bPosition] = temp_wj;
+        element[bPosition] = temp;
     }
 
     /**
