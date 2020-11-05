@@ -82,8 +82,37 @@ public class StringUtil {
         return findByRegex(str, ".*" + strToFind + ".*");
     }
 
+    /**
+     * 字符串删除空格
+     *
+     * @param string 原字符串
+     * @return 删除空格后的字符串
+     */
+    public String stringSpaceDelete(String string) {
+        return string.replace(" ", "");
+    }
+
     public static void main(String[] args) {
         System.out.println(findByRegex("Apple,love,love", "lo"));
         System.out.println(findWords("apple,banana,orange", "apple"));
+    }
+
+    /**
+     * 子字符串在母字符串中出现的次数
+     * 统计数字出现的次数的时候可以只设置一个int[10]来计数
+     *
+     * @param mom 母字符串
+     * @param son 子字符串
+     * TODO 给很多子字符串或者很多母字符串
+     */
+    public static Integer stringTimes(String mom, String son) {
+        int times = 0;
+        //存在子字符串
+        while (mom.contains(son)) {
+            times++;
+            //将前面全部截掉
+            mom = mom.substring(mom.indexOf(son) + son.length());
+        }
+        return times;
     }
 }
