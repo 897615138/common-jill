@@ -11,14 +11,6 @@ import static org.mockito.Mockito.*;
  */
 public class ArgumentMatcher<T> {
 
-        public void add(T e) {
-            if (e instanceof String) {
-                System.out.println(" I am String");
-            } else if (e instanceof Integer) {
-                System.out.println("I am Integer");
-            }
-        }
-
     public static void main(String[] args) {
         //创建mock对象
         LinkedList mockedList = mock(LinkedList.class);
@@ -31,5 +23,15 @@ public class ArgumentMatcher<T> {
         //you can also verify using an argument matcher
         // 你也可以验证参数匹配器
         verify(mockedList).get(anyInt());
+    }
+
+    public void add(T e) {
+        if (e instanceof String) {
+            System.out.println(" I am String");
+        } else {
+            if (e instanceof Integer) {
+                System.out.println("I am Integer");
+            }
+        }
     }
 }

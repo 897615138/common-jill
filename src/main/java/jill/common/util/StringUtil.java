@@ -72,14 +72,16 @@ public class StringUtil {
 
     /**
      * 查找存在
-     * @param str 字符串
+     *
+     * @param str       字符串
      * @param strToFind 要找的字符串
      * @return 结果list
-     *  TODO 给很多字符串只要匹配即可
+     * TODO 给很多字符串只要匹配即可
      */
-    public static List<StringResult> findExists(String str,String strToFind){
-        return findByRegex(str,".*"+strToFind+".*");
+    public static List<StringResult> findExists(String str, String strToFind) {
+        return findByRegex(str, ".*" + strToFind + ".*");
     }
+
     public static void main(String[] args) {
         System.out.println(findByRegex("Apple,love,love", "lo"));
         System.out.println(findWords("apple,banana,orange", "apple"));

@@ -57,7 +57,9 @@ public class ExcelUtil {
      * clazz: 返回数据List<Object> 中Object的类名
      */
     private static List<Object> readLessThan1000RowByReadSheet(String filePath, ReadSheet sheet) {
-        if (StrUtil.isBlank(filePath)) return ListUtil.list(false);
+        if (StrUtil.isBlank(filePath)) {
+            return ListUtil.list(false);
+        }
 
         sheet = sheet != null ? sheet : initReadSheet;
         InputStream fileStream = null;
@@ -70,7 +72,9 @@ public class ExcelUtil {
         } finally {
             try {
 
-                if (fileStream != null) fileStream.close();
+                if (fileStream != null) {
+                    fileStream.close();
+                }
             } catch (IOException e) {
                 log.info("excel文件读取失败, 失败原因：{}", e.getMessage());
             }
@@ -96,7 +100,9 @@ public class ExcelUtil {
      * @return List
      */
     private static List<Object> readMoreThan1000RowByReadSheet(String filePath, ReadSheet sheet) {
-        if (StrUtil.isNotBlank(filePath)) return ListUtil.list(false);
+        if (StrUtil.isNotBlank(filePath)) {
+            return ListUtil.list(false);
+        }
 
         sheet = sheet != null ? sheet : initReadSheet;
 
@@ -110,7 +116,9 @@ public class ExcelUtil {
             log.error("找不到文件或文件路径错误, 文件：{}", filePath);
         } finally {
             try {
-                if (fileStream != null) fileStream.close();
+                if (fileStream != null) {
+                    fileStream.close();
+                }
             } catch (IOException e) {
                 log.error("excel文件读取失败, 失败原因：{}", e.getMessage());
             }
@@ -157,9 +165,13 @@ public class ExcelUtil {
             log.error("找不到文件或文件路径错误, 文件：{}", filePath);
         } finally {
             try {
-                if (writer != null) writer.finish();
+                if (writer != null) {
+                    writer.finish();
+                }
 
-                if (outputStream != null) outputStream.close();
+                if (outputStream != null) {
+                    outputStream.close();
+                }
 
             } catch (IOException e) {
                 log.error("excel文件导出失败, 失败原因：{}", e.getMessage());
@@ -188,7 +200,9 @@ public class ExcelUtil {
      */
     private static void writeWithTemplateAndReadSheet(String filePath, List<? extends BaseRowModel> data,
                                                       WriteSheet sheet) {
-        if (CollectionUtil.isEmpty(data)) return;
+        if (CollectionUtil.isEmpty(data)) {
+            return;
+        }
 
         sheet = (sheet != null) ? sheet : initWriteSheet;
         sheet.setClazz(data.get(0).getClass());
@@ -203,9 +217,13 @@ public class ExcelUtil {
             log.error("找不到文件或文件路径错误, 文件：{}", filePath);
         } finally {
             try {
-                if (writer != null) writer.finish();
+                if (writer != null) {
+                    writer.finish();
+                }
 
-                if (outputStream != null) outputStream.close();
+                if (outputStream != null) {
+                    outputStream.close();
+                }
             } catch (IOException e) {
                 log.error("excel文件导出失败, 失败原因：{}", e.getMessage());
             }
@@ -220,7 +238,9 @@ public class ExcelUtil {
      * @param multipleSheetProperties m
      */
     public static void writeWithMultipleSheet(String filePath, List<MultipleSheetProperty> multipleSheetProperties) {
-        if (CollectionUtil.isEmpty(multipleSheetProperties)) return;
+        if (CollectionUtil.isEmpty(multipleSheetProperties)) {
+            return;
+        }
         OutputStream outputStream = null;
         ExcelWriter writer = null;
         try {
@@ -229,8 +249,9 @@ public class ExcelUtil {
             for (MultipleSheetProperty multipleSheelaProphet : multipleSheetProperties) {
                 WriteSheet sheet =
                         multipleSheelaProphet.getSheet() != null ? multipleSheelaProphet.getSheet() : initWriteSheet;
-                if (!CollectionUtil.isEmpty(multipleSheelaProphet.getData()))
+                if (!CollectionUtil.isEmpty(multipleSheelaProphet.getData())) {
                     sheet.setClazz(multipleSheelaProphet.getData().get(0).getClass());
+                }
                 writer.write(multipleSheelaProphet.getData(), sheet);
             }
 
@@ -238,9 +259,13 @@ public class ExcelUtil {
             log.error("找不到文件或文件路径错误, 文件：{}", filePath);
         } finally {
             try {
-                if (writer != null) writer.finish();
+                if (writer != null) {
+                    writer.finish();
+                }
 
-                if (outputStream != null) outputStream.close();
+                if (outputStream != null) {
+                    outputStream.close();
+                }
             } catch (IOException e) {
                 log.error("excel文件导出失败, 失败原因：{}", e.getMessage());
             }
@@ -279,7 +304,9 @@ public class ExcelUtil {
         public void invoke(Object object, AnalysisContext context) {
             //当前行
             // context.getCurrentRowNum()
-            if (object != null) data.add(object);
+            if (object != null) {
+                data.add(object);
+            }
         }
 
 

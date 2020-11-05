@@ -4,8 +4,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.ToString;
 
-import java.util.ArrayList;
-
 /**
  * @author Jill W
  * @date 2020/11/04

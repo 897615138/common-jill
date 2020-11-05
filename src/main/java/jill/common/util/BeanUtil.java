@@ -16,9 +16,10 @@ public class BeanUtil {
 
     /**
      * 手动装载Bean 所装载的Bean必须要有get set方法
+     *
      * @param aClass 装载类类型
-     * @param <T> 泛型
-     * @return 返回装载好的Bean(若要检查内容,需重写toString)
+     * @param <T>    泛型
+     * @return 返回装载好的Bean(若要检查内容, 需重写toString)
      */
     public static <T> T manualInsertBean(Class<T> aClass) {
         final Scanner scanner = new Scanner(System.in);
