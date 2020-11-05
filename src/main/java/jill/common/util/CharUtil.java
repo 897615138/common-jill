@@ -17,6 +17,13 @@ public class CharUtil {
         return c - 48;
     }
 
+    public static void change(char[] element, int aPosition, int bPosition) {
+        //中间量
+        char temp_wj = element[aPosition];
+        element[aPosition] = element[bPosition];
+        element[bPosition] = temp_wj;
+    }
+
     /**
      * 全排序
      *
@@ -24,7 +31,7 @@ public class CharUtil {
      * @param begin   排序的开始元素位置
      * @param end     排序的结束元素位置
      */
-    public static char[] fullPermutation(char[] element, int begin, int end) {
+    public char[] fullPermutation(char[] element, int begin, int end) {
         //排序完成就输出
         if (begin == end) {
             return element;
@@ -37,12 +44,5 @@ public class CharUtil {
             change(element, begin, point);
         }
         return element;
-    }
-
-    public static void change(char[] element, int aPosition, int bPosition) {
-        //中间量
-        char temp_wj = element[aPosition];
-        element[aPosition] = element[bPosition];
-        element[bPosition] = temp_wj;
     }
 }
