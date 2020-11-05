@@ -1,14 +1,10 @@
 
 ]
 -src/main/java/jill/common/util/ExcelUtil.java,b/a/baa6270454fedf6d4331fb62a7e1e8a0cf14b727
-c
-3src/main/java/jill/common/consts/CodeConstants.java,5/3/537de293e5dea6768c56ae9fa7c38c1814146e14
 7
 pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
 ]
 -src/main/java/jill/common/util/HttpUtils.java,3/b/3bb62f753a05df689e21b92b81766f7bb7976a04
-c
-3src/main/java/jill/common/consts/FileConstants.java,0/5/05d16e7ff0333013aa67d391d263a6dde87f03c1
 \
 ,src/main/java/jill/common/util/FileUtil.java,2/7/27a84ef00457a562130addc59201bd8ef899609c
 `
@@ -25,10 +21,6 @@ Z
 .src/test/java/jill/common/util/IpUtilTest.java,6/7/67f3bf2d5e84fcad3b1611451a66cee905daccc8
 ]
 -src/main/java/jill/common/enums/FileType.java,6/5/65aac96a97df6c7d769ff278e9189b4867718ee6
-b
-2src/main/java/jill/common/consts/LogConstants.java,6/7/67198f06e8e662f4e169951a1fb96f88235a5220
-`
-0src/test/java/jill/common/util/FileUtilTest.java,9/f/9fbc50a5985a08585b3b4ed9fae5a88a0da35a38
 _
 /src/main/java/jill/mockito/model/TestModel.java,f/6/f6d49433be763de0735a72830c50f6e920bd3796
 Z
@@ -101,3 +93,19 @@ I
 -src/main/java/jill/common/enums/TextType.java,9/3/93674a6d5e05048bec32510bc22e536e1872c866
 ^
 .src/main/java/jill/common/enums/VoiceType.java,6/b/6bdd7aef8c816a7cd06c26307361390fed5426a7
+d
+4src/main/java/jill/common/constant/CodeConstant.java,b/7/b7f51fefd07506946bc5175c6db3cb8db883d8b9
+d
+4src/main/java/jill/common/constant/FileConstant.java,f/6/f6359232bd5feba8905b441761aa82a47895d2db
+c
+3src/main/java/jill/common/constant/LogConstant.java,a/5/a57355ee8d107a08edd227ef9b52ae02a3b30f67
+c
+3src/main/java/jill/common/constant/NumConstant.java,6/0/60a0cea979da5b6df6c1ccaa0be102d8b9f2b1a8
+\
+,src/main/java/jill/common/util/BeanUtil.java,f/2/f2e7f92b3c67202ab11fc7c8ef6d0309c0ec81dd
+\
+,src/main/java/jill/common/util/CharUtil.java,2/c/2cbef369f9e9b27c177d4f7575df286f35f81822
+a
+1src/main/java/jill/common/model/StringResult.java,1/0/1038361efaac80b15a447a4e06b576623f5af5c5
+_
+/src/main/java/jill/common/util/IntegerUtil.java,2/a/2aa3f251f85f3afe56f01d1ed4e703804a183021

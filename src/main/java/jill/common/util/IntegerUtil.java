@@ -18,7 +18,6 @@ public class IntegerUtil {
     }
 
     /**
-     * TODO
      * Integer 翻转
      *
      * @param i Integer
@@ -26,14 +25,18 @@ public class IntegerUtil {
      */
     public static Integer reverse(Integer i) {
         int rev = 0;
-        while (i != 0) {
+        if (Integer.toString(i).endsWith("0")){
+            System.out.println("last.number.is.zero");
+            return 0;
+        }
+        while(i != 0) {
+            //剩下的部分
             int pop = i % 10;
+            //加上的数字
             i /= 10;
-            boolean b = rev > Integer.MAX_VALUE / 10 || (rev == Integer.MAX_VALUE / 10 && pop > 7);
-            if (b) {
-                return 0;
-            }
-            b = rev < Integer.MIN_VALUE / 10 || (rev == Integer.MIN_VALUE / 10 && pop < -8);
+            //从-2147483648 至 2147483647 ，包括-2147483648 和 2147483647 -2^31~2^31-1
+            boolean b = rev > Integer.MAX_VALUE / 10 || (rev == Integer.MAX_VALUE / 10 && pop > 7)||rev < Integer.MIN_VALUE / 10 || (rev == Integer.MIN_VALUE / 10 && pop < -8);
+//            rev > Integer.MAX_VALUE / 10 || (rev == Integer.MAX_VALUE / 10 && pop > Integer.MAX_VALUE % 10)
             if (b) {
                 return 0;
             }
