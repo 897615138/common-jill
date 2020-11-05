@@ -44,4 +44,19 @@ public class IntegerUtil {
         }
         return rev;
     }
+
+    /**
+     * 打印99乘法表
+     *
+     * @param end 打到多少为止
+     */
+    public static void printMultiplication(int end) {
+        for (int i = 1; i <= end; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + "*" + i + '=' + i * j + "\t");
+            }
+            System.out.println();
+        }
+    }
+
 }

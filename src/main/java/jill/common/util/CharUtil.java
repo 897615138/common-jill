@@ -10,9 +10,9 @@ public class CharUtil {
     /**
      * Character -> Integer
      * 转大写
-     *      char[] wordArray = word.toCharArray();
-     *         wordArray[0]-=32;
-     *         return String.valueOf(wordArray);
+     * char[] wordArray = word.toCharArray();
+     * wordArray[0]-=32;
+     * return String.valueOf(wordArray);
      *
      * @param c Character
      * @return Integer
