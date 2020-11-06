@@ -59,4 +59,22 @@ public class IntegerUtil {
         }
     }
 
+    /**
+     * 判断是否为素数，是否可以分解质因数 是为1
+     * @param num 数字
+     */
+    public boolean primeJudge(int num){
+        //判断（是否为素数）
+        return num % 6 == 1 || num % 6 == 5 || num < 4;
+    }
+    public Integer countPrimeNumbers(Integer start,Integer end){
+        Integer count=0;
+        for (int i = start; i <=end ; i++) {
+            if (primeJudge(i))
+            {
+                count++;
+            }
+        }
+        return count;
+    }
 }
