@@ -1,4 +1,4 @@
-package jill.common.util;
+package jill.common.util.time;
 
 
 /**
