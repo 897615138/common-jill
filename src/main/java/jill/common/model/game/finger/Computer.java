@@ -1,9 +1,10 @@
-package jill.common.model.game;
+package jill.common.model.game.finger;
 
 /**
  * 计算机类
- * @author  JIll Wang
- * @date  2020-07-03 21:11
+ *
+ * @author JIll Wang
+ * @date 2020-07-03 21:11
  **/
 public class Computer {
     /**

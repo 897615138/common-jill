@@ -60,6 +60,20 @@ public class IntegerUtil {
     }
 
     /**
+     * 尾递归 n的阶乘
+     *
+     * @param n   还有多少次计算
+     * @param res 阶乘的结果
+     * @return n的阶乘
+     */
+    public static int factorial3(int n, int res) {
+        if (n == 1) {
+            return res;
+        }
+        return factorial3(n - 1, n * res);
+    }
+
+    /**
      * 判断是否为素数，是否可以分解质因数 是为1
      *
      * @param num 数字
@@ -77,19 +91,5 @@ public class IntegerUtil {
             }
         }
         return count;
-    }
-
-    /**
-     * 尾递归 n的阶乘
-     *
-     * @param n   还有多少次计算
-     * @param res 阶乘的结果
-     * @return n的阶乘
-     */
-    public static int factorial3(int n, int res) {
-        if (n == 1) {
-            return res;
-        }
-        return factorial3(n - 1, n * res);
     }
 }

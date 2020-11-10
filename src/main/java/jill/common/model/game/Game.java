@@ -1,5 +1,7 @@
 package jill.common.model.game;
 
+import jill.common.model.game.finger.Computer;
+
 import java.util.Scanner;
 
 /**
