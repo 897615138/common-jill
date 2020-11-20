@@ -1,77 +1,121 @@
 package jill.common.model;
 
+import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ObjectUtil;
+import jill.common.enums.ComputeTypeEnum;
+import jill.common.util.SimilarUtil;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
 /**
+ * less<=value<=more
+ *
  * @author Jill W
- * @date 2020/11/18
+ * @date 2020/11/20
  */
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class NumRange {
-    private Integer value1;
-    private Integer value2;
+    private Integer less;
+    private Integer more;
+
     /**
-     * 数据是否不合规
+     * 通过数值和计算类型返回数值范围
      *
-     * @return 不合规返回true
+     * @param less 单一数值或者小的数值
+     * @param more 大的数值
+     * @param type 计算类型
+     * @return 数值范围List
      */
-    public Boolean isWrong() {
-        //区间范围为空
-        if (ObjectUtil.isNull(this.value1) && ObjectUtil.isNull(this.value2)) {
-            return true;
+    public static List<NumRange> getRanges(Integer less, Integer more, Integer type) {
+        ArrayList<NumRange> numRanges = new ArrayList<>();
+        if (ObjectUtil.equal(ComputeTypeEnum.E.getCode(), type)) {
+            numRanges.add(NumRange.builder().less(less).more(more).build());
         }
-        //大值小于小值
-        if (ObjectUtil.isNotNull(this.value1)&&ObjectUtil.isNotNull(this.value2)){
-            return this.value2<this.value1;
+        if (ObjectUtil.equal(ComputeTypeEnum.L.getCode(), type)) {
+            numRanges.add(NumRange.builder().less(0).more(less - 1).build());
         }
-        return false;
+        if (ObjectUtil.equal(ComputeTypeEnum.M.getCode(), type)) {
+            numRanges.add(NumRange.builder().less(less + 1).more(100).build());
+        }
+        if (ObjectUtil.equal(ComputeTypeEnum.LE.getCode(), type)) {
+            numRanges.add(NumRange.builder().less(0).more(less).build());
+        }
+        if (ObjectUtil.equal(ComputeTypeEnum.ME.getCode(), type)) {
+            numRanges.add(NumRange.builder().less(more).more(100).build());
+        }
+        if (ObjectUtil.equal(ComputeTypeEnum.LL.getCode(), type)) {
+            numRanges.add(NumRange.builder().less(less + 1).more(more - 1).build());
+        }
+        if (ObjectUtil.equal(ComputeTypeEnum.LE_L.getCode(), type)) {
+            numRanges.add(NumRange.builder().less(less).more(more - 1).build());
+        }
+        if (ObjectUtil.equal(ComputeTypeEnum.L_LE.getCode(), type)) {
+            numRanges.add(NumRange.builder().less(less + 1).more(more).build());
+        }
+        if (ObjectUtil.equal(ComputeTypeEnum.LE_LE.getCode(), type)) {
+            numRanges.add(NumRange.builder().less(less).more(more).build());
+        }
+        if (ObjectUtil.equal(ComputeTypeEnum.NE.getCode(), type)) {
+            numRanges.add(NumRange.builder().less(0).more(less - 1).build());
+            numRanges.add(NumRange.builder().less(less + 1).more(100).build());
+        }
+        if (ObjectUtil.equal(ComputeTypeEnum.LIKE.getCode(), type)) {
+            Set<Integer> similarNum = SimilarUtil.getSimilarNum(less, 0, 100);
+            similarNum.forEach(num -> numRanges.add(NumRange.builder().less(num).more(num).build()));
+        }
+        return numRanges;
     }
-    public Boolean isMatched(Integer value) {
-        Integer less = this.value1;
-        Integer more = this.value2;
-        //不合规的设置
-        if (this.isWrong()) {
-            return false;
+
+
+    /**
+     * 范围有重合返回True
+     *
+     * @param ranges 范围
+     * @return 结果
+     */
+    public static Boolean hasCoincidence(List<NumRange> ranges) {
+        ArrayList<Integer> integers = new ArrayList<>();
+        for (NumRange range : ranges) {
+            List<Integer> integerList = getIntegerList(range);
+            if (CollUtil.containsAny(integers, integerList)) {
+                return Boolean.TRUE;
+            } else {
+                integers = (ArrayList<Integer>) CollUtil.addAll(integers, integerList);
+            }
         }
-        //less <= x
-        if (ObjectUtil.isNull(more)) {
-            return less <= value;
-        }
-        //x <= more
-        if (ObjectUtil.isNull(less)) {
-            return value <= more;
-        }
-        //less <=x <=more
-        return less <= value && value <= more;
+        return Boolean.FALSE;
     }
+
+    /**
+     * NumRange->List<Integer>
+     *
+     * @param range NumRange
+     * @return List<Integer>
+     */
+    public static List<Integer> getIntegerList(NumRange range) {
+        ArrayList<Integer> integers = new ArrayList<>();
+        for (int i = range.getLess(); i <= range.getMore(); i++) {
+            integers.add(i);
+        }
+        return integers;
+    }
+
     public static void main(String[] args) {
-        //50<=x
-        NumRange build1 = NumRange.builder().value1(50).build();
-        //false
-        System.out.println(build1.isMatched(49));
-        //true
-        System.out.println(build1.isMatched(50));
-        System.out.println(build1.isMatched(51));
-        //x<=50
-        NumRange build2 = NumRange.builder().value2(50).build();
-        //true
-        System.out.println(build2.isMatched(49));
-        System.out.println(build2.isMatched(50));
-        //false
-        System.out.println(build2.isMatched(51));
-        //49<=x<=51
-        NumRange build3 = NumRange.builder().value1(49).value2(51).build();
-        //false
-        System.out.println(build3.isMatched(47));
-        System.out.println(build3.isMatched(52));
-        //true
-        System.out.println(build3.isMatched(50));
+        ArrayList<NumRange> numRanges = new ArrayList<>();
+        NumRange build = NumRange.builder().more(10).less(1).build();
+        NumRange build1 = NumRange.builder().more(20).less(10).build();
+        numRanges.add(build1);
+        numRanges.add(build);
+        Boolean aBoolean = hasCoincidence(numRanges);
+        System.out.println(aBoolean);
     }
 }

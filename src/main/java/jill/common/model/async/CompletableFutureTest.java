@@ -30,7 +30,7 @@ public class CompletableFutureTest {
         return NumConstant.POINT_THREE + Math.random() * 23;
     }
 
-    static String queryCode(String name) {
+    static String queryCode(@SuppressWarnings("SameParameterValue") String name) {
         try {
             Thread.sleep(100);
         } catch (InterruptedException ignored) {
