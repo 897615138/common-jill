@@ -2,13 +2,10 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/array/DynamicArray.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/array/MyContainer.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/game/FingerGuessingGameV1.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/game/Game.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/game/Main.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/game/Person.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/game/finger/Computer.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/game/finger/Computer.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/game/gate/Main.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/game/gate/Square.java" charset="GBK" />
@@ -24,13 +21,6 @@
     <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/warehouse/Commodity.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/warehouse/Warehouse.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/jill/common/util/BeanUtil.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/jill/common/util/number/operation" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/jill/common/util/sort/Demo1.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/jill/common/util/sort/Demo2.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/jill/common/util/sort/Demo3.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/jill/common/util/sort/HeapSort.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/test.xml" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/text.txt" charset="GBK" />
   </component>
 </project>

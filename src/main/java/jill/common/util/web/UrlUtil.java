@@ -1,4 +1,4 @@
-package jill.common.util;
+package jill.common.util.web;
 
 import cn.hutool.core.codec.Base64;
 import com.aliyun.openservices.log.http.client.HttpMethod;

@@ -3,7 +3,7 @@ package jill.common.model;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ObjectUtil;
 import jill.common.enums.ComputeTypeEnum;
-import jill.common.util.SimilarUtil;
+import jill.common.util.word.SimilarUtil;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

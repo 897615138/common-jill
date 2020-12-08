@@ -1,6 +1,7 @@
 package jill.common.util;
 
 import cn.hutool.core.util.CharsetUtil;
+import jill.common.util.word.CodeUtil;
 import org.junit.Assert;
 import org.junit.Test;
 
