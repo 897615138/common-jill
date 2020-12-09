@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
@@ -38,7 +39,7 @@ public class NumRange {
     public static List<NumRange> getRanges(Integer less, Integer more, Integer type) {
         ArrayList<NumRange> numRanges = new ArrayList<>();
         if (ObjectUtil.equal(ComputeTypeEnum.E.getCode(), type)) {
-            numRanges.add(NumRange.builder().less(less).more(more).build());
+            numRanges.add(NumRange.builder().less(less).more(less).build());
         }
         if (ObjectUtil.equal(ComputeTypeEnum.L.getCode(), type)) {
             numRanges.add(NumRange.builder().less(0).more(less - 1).build());
@@ -50,7 +51,7 @@ public class NumRange {
             numRanges.add(NumRange.builder().less(0).more(less).build());
         }
         if (ObjectUtil.equal(ComputeTypeEnum.ME.getCode(), type)) {
-            numRanges.add(NumRange.builder().less(more).more(100).build());
+            numRanges.add(NumRange.builder().less(less).more(100).build());
         }
         if (ObjectUtil.equal(ComputeTypeEnum.LL.getCode(), type)) {
             numRanges.add(NumRange.builder().less(less + 1).more(more - 1).build());
@@ -85,7 +86,13 @@ public class NumRange {
     public static Boolean hasCoincidence(List<NumRange> ranges) {
         ArrayList<Integer> integers = new ArrayList<>();
         for (NumRange range : ranges) {
+            if (ObjectUtil.isNull(range)) {
+                return Boolean.TRUE;
+            }
             List<Integer> integerList = getIntegerList(range);
+            if (ObjectUtil.isNull(integerList)) {
+                return Boolean.TRUE;
+            }
             if (CollUtil.containsAny(integers, integerList)) {
                 return Boolean.TRUE;
             } else {
@@ -102,6 +109,9 @@ public class NumRange {
      * @return List<Integer>
      */
     public static List<Integer> getIntegerList(NumRange range) {
+        if (ObjectUtil.isNull(range)) {
+            return Collections.emptyList();
+        }
         ArrayList<Integer> integers = new ArrayList<>();
         for (int i = range.getLess(); i <= range.getMore(); i++) {
             integers.add(i);
@@ -109,13 +119,4 @@ public class NumRange {
         return integers;
     }
 
-    public static void main(String[] args) {
-        ArrayList<NumRange> numRanges = new ArrayList<>();
-        NumRange build = NumRange.builder().more(10).less(1).build();
-        NumRange build1 = NumRange.builder().more(20).less(10).build();
-        numRanges.add(build1);
-        numRanges.add(build);
-        Boolean aBoolean = hasCoincidence(numRanges);
-        System.out.println(aBoolean);
-    }
 }
