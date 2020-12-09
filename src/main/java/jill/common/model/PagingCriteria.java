@@ -12,9 +12,9 @@ import java.util.Objects;
  * @date 2020/12/08
  */
 public class PagingCriteria extends Criteria implements Serializable {
-    private static final long serialVersionUID = 2598875146576926658L;
     public static final int SORT_TYPE_ASC = 1;
     public static final int SORT_TYPE_DESC = 2;
+    private static final long serialVersionUID = 2598875146576926658L;
     @JsonIgnore
     protected Integer pageNo = 1;
     @JsonIgnore
@@ -67,28 +67,28 @@ public class PagingCriteria extends Criteria implements Serializable {
         return this.pageNo;
     }
 
-    public Integer getPageSize() {
-        return this.pageSize;
-    }
-
-    public String getSortBy() {
-        return this.sortBy;
-    }
-
-    public Integer getSortType() {
-        return this.sortType;
-    }
-
     public void setPageNo(Integer pageNo) {
         this.pageNo = pageNo;
+    }
+
+    public Integer getPageSize() {
+        return this.pageSize;
     }
 
     public void setPageSize(Integer pageSize) {
         this.pageSize = pageSize;
     }
 
+    public String getSortBy() {
+        return this.sortBy;
+    }
+
     public void setSortBy(String sortBy) {
         this.sortBy = sortBy;
+    }
+
+    public Integer getSortType() {
+        return this.sortType;
     }
 
     public void setSortType(Integer sortType) {
@@ -109,7 +109,7 @@ public class PagingCriteria extends Criteria implements Serializable {
         } else if (!(o instanceof PagingCriteria)) {
             return false;
         } else {
-            PagingCriteria other = (PagingCriteria)o;
+            PagingCriteria other = (PagingCriteria) o;
             if (!Objects.equals(this.pageNo, other.pageNo)) {
                 return false;
             } else if (!Objects.equals(this.pageSize, other.pageSize)) {

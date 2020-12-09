@@ -1,8 +1,9 @@
 package jill.mockito.code;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.LinkedList;
 
-import static jill.common.constant.LogConstant.log;
 import static org.mockito.Mockito.*;
 
 /**
@@ -10,6 +11,7 @@ import static org.mockito.Mockito.*;
  * @date 2020/09/30
  */
 @SuppressWarnings("ALL")
+@Slf4j
 public class InteractionTest {
     public static void main(String[] args) {
         //创建mock对象

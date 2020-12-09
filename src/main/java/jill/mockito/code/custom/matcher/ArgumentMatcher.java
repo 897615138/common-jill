@@ -3,16 +3,17 @@ package jill.mockito.code.custom.matcher;
 import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUtil;
 import jill.mockito.model.TestModel;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.LinkedList;
 
-import static jill.common.constant.LogConstant.log;
 import static org.mockito.Mockito.*;
 
 /**
  * @author JillW
  * @date 2020/09/30
  */
+@Slf4j
 public class ArgumentMatcher {
     public static void main(String[] args) {
         //创建mock对象

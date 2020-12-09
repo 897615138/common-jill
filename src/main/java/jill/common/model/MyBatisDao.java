@@ -13,8 +13,6 @@ import java.util.*;
  * @date 2020/12/08
  */
 public abstract class MyBatisDao<T> {
-    @Autowired
-    protected SqlSession sqlSession;
     protected static final String CREATE = "create";
     protected static final String CREATES = "creates";
     protected static final String DELETE = "delete";
@@ -27,12 +25,14 @@ public abstract class MyBatisDao<T> {
     protected static final String COUNT = "count";
     protected static final String PAGING = "paging";
     public final String nameSpace;
+    @Autowired
+    protected SqlSession sqlSession;
 
     protected MyBatisDao() {
         if (this.getClass().getGenericSuperclass() instanceof ParameterizedType) {
-            this.nameSpace = ((Class)((ParameterizedType)this.getClass().getGenericSuperclass()).getActualTypeArguments()[0]).getSimpleName();
+            this.nameSpace = ((Class) ((ParameterizedType) this.getClass().getGenericSuperclass()).getActualTypeArguments()[0]).getSimpleName();
         } else {
-            this.nameSpace = ((Class)((ParameterizedType)this.getClass().getSuperclass().getGenericSuperclass()).getActualTypeArguments()[0]).getSimpleName();
+            this.nameSpace = ((Class) ((ParameterizedType) this.getClass().getSuperclass().getGenericSuperclass()).getActualTypeArguments()[0]).getSimpleName();
         }
 
     }
@@ -67,7 +67,7 @@ public abstract class MyBatisDao<T> {
     }
 
     public T findById(Integer id) {
-        return this.findById((long)id);
+        return this.findById((long) id);
     }
 
     public T findById(Long id) {

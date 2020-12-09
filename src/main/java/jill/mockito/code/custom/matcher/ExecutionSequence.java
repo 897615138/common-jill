@@ -1,10 +1,10 @@
 package jill.mockito.code.custom.matcher;
 
+import lombok.extern.slf4j.Slf4j;
 import org.mockito.InOrder;
 
 import java.util.LinkedList;
 
-import static jill.common.constant.LogConstant.log;
 import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.mock;
 
@@ -13,6 +13,7 @@ import static org.mockito.Mockito.mock;
  * @date 2020/09/30
  */
 @SuppressWarnings("ALL")
+@Slf4j
 public class ExecutionSequence {
     public static void main(String[] args) {
         //创建mock对象

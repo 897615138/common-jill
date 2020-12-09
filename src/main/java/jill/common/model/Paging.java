@@ -22,6 +22,10 @@ public class Paging<T> implements Serializable {
         this.total = total;
     }
 
+    public static <T> Paging<T> empty() {
+        return new Paging<>(0L, Collections.emptyList());
+    }
+
     public List<T> getData() {
         return this.data;
     }
@@ -38,17 +42,13 @@ public class Paging<T> implements Serializable {
         this.total = total;
     }
 
-    public Boolean isEmpty() {
-        return Objects.equals(0L, this.total) || this.data == null || this.data.isEmpty();
-    }
-
 //    public static <T> Paging<T> empty(Class<T> clazz) {
 //        List<T> emptyList = Collections.emptyList();
 //        return new Paging(0L, emptyList);
 //    }
 
-    public static <T> Paging<T> empty() {
-        return new Paging<>(0L, Collections.emptyList());
+    public Boolean isEmpty() {
+        return Objects.equals(0L, this.total) || this.data == null || this.data.isEmpty();
     }
 
     public boolean equals(Object o) {

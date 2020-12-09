@@ -1,14 +1,16 @@
 package jill.mockito.code;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.LinkedList;
 
-import static jill.common.constant.LogConstant.log;
 import static org.mockito.Mockito.*;
 
 /**
  * @author JillW
  * @date 2020/09/30
  */
+@Slf4j
 public class SpyTest2 {
     public static void main(String[] args) {
         LinkedList<String> list = new LinkedList<>();

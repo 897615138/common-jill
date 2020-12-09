@@ -1,17 +1,17 @@
 package jill.common.util.word;
 
 import jill.common.constant.CodeConstant;
+import lombok.extern.slf4j.Slf4j;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.util.UUID;
 
-import static jill.common.constant.LogConstant.log;
-
 
 /**
  * @author jill
  */
+@Slf4j
 public class CodeUtil {
     /**
      * 获取UUID

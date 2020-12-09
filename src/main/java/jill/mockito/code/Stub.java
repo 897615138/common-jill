@@ -3,10 +3,10 @@ package jill.mockito.code;
 // 静态导入会使代码更简洁
 
 import jill.common.constant.LogConstant;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.LinkedList;
 
-import static jill.common.constant.LogConstant.log;
 import static org.mockito.Mockito.*;
 
 /**
@@ -14,6 +14,7 @@ import static org.mockito.Mockito.*;
  * @date 2020/09/30
  * 测试桩 Stub
  */
+@Slf4j
 public class Stub {
     public static void main(String[] args) {
         //You can mock concrete classes, not only interfaces

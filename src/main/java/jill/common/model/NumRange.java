@@ -2,6 +2,9 @@ package jill.common.model;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ObjectUtil;
+import com.google.common.collect.Range;
+import com.google.common.collect.RangeSet;
+import com.google.common.collect.TreeRangeSet;
 import jill.common.enums.ComputeTypeEnum;
 import jill.common.util.word.SimilarUtil;
 import lombok.AllArgsConstructor;
@@ -119,4 +122,12 @@ public class NumRange {
         return integers;
     }
 
+    public static void main(String[] args) {
+        RangeSet<Integer> rangeSet = TreeRangeSet.create();
+        rangeSet.add(Range.closed(1, 10));
+        rangeSet.add(Range.closed(2, 11));
+        System.out.println(rangeSet);
+        Set<Range<Integer>> ranges = rangeSet.asRanges();
+        ranges.forEach(integerRange -> System.out.println(integerRange.lowerEndpoint()));
+    }
 }

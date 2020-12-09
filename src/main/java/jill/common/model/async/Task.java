@@ -6,7 +6,7 @@ import java.util.concurrent.Callable;
  * @author Jill W
  * @date 2020/11/17
  */
-public class Task implements Callable<String>{
+public class Task implements Callable<String> {
 
     /**
      * Computes a result, or throws an exception if unable to do so.
@@ -16,6 +16,6 @@ public class Task implements Callable<String>{
      */
     @Override
     public String call() throws Exception {
-        return "time:"+System.currentTimeMillis();
+        return "time:" + System.currentTimeMillis();
     }
 }

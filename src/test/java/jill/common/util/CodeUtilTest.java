@@ -2,11 +2,11 @@ package jill.common.util;
 
 import cn.hutool.core.util.CharsetUtil;
 import jill.common.util.word.CodeUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static jill.common.constant.LogConstant.log;
-
+@Slf4j
 public class CodeUtilTest {
     private static final String TEST = "test";
 

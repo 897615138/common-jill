@@ -1,16 +1,17 @@
 package jill.mockito.code;
 
 import jill.mockito.model.TestModel;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.LinkedList;
 
-import static jill.common.constant.LogConstant.log;
 import static org.mockito.Mockito.*;
 
 /**
  * @author JillW
  * @date 2020/09/30
  */
+@Slf4j
 public class Foo {
     public static void main(String[] args) {
         //创建mock对象

@@ -1,8 +1,9 @@
 package jill.mockito.code;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.LinkedList;
 
-import static jill.common.constant.LogConstant.log;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -10,6 +11,7 @@ import static org.mockito.Mockito.when;
  * @author JillW
  * @date 2020/09/30
  */
+@Slf4j
 @SuppressWarnings("ALL")
 public class ContinuousTest {
     public static void main(String[] args) {

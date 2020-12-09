@@ -1,5 +1,6 @@
 package jill.common.util;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 
 import java.io.IOException;
@@ -7,11 +8,11 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Objects;
 
-import static jill.common.constant.LogConstant.log;
 
 /**
  * @author jill
  */
+@Slf4j
 public class StreamUtil {
     /**
      * 输入流

@@ -19,6 +19,14 @@ public class PageInfo {
     public PageInfo() {
     }
 
+    public PageInfo(Integer pageNo, Integer size) {
+        pageNo = MoreObjects.firstNonNull(pageNo, 1);
+        size = MoreObjects.firstNonNull(size, 20);
+        this.pageLimit = size > 0 ? size : 20;
+        this.pageOffset = (pageNo - 1) * size;
+        this.pageOffset = this.pageOffset > 0 ? this.pageOffset : 0;
+    }
+
     public static PageInfo of(Integer pageNo, Integer size) {
         return new PageInfo(pageNo, size);
     }
@@ -30,14 +38,6 @@ public class PageInfo {
         pageInfo.pageOffset = lastId > 0 ? lastId : 0;
         pageInfo.pageLimit = size > 0 ? size : 20;
         return pageInfo;
-    }
-
-    public PageInfo(Integer pageNo, Integer size) {
-        pageNo = MoreObjects.firstNonNull(pageNo, 1);
-        size = MoreObjects.firstNonNull(size, 20);
-        this.pageLimit = size > 0 ? size : 20;
-        this.pageOffset = (pageNo - 1) * size;
-        this.pageOffset = this.pageOffset > 0 ? this.pageOffset : 0;
     }
 
     public Integer getPageOffset() {

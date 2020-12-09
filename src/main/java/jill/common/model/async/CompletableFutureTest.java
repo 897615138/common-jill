@@ -45,7 +45,7 @@ public class CompletableFutureTest {
      * @param times 次数
      * @throws Exception 异常
      */
-    public static void getPriceManyTimes(Integer times,String name) throws Exception {
+    public static void getPriceManyTimes(Integer times, String name) throws Exception {
         for (int i = 0; i < times; i++) {
             getPrice(name);
         }
@@ -89,7 +89,7 @@ public class CompletableFutureTest {
 
     private static void simpleTest() {
         try {
-            getPriceManyTimes(10,TEST);
+            getPriceManyTimes(10, TEST);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -98,7 +98,7 @@ public class CompletableFutureTest {
     private static void serialTest() {
         CompletableFuture<String> first = CompletableFuture.supplyAsync(() -> queryCode(TEST));
         CompletableFuture<Double> twice = first.thenApply(CompletableFutureTest::getPrice);
-        CompletableFuture<Object> third= twice.thenApply((price) -> {
+        CompletableFuture<Object> third = twice.thenApply((price) -> {
             System.out.println("price:" + price);
             return null;
         });

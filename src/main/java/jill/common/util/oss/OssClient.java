@@ -1,7 +1,5 @@
 package jill.common.util.oss;
 
-import java.io.InputStream;
-
 /**
  * @author Jill W
  * @date 2020/12/08
@@ -31,7 +29,6 @@ public interface OssClient {
     void shutDown(String requestId);
 
     /**
-     *
      * @param fileKey fileKey
      * @return url
      */
