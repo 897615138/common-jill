@@ -1,7 +1,7 @@
 package jill.commonspring;
 
-import jill.commonspring.mapper.UserMapper;
-import jill.commonspring.model.User;
+import jill.common.mapper.UserMapper;
+import jill.common.model.User;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

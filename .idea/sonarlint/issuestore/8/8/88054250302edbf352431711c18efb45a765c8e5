@@ -1,0 +1,11 @@
+
+l
+java:S2095n"QUse try-with-resources or close this "ReadableByteChannel" in a "finally" clause.(€Ç—øÿÿÿÿ
+@
+java:S1181Z"%Catch Exception instead of Throwable.(‡˜ÚÚøÿÿÿÿ
+d
+java:S2095o"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(„õ½‰
+S
+java:S11970"8Move the array designator from the variable to the type.(¡şÏÖøÿÿÿÿ
+0
+java:S1220""Move this file to a named package.
