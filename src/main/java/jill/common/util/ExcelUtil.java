@@ -1,7 +1,9 @@
 package jill.common.util;
 
+
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.collection.ListUtil;
+import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.StrUtil;
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.EasyExcelFactory;
@@ -11,6 +13,7 @@ import com.alibaba.excel.event.AnalysisEventListener;
 import com.alibaba.excel.metadata.BaseRowModel;
 import com.alibaba.excel.read.metadata.ReadSheet;
 import com.alibaba.excel.write.metadata.WriteSheet;
+import jill.common.model.TableInfo;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,6 +23,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author jill
@@ -318,6 +322,24 @@ public class ExcelUtil {
             //解析结束销毁不用的资源
         }
 
+    }
+
+    public static void writeExcel(String name, List<TableInfo> data) {
+        String fileName = SqlUtil.class.getResource("/").getPath() + name + ".xlsx";
+        File file = cn.hutool.core.io.FileUtil.file(fileName);
+        if (Objects.isNull(file)) {
+            file = FileUtil.newFile(fileName);
+            System.out.println(file);
+        }
+        System.out.println(file);
+        EasyExcel.write(fileName, TableInfo.class).sheet(name).doWrite(data);
+    }
+
+    public static void main(String[] args) {
+        TableInfo build = TableInfo.builder().tableName("test").comment("test").paramName("test").build();
+        List<TableInfo> tableInfos = new ArrayList<>();
+        tableInfos.add(build);
+        writeExcel("test", tableInfos);
     }
 
 }

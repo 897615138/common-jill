@@ -10,7 +10,7 @@ import static cn.hutool.core.util.CharUtil.DOT;
 /**
  * @author jill
  */
-public class FileUtil {
+public class FilesUtil {
     /**
      * 递归删除目录
      *
