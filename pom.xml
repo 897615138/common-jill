@@ -4,30 +4,38 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>com.jill.own</groupId>
     <artifactId>common-jill</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>common-jill Maven Webapp</name>
     <url>http://www.common-jill.com</url>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
-        <zookeeper.version>3.4.14</zookeeper.version>
-        <log4j.version>2.13.3</log4j.version>
+
+        <spring.version>5.3.2</spring.version>
+        <zookeeper.version>3.6.2</zookeeper.version>
+        <apache-http.version>4.5.13</apache-http.version>
+        <mybatis-plus-core.version>3.4.1</mybatis-plus-core.version>
+
+        <log4j.version>2.14.0</log4j.version>
         <log4j12.version>2.0.0-alpha1</log4j12.version>
-        <common-logging.version>1.2</common-logging.version>
         <common-io.version>2.8.0</common-io.version>
         <common-lang3.version>3.11</common-lang3.version>
-        <hutool.version>5.4.3</hutool.version>
-        <apache-http.version>4.5.12</apache-http.version>
-        <lombok.version>1.18.12</lombok.version>
-        <easy-excel.version>2.2.6</easy-excel.version>
-        <spring.version>5.1.8.RELEASE</spring.version>
+        <hutool.version>5.5.2</hutool.version>
+        <lombok.version>1.18.16</lombok.version>
+        <easy-excel.version>2.2.7</easy-excel.version>
+        <aliyun-log.version>0.6.61</aliyun-log.version>
+        <jackson-datatype-guava.version>2.12.0</jackson-datatype-guava.version>
+
         <mockito.version>3.5.13</mockito.version>
+        <disruption.version>3.0.1</disruption.version>
+
+<!--        <metrics.version>4.1.13</metrics.version>-->
+<!--        <metrics.spring.version>3.1.3</metrics.spring.version>-->
     </properties>
 
     <dependencies>
@@ -51,21 +59,22 @@
                     <artifactId>log4j-over-slf4j</artifactId>
                     <groupId>org.slf4j</groupId>
                 </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>${log4j12.version}</version>
-        </dependency>
-
-
-        <!--    log4j-->
         <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
             <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${log4j12.version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
         <dependency>
@@ -73,8 +82,6 @@
             <artifactId>slf4j-api</artifactId>
             <version>${log4j12.version}</version>
         </dependency>
-
-
         <!--common-->
         <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
         <dependency>
@@ -138,68 +145,40 @@
         <dependency>
             <groupId>com.lmax</groupId>
             <artifactId>disruptor</artifactId>
-            <version>3.0.1</version>
+            <version>${disruption.version}</version>
         </dependency>
         <!--    metric测量    -->
         <!-- https://mvnrepository.com/artifact/io.dropwizard.metrics/metrics-core -->
-        <dependency>
-            <groupId>io.dropwizard.metrics</groupId>
-            <artifactId>metrics-core</artifactId>
-            <version>4.1.13</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.dropwizard.metrics</groupId>-->
+<!--            <artifactId>metrics-core</artifactId>-->
+<!--            <version>${metrics.version}</version>-->
+<!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/com.ryantenney.metrics/metrics-spring -->
-        <dependency>
-            <groupId>com.ryantenney.metrics</groupId>
-            <artifactId>metrics-spring</artifactId>
-            <version>3.1.3</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.ryantenney.metrics</groupId>-->
+<!--            <artifactId>metrics-spring</artifactId>-->
+<!--            <version>${metrics.spring.version}</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>com.aliyun.openservices</groupId>
             <artifactId>aliyun-log</artifactId>
-            <version>0.6.33</version>
+            <version>${aliyun-log.version}</version>
         </dependency>
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-core</artifactId>
-            <version>3.1.2</version>
+            <version>${mybatis-plus-core.version}</version>
         </dependency>
-        <dependency>
-            <groupId>io.swagger</groupId>
-            <artifactId>swagger-annotations</artifactId>
-            <version>1.5.21</version>
-        </dependency>
-        <dependency>
-            <groupId>org.dom4j</groupId>
-            <artifactId>dom4j</artifactId>
-            <version>2.1.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.aliyun.oss</groupId>
-            <artifactId>aliyun-sdk-oss</artifactId>
-            <version>3.11.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot</artifactId>
-            <version>2.3.4.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba.edas.acm</groupId>
-            <artifactId>acm-sdk</artifactId>
-            <version>1.0.8</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.8.11.3</version>
-        </dependency>
+
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-guava</artifactId>
-            <version>2.10.0</version>
+            <version>${jackson-datatype-guava.version}</version>
         </dependency>
-    </dependencies>
 
+
+    </dependencies>
     <build>
         <finalName>common-jill</finalName>
         <pluginManagement><!-- zookeeper.lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->

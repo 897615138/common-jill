@@ -2,7 +2,6 @@ package jill.mockito.code;
 
 // 静态导入会使代码更简洁
 
-import jill.common.constant.LogConstant;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.LinkedList;
@@ -42,6 +41,5 @@ public class Stub {
         // 验证get(0)被调用的次数
         Object s = verify(mockedList).get(0);
         log.info((String) s);
-        log.info(LogConstant.CROSS_LINE);
     }
 }

@@ -111,11 +111,11 @@ public class Warehouse {
         String choice = SCANNER.nextLine();
         switch (choice) {
             case "´æ»õ":
-                Commodity bean1 = BeanUtil.getBean(Commodity.class);
+                Commodity bean1 = BeanUtil.manualInsertBean(Commodity.class);
                 goodEntry(bean1);
                 break;
             case "È¡»õ":
-                Commodity bean2 = BeanUtil.getBean(Commodity.class);
+                Commodity bean2 = BeanUtil.manualInsertBean(Commodity.class);
                 goodGet(bean2);
                 break;
             case "0":

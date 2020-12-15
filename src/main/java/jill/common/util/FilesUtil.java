@@ -3,7 +3,7 @@ package jill.common.util;
 
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.StrUtil;
-import jill.common.constant.LogConstant;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
 import java.util.Arrays;
@@ -16,6 +16,7 @@ import static cn.hutool.core.util.StrUtil.DOT;
 /**
  * @author jill
  */
+@Slf4j
 public class FilesUtil {
     /**
      * 递归删除目录
@@ -44,9 +45,10 @@ public class FilesUtil {
      */
     public static String getFileExt(String fileName) {
         String ext = "";
+        //文件名非空
         if (StrUtil.isNotEmpty(fileName)) {
-            if (StrUtil.contains(fileName, DOT) && !StrUtil.endWith(fileName,
-                    DOT)) {
+            //文件名有. 并且不是以.结尾
+            if (StrUtil.contains(fileName, DOT) && !StrUtil.endWith(fileName, DOT)) {
                 ext = fileName.substring(fileName.lastIndexOf(DOT) + 1);
             }
         }
@@ -67,7 +69,7 @@ public class FilesUtil {
             try {
                 file.mkdirs();
             } catch (Exception e) {
-                LogConstant.log.warn("file make dir fail");
+                log.warn("file make dir fail");
                 if (!file.exists()) {
                     throw new RuntimeException("create directory fail");
                 }
@@ -81,6 +83,10 @@ public class FilesUtil {
         deleteMuchDependencies(file);
     }
 
+    /**
+     * 删除指定文件下除了最高版本的依赖文件
+     * @param file 文件
+     */
     public static void deleteMuchDependencies(File file) {
 //        System.out.println(file);
         if (file.isDirectory()) {

@@ -2,15 +2,16 @@ package jill.common.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.base.MoreObjects;
+import lombok.Data;
 
 import java.io.Serializable;
-import java.util.Map;
 import java.util.Objects;
 
 /**
  * @author Jill W
  * @date 2020/12/08
  */
+@Data
 public class PagingCriteria extends Criteria implements Serializable {
     public static final int SORT_TYPE_ASC = 1;
     public static final int SORT_TYPE_DESC = 2;
@@ -57,50 +58,6 @@ public class PagingCriteria extends Criteria implements Serializable {
     public Integer getOffset() {
         PageInfo pageInfo = new PageInfo(this.pageNo, this.pageSize);
         return pageInfo.getPageOffset();
-    }
-
-    public Map<String, Object> toMap() {
-        return super.toMap();
-    }
-
-    public Integer getPageNo() {
-        return this.pageNo;
-    }
-
-    public void setPageNo(Integer pageNo) {
-        this.pageNo = pageNo;
-    }
-
-    public Integer getPageSize() {
-        return this.pageSize;
-    }
-
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
-    }
-
-    public String getSortBy() {
-        return this.sortBy;
-    }
-
-    public void setSortBy(String sortBy) {
-        this.sortBy = sortBy;
-    }
-
-    public Integer getSortType() {
-        return this.sortType;
-    }
-
-    public void setSortType(Integer sortType) {
-        this.sortType = sortType;
-    }
-
-    public Boolean getSkipCount() {
-        return this.skipCount;
-    }
-
-    public void setSkipCount(Boolean skipCount) {
-        this.skipCount = skipCount;
     }
 
     public boolean equals(Object o) {
