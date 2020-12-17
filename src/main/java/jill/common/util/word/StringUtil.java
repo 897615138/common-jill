@@ -37,7 +37,6 @@ public class StringUtil {
      * @param str   字符串
      * @param regex 正则表达式
      * @return 结果list
-     * TODO 给很多正则 只要匹配即可
      */
     public static List<StringResult> findByRegex(String str, String regex) {
         ArrayList<StringResult> stringResults = new ArrayList<>();
@@ -59,15 +58,60 @@ public class StringUtil {
     }
 
     /**
+     * 通过正则寻找
+     *
+     * @param str     字符串
+     * @param regexes 正则表达式
+     * @return 结果list
+     */
+    public static List<StringResult> findByRegex(String str, String... regexes) {
+        ArrayList<StringResult> stringResults = new ArrayList<>();
+        ArrayList<Pattern> patterns = new ArrayList<>();
+        for (String regex : regexes) {
+            patterns.add(Pattern.compile(regex));
+        }
+        int index = 0;
+        for (Pattern pattern : patterns) {
+            Matcher matcher = pattern.matcher(str);
+            while (matcher.find()) {
+                int start = matcher.start();
+                int end = matcher.end();
+                StringResult build = StringResult.builder()
+                        .matchIndex(index)
+                        .startIndex(start)
+                        .endIndex(end)
+                        .stringValue(str.substring(start, end))
+                        .build();
+                stringResults.add(build);
+            }
+        }
+        return stringResults;
+    }
+
+    /**
      * 查找单词
      *
      * @param str  字符串
      * @param word 单词
      * @return 结果list
-     * TODO 给很多字符串只要匹配即可
      */
-    public static List<StringResult> findWords(String str, String word) {
+    public static List<StringResult> findWord(String str, String word) {
         return findByRegex(str, "\\b" + word + "\\b");
+    }
+
+    /**
+     * 查找单词
+     *
+     * @param str  字符串
+     * @param word 单词
+     * @return 结果list
+     */
+    public static List<StringResult> findWord(String str, String... word) {
+        String[] strings = new String[word.length];
+        for (int i = 0; i < strings.length; i++) {
+            strings[i] = "\\b" + word[i] + "\\b";
+        }
+        return findByRegex(str, strings);
     }
 
     /**
@@ -76,15 +120,29 @@ public class StringUtil {
      * @param str       字符串
      * @param strToFind 要找的字符串
      * @return 结果list
-     * TODO 给很多字符串只要匹配即可
      */
     public static List<StringResult> findExists(String str, String strToFind) {
         return findByRegex(str, ".*" + strToFind + ".*");
     }
 
+    /**
+     * 查找存在
+     *
+     * @param str       字符串
+     * @param strToFind 要找的字符串
+     * @return 结果list
+     */
+    public static List<StringResult> findExists(String str, String... strToFind) {
+        String[] strings = new String[strToFind.length];
+        for (int i = 0; i < strToFind.length; i++) {
+            strings[i] = ".*" + strToFind[i] + ".*";
+        }
+        return findByRegex(str, strings);
+    }
+
     public static void main(String[] args) {
         System.out.println(findByRegex("Apple,love,love", "lo"));
-        System.out.println(findWords("apple,banana,orange", "apple"));
+        System.out.println(findWord("apple,banana,orange", "apple"));
     }
 
     /**
@@ -93,7 +151,6 @@ public class StringUtil {
      *
      * @param mom 母字符串
      * @param son 子字符串
-     *            TODO 给很多子字符串或者很多母字符串
      */
     public static Integer stringTimes(String mom, String son) {
         int times = 0;
@@ -150,7 +207,6 @@ public class StringUtil {
                 d[i][j] = Math.min(Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1), d[i - 1][j - 1] + temp);
             }
         }
-
         return (1 - (float) d[n][m] / Math.max(str1.length(), str2.length())) * 100F;
     }
 

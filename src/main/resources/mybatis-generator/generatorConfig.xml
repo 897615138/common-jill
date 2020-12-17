@@ -17,7 +17,7 @@
                         password="root"/>
 
         <javaModelGenerator targetPackage="result.entity"
-                            targetProject="/Users/terminus/IdeaProjects/common-jill/src/main/java/jill/common/util/sql/generator/" >
+                            targetProject="/Users/terminus/IdeaProjects/common-jill/src/main/java/jill/common/util/sql/generator/">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -29,7 +29,7 @@
 
         <javaClientGenerator targetPackage="result.mapper"
                              targetProject="/Users/terminus/IdeaProjects/common-jill/src/main/java/jill/common/util/sql/generator/"
-                             type="XMLMAPPER" >
+                             type="XMLMAPPER">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
@@ -39,7 +39,7 @@
                enableDeleteByExample="true"
                enableSelectByExample="true"
                selectByExampleQueryId="true"
-               selectByPrimaryKeyQueryId="true" >
+               selectByPrimaryKeyQueryId="true">
             <!--<columnRenamingRule searchString="^D_"
                                 replaceString=""/>-->
         </table>

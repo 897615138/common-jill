@@ -263,6 +263,24 @@ public class ExcelUtil {
         }
     }
 
+    public static void writeExcel(String name, List<TableInfo> data) {
+        String fileName = SqlUtil.class.getResource("/").getPath() + name + ".xlsx";
+        File file = cn.hutool.core.io.FileUtil.file(fileName);
+        if (Objects.isNull(file)) {
+            file = FileUtil.newFile(fileName);
+            System.out.println(file);
+        }
+        System.out.println(file);
+        EasyExcel.write(fileName, TableInfo.class).sheet(name).doWrite(data);
+    }
+
+    public static void main(String[] args) {
+        TableInfo build = TableInfo.builder().tableName("test").comment("test").paramName("test").build();
+        List<TableInfo> tableInfos = new ArrayList<>();
+        tableInfos.add(build);
+        writeExcel("test", tableInfos);
+    }
+
     @Data
     private static class MultipleSheetProperty {
 
@@ -304,23 +322,5 @@ public class ExcelUtil {
             //解析结束销毁不用的资源
         }
 
-    }
-
-    public static void writeExcel(String name, List<TableInfo> data) {
-        String fileName = SqlUtil.class.getResource("/").getPath() + name + ".xlsx";
-        File file = cn.hutool.core.io.FileUtil.file(fileName);
-        if (Objects.isNull(file)) {
-            file = FileUtil.newFile(fileName);
-            System.out.println(file);
-        }
-        System.out.println(file);
-        EasyExcel.write(fileName, TableInfo.class).sheet(name).doWrite(data);
-    }
-
-    public static void main(String[] args) {
-        TableInfo build = TableInfo.builder().tableName("test").comment("test").paramName("test").build();
-        List<TableInfo> tableInfos = new ArrayList<>();
-        tableInfos.add(build);
-        writeExcel("test", tableInfos);
     }
 }

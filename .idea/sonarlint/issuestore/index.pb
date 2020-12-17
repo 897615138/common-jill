@@ -101,10 +101,6 @@ _
 -src/main/java/jill/common/util/ExcelUtil.java,b/a/baa6270454fedf6d4331fb62a7e1e8a0cf14b727
 ]
 -src/main/java/jill/common/util/FilesUtil.java,0/a/0aa66d0552f019d258e6f70c5c5c83f9e861deed
-e
-5src/main/resources/mapper/jill/RiskStrategyMapper.xml,f/f/ff83665642bd7e16151064dee5ada9ab9bfa2701
-]
--src/main/resources/mapper/jill/UserMapper.xml,d/8/d825cd0b85529a60d8ed83430b8a241a9b68937e
 h
 8src/main/java/jill/common/model/warehouse/Warehouse.java,5/c/5caf807ebe17079a80f92163d44dd7acc192a6ca
 _

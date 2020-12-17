@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
  * @date 2020/12/14
  */
 public class SqlUtil {
-    public static Pattern table = Pattern.compile("create table if not exists ");
+    public static final Pattern table = Pattern.compile("create table if not exists ");
 
     public static List<TableInfo> getData(File file) {
         String fileName = file.getName();

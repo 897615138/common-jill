@@ -1,7 +1,6 @@
 package jill.common.util;
 
 
-import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.StrUtil;
 import lombok.extern.slf4j.Slf4j;
 
@@ -85,6 +84,7 @@ public class FilesUtil {
 
     /**
      * 删除指定文件下除了最高版本的依赖文件
+     *
      * @param file 文件
      */
     public static void deleteMuchDependencies(File file) {
@@ -177,8 +177,9 @@ public class FilesUtil {
         //删除空文件夹  for循环已经把上一层节点的目录清空。
         file.delete();
     }
-    public static File getResource(String  name){
-        String property = System.getProperty("user.dir")+"/src/main/resources"+name;
+
+    public static File getResource(String name) {
+        String property = System.getProperty("user.dir") + "/src/main/resources" + name;
         return new File(property);
     }
 }

@@ -24,11 +24,11 @@ public class Warehouse {
      * 仓库数量上限
      */
     public static final Integer CAPACITY = 10;
+    public static final Scanner SCANNER = new Scanner(System.in);
     /**
      * 仓库商品目录
      */
-    public static final List<Commodity> GOOD_LIST = new ArrayList<>();
-    public static final Scanner SCANNER = new Scanner(System.in);
+    protected static final List<Commodity> GOOD_LIST = new ArrayList<>();
     /**
      * 仓库现有数量
      */

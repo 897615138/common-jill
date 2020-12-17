@@ -5,13 +5,6 @@ package jill.common.util.oss;
  * @date 2020/12/08
  */
 public interface OssClient {
-    /**
-     * oss上传
-     *
-     * @param inputStream 输入流
-     * @param targetObjectKey 目标key
-     * @return String
-     */
 
     /**
      * oss下载

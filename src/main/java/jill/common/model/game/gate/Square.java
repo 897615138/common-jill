@@ -72,13 +72,15 @@ public class Square {
                     default:
                         if (map[x][y].isWrapGate()) {
                             int gateNumber = map[x][y].type;
-                            WrapGate wrapGate1 = wrapGate.get(gateNumber);
-                            if (wrapGate1 == null) {
-                                wrapGate1 = new WrapGate();
-                                wrapGate.put(gateNumber, wrapGate1);
+                            WrapGate wrapGate1 = wrapGate.computeIfAbsent(gateNumber, k -> wrapGate.put(gateNumber, new WrapGate()));
+//                            WrapGate wrapGate1 = wrapGate.get(gateNumber);
+//                            if (wrapGate1 == null) {
+//                                wrapGate1 = new WrapGate();
+//                                wrapGate.put(gateNumber, wrapGate1);
+//                            }
+                            if (wrapGate1 != null) {
+                                wrapGate1.buildWrapGate(map[x][y]);
                             }
-                            wrapGate1.buildWrapGate(map[x][y]);
-
                         }
                 }
                 y++;
