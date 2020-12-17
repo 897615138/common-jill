@@ -1,4 +1,4 @@
-package jill.common.model;
+package jill.common.model.sql;
 
 import com.google.common.collect.Maps;
 import org.apache.ibatis.session.SqlSession;

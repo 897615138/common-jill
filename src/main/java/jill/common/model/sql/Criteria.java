@@ -1,4 +1,4 @@
-package jill.common.model;
+package jill.common.model.sql;
 
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.DeserializationFeature;

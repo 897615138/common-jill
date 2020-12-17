@@ -1,4 +1,4 @@
-package jill.common.model;
+package jill.common.model.util;
 
 import lombok.Builder;
 import lombok.Data;

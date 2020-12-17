@@ -1,4 +1,4 @@
-package jill.common.model;
+package jill.common.model.sql;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.base.MoreObjects;

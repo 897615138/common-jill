@@ -1,4 +1,4 @@
-package jill.common.model;
+package jill.common.model.sql;
 
 import java.io.Serializable;
 import java.util.Collections;

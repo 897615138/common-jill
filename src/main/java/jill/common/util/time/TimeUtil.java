@@ -1,6 +1,6 @@
 package jill.common.util.time;
 
-import jill.common.model.TimeModel;
+import jill.common.model.util.TimeModel;
 
 import java.io.Serializable;
 import java.util.Date;

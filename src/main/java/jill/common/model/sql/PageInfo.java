@@ -1,4 +1,4 @@
-package jill.common.model;
+package jill.common.model.sql;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Strings;

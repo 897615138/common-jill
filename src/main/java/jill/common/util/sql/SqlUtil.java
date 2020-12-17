@@ -2,7 +2,7 @@ package jill.common.util.sql;
 
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.core.util.ZipUtil;
-import jill.common.model.TableInfo;
+import jill.common.model.util.TableInfo;
 import jill.common.util.ExcelUtil;
 import jill.common.util.FilesUtil;
 

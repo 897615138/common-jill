@@ -1,6 +1,6 @@
 package jill.common.util.word;
 
-import jill.common.model.StringResult;
+import jill.common.model.util.StringResult;
 
 import java.util.ArrayList;
 import java.util.List;

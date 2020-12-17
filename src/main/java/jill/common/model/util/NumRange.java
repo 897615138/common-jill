@@ -1,4 +1,4 @@
-package jill.common.model;
+package jill.common.model.util;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ObjectUtil;
