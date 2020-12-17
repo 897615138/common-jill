@@ -79,7 +79,7 @@ public class FilesUtil {
     }
 
     public static void main(String[] args) {
-        File file = FileUtil.newFile("/Users/terminus/.m2/repository");
+        File file = cn.hutool.core.io.FileUtil.newFile("/Users/terminus/.m2/repository");
         deleteMuchDependencies(file);
     }
 
@@ -176,5 +176,9 @@ public class FilesUtil {
         }
         //删除空文件夹  for循环已经把上一层节点的目录清空。
         file.delete();
+    }
+    public static File getResource(String  name){
+        String property = System.getProperty("user.dir")+"/src/main/resources"+name;
+        return new File(property);
     }
 }

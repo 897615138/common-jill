@@ -9,18 +9,22 @@
         <outputRelativeToContentRoot value="true" />
         <module name="common-spring" />
         <module name="common-arithmetic" />
+        <module name="untitled" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="common-arithmetic" target="8" />
       <module name="common-kafka" target="8" />
       <module name="common-pattern" target="8" />
+      <module name="common-spring (1) (jill)" target="1.8" />
       <module name="common-zookeeper" target="1.8" />
+      <module name="untitled" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="common-spring" options="-parameters" />
+      <module name="common-spring (1) (jill)" options="-parameters" />
       <module name="common-zookeeper" options="-parameters" />
     </option>
   </component>
