@@ -219,4 +219,6 @@ public class StringUtil {
     public String stringSpaceDelete(String string) {
         return string.replace(" ", "");
     }
+
+
 }
