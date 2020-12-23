@@ -1,8 +1,8 @@
 package jill;
 
-import com.google.common.base.CharMatcher;
-import com.google.common.base.Joiner;
-import com.google.common.base.Splitter;
+import org.springframework.context.i18n.LocaleContextHolder;
+
+import java.util.Locale;
 
 /**
  * @author Jill W
@@ -10,6 +10,8 @@ import com.google.common.base.Splitter;
  */
 public class Test {
     public static void main(String[] args) {
-        Splitter on = Splitter.on(CharMatcher.breakingWhitespace());
+        //返回与当前线程关联的语言环境
+        Locale locale = LocaleContextHolder.getLocale();
+        System.out.println(locale);
     }
 }
