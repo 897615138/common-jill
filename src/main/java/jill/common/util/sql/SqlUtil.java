@@ -124,7 +124,7 @@ public class SqlUtil {
     /**
      * 获取表信息 设置默认注释
      *
-     * @param substring 含有表信息的substring
+     * @param substring      含有表信息的substring
      * @param defaultComment 默认注释 如果为null 就使用字段名作为注释
      * @return 表信息
      */

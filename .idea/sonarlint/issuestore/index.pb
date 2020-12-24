@@ -164,14 +164,10 @@ e
 5src/main/java/jill/common/model/vote/VoteManager.java,d/1/d1b218a0c93974ba72742b12f18a630ebf68113b
 c
 3src/main/java/jill/common/model/vote/VoteState.java,3/1/313aadeb33192e5ab59b2bdcf792e601e73077e7
-|
-Ltarget/maven-status/maven-compiler-plugin/compile/default-cli/inputFiles.lst,8/9/898b09efdc17c5a6db094f56cedb45bf16e6e77c
 h
 8src/main/java/jill/common/model/warehouse/Commodity.java,7/2/7293e2c8503bab4c32da7cf7e9f206931e9e5a2c
 h
 8src/main/java/jill/mockito/model/EmBannerPortalType.java,7/4/749cb5748dca1b092978ef74588652cac52faa66
-~
-Ntarget/maven-status/maven-compiler-plugin/compile/default-cli/createdFiles.lst,e/6/e6b2ea38611594245ca13ddc632ac15cab3ffc23
 ^
 .src/main/java/jill/mockito/model/TestUtil.java,c/b/cb50665ba1dd208c13fd1160352636118d3e9298
 _
@@ -224,11 +220,3 @@ i
 9src/test/java/jill/common/model/async/RxJavaTestTest.java,9/f/9fcc4bd4e16acd4e0f1e69bdd1b2b2d5755765ef
 T
 $src/main/java/jill/ServerApiAop.java,b/e/bed7d9eef602ba597bc32c87e547f4816758558d
-|
-Lsrc/main/java/jill/common/util/sql/generator/result/entity/RiskStrategy.java,c/3/c3ca2826cf8ed381b45e02950a0dcb7e4304d174
-ƒ
-Ssrc/main/java/jill/common/util/sql/generator/result/entity/RiskStrategyExample.java,2/5/251c38843ad9bc1fec976e7f2e64d2a099539ad0
-‚
-Rsrc/main/java/jill/common/util/sql/generator/result/mapper/RiskStrategyMapper.java,3/f/3f5ea21e7c7e3d97d86e438bcf9757b28200e70f
-…
-Usrc/main/java/jill/common/util/sql/generator/result/entity/xml/RiskStrategyMapper.xml,8/0/808d28deb632111f24065c261f62ace6b46de2d7
