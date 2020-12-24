@@ -8,7 +8,7 @@ import java.net.Socket;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 /**
- * Ö÷·şÎñÆ÷
+ * ä¸»æœåŠ¡å™¨
  *
  * @author JIll Wang
  * @date 2020-07-16 18:24
@@ -16,21 +16,21 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 public class MainServer {
 
     public static void start(int port) {
-        //ÏŞ¶¨³¤¶ÈÏß³Ì³Ø
+        //é™å®šé•¿åº¦çº¿ç¨‹æ± 
         ScheduledThreadPoolExecutor executorService = new ScheduledThreadPoolExecutor(10,
                 new BasicThreadFactory.Builder().namingPattern("example-schedule-pool-%d").daemon(true).build());
-        //´´½¨·şÎñÆ÷socket
+        //åˆ›å»ºæœåŠ¡å™¨socket
         try {
-            //¼àÌıµ±Ç°µÄ9000¶Ë¿Ú
+            //ç›‘å¬å½“å‰çš„9000ç«¯å£
             Socket socket;
             try (ServerSocket serverSocket = new ServerSocket(port)) {
-                System.out.println("¶Ë¿ÚºÅ£º" + port);
-                //Ò»Ö±½øĞĞĞÅºÅ½ÓÊÕÅĞ¶Ï
+                System.out.println("ç«¯å£å·ï¼š" + port);
+                //ä¸€ç›´è¿›è¡Œä¿¡å·æ¥æ”¶åˆ¤æ–­
 //            while (true) {
-                //¶Ë¿Ú½ÓÊÕµ½µÄÌ×½Ó×Ö
+                //ç«¯å£æ¥æ”¶åˆ°çš„å¥—æ¥å­—
                 socket = serverSocket.accept();
             }
-            //ĞÂ½¨Ïß³Ì
+            //æ–°å»ºçº¿ç¨‹
             executorService.submit(new SocketRun(socket));
 //            }
         } catch (IOException e) {

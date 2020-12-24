@@ -1,7 +1,7 @@
 package jill.common.model.game.gate;
 
 /**
- * ´«ËÍÃÅ
+ * ä¼ é€é—¨
  *
  * @author JIll Wang
  * @date 2020-07-08 08:23
@@ -12,10 +12,10 @@ public class WrapGate {
     public Square s2;
 
     /**
-     * ÕÒ´«ËÍÃÅµÄÁíÒ»±ß
+     * æ‰¾ä¼ é€é—¨çš„å¦ä¸€è¾¹
      *
-     * @param s ´«ËÍÃÅ
-     * @return ÁíÒ»¸ö´«ËÍÃÅ
+     * @param s ä¼ é€é—¨
+     * @return å¦ä¸€ä¸ªä¼ é€é—¨
      */
     public Square getOtherSide(Square s) {
         if (s.equals(s1)) {

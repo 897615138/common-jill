@@ -224,3 +224,11 @@ i
 9src/test/java/jill/common/model/async/RxJavaTestTest.java,9/f/9fcc4bd4e16acd4e0f1e69bdd1b2b2d5755765ef
 T
 $src/main/java/jill/ServerApiAop.java,b/e/bed7d9eef602ba597bc32c87e547f4816758558d
+|
+Lsrc/main/java/jill/common/util/sql/generator/result/entity/RiskStrategy.java,c/3/c3ca2826cf8ed381b45e02950a0dcb7e4304d174
+ƒ
+Ssrc/main/java/jill/common/util/sql/generator/result/entity/RiskStrategyExample.java,2/5/251c38843ad9bc1fec976e7f2e64d2a099539ad0
+‚
+Rsrc/main/java/jill/common/util/sql/generator/result/mapper/RiskStrategyMapper.java,3/f/3f5ea21e7c7e3d97d86e438bcf9757b28200e70f
+…
+Usrc/main/java/jill/common/util/sql/generator/result/entity/xml/RiskStrategyMapper.xml,8/0/808d28deb632111f24065c261f62ace6b46de2d7

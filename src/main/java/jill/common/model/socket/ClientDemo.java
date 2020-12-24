@@ -6,30 +6,30 @@ import java.net.Socket;
 import java.util.Scanner;
 
 /**
- * ¿Í»§¶Ë
+ * å®¢æˆ·ç«¯
  *
  * @author JIll Wang
  * @date 2020-07-16 18:41
  **/
 public class ClientDemo {
     public static void start(int port) {
-        //´´½¨¿Í»§¶Ë¶Ë¿Ú
+        //åˆ›å»ºå®¢æˆ·ç«¯ç«¯å£
         try {
             OutputStream outputStream;
             try (Socket socket = new Socket("localhost", port)) {
-                //´´½¨¿Í»§¶ËµÄÊä³öÁ÷
+                //åˆ›å»ºå®¢æˆ·ç«¯çš„è¾“å‡ºæµ
                 outputStream = socket.getOutputStream();
             }
-            //´´½¨Scanner
+            //åˆ›å»ºScanner
             Scanner scanner = new Scanner(System.in);
-            //ÊäÈëÃû³Æ
-            System.out.println("ÇëÊäÈëÃû³Æ");
+            //è¾“å…¥åç§°
+            System.out.println("è¯·è¾“å…¥åç§°");
             String name = scanner.nextLine();
-            //Ò»Ö±ÅĞ¶ÏÊÇ·ñÓĞĞÂµÄÄÚÈİÊäÈë
+            //ä¸€ç›´åˆ¤æ–­æ˜¯å¦æœ‰æ–°çš„å†…å®¹è¾“å…¥
 //            while (true) {
-            System.out.println("ÊäÈëÎÄ±¾");
+            System.out.println("è¾“å…¥æ–‡æœ¬");
             String line = name + ":" + scanner.nextLine();
-            //°´ÕÕ×Ö½ÚÍ¨¹ısocketµÄÊä³öÁ÷´«Êä
+            //æŒ‰ç…§å­—èŠ‚é€šè¿‡socketçš„è¾“å‡ºæµä¼ è¾“
             outputStream.write(line.getBytes());
 //            }
         } catch (IOException e) {

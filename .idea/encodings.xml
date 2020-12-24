@@ -7,10 +7,13 @@
     <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/game/Main.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/game/Person.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/game/finger/Computer.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/game/gate/Main.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/game/gate/Main.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/game/gate/Square.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/game/gate/WrapGate.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/game/gate/WrapGate.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/socket" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/socket/ClientDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/socket/MainServer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/socket/SocketRun.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/vote/BlackVoteState.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/vote/Client.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/vote/NormalVoteState.java" charset="GBK" />
@@ -18,9 +21,9 @@
     <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/vote/SpiteVoteState.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/vote/VoteManager.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/vote/VoteState.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/warehouse/Commodity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/warehouse/Warehouse.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/jill/common/util/BeanUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/warehouse/Commodity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/jill/common/model/warehouse/Warehouse.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/jill/common/util/BeanUtil.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../common-spring/src/main/java" charset="UTF-8" />
   </component>

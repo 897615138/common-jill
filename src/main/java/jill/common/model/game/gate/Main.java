@@ -3,7 +3,7 @@ package jill.common.model.game.gate;
 import java.util.Scanner;
 
 /**
- * 每个点的位置
+ * 姣忎釜鐐圭殑浣嶇疆
  *
  * @author jill
  */

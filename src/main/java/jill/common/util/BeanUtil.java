@@ -13,42 +13,42 @@ import java.util.Scanner;
  **/
 public class BeanUtil {
     /**
-     * ÊÖ¶¯×°ÔØBean Ëù×°ÔØµÄBean±ØĞëÒªÓĞget set·½·¨
+     * æ‰‹åŠ¨è£…è½½Bean æ‰€è£…è½½çš„Beanå¿…é¡»è¦æœ‰get setæ–¹æ³•
      *
-     * @param aClass ×°ÔØÀàÀàĞÍ
-     * @param <T>    ·ºĞÍ
-     * @return ·µ»Ø×°ÔØºÃµÄBean(ÈôÒª¼ì²éÄÚÈİ, ĞèÖØĞ´toString)
+     * @param aClass è£…è½½ç±»ç±»å‹
+     * @param <T>    æ³›å‹
+     * @return è¿”å›è£…è½½å¥½çš„Bean(è‹¥è¦æ£€æŸ¥å†…å®¹, éœ€é‡å†™toString)
      */
     public static <T> T manualInsertBean(Class<T> aClass) {
         final Scanner scanner = new Scanner(System.in);
         T t = null;
         try {
             t = aClass.getDeclaredConstructor().newInstance();
-            //»ñµÃËùÓĞÊôĞÔ fields
+            //è·å¾—æ‰€æœ‰å±æ€§ fields
             List<Field> fields = Arrays.asList(aClass.getDeclaredFields());
-            //»ñµÃÊôĞÔÃû ºÍ ÊôĞÔÀàĞÍ
+            //è·å¾—å±æ€§å å’Œ å±æ€§ç±»å‹
             T finalT = t;
             fields.forEach(el -> {
                 String name = el.getName();
                 //System.out.println(name);
                 Class<?> type = el.getType();
                 try {
-                    //ÉèÖÃmethodµÄÃû³ÆÒÔ¼°²ÎÊıÀàĞÍ
+                    //è®¾ç½®methodçš„åç§°ä»¥åŠå‚æ•°ç±»å‹
                     Method method = aClass.getDeclaredMethod(
                             "set" + name.substring(0, 1).toUpperCase() + name.substring(1), type);
-                    System.out.println("ÇëÊäÈë" + name + "Öµ");
+                    System.out.println("è¯·è¾“å…¥" + name + "å€¼");
                     String line = scanner.nextLine();
                     Object value;
-                    //Èç¹ûÊäÈënull¾Í²»¸³Öµ
+                    //å¦‚æœè¾“å…¥nullå°±ä¸èµ‹å€¼
                     if (!("null".equals(line))) {
-                        //Èç¹ûÊÇ×Ö·û´®¾Í²»ÓÃ×ª»»,×îÖÕ»ñµÃvalue
+                        //å¦‚æœæ˜¯å­—ç¬¦ä¸²å°±ä¸ç”¨è½¬æ¢,æœ€ç»ˆè·å¾—value
                         if (type == String.class) {
                             value = line;
                         } else {
-                            //Èç¹ûÊÇInteger¾ÍÓÃvalueOf×ª»»
+                            //å¦‚æœæ˜¯Integerå°±ç”¨valueOfè½¬æ¢
                             value = Integer.valueOf(line);
                         }
-                        //µ÷ÓÃ·½·¨
+                        //è°ƒç”¨æ–¹æ³•
                         method.invoke(finalT, value);
                     }
                 } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {

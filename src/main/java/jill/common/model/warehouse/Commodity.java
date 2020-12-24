@@ -3,18 +3,18 @@ package jill.common.model.warehouse;
 import java.util.Objects;
 
 /**
- * ÉÌÆ·Àà
+ * å•†å“ç±»
  *
  * @author JIll Wang
  * @date 2020-07-14 17:56
  **/
 public class Commodity {
     /**
-     * ÉÌÆ·Ãû
+     * å•†å“å
      */
     private String name;
     /**
-     * ÉÌÆ·´æÁ¿
+     * å•†å“å­˜é‡
      */
     private Integer number;
 

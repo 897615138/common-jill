@@ -12,31 +12,31 @@ import java.util.Scanner;
 
 public class Square {
     /**
-     * 开始标志
+     * ??????
      */
     public final static int SQUARE_START = -2;
     /**
-     * 结束标志
+     * ???????
      */
     public final static int SQUARE_END = -3;
     /**
-     * 路径
+     * 路??
      */
     public final static int SQUARE_PATH = 0;
     /**
-     * 障碍标志
+     * ??????
      */
     public final static int SQUARE_BLOCK = -1;
     /**
-     * x坐标
+     * x????
      */
     public final int x;
     /**
-     * y坐标
+     * y????
      */
     public final int y;
     /**
-     * >0就是传送门
+     * >0?????????
      */
     public final int type;
 
@@ -47,7 +47,7 @@ public class Square {
     }
 
     public static void solve(Scanner in) {
-        System.out.println("输入两个整数并且以空格分开");
+        System.out.println("??????????????????????");
         String[] dimension = in.nextLine().split(" ");
         int width = Integer.parseInt(dimension[0]);
         System.out.println(width);

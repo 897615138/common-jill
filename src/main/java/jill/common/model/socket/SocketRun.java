@@ -6,21 +6,21 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 
 /**
- * Ì×½Ó×ÖµÄRunnable
+ * å¥—æ¥å­—çš„Runnable
  *
  * @author JIll Wang
  * @date 2020-07-16 18:33
  **/
 public class SocketRun implements Runnable {
     /**
-     * Ë½ÓĞ»¯Ì×½Ó×Ö
+     * ç§æœ‰åŒ–å¥—æ¥å­—
      */
     private final Socket socket;
 
     /**
-     * ´´½¨¹¹Ôìº¯Êı
+     * åˆ›å»ºæ„é€ å‡½æ•°
      *
-     * @param socket Ì×½Ó×Ö
+     * @param socket å¥—æ¥å­—
      */
     public SocketRun(Socket socket) {
         this.socket = socket;
@@ -28,12 +28,12 @@ public class SocketRun implements Runnable {
 
     @Override
     public void run() {
-        //·şÎñÆ÷½ÓÊÜÏûÏ¢
-        //¸ù¾İsocket´´½¨»º³å¶ÁÁ÷ try resources
+        //æœåŠ¡å™¨æ¥å—æ¶ˆæ¯
+        //æ ¹æ®socketåˆ›å»ºç¼“å†²è¯»æµ try resources
         try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
-            //²»¶ÏµØ¶ÁÈëÏûÏ¢
+            //ä¸æ–­åœ°è¯»å…¥æ¶ˆæ¯
 //            while (true) {
-            //»º³å¶ÁÁ÷¶ÁÒ»ĞĞ
+            //ç¼“å†²è¯»æµè¯»ä¸€è¡Œ
             String line = bufferedReader.readLine();
             System.out.println(line);
 //            }
