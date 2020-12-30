@@ -23,7 +23,7 @@ public class Generator {
 
 
     public static void main(String[] args) {
-        generateByConfigXml("/mybatis-generator/generatorConfig.xml");
+        generateByConfigXml("mybatis-generator/generatorConfig.xml");
     }
 
     public static void generateByConfigXml(String name) {

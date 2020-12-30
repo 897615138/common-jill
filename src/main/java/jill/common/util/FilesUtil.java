@@ -179,7 +179,7 @@ public class FilesUtil {
     }
 
     public static File getResource(String name) {
-        String property = System.getProperty("user.dir") + "/src/main/resources" + name;
+        String property = System.getProperty("user.dir") + "/src/main/resources/" + name;
         return new File(property);
     }
 }
