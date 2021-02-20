@@ -11,7 +11,7 @@ import java.util.concurrent.CompletableFuture;
  * @date 2020/12/30
  */
 @Slf4j
-public class CompletedFutureTest {
+public class CompletedFutureProtoTest {
     /**
      * 1 创建一个完成的CompletableFuture
      */

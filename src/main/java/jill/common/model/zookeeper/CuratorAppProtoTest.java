@@ -11,7 +11,7 @@ import java.io.IOException;
  * @author Jill W
  * @date 2020/12/25
  */
-public class CuratorAppTest {
+public class CuratorAppProtoTest {
     private TestingServer server;
 
     @BeforeClass

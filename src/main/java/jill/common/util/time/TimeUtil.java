@@ -12,25 +12,6 @@ import java.util.Date;
 public class TimeUtil implements Serializable {
     private static final long serialVersionUID = 5619743170608617827L;
 
-//    private static boolean compareTimeContain(TimeModel time1, TimeModel time2) {
-//        boolean and1 = BooleanUtil.and(time1.getStartAt().getTime() <= time2.getStartAt().getTime(),
-//                time2.getStartAt().getTime() <= time1.getEndAt().getTime());
-////        System.out.println("B的左端在A的闭区间内"+and1);
-//        boolean and2 = BooleanUtil.and(time1.getStartAt().getTime() <= time2.getEndAt().getTime(),
-//                time2.getEndAt().getTime() <= time1.getEndAt().getTime());
-////        System.out.println("B的右端在A的闭区间内"+and2);
-//        boolean or = BooleanUtil.or(and1, and2);
-////        System.out.println("B只要有一端在A的闭区间内"+or);
-//
-//        boolean and3 = BooleanUtil.and(time2.getStartAt().getTime() < time1.getStartAt().getTime(),
-//                time1.getEndAt().getTime() < time2.getEndAt().getTime());
-////        System.out.println("A在B内"+and3);
-//
-//        boolean or1 = BooleanUtil.or(and1, and2, and3);
-////         System.out.println("有重复部分"+or1);
-//        return or1;
-//    }
-
     public static Boolean compareTimeIn(Date time1, TimeModel time2) {
         return time2.getStartAt().getTime() <= time1.getTime() &&
                 time1.getTime() <= time2.getEndAt().getTime();

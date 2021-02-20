@@ -15,7 +15,7 @@ import java.net.URLEncoder;
  * @author Jill W
  * @date 2020/11/19
  */
-public class UrlUtilTest {
+public class UrlUtilProtoTest {
     private static final String MAC_NAME = "HmacSHA1";
     private static final String ENCODING = "UTF-8";
 

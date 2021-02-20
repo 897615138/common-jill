@@ -6,7 +6,7 @@ package jill.common.util;
 //
 //public class LogTest {
 //
-////    @Test
+////    @ProtoTest
 ////    public void log() {
 ////        log.info("Start process...");
 ////        log.info("Process end.");

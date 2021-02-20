@@ -40,6 +40,7 @@
         <aliyun-log.version>0.6.61</aliyun-log.version>
         <jackson-datatype-guava.version>2.12.0</jackson-datatype-guava.version>
         <dom4j.version>1.6.1</dom4j.version>
+        <protobuf-java.version>4.0.0-rc-2</protobuf-java.version>
 
         <mockito.version>3.6.28</mockito.version>
         <disruption.version>3.0.1</disruption.version>
@@ -269,6 +270,18 @@
             <groupId>dom4j</groupId>
             <artifactId>dom4j</artifactId>
             <version>${dom4j.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java -->
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>${protobuf-java.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>1.5.21</version>
+            <scope>compile</scope>
         </dependency>
 
 

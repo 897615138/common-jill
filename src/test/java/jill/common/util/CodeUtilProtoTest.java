@@ -7,7 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 @Slf4j
-public class CodeUtilTest {
+public class CodeUtilProtoTest {
     private static final String TEST = "test";
 
     @Test

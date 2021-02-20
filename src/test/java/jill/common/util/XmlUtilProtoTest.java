@@ -9,7 +9,7 @@ import org.dom4j.Element;
  * @author Jill W
  * @date 2020/12/28
  */
-public class XmlUtilTest extends TestCase {
+public class XmlUtilProtoTest extends TestCase {
 
     public void testGetDocument() {
         Document document = XmlUtil.getDocument("text.json");
