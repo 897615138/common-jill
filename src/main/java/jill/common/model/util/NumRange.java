@@ -2,9 +2,7 @@ package jill.common.model.util;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ObjectUtil;
-import com.google.common.collect.Range;
-import com.google.common.collect.RangeSet;
-import com.google.common.collect.TreeRangeSet;
+import io.swagger.annotations.ApiModelProperty;
 import jill.common.enums.ComputeTypeEnum;
 import jill.common.util.word.SimilarUtil;
 import lombok.AllArgsConstructor;
@@ -18,7 +16,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * less<=value<=more
+ * 数值范围
  *
  * @author Jill W
  * @date 2020/11/20
@@ -28,53 +26,61 @@ import java.util.Set;
 @AllArgsConstructor
 @Builder
 public class NumRange {
-    private Integer less;
-    private Integer more;
-
     /**
-     * 通过数值和计算类型返回数值范围
+     * 双目运算符范围
+     */
+    private static final Integer[] DOUBLE_RANGE = {5, 8};
+    @ApiModelProperty(value = "数值1 单值运算符的值或多值运算符的小值")
+    private Integer value1;
+    @ApiModelProperty(value = "数值2 多值运算符的大值")
+    private Integer value2;
+//    @ApiModelProperty(value = "运算符枚举code（ 0等于，1 小于，2 大于, 3 小于等于，4 大于等于，5 A<X<B，6 A<=X<B，7 A<X<=B ，8 A<=X<=B ，9 like，10不等于,11 非空)）")
+//    private Integer computeType;
+    /**
+     * 通过数值和计算类型返回数值范围List
+     * 0等于，1 小于，2 大于, 3 小于等于，4 大于等于，5 A<X<B，6 A<=X<B，7 A<X<=B ，8 A<=X<=B ，9 like，10不等于,11 非空)）
      *
-     * @param less 单一数值或者小的数值
-     * @param more 大的数值
+     * @param value1 单一数值或者小的数值
+     * @param value2 大的数值
      * @param type 计算类型
      * @return 数值范围List
      */
-    public static List<NumRange> getRanges(Integer less, Integer more, Integer type) {
+    public static List<NumRange> getRanges(Integer value1, Integer value2, Integer type) {
         ArrayList<NumRange> numRanges = new ArrayList<>();
         if (ObjectUtil.equal(ComputeTypeEnum.E.getCode(), type)) {
-            numRanges.add(NumRange.builder().less(less).more(less).build());
+            numRanges.add(NumRange.builder().value1(value1).value2(value1).build());
         }
         if (ObjectUtil.equal(ComputeTypeEnum.L.getCode(), type)) {
-            numRanges.add(NumRange.builder().less(0).more(less - 1).build());
+            numRanges.add(NumRange.builder().value1(0).value2(value1 - 1).build());
         }
         if (ObjectUtil.equal(ComputeTypeEnum.M.getCode(), type)) {
-            numRanges.add(NumRange.builder().less(less + 1).more(100).build());
+            numRanges.add(NumRange.builder().value1(value1 + 1).value2(100).build());
         }
         if (ObjectUtil.equal(ComputeTypeEnum.LE.getCode(), type)) {
-            numRanges.add(NumRange.builder().less(0).more(less).build());
+            numRanges.add(NumRange.builder().value1(0).value2(value1).build());
         }
         if (ObjectUtil.equal(ComputeTypeEnum.ME.getCode(), type)) {
-            numRanges.add(NumRange.builder().less(less).more(100).build());
+            numRanges.add(NumRange.builder().value1(value1).value2(100).build());
         }
         if (ObjectUtil.equal(ComputeTypeEnum.LL.getCode(), type)) {
-            numRanges.add(NumRange.builder().less(less + 1).more(more - 1).build());
+            numRanges.add(NumRange.builder().value1(value1 + 1).value2(value2 - 1).build());
         }
         if (ObjectUtil.equal(ComputeTypeEnum.LE_L.getCode(), type)) {
-            numRanges.add(NumRange.builder().less(less).more(more - 1).build());
+            numRanges.add(NumRange.builder().value1(value1).value2(value2 - 1).build());
         }
         if (ObjectUtil.equal(ComputeTypeEnum.L_LE.getCode(), type)) {
-            numRanges.add(NumRange.builder().less(less + 1).more(more).build());
+            numRanges.add(NumRange.builder().value1(value1 + 1).value2(value2).build());
         }
         if (ObjectUtil.equal(ComputeTypeEnum.LE_LE.getCode(), type)) {
-            numRanges.add(NumRange.builder().less(less).more(more).build());
+            numRanges.add(NumRange.builder().value1(value1).value2(value2).build());
         }
         if (ObjectUtil.equal(ComputeTypeEnum.NE.getCode(), type)) {
-            numRanges.add(NumRange.builder().less(0).more(less - 1).build());
-            numRanges.add(NumRange.builder().less(less + 1).more(100).build());
+            numRanges.add(NumRange.builder().value1(0).value2(value1 - 1).build());
+            numRanges.add(NumRange.builder().value1(value1 + 1).value2(100).build());
         }
         if (ObjectUtil.equal(ComputeTypeEnum.LIKE.getCode(), type)) {
-            Set<Integer> similarNum = SimilarUtil.getSimilarNum(less, 0, 100);
-            similarNum.forEach(num -> numRanges.add(NumRange.builder().less(num).more(num).build()));
+            Set<Integer> similarNum = SimilarUtil.getSimilarNum(value1, 0, 100);
+            similarNum.forEach(num -> numRanges.add(NumRange.builder().value1(num).value2(num).build()));
         }
         return numRanges;
     }
@@ -82,6 +88,7 @@ public class NumRange {
 
     /**
      * 范围有重合返回True
+     * 有null值也返回True
      *
      * @param ranges 范围
      * @return 结果
@@ -107,6 +114,7 @@ public class NumRange {
 
     /**
      * NumRange->List<Integer>
+     * 范围为空就返回null
      *
      * @param range NumRange
      * @return List<Integer>
@@ -116,18 +124,25 @@ public class NumRange {
             return Collections.emptyList();
         }
         ArrayList<Integer> integers = new ArrayList<>();
-        for (int i = range.getLess(); i <= range.getMore(); i++) {
+        for (int i = range.value1; i <= range.value2; i++) {
             integers.add(i);
         }
         return integers;
     }
 
     public static void main(String[] args) {
-        RangeSet<Integer> rangeSet = TreeRangeSet.create();
-        rangeSet.add(Range.closed(1, 10));
-        rangeSet.add(Range.closed(2, 11));
-        System.out.println(rangeSet);
-        Set<Range<Integer>> ranges = rangeSet.asRanges();
-        ranges.forEach(integerRange -> System.out.println(integerRange.lowerEndpoint()));
+//        RangeSet<Integer> rangeSet = TreeRangeSet.create();
+//        rangeSet.add(Range.closed(1, 10));
+//        rangeSet.add(Range.closed(2, 11));
+//        System.out.println(rangeSet);
+//        Set<Range<Integer>> ranges = rangeSet.asRanges();
+//        ranges.forEach(integerRange -> System.out.println(integerRange.lowerEndpoint()));
+        NumRange build1 = NumRange.builder().value1(1).value2(10).build();
+        NumRange build2 = NumRange.builder().value1(11).value2(11).build();
+        List<NumRange> like = NumRange.getRanges(1, null, 9);
+        System.out.println(like);
+        ArrayList<NumRange> numRanges = CollUtil.newArrayList(build1, build2);
+        Boolean aBoolean = NumRange.hasCoincidence(numRanges);
+        System.out.println(aBoolean);
     }
 }

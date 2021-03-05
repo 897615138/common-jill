@@ -6,7 +6,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 @Slf4j
-public class IpUtilTest {
+public class IpUtilProtoTest {
     @Test
     public void getIP() {
         Assert.assertNotNull(IpUtil.getHostAddress());

@@ -22,10 +22,9 @@ import java.util.Locale;
 @RequiredArgsConstructor
 public class ServerApiAop {
 
-    private final MessageSource messageSource;
     private static final String COUNTRY_KEY = "country";
     private static final String LANGUAGE_KEY = "language";
-
+    private final MessageSource messageSource;
 
     @Pointcut(value = "within(jill..*)")
     public void apiPointcut() {

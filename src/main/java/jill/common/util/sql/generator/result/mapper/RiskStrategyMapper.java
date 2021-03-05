@@ -1,9 +1,10 @@
 package result.mapper;
 
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import result.entity.RiskStrategy;
 import result.entity.RiskStrategyExample;
+
+import java.util.List;
 
 public interface RiskStrategyMapper {
     long countByExample(RiskStrategyExample example);

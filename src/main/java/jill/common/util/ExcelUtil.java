@@ -1,5 +1,6 @@
 package jill.common.util;
 
+
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.collection.ListUtil;
 import cn.hutool.core.io.FileUtil;
@@ -13,6 +14,8 @@ import com.alibaba.excel.metadata.BaseRowModel;
 import com.alibaba.excel.read.metadata.ReadSheet;
 import com.alibaba.excel.write.metadata.WriteSheet;
 import jill.common.model.util.TableInfo;
+import jill.common.model.util.TableInfo1;
+import jill.common.model.util.TableInfo2;
 import jill.common.util.sql.SqlUtil;
 import lombok.Data;
 import lombok.Getter;
@@ -274,12 +277,29 @@ public class ExcelUtil {
         EasyExcel.write(fileName, TableInfo.class).sheet(name).doWrite(data);
     }
 
-    public static void main(String[] args) {
-        TableInfo build = TableInfo.builder().tableName("test").comment("test").paramName("test").build();
-        List<TableInfo> tableInfos = new ArrayList<>();
-        tableInfos.add(build);
-        writeExcel("test", tableInfos);
+    public static void writeExcel1(String name, List<TableInfo1> data) {
+        String fileName = SqlUtil.class.getResource("/").getPath() + name + ".xlsx";
+        File file = cn.hutool.core.io.FileUtil.file(fileName);
+        if (Objects.isNull(file)) {
+            file = FileUtil.newFile(fileName);
+            System.out.println(file);
+        }
+        System.out.println(file);
+        EasyExcel.write(fileName, TableInfo.class).sheet(name).doWrite(data);
     }
+
+//    public static void main(String[] args) {
+//        TableInfo build = TableInfo.builder().tableName("test").comment("test").paramName("test").build();
+//        List<TableInfo> tableInfos = new ArrayList<>();
+//        tableInfos.add(build);
+//        writeExcel("test", tableInfos);
+//    }
+//public static void main(String[] args) {
+//    File file = FilesUtil.getResource("risk.xlsx");
+//    ExcelReaderBuilder read = EasyExcel.read(file, TableInfo2.class, new ExcelListener());
+//    read.sheet(0).doRead();
+//}
+
 
     @Data
     private static class MultipleSheetProperty {
@@ -299,6 +319,7 @@ public class ExcelUtil {
     public static class ExcelListener extends AnalysisEventListener {
 
         private List<Object> data = new ArrayList<>();
+        List<TableInfo1> tableInfos = new ArrayList<>();
 
         /**
          * 逐行解析
@@ -310,6 +331,16 @@ public class ExcelUtil {
             // context.getCurrentRowNum()
             if (object != null) {
                 data.add(object);
+                TableInfo2 tableInfo = (TableInfo2) object;
+                System.out.println(tableInfo);
+                //解析结束销毁不用的资源
+
+                TableInfo1 build = TableInfo1.builder()
+                        .date(tableInfo.getDate())
+                        .ip(tableInfo.getIp())
+                        .mobile(Md5Util.getMobileMd5(tableInfo.getMobileMD5()))
+                        .mobileMD5(tableInfo.getMobileMD5()).build();
+                tableInfos.add(build);
             }
         }
 
@@ -319,7 +350,7 @@ public class ExcelUtil {
          */
         @Override
         public void doAfterAllAnalysed(AnalysisContext context) {
-            //解析结束销毁不用的资源
+            writeExcel1("test", tableInfos);
         }
 
     }

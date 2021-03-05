@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
  * @author Jill W
  * @date 2020/12/23
  */
-public class RxJavaTestTest extends TestCase {
+public class RxJavaTestProtoTest extends TestCase {
     public static int count = 10000;
 
     public void testTestRxJavaWithoutBlocking() {
