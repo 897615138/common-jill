@@ -1,0 +1,571 @@
+config:
+  system-code: SBO
+  system-name: 智能营销中心
+  app-code: MARKETING
+  app-name: 营销
+  operations:
+    - package-name: "com.mobil.marketing.admin.controller"
+      classes:
+        - className: "EmCouponController"
+          app-code: EmCouponController
+          app-name: 优惠券组件
+          methods:
+            create:
+              code: createEmCoupon
+              name: 创建优惠券组件
+              extra-format: "创建优惠券组件【%s】"
+              extra-args:
+                - "$p0.name"
+            update:
+              code: updateEmCoupon
+              name: 修改优惠券组件
+              extra-format: "修改优惠券组件【%s】"
+              extra-args:
+                - "$p0.name"
+            delete:
+              code: deleteEmCoupon
+              name: 删除优惠券组件
+              handler: "com.mobil.marketing.admin.log.EmCouponDeleteLogHandler"
+            updateStatus:
+              code: updateStatusEmCoupon
+              name: 修改优惠券组件状态
+              handler: "com.mobil.marketing.admin.log.EmCouponUpdateStatusLogHandler"
+            paging:
+              code: pagingEmCoupon
+              name: 优惠券组件分页展示
+              extra-format: "优惠券组件分页展示"
+            detail:
+              code: detailEmCoupon
+              name: 优惠券组件详情
+              handler: "com.mobil.marketing.admin.log.EmCouponDetailLogHandler"
+        - className: "EmLuckDrawController"
+          app-code: EmLuckDrawController
+          app-name: 营销抽奖
+          methods:
+            create:
+              code: createEmLuckDraw
+              name: 创建抽奖活动
+              extra-format: "创建抽奖活动【%s】"
+              extra-args:
+                - "$p0.luckDrawName"
+            copy:
+              code: copyEmLuckDraw
+              name: 复制抽奖活动
+              extra-format: "创建抽奖活动【%s】-副本"
+              extra-args:
+                - "$p0.name"
+            submit:
+              code: submitEmLuckDraw
+              name: 提交抽奖活动
+              extra-format: "提交抽奖活动【%s】"
+              extra-args:
+                - "$p0.luckDrawName"
+            update:
+              code: updateEmLuckDraw
+              name: 修改抽奖活动
+              extra-format: "修改抽奖活动【%s】"
+              extra-args:
+                - "$p0.luckDrawName"
+            saveDraft:
+              code: saveEmLuckDraw
+              name: 保存抽奖活动
+              extra-format: "保存抽奖活动【%s】"
+              extra-args:
+                - "$p0.luckDrawName"
+            delete:
+              code: deleteEmLuckDraw
+              name: 删除抽奖活动
+              handler: "com.mobil.marketing.admin.log.EmLuckDrawDeleteLogHandler"
+            updateStatus:
+              code: updateStatusEmLuckDraw
+              name: 修改抽奖活动状态
+              handler: "com.mobil.marketing.admin.log.EmLuckDrawUpdateStatusLogHandler"
+            paging:
+              code: pagingEmLuckDraw
+              name: 抽奖活动分页展示
+              extra-format: "抽奖活动分页展示"
+              extra-args:
+            detail:
+              code: detailEmLuckDraw
+              name: 抽奖活动详情
+              handler: "com.mobil.marketing.admin.log.EmLuckDrawDetailLogHandler"
+        - className: "EmSignTemplateController"
+          app-code: EmSignTemplateController
+          app-name: 签到活动模板
+          methods:
+            create:
+              code: createEmSignTemplate
+              name: 创建签到活动
+              extra-format: "创建签到活动【%s】"
+              extra-args:
+                - "$p0.activityName"
+            saveDraft:
+              code: saveEmSignTemplate
+              name: 保存签到活动
+              extra-format: "保存签到活动【%s】"
+              extra-args:
+                - "$p0.activityName"
+            submit:
+              code: submitEmSignTemplate
+              name: 提交签到活动
+              extra-format: "保存签到活动【%s】"
+              extra-args:
+                - "$p0.activityName"
+            update:
+              code: updateEmSignTemplate
+              name: 修改签到活动
+              extra-format: "修改签到活动【%s】"
+              extra-args:
+                - "$p0.activityName"
+            delete:
+              code: deleteEmSignTemplate
+              name: 删除签到活动
+              handler: "com.mobil.marketing.admin.log.EmSignTemplateDeleteLogHandler"
+            updatesStatus:
+              code: updatesStatusEmSignTemplate
+              name: 修改签到活动状态
+              handler: "com.mobil.marketing.admin.log.EmSignTemplateUpdateStatusLogHandler"
+            paging:
+              code: pagingEmSignTemplate
+              name: 签到活动分页展示
+              extra-format: "签到活动分页展示"
+              extra-args:
+            findEmSignTemplateById:
+              code: findEmSignTemplateByIdEmSignTemplate
+              name: 签到活动详情
+              extra-format: "签到活动详情【%s】"
+              extra-args:
+                - "$p0.name"
+            findEnableAndEffectiveStatus:
+              code: findEnableAndEffectiveStatusEmSignTemplate
+              name: 查询状态为有效和生效中的活动
+              extra-format: "查询状态为有效和生效中的活动"
+              extra-args:
+        - className: "MobilNoticeTemplateController"
+          app-code: MobilNoticeTemplateController
+          app-name: 消息中心
+          methods:
+            create:
+              code: createMobilNoticeTemplate
+              name: 消息中心创建模板
+              extra-format: "新建了模板消息%s"
+              extra-args:
+                - "$p0.noticeTemplateTitle"
+            copy:
+              code: copyMobilNoticeTemplate
+              name: 消息中心模板复制
+              handler: "com.mobil.marketing.admin.log.MobilNoticeTemplateCopyLogHandler"
+            paging:
+              code: pagingMobilNoticeTemplate
+              name: 消息中心分页展示
+              extra-format: "进行了消息中心查询"
+              extra-args:
+        - className: "MarketingEffectController"
+          app-code: MobilActivitiesController
+          app-name: 批量触达
+          methods:
+            queryMarketingEffect:
+              code: queryMarketingEffect
+              name: 营销效果分析
+              handler: "com.mobil.marketing.admin.log.MarketingEffectQueryLogHandler"
+            exportMarketingEffect:
+              code: exportMarketingEffect
+              name: 营销策略导出
+              handler: "com.mobil.marketing.admin.log.MarketingEffectExportLogHandler"
+        - className: "MobilActivitiesController"
+          app-code: MobilActivitiesController
+          app-name: 批量触达
+          methods:
+            updateGroup:
+              code: updateGroupMobilActivities
+              name: 批量触达更新群组
+              extra-format: "更新了群组【%s】"
+              extra-args:
+                - "$p0.name"
+            update:
+              code: updateMobilActivities
+              name: 批量触达更新策略
+              extra-format: "更新了策略【%s】"
+              extra-args:
+                - "$p0.name"
+            createGroup:
+              code: createGroupMobilActivities
+              name: 批量触达创建群组
+              extra-format: "创建了分组【%s】"
+              extra-args:
+                - "$p0.name"
+            create:
+              code: createMobilActivities
+              name: 批量触达创建策略
+              extra-format: "创建了策略【%s】"
+              extra-args:
+                - "$p0.name"
+            paging:
+              code: pagingMobilActivities
+              name: 营销策略分页展示
+              extra-format: "进行了策略查询"
+              extra-args:
+            groupPaging:
+              code: groupPagingMobilActivities
+              name: 批量触达分组分页
+              extra-format: "进行了分组查询"
+              extra-args:
+            startOrPause:
+              code: startOrPauseMobilActivities
+              name: 策略的启用与结束
+              handler: "com.mobil.marketing.admin.log.MobilActivitiesLogHandler"
+            preview:
+              code: previewMobilActivities
+              name: 策略邮件内容预览
+              extra-format: "预览了策略邮件内容"
+              extra-args:
+        - className: "MobilFlowController"
+          app-code: MobilFlowController
+          app-name: 营销审批
+          methods:
+            apply:
+              code: applyMobilFlow
+              name: 审批操作
+              handler: "com.mobil.marketing.admin.log.MobilFlowApplyLogHandler"
+            batchInfo:
+              code: batchInfoMobilFlow
+              name: 批量触达预览
+              extra-format: "预览了批量触达审批"
+              extra-args:
+            eventInfo:
+              code: eventInfoMobilFlow
+              name: 条件触达预览
+              extra-format: "预览了条件触达审批"
+              extra-args:
+        - className: "MobilCompositeDefController"
+          app-code: MobilCompositeDefController
+          app-name: 条件触达
+          methods:
+            delete:
+              code: deleteComposite
+              name: 删除事件
+              handler: "com.mobil.marketing.admin.log.MobilCompositeDelLogHandler"
+            create:
+              code: createComposite
+              name: 创建事件
+              extra-format: "创建了事件 【%s】"
+              extra-args:
+                - "$p0.eventDefName"
+            paging:
+              code: pagingComposite
+              name: 条件触达分页
+              extra-format: "查看了事件"
+              extra-args:
+        - className: "MobilActivityDefController"
+          app-code: MobilCompositeDefController
+          app-name: 条件触达
+          methods:
+            pause:
+              code: pauseCompositeDef
+              name: 停止条件触达
+              handler: "com.mobil.marketing.admin.log.MobilActivityDefPauseLogHandler"
+        - className: "EmExchangeCodeController"
+          app-code: EmExchangeCodeController
+          app-name: 兑换码
+          methods:
+            create:
+              code: createEmExchangeCode
+              name: 创建兑换码
+              extra-format: "创建了兑换码【%s】"
+              extra-args:
+                - "$p0.name"
+            delete:
+              code: deleteEmExchangeCode
+              name: 删除了兑换码
+              handler: "com.mobil.marketing.admin.log.EmExchangeCodeDeleteLogHandler"
+            paging:
+              code: pagingEmExchangeCode
+              name: 兑换码分页展示
+              extra-format: "查询了兑换码列表"
+              extra-args:
+            findActivity:
+              code: findActivity
+              name: 查看兑换码关联的活动
+              handler: "com.mobil.marketing.admin.log.EmExchangeCodeFindActivityLogHandler"
+        - className: "EmExchangeCodeTypeController"
+          app-code: EmExchangeCodeTypeController
+          app-name: 兑换码分类
+          methods:
+            create:
+              code: createEmExchangeCodeType
+              name: 创建兑换码分类
+              extra-format: "创建了兑换码分类【%s】"
+              extra-args:
+                - "$p0.name"
+            update:
+              code: updateEmExchangeCodeType
+              name: 编辑兑换码分类
+              extra-format: "编辑了兑换码分类【%s】"
+              extra-args:
+                - "$p0.name"
+            paging:
+              code: pagingEmExchangeCodeType
+              name: 兑换码分类分页展示
+              extra-format: "查询了兑换码分类列表"
+              extra-args:
+            delete:
+              code: deleteEmExchangeCodeType
+              name: 删除了兑换码分类
+              handler: "com.mobil.marketing.admin.log.EmExchangeCodeTypeDeleteLogHandler"
+        - className: "EmPosterActivityController"
+          app-code: EmPosterActivityController
+          app-name: 海报活动
+          methods:
+            createPoster:
+              code: createPoster
+              name: 创建海报活动
+              extra-format: "创建了海报活动【%s】"
+              extra-args:
+                - "$p0.name"
+            updatePoster:
+              code: updatePoster
+              name: 编辑海报活动
+              extra-format: "编辑了海报活动【%s】"
+              extra-args:
+                - "$p0.name"
+            pagingPoster:
+              code: pagingPoster
+              name: 海报活动分页展示
+              extra-format: "查询了海报活动列表"
+              extra-args:
+            getList:
+              code: ListPoster
+              name: 可用海报活动展示
+              extra-format: "查询了可用海报活动列表"
+              extra-args:
+            deltetePoster:
+              code: deletePoster
+              name: 海报活动删除
+              handler: "com.mobil.marketing.admin.log.EmPosterActivityDeleteLogHandler"
+            pause:
+              code: pausePoster
+              name: 海报活动停用
+              handler: "com.mobil.marketing.admin.log.EmPosterActivityPauseLogHandler"
+            findById:
+              code: findPoster
+              name: 海报活动单个查询
+              handler: "com.mobil.marketing.admin.log.EmPosterActivityFindOneLogHandler"
+        - className: "MobilMicroPagesController"
+          app-code: MobilMicroPagesController
+          app-name: H5页面
+          methods:
+            deleteGroup:
+              code: deleteGroupMicroPages
+              name: 删除微页面分组
+              handler: "com.mobil.marketing.admin.log.H5GroupDelLogHandler"
+            delete:
+              code: deleteMicroPages
+              name: 微页面删除
+              handler: "com.mobil.marketing.admin.log.H5DelLogHandler"
+            create:
+              code: createMicroPages
+              name: 微页面分组创建
+              extra-format: "创建了微页面分组【%s】"
+              extra-args:
+                - "$p0.name"
+            createOrUpdate:
+              code: createOrUpdateMicroPages
+              name: 创建微页面
+              extra-format: "创建了微页面【%s】"
+              extra-args:
+                - "$p0.name"
+            paging:
+              code: pagingMicroPages
+              name: 微页面分页展示
+              extra-format: "查询了微页面列表"
+              extra-args:
+            pagingGroup:
+              code: pagingGroupMicroPages
+              name: 模板和微页面分组展示
+              extra-format: "查询了微页面分组"
+              extra-args:
+            modify:
+              code: modifyMicroPages
+              name: 修改微页面分组
+              extra-format: "修改了微页面分组【%s】"
+              extra-args:
+                - "$p0.name"
+            createTemplate:
+              code: createTemplateMicroPages
+              name: 创建微页面模板
+              extra-format: "创建了微页面模板 【%s】"
+              extra-args:
+                - "$p0.name"
+            updateTemplate:
+              code: updateTemplateMicroPages
+              name: 更改微页面模板
+              extra-format: "修改了微页面模板【%s】"
+              extra-args:
+                - "$p0.name"
+            deleteTemplate:
+              code: deleteTemplateMicroPages
+              name: 删除微页面模板
+              handler: "com.mobil.marketing.admin.log.H5TemplateDelLogHandler"
+            deleteTrue:
+              code: deleteTrueMicroPages
+              name: 回收站删除
+              handler: "com.mobil.marketing.admin.log.H5TrueDelLogHandler"
+            recover:
+              code: recoverMicroPages
+              name: 回收站恢复
+              handler: "com.mobil.marketing.admin.log.H5TrueRecoverLogHandler"
+            saveTemplate:
+              code: saveToTemplate
+              name: 保存为模板
+              handler: "com.mobil.marketing.admin.log.MobilPageSaveToTemplateLogHandler"
+            exportReportWithAuditCommit:
+              code: exportReportWithAuditCommit
+              name: 提交报表导出审批
+              extra-format: "报表导出"
+              extra-args:
+        - className: "MobilPageEnableController"
+          app-code: MobilPageEnableController
+          app-name: 微页面发布
+          methods:
+            enable:
+              code: enablePages
+              name: 立即发布
+              handler: "com.mobil.marketing.admin.log.MobilPageEnableLogHandler"
+            enableJob:
+              code: enableJobPages
+              name: 创建定时发布
+              handler: "com.mobil.marketing.admin.log.MobilPageEnableJobLogHandler"
+        - className: "EmBannerConfigController"
+          app-code: EmBannerConfigController
+          app-name: banner配置
+          methods:
+            paging:
+              code: pagingBannerConfig
+              name: banner配置分页展示
+              extra-format: "banner配置分页展示"
+              extra-args:
+            create:
+              code: createBannerConfig
+              name: 创建banner配置
+              extra-format: "创建了banner配置 name:【%s】"
+              extra-args:
+                - "$p0.name"
+            update:
+              code: updateBannerConfig
+              name: 编辑banner配置
+              extra-format: "编辑了banner配置 name:【%s】"
+              extra-args:
+                - "$p0.name"
+            list:
+              code: listBannerConfig
+              name: 获取启用的渠道
+              extra-format: "获取启用的渠道"
+              extra-args:
+            delete:
+              code: deleteBannerConfig
+              name: banner配置删除
+              handler: "com.mobil.marketing.admin.log.EmBannerConfigDeleteLogHandler"
+            pause:
+              code: pauseBannerConfig
+              name: banner配置停用
+              handler: "com.mobil.marketing.admin.log.EmBannerConfigPauseLogHandler"
+            findById:
+              code: findBannerConfigById
+              name: banner配置单个查询 id
+              handler: "com.mobil.marketing.admin.log.EmBannerConfigFindOneByIdLogHandler"
+            findByChannelAndPlatform:
+              code: findBannerConfigByChannelAndPlatform
+              name: banner配置单个查询 平台+渠道
+              handler: "com.mobil.marketing.admin.log.EmBannerConfigFindOneByChannelAndPlatformHandler"
+    - package-name: "io.terminus.sagittarius.admin.api"
+      classes:
+        - className: "ConsoleActivities"
+          app-code: MobilActivitiesController
+          app-name: 批量触达
+          methods:
+            delete:
+              code: deleteConsole
+              name: 批量触达删除
+              handler: "com.mobil.marketing.admin.log.ConsoleActivitiesDelLogHandler"
+            copy:
+              code: copyConsole
+              name: 批量触达复制
+              handler: "com.mobil.marketing.admin.log.ConsoleActivitiesCopyLogHandler"
+        - className: "NoticeTemplateApi"
+          app-code: MobilNoticeTemplateController
+          app-name: 消息中心
+          methods:
+            delete:
+              code: deleteNoticeTemplateApi
+              name: 删除消息模板
+              handler: "com.mobil.marketing.admin.log.NoticeTemplateDelLogHandler"
+            enable:
+              code: enableNoticeTemplateApi
+              name: 启用消息模板
+              handler: "com.mobil.marketing.admin.log.NoticeTemplateEnableLogHandler"
+            modify:
+              code: modifyNoticeTemplateApi
+              name: 修改消息中心
+              extra-format: "修改了消息模板【%s】"
+              extra-args:
+                - "$p0.noticeTemplateTitle"
+            pause:
+              code: pauseNoticeTemplateApi
+              name: 停用消息模板
+              handler: "com.mobil.marketing.admin.log.NoticeTemplatePauseLogHandler"
+        - className: "NoticeGroupApi"
+          app-code: MobilNoticeTemplateController
+          app-name: 消息中心
+          methods:
+            update:
+              code: updateNoticeGroupApi
+              name: 更新消息中心分组
+              extra-format: "更新消息中心分组 【%s】"
+              extra-args:
+                - "$p0.name"
+            delete:
+              code: deleteNoticeGroupApi
+              name: 删除消息中心分组
+              handler: "com.mobil.marketing.admin.log.NoticeGroupDelLogHandler"
+            create:
+              code: createNoticeGroupApi
+              name: 创建消息中心分组
+              extra-format: "创建消息中心分组 【%s】"
+              extra-args:
+                - "$p0.name"
+            paging:
+              code: pagingNoticeGroupApi
+              name: 消息中心分页展示
+              extra-format: "查询消息中心分组"
+              extra-args:
+        - className: "ConsoleActivityGroups"
+          app-code: MobilActivitiesController
+          app-name: 批量触达
+          methods:
+            delete:
+              code: deleteConsoleActivityGroups
+              name: 删除批量触达群组
+              handler: "com.mobil.marketing.admin.log.ActivityGroupsV2DelLogHandler"
+        - className: "ActivityTouchApi"
+          app-code: ActivityTouchApi
+          app-name: 触点活动
+          methods:
+            delete:
+              code: deleteTouchActivity
+              name: 删除触点活动
+              handler: "com.mobil.marketing.admin.log.MobilActivityTouchDeleteLogHandler"
+            update:
+              code: updateTouchActivity
+              name: 编辑触点活动
+              handler: "com.mobil.marketing.admin.log.MobilActivityTouchUpdateLogHandler"
+            create:
+              code: createTouchActivity
+              name: 创建触点活动
+              extra-format: "创建触点活动 【%s】"
+              extra-args:
+                - "$p0.name"
+            paging:
+              code: pagingTouchActivity
+              name: 查询触点活动
+              extra-format: "查看触点活动列表"
+              extra-args:

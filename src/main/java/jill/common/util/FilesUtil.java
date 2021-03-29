@@ -5,8 +5,7 @@ import cn.hutool.core.util.StrUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static cn.hutool.core.util.StrUtil.DOT;
@@ -181,5 +180,40 @@ public class FilesUtil {
     public static File getResource(String name) {
         String property = System.getProperty("user.dir") + "/src/main/resources/" + name;
         return new File(property);
+    }
+
+
+    public static Map<String, Class> getClasses(String packageName, String moduleName) {
+        String path = packageName.replaceAll("\\.", "/");
+        File file = getFilePath(path, moduleName);
+        //遍历path下的文件和目录，放在File数组中
+        File[] fs = file.listFiles();
+        HashMap<String, Class> classMap = new HashMap<>();
+        if (Objects.nonNull(fs)) {
+            for (File f : fs) {
+                if (!f.isDirectory()) {
+                    String name = f.getName();
+                    name = packageName + "." + name.substring(0, name.length() - 5);
+                    try {
+                        System.out.println(name);
+                        Class<?> aClass = Thread.currentThread().getContextClassLoader().loadClass(name);
+                        classMap.put(name, aClass);
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        } else {
+            log.info("file path wrong,{}", file);
+        }
+        return classMap;
+    }
+
+    public static File getFilePath(String suffix, String moduleName) {
+        if (StrUtil.isNotBlank(moduleName)) {
+            return new File(System.getProperty("user.dir") + "/" + moduleName + "/src/main/java/" + suffix);
+        } else {
+            return new File(System.getProperty("user.dir") + suffix);
+        }
     }
 }
