@@ -1,0 +1,104 @@
+components:
+  schemas:
+    test:
+      default: 默认值
+      description: ""
+      enum:
+        - a
+        - b
+        - ab
+      example: Example
+      maxLength: 2
+      minLength: 1
+      pattern: 是字母
+      type: string
+      x-dice-forbidden-types:
+        - test
+      x-dice-name: test
+    a:
+      description: 省市区获取入参
+      example:
+        level: Example
+        pid: 1
+        type: Example
+      properties:
+        level:
+          $ref: '#/components/schemas/test'
+          description: 级别ID
+          example: Example
+          format: int32
+          type: string
+          x-dice-name: level
+          x-dice-required: true
+        pid:
+          description: 父级ID
+          example: 1
+          format: int64
+          type: number
+          x-dice-name: pid
+          x-dice-required: true
+        type:
+          description: 类型 PROFILE-个人信息 SHIPPING-收货地址
+          enum:
+            - PROFILE
+            - SHIPPING
+          example: Example
+          type: string
+          x-dice-name: type
+          x-dice-required: true
+      required:
+        - level
+        - pid
+        - type
+      type: object
+      x-dice-media: application/json
+      x-dice-name: schema
+info:
+  description: |
+    # API 设计中心创建的 API 文档。
+
+    请在『API 概况』中填写 API 文档的基本信息；在『API列表』新增接口描述；在『数据类型』中定义要引用的数据结构。
+  title: userportal-open
+  version: default
+openapi: 3.0.0
+paths:
+  /api/user/portal/open/address/list:
+    parameters: []
+    post:
+      operationId: 根据级别查询省市区
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/a'
+        description: 省市区获取入参
+        required: deprecatedfalse
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                description: ""
+                example: {}
+                type: object
+                x-dice-media: application/json
+                x-dice-name: schema
+          description: ""
+      summary: 根据级别查询省市区
+      tags:
+        - address-controller
+tags:
+  - name: address-controller
+  - name: coupon-controller
+  - name: coupon-template-controller
+  - name: luck-draw-controller-open
+  - name: member-controller
+  - name: member-profile-controller
+  - name: point-controller
+  - name: portal-captcha-controller
+  - name: risk-strategy-controller-open
+  - name: verifi-code-controller
+  - name: virgo-trans-detail-controller
+  - name: winsafe-controller
+  - name: 地址

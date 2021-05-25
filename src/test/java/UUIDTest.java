@@ -41,14 +41,13 @@ public class UUIDTest {
             System.out.println(entry.getKey() + ":" + entry.getValue());
         });
         executor.shutdown();
-
     }
 
-    private class UuidGenerateTask implements Runnable {
+    private static class UuidGenerateTask implements Runnable {
 
-        private CountDownLatch countDownLatch;
+        private final CountDownLatch countDownLatch;
 
-        private List<String> uuidList;
+        private final List<String> uuidList;
 
         public UuidGenerateTask(CountDownLatch countDownLatch, List<String> uuidList) {
             this.countDownLatch = countDownLatch;

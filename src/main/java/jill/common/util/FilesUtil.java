@@ -208,7 +208,6 @@ public class FilesUtil {
         }
         return classMap;
     }
-
     public static File getFilePath(String suffix, String moduleName) {
         if (StrUtil.isNotBlank(moduleName)) {
             return new File(System.getProperty("user.dir") + "/" + moduleName + "/src/main/java/" + suffix);

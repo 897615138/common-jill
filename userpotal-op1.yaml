@@ -1,0 +1,3997 @@
+components:
+  schemas:
+    Response«List«UserCouponInfo»»:
+      type: object
+      properties:
+        code:
+          type: string
+        error:
+          type: string
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserCouponInfo'
+        sourceIp:
+          type: string
+        sourceStack:
+          type: string
+        success:
+          type: boolean
+      title: Response«List«UserCouponInfo»»
+    Response«List«VirgoAccount»»:
+      type: object
+      properties:
+        code:
+          type: string
+        error:
+          type: string
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/VirgoAccount'
+        sourceIp:
+          type: string
+        sourceStack:
+          type: string
+        success:
+          type: boolean
+      title: Response«List«VirgoAccount»»
+    Response«List«会员信息»»:
+      type: object
+      properties:
+        code:
+          type: string
+        error:
+          type: string
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/会员信息'
+        sourceIp:
+          type: string
+        sourceStack:
+          type: string
+        success:
+          type: boolean
+      title: Response«List«会员信息»»
+    Response«List«会员账户信息»»:
+      type: object
+      properties:
+        code:
+          type: string
+        error:
+          type: string
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/会员账户信息'
+        sourceIp:
+          type: string
+        sourceStack:
+          type: string
+        success:
+          type: boolean
+      title: Response«List«会员账户信息»»
+    Response«List«省市区信息»»:
+      type: object
+      properties:
+        code:
+          type: string
+        error:
+          type: string
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/省市区信息'
+        sourceIp:
+          type: string
+        sourceStack:
+          type: string
+        success:
+          type: boolean
+      title: Response«List«省市区信息»»
+    Response«Paging«个人中奖信息详情»»:
+      type: object
+      properties:
+        code:
+          type: string
+        error:
+          type: string
+        result:
+          $ref: '#/components/schemas/Paging«个人中奖信息详情»'
+        sourceIp:
+          type: string
+        sourceStack:
+          type: string
+        success:
+          type: boolean
+      title: Response«Paging«个人中奖信息详情»»
+    Response«Paging«会员账户交易记录(账户快照)»»:
+      type: object
+      properties:
+        code:
+          type: string
+        error:
+          type: string
+        result:
+          $ref: '#/components/schemas/Paging«会员账户交易记录(账户快照)»'
+        sourceIp:
+          type: string
+        sourceStack:
+          type: string
+        success:
+          type: boolean
+      title: Response«Paging«会员账户交易记录(账户快照)»»
+    Response«Paging«展示中奖信息详情»»:
+      type: object
+      properties:
+        code:
+          type: string
+        error:
+          type: string
+        result:
+          $ref: '#/components/schemas/Paging«展示中奖信息详情»'
+        sourceIp:
+          type: string
+        sourceStack:
+          type: string
+        success:
+          type: boolean
+      title: Response«Paging«展示中奖信息详情»»
+    Response«TokenInfo»:
+      type: object
+      properties:
+        code:
+          type: string
+        error:
+          type: string
+        result:
+          $ref: '#/components/schemas/TokenInfo'
+        sourceIp:
+          type: string
+        sourceStack:
+          type: string
+        success:
+          type: boolean
+      title: Response«TokenInfo»
+    Response«WsMpqrInfo»:
+      type: object
+      properties:
+        code:
+          type: string
+        error:
+          type: string
+        result:
+          $ref: '#/components/schemas/WsMpqrInfo'
+        sourceIp:
+          type: string
+        sourceStack:
+          type: string
+        success:
+          type: boolean
+      title: Response«WsMpqrInfo»
+    Response«boolean»:
+      type: object
+      properties:
+        code:
+          type: string
+        error:
+          type: string
+        result:
+          type: boolean
+        sourceIp:
+          type: string
+        sourceStack:
+          type: string
+        success:
+          type: boolean
+      title: Response«boolean»
+    Response«long»:
+      type: object
+      properties:
+        code:
+          type: string
+        error:
+          type: string
+        result:
+          type: integer
+          format: int64
+        sourceIp:
+          type: string
+        sourceStack:
+          type: string
+        success:
+          type: boolean
+      title: Response«long»
+    Response«open抽奖结果»:
+      type: object
+      properties:
+        code:
+          type: string
+        error:
+          type: string
+        result:
+          $ref: '#/components/schemas/open抽奖结果'
+        sourceIp:
+          type: string
+        sourceStack:
+          type: string
+        success:
+          type: boolean
+      title: Response«open抽奖结果»
+    Response«string»:
+      type: object
+      properties:
+        code:
+          type: string
+        error:
+          type: string
+        result:
+          type: string
+        sourceIp:
+          type: string
+        sourceStack:
+          type: string
+        success:
+          type: boolean
+      title: Response«string»
+    Response«会员id»:
+      type: object
+      properties:
+        code:
+          type: string
+        error:
+          type: string
+        result:
+          $ref: '#/components/schemas/会员id'
+        sourceIp:
+          type: string
+        sourceStack:
+          type: string
+        success:
+          type: boolean
+      title: Response«会员id»
+    Response«会员信息»:
+      type: object
+      properties:
+        code:
+          type: string
+        error:
+          type: string
+        result:
+          $ref: '#/components/schemas/会员信息'
+        sourceIp:
+          type: string
+        sourceStack:
+          type: string
+        success:
+          type: boolean
+      title: Response«会员信息»
+    Response«会员信息级关联信息»:
+      type: object
+      properties:
+        code:
+          type: string
+        error:
+          type: string
+        result:
+          $ref: '#/components/schemas/会员信息级关联信息'
+        sourceIp:
+          type: string
+        sourceStack:
+          type: string
+        success:
+          type: boolean
+      title: Response«会员信息级关联信息»
+    Response«剩余次数»:
+      type: object
+      properties:
+        code:
+          type: string
+        error:
+          type: string
+        result:
+          $ref: '#/components/schemas/剩余次数'
+        sourceIp:
+          type: string
+        sourceStack:
+          type: string
+        success:
+          type: boolean
+      title: Response«剩余次数»
+    Response«开放抽奖活动规则详情»:
+      type: object
+      properties:
+        code:
+          type: string
+        error:
+          type: string
+        result:
+          $ref: '#/components/schemas/开放抽奖活动规则详情'
+        sourceIp:
+          type: string
+        sourceStack:
+          type: string
+        success:
+          type: boolean
+      title: Response«开放抽奖活动规则详情»
+    Response«更新收货地址返回信息»:
+      type: object
+      properties:
+        code:
+          type: string
+        error:
+          type: string
+        result:
+          $ref: '#/components/schemas/更新收货地址返回信息'
+        sourceIp:
+          type: string
+        sourceStack:
+          type: string
+        success:
+          type: boolean
+      title: Response«更新收货地址返回信息»
+    Response«用户标识»:
+      type: object
+      properties:
+        code:
+          type: string
+        error:
+          type: string
+        result:
+          $ref: '#/components/schemas/用户标识'
+        sourceIp:
+          type: string
+        sourceStack:
+          type: string
+        success:
+          type: boolean
+      title: Response«用户标识»
+    Response«等级配置»:
+      type: object
+      properties:
+        code:
+          type: string
+        error:
+          type: string
+        result:
+          $ref: '#/components/schemas/等级配置'
+        sourceIp:
+          type: string
+        sourceStack:
+          type: string
+        success:
+          type: boolean
+      title: Response«等级配置»
+    Response«风险识别openApi出参»:
+      type: object
+      properties:
+        code:
+          type: string
+        error:
+          type: string
+        result:
+          $ref: '#/components/schemas/风险识别openApi出参'
+        sourceIp:
+          type: string
+        sourceStack:
+          type: string
+        success:
+          type: boolean
+      title: Response«风险识别openApi出参»
+    SignUpByEmailAndEmailCodeRequest:
+      type: object
+      required:
+        - isApp
+      properties:
+        channel:
+          type: string
+          description: 注册渠道
+        channelType:
+          type: string
+          description: 注册渠道类型
+        email:
+          type: string
+          description: 邮箱
+        emailCode:
+          type: string
+          description: 邮件验证码
+        identify:
+          type: string
+        isApp:
+          type: boolean
+          description: 是否APP调用，false指代PC调用
+        nickname:
+          type: string
+          description: 昵称
+        password:
+          type: string
+          description: 密码
+        prefix:
+          type: string
+          example: 86
+      title: SignUpByEmailAndEmailCodeRequest
+      description: 邮箱注册
+    SignUpByEmailSendEmailCodeRequest:
+      type: object
+      required:
+        - email
+      properties:
+        captcha:
+          type: string
+          description: 图片验证码
+        email:
+          type: string
+          description: 邮箱
+        token:
+          type: string
+          description: 图片验证码token
+      title: SignUpByEmailSendEmailCodeRequest
+    SignUpByEmailSendEmailCodeWithOutCaptchaRequest:
+      type: object
+      required:
+        - email
+      properties:
+        email:
+          type: string
+          description: 邮箱
+      title: SignUpByEmailSendEmailCodeWithOutCaptchaRequest
+    SignUpByMobileAndSmsCodeRequest:
+      type: object
+      required:
+        - isApp
+        - mobile
+        - smsCode
+      properties:
+        activityRuleCode:
+          type: string
+          description: 活动id
+        address:
+          type: string
+          description: 详细地址
+        appId:
+          type: string
+          description: appId
+        channel:
+          type: string
+          description: 注册渠道
+        channelType:
+          type: string
+          description: 渠道类型
+        city:
+          type: string
+          description: 市
+        extraJson:
+          type: string
+          description: 扩展json
+        firstName:
+          type: string
+          description: 名
+        identify:
+          type: string
+        inviteMemberId:
+          type: integer
+          format: int64
+          description: 邀请人会员编号
+        isApp:
+          type: boolean
+          description: 是否APP调用，false指代PC调用
+        lastName:
+          type: string
+          description: 姓
+        latitude:
+          type: string
+          description: 维度
+        longitude:
+          type: string
+          description: 经度
+        mobile:
+          type: string
+          example: 15950552810
+          description: 手机号
+        nickname:
+          type: string
+          description: 昵称
+        oemActivityCode:
+          type: string
+          description: OEM活动编码
+        openId:
+          type: string
+          description: openId
+        pageId:
+          type: integer
+          format: int64
+          description: 活动页面id
+        password:
+          type: string
+          description: 密码
+        prefix:
+          type: string
+          example: 86
+          description: 手机号前缀
+        province:
+          type: string
+          description: 省
+        region:
+          type: string
+          description: 区县
+        requestSource:
+          type: string
+          description: 请求来源
+        smsCode:
+          type: string
+          example: 4567
+          description: 短信验证码
+        sourceChannel:
+          type: string
+          description: 会员来源渠道
+        sourceIp:
+          type: string
+          description: 来源IP地址
+        unionId:
+          type: string
+          description: unionId
+        username:
+          type: string
+          description: 用户名
+      title: SignUpByMobileAndSmsCodeRequest
+      description: 手机号注册
+    SignUpByMobileRequest:
+      type: object
+      required:
+        - isApp
+        - mobile
+      properties:
+        activityRuleCode:
+          type: string
+          description: 活动id
+        address:
+          type: string
+          description: 详细地址
+        appId:
+          type: string
+          description: appId
+        channel:
+          type: string
+          description: 注册渠道
+        channelType:
+          type: string
+          description: 渠道类型
+        city:
+          type: string
+          description: 市
+        extraJson:
+          type: string
+          description: 扩展json
+        firstName:
+          type: string
+          description: 名
+        identify:
+          type: string
+        inviteMemberId:
+          type: integer
+          format: int64
+          description: 邀请人会员编号
+        isApp:
+          type: boolean
+          description: 是否APP调用，false指代PC调用
+        lastName:
+          type: string
+          description: 姓
+        latitude:
+          type: string
+          description: 维度
+        longitude:
+          type: string
+          description: 经度
+        mobile:
+          type: string
+          example: 15950552810
+          description: 手机号
+        nickname:
+          type: string
+          description: 昵称
+        oemActivityCode:
+          type: string
+          description: OEM活动编码
+        openId:
+          type: string
+          description: openId
+        pageId:
+          type: integer
+          format: int64
+          description: 活动页面id
+        password:
+          type: string
+          description: 密码
+        province:
+          type: string
+          description: 省
+        region:
+          type: string
+          description: 区县
+        requestSource:
+          type: string
+          description: 请求来源
+        sourceChannel:
+          type: string
+          description: 会员来源渠道
+        sourceIp:
+          type: string
+          description: 来源IP地址
+        unionId:
+          type: string
+          description: unionId
+        username:
+          type: string
+          description: 用户名
+      title: SignUpByMobileRequest
+      description: 手机号注册
+      SignUpByMobileSendSmsCodeRequest:
+        type: object
+        required:
+          - mobile
+        properties:
+          captcha:
+            type: string
+            description: 图片验证码
+          checkWay:
+            type: string
+            description: '校验方式 1:滑动验证码'
+          mobile:
+            type: string
+            example: 15950552810
+          prefix:
+            type: string
+            example: 86
+          sourceIp:
+            type: string
+            description: 来源IP地址
+          token:
+            type: string
+            description: 图片/滑动验证码token
+        title: SignUpByMobileSendSmsCodeRequest
+      SignUpByMobileSendSmsCodeWithOutCaptchaRequest:
+        type: object
+        required:
+          - mobile
+        properties:
+          mobile:
+            type: string
+            example: 15950552810
+          prefix:
+            type: string
+            example: 86
+          sourceIp:
+            type: string
+            description: 来源IP地址
+        title: SignUpByMobileSendSmsCodeWithOutCaptchaRequest
+      TokenInfo:
+        type: object
+        properties:
+          expireTime:
+            type: integer
+            format: int32
+            description: 过期时长（秒）
+          extra:
+            type: object
+            description: 额外信息
+            additionalProperties:
+              type: string
+          imageUrl:
+            type: string
+            description: 图片URL
+          inviteMemberId:
+            type: integer
+            format: int64
+            description: 邀请人会员编号
+          isMgm:
+            type: integer
+            format: int32
+            description: 是否MGM流程注册 0或空：否 1：是
+          isShowMessage:
+            type: integer
+            format: int32
+            description: 会员招募信息
+          jdTips:
+            type: string
+            description: 信息提示
+          jwtToken:
+            type: string
+            description: jwtToken的值
+          memberId:
+            type: integer
+            format: int64
+            description: 会员ID
+          message:
+            type: string
+            description: 信息提示
+          oemCode:
+            type: integer
+            format: int32
+            description: '1:新会员获取积分和券,2:老会员获取券,3:新会员获取积分券领完,4:老会员券领完,5:二次领取'
+          registerStatus:
+            type: integer
+            format: int32
+            description: '状态标识 1:新注册会员 2:老会员 3:新绑定会员 4:再次注册会员'
+          tenantIdLong:
+            type: integer
+            format: int64
+            description: 租户编号-Long
+          token:
+            type: string
+            description: token的值
+          userId:
+            type: integer
+            format: int64
+            description: 用户中心ID
+        title: TokenInfo
+        description: Token信息实体
+      UserCouponInfo:
+        type: object
+        properties:
+          activityDesc:
+            type: string
+          activityOuterId:
+            type: string
+          balance:
+            type: integer
+            format: int64
+          createdAt:
+            type: string
+            format: date-time
+          discountCondition:
+            type: integer
+            format: int64
+          discountType:
+            type: integer
+            format: int32
+          discountValue:
+            type: integer
+            format: int64
+          expiredAt:
+            type: string
+            format: date-time
+          extra:
+            type: object
+            additionalProperties:
+              type: string
+          faceValue:
+            type: string
+          id:
+            type: integer
+            format: int64
+          mobile:
+            type: string
+          name:
+            type: string
+          owner:
+            type: integer
+            format: int64
+          remark:
+            type: string
+          resourceId:
+            type: string
+          startAt:
+            type: string
+            format: date-time
+          templateId:
+            type: integer
+            format: int64
+          type:
+            type: string
+          useChannel:
+            type: string
+          usedAt:
+            type: string
+            format: date-time
+          usedStatus:
+            type: integer
+            format: int32
+          userId:
+            type: integer
+            format: int64
+        title: UserCouponInfo
+      UserCouponOperateRequest:
+        type: object
+        required:
+          - benefitId
+          - shopId
+          - userId
+        properties:
+          benefitId:
+            type: integer
+            format: int64
+            description: 权益id，例如买家券权益id
+          channel:
+            type: string
+            description: 渠道： O2O
+          couponId:
+            type: integer
+            format: int64
+            description: ulp 优惠券id
+          outsizeCouponUniqueKey:
+            type: string
+            description: 外部优惠券主键
+          outsizeOrderNumber:
+            type: string
+            description: 订单编号
+          shopId:
+            type: integer
+            format: int64
+            description: 店铺id
+          templateId:
+            type: integer
+            format: int64
+            description: 卡券模板id
+          useChannel:
+            type: string
+            description: 使用渠道
+          userId:
+            type: integer
+            format: int64
+            description: 买家id/用户id
+        title: UserCouponOperateRequest
+      UserInfoFindByIdRequest:
+        type: object
+        properties:
+          channel:
+            type: string
+            description: 查询来源渠道
+          id:
+            type: integer
+            format: int64
+            description: 会员编号
+        title: UserInfoFindByIdRequest
+      UserInfoFindByIdsRequest:
+        type: object
+        required:
+          - ids
+        properties:
+          ids:
+            type: array
+            description: 会员id集合
+            items:
+              type: integer
+              format: int64
+        title: UserInfoFindByIdsRequest
+      UserInfoUpdateRequest:
+        type: object
+        properties:
+          address:
+            type: string
+            description: 详细地址
+          avatar:
+            type: string
+            description: 会员头像
+          birthday:
+            type: string
+            format: date-time
+            description: 生日
+          carItems:
+            type: array
+            description: 车辆信息
+            items:
+              $ref: '#/components/schemas/会员车辆信息'
+          city:
+            type: string
+            description: 市
+          completeInfoChannel:
+            type: string
+            description: 完善信息渠道
+          country:
+            type: string
+            description: 国家
+          firstName:
+            type: string
+            description: 名
+          from:
+            type: string
+            description: 注册渠道
+          fromType:
+            type: integer
+            format: int32
+            description: 注册渠道类型
+          gender:
+            type: integer
+            format: int32
+            description: 性别
+          id:
+            type: integer
+            format: int64
+            description: 会员id
+          isAccount:
+            type: boolean
+            description: 是否接收账户变动 false：否 true：是
+          isAlipayNotice:
+            type: boolean
+            description: 是否接收支付宝小程序通知 0 ： 否 1：是
+          isEmailNotice:
+            type: boolean
+            description: 是否接收微信公众号通知 0 ： 否 1：是
+          isSmsNotice:
+            type: boolean
+            description: 是否接收短信通知 0 ： 否 1：是
+          isWechatMiniProgramNotice:
+            type: boolean
+            description: 是否接收微信小程序通知 0 ： 否 1：是
+          isWechatOfficialAccountNotice:
+            type: boolean
+            description: 是否接收微信公众号通知 0 ： 否 1：是
+          lastName:
+            type: string
+            description: 姓
+          level:
+            type: integer
+            format: int32
+            description: 会员等级
+          nickname:
+            type: string
+            description: 会员昵称
+          point:
+            type: integer
+            format: int64
+            description: 会员积分
+          province:
+            type: string
+            description: 省
+          region:
+            type: string
+            description: 区
+          srv:
+            type: string
+            description: 服务渠道
+          srvType:
+            type: integer
+            format: int32
+            description: 服务渠道类型
+          status:
+            type: integer
+            format: int32
+            description: 会员状态
+          street:
+            type: string
+            description: 街道
+          tenant:
+            type: string
+            description: 租户
+          type:
+            type: integer
+            format: int32
+            description: 会员类型
+          userId:
+            type: integer
+            format: int64
+            description: 用户id
+        title: UserInfoUpdateRequest
+      VirgoAccount:
+        type: object
+        properties:
+          amount:
+            type: integer
+            format: int64
+            description: 积分余额
+          glCode:
+            type: string
+            description: 账户类型
+        title: VirgoAccount
+        description: 积分账户信息
+      WsMpqrInfo:
+        type: object
+        properties:
+          picEncoder:
+            type: string
+        title: WsMpqrInfo
+      open抽奖结果:
+        type: object
+        properties:
+          exchangeCode:
+            type: string
+            description: 兑换码
+          isPrize:
+            type: integer
+            format: int32
+            description: '奖品是否中奖 1 中奖,2 未中奖，3活动未开始，4 活动已结束，5 次数已用完, 6 积分不足'
+          luckDrawWinningLogId:
+            type: integer
+            format: int64
+            description: 中奖记录id
+          prizeLevel:
+            type: string
+            description: 奖品等级
+          prizeName:
+            type: string
+            description: 奖品名称
+          prizeType:
+            type: integer
+            format: int32
+            description: '奖品类型 1: 实物奖品 、2：积分，3：优惠卷，4:非奖品'
+          tbCode:
+            type: string
+            description: 淘口令
+        title: open抽奖结果
+    AccountTransRequest:
+      type: object
+      properties:
+        channel:
+          type: string
+          description: 渠道
+        id:
+          type: integer
+          format: int64
+          description: 会员编号
+        pageNo:
+          type: integer
+          format: int32
+          description: 当前页码-默认1，从1开始
+        pageSize:
+          type: integer
+          format: int32
+          description: 每页条数-默认20，最大1024
+      title: AccountTransRequest
+    CaptchaBean:
+      type: object
+      properties:
+        imageUrl:
+          type: string
+        token:
+          type: string
+      title: CaptchaBean
+    CouponBindCallBackRequest:
+      type: object
+      properties:
+        couponId:
+          type: integer
+          format: int64
+          description: ULP用户优惠券实例id
+        outsizeCouponUniqueKey:
+          type: integer
+          format: int64
+          description: 外部优惠券实例id
+        success:
+          type: boolean
+          description: 业务处理结果
+        userId:
+          type: integer
+          format: int64
+          description: ULP用户id
+      title: CouponBindCallBackRequest
+    Paging«个人中奖信息详情»:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/个人中奖信息详情'
+        empty:
+          type: boolean
+        total:
+          type: integer
+          format: int64
+      title: Paging«个人中奖信息详情»
+    Paging«会员账户交易记录(账户快照)»:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/会员账户交易记录(账户快照)'
+        empty:
+          type: boolean
+        total:
+          type: integer
+          format: int64
+      title: Paging«会员账户交易记录(账户快照)»
+    Paging«展示中奖信息详情»:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/展示中奖信息详情'
+        empty:
+          type: boolean
+        total:
+          type: integer
+          format: int64
+      title: Paging«展示中奖信息详情»
+    Response«CaptchaBean»:
+      type: object
+      properties:
+        code:
+          type: string
+        error:
+          type: string
+        result:
+          $ref: '#/components/schemas/CaptchaBean'
+        sourceIp:
+          type: string
+        sourceStack:
+          type: string
+        success:
+          type: boolean
+      title: Response«CaptchaBean»
+    个人中奖信息详情:
+      type: object
+      properties:
+        activityRulesValues:
+          type: integer
+          format: int32
+          description: 规则值（积分值，实物/优惠卷默认1）
+        adress:
+          type: string
+          description: 收获地址
+        exchangeCode:
+          type: string
+          description: 兑换码
+        id:
+          type: integer
+          format: int64
+          description: 抽奖记录id
+        luckDrawAt:
+          type: string
+          description: 抽奖日期，精确到秒，实际为数据库中的创建时间
+        mobile:
+          type: string
+          description: 收获人手机号
+        name:
+          type: string
+          description: 收获人姓名
+        prizeLevel:
+          type: string
+          description: 奖品等级
+        prizeName:
+          type: string
+          description: 奖品名称
+        tbCode:
+          type: string
+          description: 淘口令
+      title: 个人中奖信息详情
+    优惠券操作:
+      type: object
+      required:
+        - couponId
+        - userId
+      properties:
+        couponId:
+          type: integer
+          format: int64
+          example: 1
+          description: 券ID
+        userId:
+          type: integer
+          format: int64
+          example: 1
+          description: 用户ID
+      title: 优惠券操作
+      description: 优惠券操作
+    会员id:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: 是否成功
+      title: 会员id
+    会员信息:
+      type: object
+      required:
+        - from
+        - fromType
+        - mobile
+        - nickname
+        - srv
+        - srvType
+        - type
+        - userId
+      properties:
+        extra:
+          type: object
+          description: 额外信息
+          additionalProperties:
+            type: string
+        isAlipayNotice:
+          type: boolean
+          description: 是否接收支付宝小程序通知 false ： 否 true：是
+        isEmailNotice:
+          type: boolean
+          description: 是否接收微信公众号通知 false ： 否 true：是
+        isFirst:
+          type: integer
+          format: int32
+          description: 是否首次完善信息 0 ： 否 1：是
+        isNewUser:
+          type: boolean
+          description: 是否为新注册用户
+        isSmsNotice:
+          type: boolean
+          description: 是否接收短信通知 false ： 否 true：是
+        isWechatMiniProgramNotice:
+          type: boolean
+          description: 是否接收微信小程序通知 false ： 否 true：是
+        isWechatOfficialAccountNotice:
+          type: boolean
+          description: 是否接收微信公众号通知 false ： 否 true：是
+        lastLocation:
+          type: string
+          description: 最近一次位置
+        tenantIdLong:
+          type: integer
+          format: int64
+          description: 租户编号-Long
+        id:
+          type: integer
+          format: int64
+          description: id
+        typeName:
+          type: string
+          description: 类型名
+        userId:
+          type: integer
+          format: int64
+          description: 用户id
+        fromName:
+          type: string
+          description: 渠道名
+        nickname:
+          type: string
+          description: 会员昵称
+        srvName:
+          type: string
+          description: 服务渠道名
+        type:
+          type: integer
+          format: int32
+          description: 会员类型
+        mobile:
+          type: string
+          description: 手机号
+        userName:
+          type: string
+          description: 用户名
+        email:
+          type: string
+          description: 邮箱号
+        level:
+          type: integer
+          format: int32
+          description: 等级信息
+        levelName:
+          type: string
+          description: 等级名称
+        barcode:
+          type: string
+          description: 小程序条形码URL
+        outerId:
+          type: string
+          description: 外部ID
+        status:
+          type: integer
+          format: int32
+          description: 会员状态
+        statusName:
+          type: string
+          description: 会员状态名称
+        from:
+          type: string
+          description: 注册渠道
+        fromType:
+          type: integer
+          format: int32
+          description: 注册渠道类型
+        srv:
+          type: string
+          description: 服务渠道
+        srvType:
+          type: integer
+          format: int32
+          description: 服务渠道类型
+        avatar:
+          type: string
+          description: 会员头像
+        firstName:
+          type: string
+          description: 名
+        lastName:
+          type: string
+          description: 姓
+        birthday:
+          type: string
+          format: date-time
+          description: 生日
+        gender:
+          type: integer
+          format: int32
+          description: 性别
+        genderName:
+          type: string
+          description: 性别名
+        registerAt:
+          type: string
+          format: date-time
+          description: 注册时间
+        lastActiveAt:
+          type: string
+          format: date-time
+          description: 最近活跃时间
+        country:
+          type: string
+          description: 国家
+        province:
+          type: string
+          description: 省
+        city:
+          type: string
+          description: 市
+        region:
+          type: string
+          description: 区
+        address:
+          type: string
+          description: 详细地址
+        street:
+          type: string
+          description: 街道
+        isAccount:
+          type: boolean
+          description: 是否接收账户变动 false：否 true：是
+        carItems:
+          type: array
+          description: 会员车辆信息
+          items:
+            $ref: '#/components/schemas/会员车辆信息'
+      title: 会员信息
+    会员信息级关联信息:
+      type: object
+      required:
+        - from
+        - fromType
+        - mobile
+        - nickname
+        - srv
+        - srvType
+        - type
+        - userId
+      properties:
+        extra:
+          type: object
+          description: 额外信息
+          additionalProperties:
+            type: string
+        isAlipayNotice:
+          type: boolean
+          description: 是否接收支付宝小程序通知 false ： 否 true：是
+        isEmailNotice:
+          type: boolean
+          description: 是否接收微信公众号通知 false ： 否 true：是
+        isFirst:
+          type: integer
+          format: int32
+          description: 是否首次完善信息 0 ： 否 1：是
+        isSmsNotice:
+          type: boolean
+          description: 是否接收短信通知 false ： 否 true：是
+        isWechatMiniProgramNotice:
+          type: boolean
+          description: 是否接收微信小程序通知 false ： 否 true：是
+        isWechatOfficialAccountNotice:
+          type: boolean
+          description: 是否接收微信公众号通知 false ： 否 true：是
+        lastLocation:
+          type: string
+          description: 最近一次位置
+        tenantIdLong:
+          type: integer
+          format: int64
+          description: 租户编号-Long
+        id:
+          type: integer
+          format: int64
+          description: id
+        typeName:
+          type: string
+          description: 类型名
+        userId:
+          type: integer
+          format: int64
+          description: 用户id
+        fromName:
+          type: string
+          description: 渠道名
+        nickname:
+          type: string
+          description: 会员昵称
+        srvName:
+          type: string
+          description: 服务渠道名
+        type:
+          type: integer
+          format: int32
+          description: 会员类型
+        mobile:
+          type: string
+          description: 手机号
+        userName:
+          type: string
+          description: 用户名
+        email:
+          type: string
+          description: 邮箱号
+        barcode:
+          type: string
+          description: 小程序条形码URL
+        outerId:
+          type: string
+          description: 外部ID
+        status:
+          type: integer
+          format: int32
+          description: 会员状态
+        statusName:
+          type: string
+          description: 会员状态名称
+        from:
+          type: string
+          description: 注册渠道
+        fromType:
+          type: integer
+          format: int32
+          description: 注册渠道类型
+        srv:
+          type: string
+          description: 服务渠道
+        srvType:
+          type: integer
+          format: int32
+          description: 服务渠道类型
+        avatar:
+          type: string
+          description: 会员头像
+        firstName:
+          type: string
+          description: 名
+        lastName:
+          type: string
+          description: 姓
+        birthday:
+          type: string
+          format: date-time
+          description: 生日
+        gender:
+          type: integer
+          format: int32
+          description: 性别
+        genderName:
+          type: string
+          description: 性别名
+        registerAt:
+          type: string
+          format: date-time
+          description: 注册时间
+        lastActiveAt:
+          type: string
+          format: date-time
+          description: 最近活跃时间
+        country:
+          type: string
+          description: 国家
+        province:
+          type: string
+          description: 省
+        city:
+          type: string
+          description: 市
+        region:
+          type: string
+          description: 区
+        address:
+          type: string
+          description: 详细地址
+        street:
+          type: string
+          description: 街道
+        isAccount:
+          type: boolean
+          description: 是否接收账户变动 false：否 true：是
+        carItems:
+          type: array
+          description: 会员车辆信息
+          items:
+            $ref: '#/components/schemas/会员车辆信息'
+        accountInfoList:
+          type: array
+          description: 账户信息
+          items:
+            $ref: '#/components/schemas/会员积分账户'
+        levelInfoList:
+          type: array
+          description: 等级信息
+          items:
+            $ref: '#/components/schemas/会员等级'
+        levelPrivilegeInfoList:
+          type: array
+          description: 权益信息
+          items:
+            $ref: '#/components/schemas/等级权益'
+      title: 会员信息级关联信息
+    会员积分账户:
+      type: object
+      properties:
+        amount:
+          type: integer
+          format: int64
+          description: 账户余额
+        amountChangeAt:
+          type: string
+          format: date-time
+        createdAt:
+          type: string
+          format: date-time
+          description: 创建时间
+        ext1:
+          type: string
+          description: 扩展字段1
+        ext2:
+          type: string
+          description: 扩展字段2
+        ext3:
+          type: string
+          description: 扩展字段3
+        extra:
+          type: object
+          description: 额外信息
+          additionalProperties:
+            type: string
+        extraJson:
+          type: string
+          description: 扩展json字段
+        frozenAmount:
+          type: integer
+          format: int64
+          description: 冻结的余额
+        glCode:
+          type: string
+          description: 科目
+        id:
+          type: integer
+          format: int64
+          description: ID
+        ownerId:
+          type: string
+          description: 所属者ID
+        status:
+          type: string
+          description: 'NORMAL:正常, FROZEN:冻结'
+        sumPoint:
+          type: integer
+          format: int64
+          description: 账户累计积分
+        tenantId:
+          type: integer
+          format: int32
+          description: 租户ID
+        tenantIdLong:
+          type: integer
+          format: int64
+          description: 租户编号-Long
+        updatedAt:
+          type: string
+          format: date-time
+          description: 更新时间
+      title: 会员积分账户
+    会员等级:
+      type: object
+      properties:
+        currentLevelExp:
+          type: integer
+          format: int64
+          description: 当前等级需要的成长值
+        extra:
+          type: object
+          description: 额外信息
+          additionalProperties:
+            type: string
+        levelLogo:
+          type: string
+          description: 等级图标
+        tenantIdLong:
+          type: integer
+          format: int64
+          description: 租户编号-Long
+        levelTemplateCode:
+          type: string
+          description: 等级模板编码
+        levelTemplateType:
+          type: string
+          description: 等级模板类型
+        level:
+          type: integer
+          format: int32
+          description: 等级权重
+        levelName:
+          type: string
+          description: 等级名称
+        exp:
+          type: integer
+          format: int64
+          description: 成长值
+        expDiff:
+          type: integer
+          format: int64
+          description: 成长值差额
+        status:
+          type: integer
+          format: int32
+          description: 等级状态
+        periodType:
+          type: string
+          description: '有效期类型 PERMANENT:永久有效 FIXED:固定整日期有效(1年) APPOINT:指定日期有效(如:固定每年12月31日失效)'
+        levelExpireAt:
+          type: string
+          format: date-time
+          description: 等级过期时间
+        levelId:
+          type: integer
+          format: int64
+          description: 等级id
+        levelTemplateId:
+          type: integer
+          format: int64
+          description: 等级模板id
+      title: 会员等级
+    会员账户交易记录(账户快照):
+      type: object
+      properties:
+        accountId:
+          type: integer
+          format: int64
+          description: 账户ID
+        accountsAmount:
+          type: integer
+          format: int64
+          description: ID
+        amount:
+          type: integer
+          format: int64
+          description: 账户当前数额
+        bizNo:
+          type: string
+          description: 外部业务号
+        bizSource:
+          type: string
+          description: 交易单据来源
+        bizSourceType:
+          type: string
+          description: 交易单据来源类型
+        bizType:
+          type: string
+          description: 外部业务类型代码
+        changeType:
+          type: string
+          example: 10000
+          description: 积分变化类型
+        channelName:
+          type: string
+          description: 渠道类型
+        computeMoney:
+          type: integer
+          format: int64
+          description: 计算金额
+        createdAt:
+          type: string
+          format: date-time
+          description: 创建时间
+        downAmount:
+          type: integer
+          format: int64
+          description: 扣减数额
+        expiredAt:
+          type: string
+          format: date-time
+          description: 过期时间
+        ext1:
+          type: string
+          description: 扩展字段1
+        ext2:
+          type: string
+          description: 扩展字段2
+        ext3:
+          type: string
+          description: 扩展字段4
+        ext4:
+          type: string
+          description: 扩展字段3
+        extraJson:
+          type: string
+          description: 扩展json字段
+        failReason:
+          type: string
+          description: 失败原因
+        finChangeAmount:
+          type: integer
+          format: int64
+          description: 交易最终变动资产
+        finishTime:
+          type: string
+          description: 订单完成时间
+        glCode:
+          type: string
+          description: 账户科目
+        glName:
+          type: string
+          description: 科目名
+        hashCode:
+          type: string
+          description: 唯一索引，用于幂等
+        id:
+          type: string
+          description: ID
+        isUsedBudget:
+          type: integer
+          format: int32
+          description: '是否使用预算,1-使用,0-未使用'
+        operateType:
+          type: string
+          description: 'UP: changeAmount为正, DOWN:changeAmount为负'
+        orderId:
+          type: string
+          description: 业务方订单号
+        orderTime:
+          type: string
+          description: 订单下单时间
+        ownerId:
+          type: string
+          description: 所属者ID
+        payFee:
+          type: string
+          description: 订单实付金额
+        reason:
+          type: string
+          description: 变更原因
+        refundMoney:
+          type: integer
+          format: int64
+          description: 退款金额
+        ruleCodes:
+          type: string
+          description: 积分规则
+        sourceBizs:
+          type: string
+          description: 来源单信息
+        status:
+          type: string
+          description: >-
+            状态
+            INIT:初始化,PROCESSING:处理中(资产未到账),DONE:交易处理完成(资产到帐),PARTDONE:部分到账,FAIL:失败(交易处理失败)
+        targetAccountId:
+          type: integer
+          format: int64
+          description: 目标账户ID
+        tenantId:
+          type: integer
+          format: int32
+          description: 租户ID
+        tradeMoney:
+          type: integer
+          format: int64
+          description: 交易金额
+        tradedAt:
+          type: string
+          format: date-time
+          description: 交易时间
+        transType:
+          type: string
+          description: 交易业务类型
+        upAmount:
+          type: integer
+          format: int64
+          description: 正向数额
+        updatedAt:
+          type: string
+          format: date-time
+          description: 更新时间
+        updatedBy:
+          type: string
+          description: 更新人
+      title: 会员账户交易记录(账户快照)
+    会员账户信息:
+      type: object
+      properties:
+        amount:
+          type: integer
+          format: int64
+          description: 账户余额
+        amountChangeAt:
+          type: string
+          format: date-time
+          description: 余额最近变动时间(日切使用)
+        createdAt:
+          type: string
+          format: date-time
+          description: 创建时间
+        ext1:
+          type: string
+          description: 扩展字段1
+        ext2:
+          type: string
+          description: 扩展字段2
+        ext3:
+          type: string
+          description: 扩展字段3
+        extraJson:
+          type: string
+          description: 扩展json字段
+        frozenAmount:
+          type: integer
+          format: int64
+          description: 冻结的余额
+        glCode:
+          type: string
+          description: 科目
+        glName:
+          type: string
+          description: 科目名
+        id:
+          type: integer
+          format: int64
+          description: ID
+        ownerId:
+          type: string
+          description: 所属者ID
+        status:
+          type: string
+          description: 'NORMAL:正常, FROZEN:冻结'
+        tenantId:
+          type: integer
+          format: int32
+          description: 租户ID
+        updatedAt:
+          type: string
+          format: date-time
+          description: 更新时间
+        withholdAmount:
+          type: integer
+          format: int64
+          description: 预扣的余额
+      title: 会员账户信息
+    会员车辆信息:
+      type: object
+      properties:
+        carBrand:
+          type: string
+          description: 车辆品牌
+        carKm:
+          type: string
+          description: 里程
+        carType:
+          type: string
+          description: 车型
+        carVehicle:
+          type: string
+          description: 汽车类型
+        carVehicleId:
+          type: string
+          description: 汽车类型code
+        carYear:
+          type: string
+          description: 年份
+        cc:
+          type: string
+          description: 排量
+        channel:
+          type: string
+          description: 渠道信息
+        extra:
+          type: object
+          description: 额外信息
+          additionalProperties:
+            type: string
+        id:
+          type: integer
+          format: int64
+          description: 主键
+        memberId:
+          type: integer
+          format: int64
+          description: 用户ID
+        tenantIdLong:
+          type: integer
+          format: int64
+          description: 租户编号-Long
+      title: 会员车辆信息
+    创建券模版:
+      type: object
+      properties:
+        channel:
+          type: string
+        collectType:
+          type: string
+        couponCode:
+          type: string
+        couponType:
+          type: string
+        desc:
+          type: string
+        effectiveEndAt:
+          type: integer
+          format: int64
+        effectiveStartAt:
+          type: integer
+          format: int64
+        effectiveTimeMode:
+          type: string
+        name:
+          type: string
+        outsizeTemplateUniqueKey:
+          type: string
+        reductionValue:
+          type: string
+        relativeDays:
+          type: integer
+          format: int64
+        shopId:
+          type: integer
+          format: int64
+        totalCount:
+          type: integer
+          format: int64
+        useCity:
+          type: string
+      title: 创建券模版
+      description: 创建券模版
+    券查询:
+      type: object
+      required:
+        - userId
+      properties:
+        activityId:
+          type: integer
+          format: int64
+          description: 活动id
+        beginCreatedAt:
+          type: string
+          format: date-time
+          description: 优惠券发放时间-开始
+        endCreatedAt:
+          type: string
+          format: date-time
+          description: 优惠券发放时间-截止
+        history:
+          type: boolean
+          description: 是否查询历史券
+        shopId:
+          type: integer
+          format: int64
+          description: 店铺id
+        sort:
+          type: string
+          description: 排序信息
+          enum:
+            - EXPIRED_DESC
+            - EXPIRED_ASC
+        type:
+          type: array
+          description: 用户权益类型
+          items:
+            type: string
+        useChannel:
+          type: string
+          description: 使用渠道
+        usedStatus:
+          type: integer
+          format: int32
+          description: 卡券状态
+        userId:
+          type: integer
+          format: int64
+          description: 会员id
+      title: 券查询
+      description: 券查询
+    剩余次数:
+      type: object
+      properties:
+        surplusValue:
+          type: integer
+          format: int64
+          description: 剩余次数
+      title: 剩余次数
+      发放用户卡券请求:
+        type: object
+        properties:
+          activityId:
+            type: integer
+            format: int64
+            description: 活动ID
+          collectType:
+            type: string
+            description: 领取方式
+          number:
+            type: integer
+            format: int32
+            description: 券数量-couponGrant默认为1
+          outerCode:
+            type: string
+            description: 外部id，比如订单编码
+          registerBuyerNickname:
+            type: string
+            description: 买家天猫昵称
+          remark:
+            type: string
+            description: 备注，发放原因
+          shopId:
+            type: integer
+            format: int64
+            description: 店铺ID
+          userId:
+            type: integer
+            format: int64
+            description: 用户ID
+          userName:
+            type: string
+            description: 姓名
+        title: 发放用户卡券请求
+    发送验证码open请求:
+      type: object
+      required:
+        - mobile
+        - scene
+        - sourceIp
+        - type
+      properties:
+        mobile:
+          type: string
+          example: 13951800000
+          description: 手机号
+        scene:
+          type: string
+          description: 验签场景
+        sourceIp:
+          type: string
+          example: 127.0.0.1
+          description: 来源ip
+        type:
+          type: integer
+          format: int32
+          description: 类型标识0：内部（不需要验证码） 1：外部 登陆即注册（用户标识对应memberId） 2：外部 简单登录（用户标识对应手机号）
+      title: 发送验证码open请求
+    展示中奖信息详情:
+      type: object
+      properties:
+        luckDrawAt:
+          type: string
+          description: 抽奖日期，精确到秒，实际为数据库中的创建时间
+        memberName:
+          type: string
+          description: 脱敏的会员名
+        phone:
+          type: string
+          description: 脱敏的抽奖手机号
+        prizeLevel:
+          type: string
+          description: 奖品等级
+        prizeName:
+          type: string
+          description: 奖品名称
+      title: 展示中奖信息详情
+    开放奖品详情:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: 奖品id
+        prizeLevel:
+          type: string
+          description: 等级
+        prizeName:
+          type: string
+          description: 奖品名称
+        prizeRuleValue:
+          type: string
+        prizeType:
+          type: integer
+          format: int32
+          description: '奖品类型1: 实物奖品 、2：积分，3：优惠卷，4:非奖品'
+      title: 开放奖品详情
+    开放抽奖活动规则详情:
+      type: object
+      required:
+        - customDeductionPointsFlag
+        - customPointsLX
+        - customPointsZX
+      properties:
+        customDeductionPointsFlag:
+          type: integer
+          format: int32
+          description: 自定义扣减积分标示 0  不允许 ， 1 允许
+        customPointsLX:
+          type: integer
+          format: int32
+          description: 自定义扣减积分 礼享
+        customPointsZX:
+          type: integer
+          format: int32
+          description: 自定义扣减积分 臻享
+        emLuckDrawPrizeInfoList:
+          type: array
+          description: 抽奖奖品列表
+          items:
+            $ref: '#/components/schemas/开放奖品详情'
+        id:
+          type: integer
+          format: int64
+          description: 活动id
+        largeCircleSector:
+          type: integer
+          format: int32
+          description: 大转盘扇区
+        luckDrawEndTime:
+          type: string
+          description: 活动结束时间
+        luckDrawLimit:
+          type: string
+          description: 活动限制 非积分活动：次数/天数 中的天数（1天）积分活动：10000代表礼享积分，20000代表臻享积分（礼享积分）
+        luckDrawName:
+          type: string
+          description: 活动名称
+        luckDrawRules:
+          type: integer
+          format: int32
+          description: '活动规则（1：次数限制，2:积分扣减,3：单次）'
+        luckDrawRulesValues:
+          type: integer
+          format: int32
+          description: 活动限制值 非积分活动：次数/天数 中的次数 积分活动：积分值
+        luckDrawStartTime:
+          type: string
+          description: 活动开始时间
+      title: 开放抽奖活动规则详情
+    抽奖open请求:
+      type: object
+      required:
+        - luckDrawId
+        - sourceIp
+        - userCode
+      properties:
+        customGlCode:
+          type: string
+          description: 自定义积分code
+        luckDrawId:
+          type: integer
+          format: int64
+          description: 活动id
+        openId:
+          type: string
+          description: openId
+        sourceIp:
+          type: string
+          description: 来源ip
+        userCode:
+          type: string
+          description: 用户标识
+      title: 抽奖open请求
+    抽奖活动详情查询open请求:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: 活动id
+      title: 抽奖活动详情查询open请求
+    更新收货信息open请求:
+      type: object
+      required:
+        - address
+        - luckDrawWinningLogId
+        - name
+        - phone
+        - userCode
+      properties:
+        address:
+          type: string
+          description: 收货人地址
+        luckDrawWinningLogId:
+          type: string
+          description: 中奖记录id
+        name:
+          type: string
+          description: 收货人姓名
+        phone:
+          type: string
+          description: 收货人手机号
+        userCode:
+          type: string
+          description: 用户标识
+      title: 更新收货信息open请求
+    更新收货地址返回信息:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: 是否成功
+      title: 更新收货地址返回信息
+    根据会员id查找账户:
+      type: object
+      properties:
+        ownerId:
+          type: string
+          description: 所属者id
+        userId:
+          type: integer
+          format: int64
+          description: 会员id
+      title: 根据会员id查找账户
+      description: 根据会员id查找账户
+    用户标识:
+      type: object
+      properties:
+        userCode:
+          type: string
+          description: 用户标识
+      title: 用户标识
+    省市区信息:
+      type: object
+      properties:
+        extra:
+          type: object
+          description: 额外信息
+          additionalProperties:
+            type: string
+        tenantIdLong:
+          type: integer
+          format: int64
+          description: 租户编号-Long
+        id:
+          type: integer
+          format: int64
+          description: 省市区ID
+        pid:
+          type: integer
+          format: int64
+          description: 父级ID
+        name:
+          type: string
+          description: 名称
+        level:
+          type: integer
+          format: int32
+          description: 级别
+        hasChildren:
+          type: integer
+          format: int32
+          description: 是否有下一级 1-有，0-无
+        pinyin:
+          type: string
+          description: 拼音
+        englishName:
+          type: string
+          description: 英文名
+        unicodeCode:
+          type: string
+          description: ASCII码
+        orderNo:
+          type: string
+          description: 排序号
+        lon:
+          type: number
+          format: double
+          description: 经度
+        lat:
+          type: number
+          format: double
+          description: 纬度
+      title: 省市区信息
+    省市区获取入参:
+      type: object
+      required:
+        - level
+        - pid
+        - type
+      properties:
+        pid:
+          type: integer
+          format: int64
+          description: 父级ID
+        level:
+          type: integer
+          format: int32
+          description: 级别ID
+        type:
+          type: string
+          description: 类型：PROFILE-个人信息 SHIPPING-收货地址
+          enum:
+            - PROFILE
+            - SHIPPING
+      title: 省市区获取入参
+    等级权益:
+      type: object
+      properties:
+        extra:
+          type: object
+          description: 额外信息
+          additionalProperties:
+            type: string
+        tenantIdLong:
+          type: integer
+          format: int64
+          description: 租户编号-Long
+        name:
+          type: string
+          description: 权益名称
+        code:
+          type: string
+          description: 权益编码
+        type:
+          type: string
+          description: 权益类型
+        series:
+          type: string
+          description: 权益系列
+        period:
+          type: string
+          description: 权益有效期
+        status:
+          type: string
+          description: 权益状态
+        value:
+          type: integer
+          format: int64
+          description: 权益值
+      title: 等级权益
+    等级配置:
+      type: object
+      properties:
+        activityId:
+          type: string
+        extra:
+          type: object
+          description: 额外信息
+          additionalProperties:
+            type: string
+        outsizeTemplateUniqueKey:
+          type: string
+        tenantIdLong:
+          type: integer
+          format: int64
+          description: 租户编号-Long
+      title: 等级配置
+    美孚账户人工调整请求参数:
+      type: object
+      required:
+        - accountId
+        - bizNo
+        - bizType
+        - operateType
+      properties:
+        accountId:
+          type: integer
+          format: int64
+          example: 5
+          description: 账户id
+        action:
+          type: string
+          example: ActionType中值
+          description: 行为事件
+        bizNo:
+          type: string
+          example: test_order
+          description: 外部单号
+        bizSource:
+          type: string
+          example: ChannelType中code
+          description: 积分来源渠道
+        bizSourceType:
+          type: string
+          example: TransOperateType中值
+          description: 积分来源类型
+        bizType:
+          type: string
+          example: BizType中值
+          description: 业务类型
+        channelCode:
+          type: string
+          description: 渠道
+        downAmount:
+          type: integer
+          format: int64
+          example: 1000
+          description: 扣减数额
+        ext2:
+          type: string
+          description: 产品类型
+        ext3:
+          type: string
+          description: 产品名称
+        ext4:
+          type: string
+          description: 订单数据
+        extraJson:
+          type: string
+          description: 扩展字段
+        glCode:
+          type: string
+          description: 账户科目
+        isChecked:
+          type: integer
+          format: int32
+          description: ' 黑白名单检测 0：未检测，需要检测，1：已检测，白名单用户'
+        operateType:
+          type: string
+          description: 增加/扣减
+          enum:
+            - UP
+            - DOWN
+        orderId:
+          type: string
+          description: 业务方订单号
+        ownerId:
+          type: string
+          description: 所属者ID
+        reason:
+          type: string
+          description: 操作原因
+        ruleCodes:
+          type: array
+          example:
+            - RECHARGE_EXCHANGE
+            - RECHARGE_FIXED
+            - RECHARGE_MULTIPLE
+          description: 规则码列表
+          items:
+            type: string
+        tradedAt:
+          type: string
+          format: date-time
+          description: 交易时间 不传则认为是当前时间
+        upAmount:
+          type: integer
+          format: int64
+          example: 0
+          description: 正向数额
+        userId:
+          type: integer
+          format: int64
+          description: 会员ID
+      title: 美孚账户人工调整请求参数
+    获取个人中奖奖品信息open请求:
+      type: object
+      required:
+        - luckDrawId
+        - userCode
+      properties:
+        luckDrawId:
+          type: integer
+          format: int64
+          description: 活动id
+        pageNo:
+          type: integer
+          format: int32
+          description: 当前页码-默认1，从1开始
+        pageSize:
+          type: integer
+          format: int32
+          description: 每页条数-默认20，最大1024
+        userCode:
+          type: string
+          description: 用户标识
+      title: 获取个人中奖奖品信息open请求
+    获取小程序太阳码:
+      type: object
+      properties:
+        appId:
+          type: string
+          description: appId
+        bizId:
+          type: string
+      title: 获取小程序太阳码
+    获取所有中奖奖品信息open请求:
+      type: object
+      required:
+        - luckDrawId
+      properties:
+        luckDrawId:
+          type: integer
+          format: int64
+          description: 活动id
+        pageNo:
+          type: integer
+          format: int32
+          description: 当前页码-默认1，从1开始
+        pageSize:
+          type: integer
+          format: int32
+          description: 每页条数-默认20，最大1024
+      title: 获取所有中奖奖品信息open请求
+    获得会员剩余次数open请求:
+      type: object
+      required:
+        - luckDrawId
+        - userCode
+      properties:
+        luckDrawId:
+          type: integer
+          format: int64
+          description: 活动Id
+        userCode:
+          type: string
+          description: 用户标识
+      title: 获得会员剩余次数open请求
+    获得会员剩余积分open请求:
+      type: object
+      required:
+        - userCode
+      properties:
+        userCode:
+          type: string
+          description: 用户标识
+      title: 获得会员剩余积分open请求
+    获得用户标识open请求:
+      type: object
+      required:
+        - info
+        - luckDrawId
+        - scene
+        - sourceIp
+        - type
+      properties:
+        info:
+          type: string
+          description: 用户信息 内部：memberId 外部：手机号
+        luckDrawId:
+          type: integer
+          format: int64
+          description: 抽奖活动Id
+        scene:
+          type: string
+          description: 验签场景
+        smsCode:
+          type: string
+          example: 4567
+          description: 短信验证码 内部不需，外部必需
+        sourceIp:
+          type: string
+          description: 来源ip
+        type:
+          type: integer
+          format: int32
+          description: >-
+            类型标识0：内部（用户标识对应memberId） 1：外部 登陆即注册（用户标识对应memberId） 2：外部
+            简单登录（用户标识对应手机号）
+      title: 获得用户标识open请求
+    风控识别触发标签信息:
+      type: object
+      properties:
+        paraphrase:
+          type: string
+        simpleInfo:
+          type: string
+        tag:
+          type: string
+        type:
+          type: string
+        typeInfo:
+          type: string
+      title: 风控识别触发标签信息
+    风险识别openApi入参:
+      type: object
+      properties:
+        channel:
+          type: string
+          description: 渠道
+        ip:
+          type: string
+          description: ip
+        mobile:
+          type: string
+          description: 手机号
+      title: 风险识别openApi入参
+    风险识别openApi出参:
+      type: object
+      properties:
+        score:
+          type: number
+          format: double
+          description: 风险分值
+        tags:
+          type: array
+          description: 风险标签
+          items:
+            $ref: '#/components/schemas/风控识别触发标签信息'
+
+info:
+  description:
+    userpotal-open api
+  title: userportal-open
+  version: default
+openapi: 3.0.0
+tags:
+  - name: address-controller
+    description: Address Controller
+  - name: coupon-controller
+    description: Coupon Controller
+  - name: coupon-template-controller
+    description: Coupon Template Controller
+  - name: luck-draw-controller-open
+    description: Luck Draw Controller Open
+  - name: member-controller
+    description: Member Controller
+  - name: member-profile-controller
+    description: Member Profile Controller
+  - name: point-controller
+    description: Point Controller
+  - name: portal-captcha-controller
+    description: Portal Captcha Controller
+  - name: risk-strategy-controller-open
+    description: Risk Strategy Controller Open
+  - name: verifi-code-controller
+    description: Verifi Code Controller
+  - name: virgo-trans-detail-controller
+    description: Virgo Trans Detail Controller
+  - name: winsafe-controller
+    description: Winsafe Controller
+
+paths:
+  /api/user/portal/open/address/list:
+    parameters: [ ]
+    post:
+      operationId: listUsingPOST
+      parameters: [ ]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/省市区获取入参'
+        description: 省市区获取入参
+        required: deprecatedfalse
+      tags:
+        - address-controller
+      summary: 根据级别查询省市区
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                description: OK
+                $ref: '#/components/Response«List«省市区信息»»'
+        '201':
+          content:
+            application/json:
+              schema:
+                description: Created
+        '401':
+          content:
+            application/json:
+              schema:
+                description: Unauthorized
+        '403':
+          content:
+            application/json:
+              schema:
+                description: Forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                description: Not Found
+  /api/user/portal/open/captcha/get-captcha:
+    get:
+      tags:
+        - portal-captcha-controller
+      summary: 获取图片验证码-公共接口
+      operationId: getCaptchaUsingGET
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                description: OK
+                $ref: '#/components/schemas/Response«CaptchaBean»'
+        '201':
+          content:
+            application/json:
+              schema:
+                description: Created
+        '401':
+          content:
+            application/json:
+              schema:
+                description: Unauthorized
+        '403':
+          content:
+            application/json:
+              schema:
+                description: Forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                description: Not Found
+  /api/user/portal/open/coupon/coupon-bind-callback:
+    post:
+      tags:
+        - coupon-controller
+      summary: 券绑定回调
+      operationId: couponBindCallbackUsingPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CouponBindCallBackRequest'
+        required: deprecatedfalse
+        description: CouponBindCallBackRequest
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                description: OK
+                $ref: '#/components/schemas/Response«boolean»'
+        '201':
+          content:
+            application/json:
+              schema:
+                description: Created
+        '401':
+          content:
+            application/json:
+              schema:
+                description: Unauthorized
+        '403':
+          content:
+            application/json:
+              schema:
+                description: Forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                description: Not Found
+  /api/user/portal/open/coupon/coupon-redemption:
+    post:
+      tags:
+        - coupon-controller
+      summary: 券核销
+      operationId: directUseUsingPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserCouponOperateRequest'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                description: OK
+                $ref: '#/components/schemas/Response«boolean»'
+        '201':
+          content:
+            application/json:
+              schema:
+                description: Created
+        '401':
+          content:
+            application/json:
+              schema:
+                description: Unauthorized
+        '403':
+          content:
+            application/json:
+              schema:
+                description: Forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                description: Not Found
+        required: deprecatedfalse
+  /api/user/portal/open/coupon/coupon-revoke:
+    post:
+      tags:
+        - coupon-controller
+      summary: 券回滚
+      operationId: rollbackUsingPOST
+      requestBody:
+        required: deprecatedfalse
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserCouponOperateRequest'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                description: OK
+                $ref: '#/components/schemas/Response«boolean»'
+        '201':
+          content:
+            application/json:
+              schema:
+                description: Created
+        '401':
+          content:
+            application/json:
+              schema:
+                description: Unauthorized
+        '403':
+          content:
+            application/json:
+              schema:
+                description: Forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                description: Not Found
+#  /api/user/portal/open/coupon/coupon-use:
+#    post:
+#      tags:
+#        - coupon-controller
+#      summary: 券使用
+#      operationId: useUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/优惠券操作'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«boolean»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/coupon/send-coupon:
+#    post:
+#      tags:
+#        - coupon-controller
+#      summary: 优惠券发放
+#      operationId: sendCouponUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/发放用户卡券请求'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«long»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/coupon/template/create:
+#    post:
+#      tags:
+#        - coupon-template-controller
+#      summary: 创建券模版--状态为启用
+#      operationId: getUserCouponListUsingPOST_1
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/创建券模版'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«等级配置»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          cont`ent:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':`
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/coupon/user-coupons:
+#    post:
+#      tags:
+#        - coupon-controller
+#      summary: 查询买家持有卡券数据列表
+#      operationId: getUserCouponListUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/券查询'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«List«UserCouponInfo»»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/marketing/luck-draw/location/change:
+#    post:
+#      tags:
+#        - luck-draw-controller-open
+#      summary: 更改中奖记录的收货信息open
+#      operationId: updateWinningLogAddressInfoUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/更新收货信息open请求'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«更新收货地址返回信息»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/marketing/luck-draw/login:
+#    post:
+#      tags:
+#        - luck-draw-controller-open
+#      summary: 登录并且获得用户标识open
+#      operationId: loginUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/获得用户标识open请求'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«用户标识»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/marketing/luck-draw/main:
+#    post:
+#      tags:
+#        - luck-draw-controller-open
+#      summary: 抽奖open
+#      operationId: luckDrawUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/抽奖open请求'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«open抽奖结果»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/marketing/luck-draw/rule:
+#    post:
+#      tags:
+#        - luck-draw-controller-open
+#      summary: 抽奖活动规则open
+#      operationId: ruleUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/抽奖活动详情查询open请求'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«开放抽奖活动规则详情»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/marketing/luck-draw/send-code:
+#    post:
+#      tags:
+#        - luck-draw-controller-open
+#      summary: 发送验证码 open
+#      operationId: sendSmsCodeUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/发送验证码open请求'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«会员id»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/marketing/luck-draw/surplus-value:
+#    post:
+#      tags:
+#        - luck-draw-controller-open
+#      summary: 次数抽奖 剩余次数 open
+#      operationId: getSurplusValueUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/获得会员剩余次数open请求'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«剩余次数»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/marketing/luck-draw/virgo-account:
+#    post:
+#      tags:
+#        - luck-draw-controller-open
+#      summary: 积分抽奖 剩余积分 open
+#      operationId: getVirgoAccountUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/获得会员剩余积分open请求'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«List«VirgoAccount»»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/marketing/luck-draw/winning-information/all:
+#    post:
+#      tags:
+#        - luck-draw-controller-open
+#      summary: 全部中奖信息open
+#      operationId: findAllWinningLogInfoUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/获取所有中奖奖品信息open请求'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«Paging«展示中奖信息详情»»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/marketing/luck-draw/winning-information/user:
+#    post:
+#      tags:
+#        - luck-draw-controller-open
+#      summary: 个人中奖信息open
+#      operationId: findIndividualWinningLogInfoUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/获取个人中奖奖品信息open请求'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«Paging«个人中奖信息详情»»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/member/register-by-email-code:
+#    post:
+#      tags:
+#        - member-controller
+#      summary: 注册-邮箱验证码注册提交
+#      operationId: registerByEmailAndEmailCodeUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/SignUpByEmailAndEmailCodeRequest'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«TokenInfo»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/member/register-by-sms-code:
+#    post:
+#      tags:
+#        - member-controller
+#      summary: 注册-手机号验证码注册提交
+#      operationId: registerByMobileAndSmsCodeUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/SignUpByMobileAndSmsCodeRequest'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«TokenInfo»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/member/register-by-without-sms-code:
+#    post:
+#      tags:
+#        - member-controller
+#      summary: 注册-手机号注册提交
+#      operationId: registerByMobileUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/SignUpByMobileRequest'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«TokenInfo»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/member/risk/account:
+#    post:
+#      tags:
+#        - risk-strategy-controller-open
+#      summary: 注册场景风险识别open
+#      operationId: accountRiskStrategyUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/风险识别openApi入参'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«风险识别openApi出参»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/member/risk/coupon:
+#    post:
+#      tags:
+#        - risk-strategy-controller-open
+#      summary: 营销场景风险识别open
+#      operationId: couponRiskStrategyUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/风险识别openApi入参'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«风险识别openApi出参»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/point/adjust:
+#    post:
+#      tags:
+#        - point-controller
+#      summary: 积分新增/扣减
+#      operationId: adjustUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/美孚账户人工调整请求参数'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«string»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/point/findPointById:
+#    post:
+#      tags:
+#        - point-controller
+#      summary: 查询会员积分信息
+#      operationId: findPointByIdUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/根据会员id查找账户'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«List«会员账户信息»»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/profile/findById:
+#    post:
+#      tags:
+#        - member-profile-controller
+#      summary: 根据会员id查询会员基础信息
+#      operationId: findByIdUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/UserInfoFindByIdRequest'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«会员信息»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/profile/findByIds:
+#    post:
+#      tags:
+#        - member-profile-controller
+#      summary: 批量查询会员基础信息
+#      operationId: findByIdsUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/UserInfoFindByIdsRequest'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«List«会员信息»»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/profile/findDetailsById:
+#    post:
+#      tags:
+#        - member-profile-controller
+#      summary: 根据会员id查询会员基础信息及关联信息
+#      operationId: findDetailsByIdUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/UserInfoFindByIdRequest'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«会员信息级关联信息»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/profile/updateMemberInfo:
+#    post:
+#      tags:
+#        - member-profile-controller
+#      summary: 完善会员信息
+#      operationId: updateUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/UserInfoUpdateRequest'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«boolean»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/transDetails/paging:
+#    post:
+#      tags:
+#        - virgo-trans-detail-controller
+#      summary: 积分明细分页查询
+#      operationId: pagingUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/AccountTransRequest'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«Paging«会员账户交易记录(账户快照)»»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/verifiCode/register-send-email-code:
+#    post:
+#      tags:
+#        - verifi-code-controller
+#      summary: 注册-发送邮件验证码
+#      operationId: registerSendEmailCodeUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/SignUpByEmailSendEmailCodeRequest'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«boolean»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/verifiCode/register-send-email-code-with-out-captcha:
+#    post:
+#      tags:
+#        - verifi-code-controller
+#      summary: 注册-发送邮件验证码(无图片验证码)
+#      operationId: registerSendEmailCodeWithOutCaptchaUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/SignUpByEmailSendEmailCodeWithOutCaptchaRequest'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«boolean»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/verifiCode/register-send-sms-code:
+#    post:
+#      tags:
+#        - verifi-code-controller
+#      summary: 注册-发送手机验证码
+#      operationId: registerSendSmsCodeUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/SignUpByMobileSendSmsCodeRequest'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«boolean»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/verifiCode/register-send-sms-code-with-out-captcha:
+#    post:
+#      tags:
+#        - verifi-code-controller
+#      summary: 注册-发送手机验证码(无图片验证码)
+#      operationId: registerSendSmsCodeWithOutCaptchaUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/SignUpByMobileSendSmsCodeWithOutCaptchaRequest'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«boolean»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
+#  /api/user/portal/open/winsafe/get-mpqr:
+#    post:
+#      tags:
+#        - winsafe-controller
+#      summary: 获取小程序太阳码
+#      operationId: getMpqrUsingPOST
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/获取小程序太阳码'
+#      responses:
+#        '200':
+#          content:
+#            application/json:
+#                schema:
+#                  description: OK
+#                  $ref: '#/components/schemas/Response«WsMpqrInfo»'
+#        '201':
+#          content:
+#            application/json:
+#              schema:
+#                description: Created
+#        '401':
+#          content:
+#            application/json:
+#              schema:
+#                description: Unauthorized
+#        '403':
+#          content:
+#            application/json:
+#              schema:
+#                description: Forbidden
+#        '404':
+#          content:
+#            application/json:
+#              schema:
+#                description: Not Found
+#        required: deprecatedfalse
