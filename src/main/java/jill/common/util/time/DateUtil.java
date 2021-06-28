@@ -116,6 +116,41 @@ public class DateUtil {
         }
     }
 
+    /**
+     * 比较两个时间的大小
+     *
+     * @param beginTime beginTime
+     * @param endTime   endTime
+     * @return int
+     */
+    public int compareDate(Date beginTime, Date endTime) {
+        return beginTime.compareTo(endTime);
+    }
+
+    /**
+     * 计算日期加天数
+     *
+     * @param date date
+     * @param days days
+     * @return java.util.Date
+     */
+    public Date dateAddDays(Date date, int days) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        //把日期往后增加一天.整数往后推,负数往前移动
+        calendar.add(Calendar.DATE, days);
+        return calendar.getTime();
+    }
+
+    public boolean isAfter(Date expiredAt, Date now) {
+        return compareDate(expiredAt, now) <= 0;
+    }
+
+    public boolean isAfterNow(Date expiredAt) {
+        Date now = new Date();
+        return isAfter(expiredAt, now);
+    }
+
     public static void main(String[] args) {
         Date date = new Date("Wed Jan 27 16:53:49 CST 2021");
 //        System.out.println(parseTimeCST(date));
